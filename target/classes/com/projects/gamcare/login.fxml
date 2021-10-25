@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.geometry.Insets?>
+
+<VBox
+    alignment="CENTER"
+    spacing="20.0"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.projects.gamcare.controllers.Login"
+    stylesheets="main.css"
+>
+
+    <Label fx:id="title" text="Welcome to GamCare!" styleClass="title"/>
+
+    <padding>
+        <Insets bottom="20.0" left="350.0" right="350.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="usernameLabel" text="Username"/>
+    <TextField fx:id="usernameText" promptText="Username"/>
+
+    <Label fx:id="passwordLabel" text="Password"/>
+    <TextField fx:id="passwordText" promptText="Password"/>
+
+    <Button text="Log In" onAction="#onLoginButtonClick"/>
+</VBox>
