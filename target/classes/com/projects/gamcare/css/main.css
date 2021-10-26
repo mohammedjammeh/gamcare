@@ -11,7 +11,8 @@
     -fx-spacing: 20px;
 }
 
-.titleBox {
+.titleBox,
+.errorBox {
     -fx-alignment: center;
 }
 
@@ -21,18 +22,22 @@
     -fx-font-size: 20px;
 }
 
+.errorLabel {
+    -fx-text-fill: #80002a;
+}
+
 .usernameBox,
 .passwordBox {
     -fx-spacing: 8px;
 }
 
-.usernameField,
-.passwordField {
+.usernameTextField,
+.passwordTextField {
     -fx-padding: 10px;
 }
 
-.usernameField:focused,
-.passwordField:focused {
+.usernameTextField:focused,
+.passwordTextField:focused {
     -fx-focus-color: #80002a;
 }
 

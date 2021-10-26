@@ -11,19 +11,22 @@
     stylesheets="@css/main.css"
 >
     <VBox styleClass="body">
-
         <VBox styleClass="titleBox">
-            <Label fx:id="title" text="Gamcare" styleClass="titleLabel"/>
+            <Label fx:id="titleLabel" text="Gamcare" styleClass="titleLabel"/>
+        </VBox>
+
+        <VBox styleClass="errorBox" fx:id="errorBox">
+            <Label fx:id="errorLabel" text="Sorry, authentication unsuccessful." styleClass="errorLabel"/>
         </VBox>
 
         <VBox styleClass="usernameBox">
             <Label fx:id="usernameLabel" text="Username"/>
-            <TextField fx:id="usernameText" promptText="Username" styleClass="usernameField"/>
+            <TextField fx:id="usernameTextField" promptText="Username" styleClass="usernameTextField"/>
         </VBox>
 
         <VBox styleClass="passwordBox">
             <Label fx:id="passwordLabel" text="Password"/>
-            <TextField fx:id="passwordText" promptText="Password" styleClass="passwordField"/>
+            <TextField fx:id="passwordTextField" promptText="Password" styleClass="passwordTextField"/>
         </VBox>
 
         <VBox styleClass="logInButtonBox">
