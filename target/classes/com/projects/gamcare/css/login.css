@@ -17,9 +17,8 @@
 }
 
 .titleLabel {
-    -fx-font-family: sans-serif;
-    -fx-font-weight: bold;
     -fx-font-size: 20px;
+    -fx-text-fill: #4d0019;
 }
 
 .errorLabel {
