@@ -6,10 +6,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 public class Login {
-
-    @FXML
-    private Label titleLabel;
-
     @FXML
     private VBox errorBox;
 
@@ -17,13 +13,13 @@ public class Login {
     private Label errorLabel;
 
     @FXML
-    private Label usernameLabel;
+    private Label emailFieldLabel;
 
     @FXML
-    private TextField usernameTextField;
+    private TextField emailTextField;
 
     @FXML
-    private Label passwordLabel;
+    private Label passwordFieldLabel;
 
     @FXML
     private TextField passwordTextField;
@@ -34,7 +30,7 @@ public class Login {
     }
 
     @FXML
-    protected void onLoginButtonClick() {
+    protected void onLogInButtonClick() {
         errorBox.setVisible(true);
         errorBox.setManaged(true);
         System.out.println("You are now logged in.");

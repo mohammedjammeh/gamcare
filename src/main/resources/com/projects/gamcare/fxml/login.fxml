@@ -8,31 +8,30 @@
 <VBox
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.projects.gamcare.controllers.Login"
-    stylesheets="@css/main.css"
+    stylesheets="@../css/login.css"
 >
     <VBox styleClass="body">
         <VBox styleClass="titleBox">
-            <Label fx:id="titleLabel" text="Gamcare" styleClass="titleLabel"/>
+            <Label text="Gamcare" styleClass="titleLabel"/>
         </VBox>
 
         <VBox styleClass="errorBox" fx:id="errorBox">
             <Label fx:id="errorLabel" text="Sorry, authentication unsuccessful." styleClass="errorLabel"/>
         </VBox>
 
-        <VBox styleClass="usernameBox">
-            <Label fx:id="usernameLabel" text="Username"/>
-            <TextField fx:id="usernameTextField" promptText="Username" styleClass="usernameTextField"/>
+        <VBox styleClass="emailBox">
+            <Label fx:id="emailFieldLabel" text="Email"/>
+            <TextField fx:id="emailTextField" promptText="Email" styleClass="emailTextField"/>
         </VBox>
 
         <VBox styleClass="passwordBox">
-            <Label fx:id="passwordLabel" text="Password"/>
+            <Label fx:id="passwordFieldLabel" text="Password"/>
             <TextField fx:id="passwordTextField" promptText="Password" styleClass="passwordTextField"/>
         </VBox>
 
         <VBox styleClass="logInButtonBox">
-            <Button text="Log In" onAction="#onLoginButtonClick" styleClass="logInButton"/>
+            <Button text="Log In" onAction="#onLogInButtonClick" styleClass="logInButton"/>
         </VBox>
-
     </VBox>
 </VBox>
 
