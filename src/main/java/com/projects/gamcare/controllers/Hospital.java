@@ -13,4 +13,9 @@ public class Hospital {
     protected void onLogOutButtonClick() {
         System.out.println("You are now logged out.");
     }
+
+    @FXML
+    protected void onAddHospitalButtonClick() {
+        System.out.println("You have now added a hospital.");
+    }
 }
