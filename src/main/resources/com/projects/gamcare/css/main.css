@@ -54,21 +54,23 @@
 .innerBodyBox {
     -fx-max-width: 1000px;
     -fx-min-width: 900px;
+    -fx-spacing: 20px;
 }
 
 
 /****************
     Hospitals
 ****************/
-.hospitalsSubHeadingBox {
+.hospitalSubHeadingBox {
     -fx-alignment: center;
+    -fx-spacing: 30px;
 }
 
-.hospitalsSubHeadingBox Label {
+.hospitalSubHeadingBox Label {
     -fx-font-size: 18px;
 }
 
-.hospitalsSubHeadingBox Button {
+.hospitalSubHeadingBox Button {
     -fx-background-color: #80002a;
     -fx-padding: 8px 8px;
     -fx-min-width: 60px;
@@ -79,16 +81,16 @@
     -fx-border-width: 0;
 }
 
-.hospitalsSubHeadingBox Button:hover {
+.hospitalSubHeadingBox Button:hover {
     -fx-background-color: #660022;
 }
 
-.hospitalsBodyBox {
-    -fx-padding: 20px 0;
+/*** Index ***/
+.hospitalIndexBodyBox {
     -fx-spacing: 30px;
 }
 
-.hospitalsBodyBox Button {
+.hospitalIndexBodyBox Button {
     -fx-cursor: hand;
     -fx-min-width: 199px;
     -fx-min-height: 150px;
@@ -96,6 +98,36 @@
     -fx-font-size: 15px;
 }
 
-.hospitalsBodyBox Button:hover {
+.hospitalIndexBodyBox Button:hover {
     -fx-background-color: #cccccc;
 }
+
+/*** Show ***/
+.hospitalShowBodyBox {
+    -fx-padding: 20px;
+    -fx-background-color: #ebebeb;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgrey;
+}
+
+.tableDisplay {
+    -fx-spacing: 20px;
+}
+
+.tableHeadings Label {
+    -fx-text-fill: #4d0019;
+    -fx-font-weight: bold;
+    -fx-font-family: sans-serif;
+}
+
+Label.shortColumn {
+    -fx-min-width: 115px;
+}
+
+Label.longColumn {
+    -fx-min-width: 200px;
+}
+
+
