@@ -47,13 +47,11 @@
 ****************/
 
 .bodyBox {
-    /*-fx-background-color: yellow;*/
     -fx-alignment: top-center;
     -fx-padding: 25px 40px;
 }
 
 .innerBodyBox {
-    /*-fx-background-color: purple;*/
     -fx-max-width: 1000px;
     -fx-min-width: 900px;
 }
@@ -63,7 +61,6 @@
     Hospitals
 ****************/
 .hospitalsSubHeadingBox {
-    /*-fx-background-color: green;*/
     -fx-alignment: center;
 }
 
