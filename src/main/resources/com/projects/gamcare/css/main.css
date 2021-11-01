@@ -13,7 +13,7 @@
 }
 
 .innerHeadingBox {
-    -fx-max-width: 1200px;
+    -fx-max-width: 1000px;
     -fx-min-width: 900px;
 }
 
@@ -47,14 +47,14 @@
 ****************/
 
 .bodyBox {
-    -fx-background-color: yellow;
+    /*-fx-background-color: yellow;*/
     -fx-alignment: top-center;
     -fx-padding: 25px 40px;
 }
 
 .innerBodyBox {
-    -fx-background-color: purple;
-    -fx-max-width: 1200px;
+    /*-fx-background-color: purple;*/
+    -fx-max-width: 1000px;
     -fx-min-width: 900px;
 }
 
@@ -63,7 +63,7 @@
     Hospitals
 ****************/
 .hospitalsSubHeadingBox {
-    -fx-background-color: green;
+    /*-fx-background-color: green;*/
     -fx-alignment: center;
 }
 
@@ -87,10 +87,18 @@
 }
 
 .hospitalsBodyBox {
-    -fx-background-color: red;
-    -fx-spacing: 10px;
+    -fx-padding: 20px 0;
+    -fx-spacing: 30px;
 }
 
 .hospitalsBodyBox Button {
-    /*-fx-min-width: 300px;*/
+    -fx-cursor: hand;
+    -fx-min-width: 199px;
+    -fx-min-height: 150px;
+    -fx-background-color: #dbdbdb;
+    -fx-font-size: 15px;
+}
+
+.hospitalsBodyBox Button:hover {
+    -fx-background-color: #cccccc;
 }

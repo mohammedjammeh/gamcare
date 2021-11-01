@@ -16,9 +16,7 @@
             <HBox styleClass="titleBox">
                 <Label text="Gamcare" styleClass="titleLabel"/>
             </HBox>
-
             <HBox HBox.hgrow="ALWAYS"/>
-
             <HBox styleClass="userBox">
                 <Button text="My Profile" onAction="#onMyProfileButtonClick"/>
                 <Button text="Log Out" onAction="#onLogOutButtonClick"/>
@@ -32,14 +30,26 @@
                 <HBox HBox.hgrow="ALWAYS"/>
                 <Button text="Add" onAction="#onAddHospitalButtonClick"/>
             </HBox>
-            <FlowPane styleClass="hospitalsBodyBox">
-                <Button text="Brikama" onAction="#onAddHospitalButtonClick"/>
-                <Button text="Mansa Konko" onAction="#onAddHospitalButtonClick"/>
-                <Button text="Farro Kono" onAction="#onAddHospitalButtonClick"/>
-                <Button text="Juffureh" onAction="#onAddHospitalButtonClick"/>
-                <Button text="Niumi" onAction="#onAddHospitalButtonClick"/>
-                <Button text="Bansang" onAction="#onAddHospitalButtonClick"/>
-            </FlowPane>
+            <VBox styleClass="hospitalsBodyBox">
+                <HBox>
+                    <Button text="Brikama" onAction="#onShowHospitalButtonClick"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <Button text="Mansa Konko" onAction="#onShowHospitalButtonClick"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <Button text="Farro Kono" onAction="#onShowHospitalButtonClick"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <Button text="Katong" onAction="#onShowHospitalButtonClick"/>
+                </HBox>
+                <HBox>
+                    <Button text="Juffureh" onAction="#onShowHospitalButtonClick"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <Button text="Niumi" onAction="#onShowHospitalButtonClick"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <Button text="Kloro" onAction="#onShowHospitalButtonClick"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <Button text="Bansang" onAction="#onShowHospitalButtonClick"/>
+                </HBox>
+            </VBox>
         </VBox>
     </VBox>
 </VBox>
