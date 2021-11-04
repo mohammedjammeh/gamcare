@@ -30,127 +30,252 @@
                 <HBox HBox.hgrow="ALWAYS"/>
                 <Button text="Add" onAction="#onAddPatientButtonClick"/>
             </HBox>
-            <VBox styleClass="hospitalShowBodyBox">
-                <VBox styleClass="tableDisplay">
-                    <HBox styleClass="tableHeadings">
-                        <Label>First name</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+            <VBox styleClass="tableDisplay">
+                <HBox styleClass="tableHeadings">
+                    <Label>First name</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>Last name</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Last name</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>Age</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Age</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="score">Score</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Score</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="address">Address</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label styleClass="address">Address</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="action">Actions</Label>
+                    <Label styleClass="action">Actions</Label>
+                </HBox>
+                <HBox>
+                    <Label>Mohammed</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>Jammeh</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>19 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>0.9</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="address">Jammeh Kunda, Brikama</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
                     </HBox>
-                    <HBox styleClass="tableRows">
-                        <Label>Mohammed</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox>
+                    <Label>Omar</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>Jammeh</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Bojang</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>19 years</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>39 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="score">0.9</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>0.6</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="address">Jammeh Kunda, Brikama</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label styleClass="address">Bojang Kunda, Bangsang River Road</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox styleClass="action">
-                            <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        </HBox>
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
                     </HBox>
-                    <HBox styleClass="tableRows">
-                        <Label>Omar</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox>
+                    <Label>Mustapha</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>Bojang</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Badjie</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>39 years</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>27 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="score">0.6</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>0.3</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="address">Bojang Kunda, Bangsang River Road</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label styleClass="address">Badjie Kunda, Kiti Koto</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox styleClass="action">
-                            <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        </HBox>
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
                     </HBox>
-                    <HBox styleClass="tableRows">
-                        <Label>Mustapha</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox>
+                    <Label>Lamin</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>Badjie</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Sanyang</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>27 years</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>28 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="score">0.3</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>0.3</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="address">Badjie Kunda, Kiti Koto</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox styleClass="action">
-                            <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        </HBox>
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
                     </HBox>
-                    <HBox styleClass="tableRows">
-                        <Label>Lamin</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox>
+                    <Label>Ousman</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>Sanyang</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Bajo</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>28 years</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>66 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="score">0.3</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>0.8</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="address">Sanyang Kunda, Kloro Bakoto</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label styleClass="address">Bajo Kunda, Casamace Road</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox styleClass="action">
-                            <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        </HBox>
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
                     </HBox>
-                    <HBox styleClass="tableRows">
-                        <Label>Ousman</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                </HBox>
+            </VBox>
 
-                        <Label>Bajo</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label>66 years</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+            <HBox styleClass="hospitalSubHeadingBox">
+                <Label text="Mansa Konko Patients"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+                <Button text="Add" onAction="#onAddPatientButtonClick"/>
+            </HBox>
+            <VBox styleClass="tableDisplay">
+                <HBox styleClass="tableHeadings">
+                    <Label>First name</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="score">0.8</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Last name</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <Label styleClass="address">Bajo Kunda, Casamace Road</Label>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                    <Label>Age</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox styleClass="action">
-                            <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        </HBox>
+                    <Label>Score</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="address">Address</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="action">Actions</Label>
+                </HBox>
+                <HBox>
+                    <Label>Mohammed</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>Jammeh</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>19 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>0.9</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="address">Jammeh Kunda, Brikama</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
                     </HBox>
-                </VBox>
+                </HBox>
+                <HBox>
+                    <Label>Omar</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>Bojang</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>39 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>0.6</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="address">Bojang Kunda, Bangsang River Road</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                    </HBox>
+                </HBox>
+                <HBox>
+                    <Label>Mustapha</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>Badjie</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>27 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>0.3</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="address">Badjie Kunda, Kiti Koto</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                    </HBox>
+                </HBox>
+                <HBox>
+                    <Label>Lamin</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>Sanyang</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>28 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>0.3</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                    </HBox>
+                </HBox>
+                <HBox>
+                    <Label>Ousman</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>Bajo</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>66 years</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>0.8</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label styleClass="address">Bajo Kunda, Casamace Road</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="action">
+                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                    </HBox>
+                </HBox>
             </VBox>
         </VBox>
     </VBox>
