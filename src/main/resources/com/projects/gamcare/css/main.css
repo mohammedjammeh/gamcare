@@ -59,18 +59,18 @@
 
 
 /****************
-    Hospitals
+    Hospital
 ****************/
-.hospitalSubHeadingBox {
+.subHeadingBox {
     -fx-alignment: center;
     -fx-spacing: 30px;
 }
 
-.hospitalSubHeadingBox Label {
+.subHeadingBox Label {
     -fx-font-size: 18px;
 }
 
-.hospitalSubHeadingBox Button {
+.subHeadingBox Button {
     -fx-background-color: #80002a;
     -fx-padding: 8px 8px;
     -fx-min-width: 60px;
@@ -81,7 +81,7 @@
     -fx-border-width: 0;
 }
 
-.hospitalSubHeadingBox Button:hover {
+.subHeadingBox Button:hover {
     -fx-background-color: #660022;
 }
 
@@ -151,3 +151,8 @@ HBox.action Button {
 HBox.action Button:hover {
     -fx-background-color: #bfbfbf;
 }
+
+
+/****************
+    Patient
+****************/

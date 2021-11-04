@@ -25,7 +25,7 @@
     </VBox>
     <VBox styleClass="bodyBox">
         <VBox styleClass="innerBodyBox">
-            <HBox styleClass="hospitalSubHeadingBox">
+            <HBox styleClass="subHeadingBox">
                 <Label text="Hospitals"/>
                 <HBox HBox.hgrow="ALWAYS"/>
                 <Button text="Add" onAction="#onAddHospitalButtonClick"/>

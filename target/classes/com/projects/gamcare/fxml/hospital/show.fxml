@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
-
 <?import javafx.geometry.Insets?>
+
 <VBox
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.projects.gamcare.controllers.Hospital"
@@ -26,7 +26,7 @@
     </VBox>
     <VBox styleClass="bodyBox">
         <VBox styleClass="innerBodyBox">
-            <HBox styleClass="hospitalSubHeadingBox">
+            <HBox styleClass="subHeadingBox">
                 <Label text="Patients"/>
                 <HBox HBox.hgrow="ALWAYS"/>
                 <Button text="Add" onAction="#onAddPatientButtonClick"/>
@@ -179,7 +179,7 @@
             </VBox>
 
 
-            <HBox styleClass="hospitalSubHeadingBox">
+            <HBox styleClass="subHeadingBox">
                 <Label text="Doctors"/>
                 <HBox HBox.hgrow="ALWAYS"/>
                 <Button text="Add" onAction="#onAddDoctorButtonClick"/>
