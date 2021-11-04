@@ -113,25 +113,27 @@
     -fx-border-color: lightgrey;
 }
 
-.tableDisplay Label {
-    -fx-padding: 10px 0;
-}
-
 .tableHeadings Label {
     -fx-text-fill: #4d0019;
     -fx-font-weight: bold;
     -fx-font-family: sans-serif;
 }
 
-.tableDisplay Label,
-.tableDisplay HBox.action {
-    -fx-min-width: 120px;
-    -fx-max-width: 120px;
+.tableDisplay Label {
+    -fx-padding: 10px 0;
+    -fx-min-width: 110px;
+    -fx-max-width: 110px;
 }
 
 Label.address {
-    -fx-min-width: 260px;
-    -fx-max-width: 260px;
+    -fx-min-width: 250px;
+    -fx-max-width: 250px;
+}
+
+Label.action,
+HBox.action {
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
 }
 
 HBox.action {
@@ -139,7 +141,7 @@ HBox.action {
 }
 
 HBox.action Button {
-    -fx-padding: 5px 40px;
+    -fx-padding: 5px 10px;
     -fx-cursor: hand;
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;

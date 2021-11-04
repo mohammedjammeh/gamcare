@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
 
+<?import javafx.geometry.Insets?>
 <VBox
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.projects.gamcare.controllers.Hospital"
@@ -13,7 +14,7 @@
     <VBox styleClass="headingBox">
         <HBox styleClass="innerHeadingBox">
             <HBox styleClass="titleBox">
-                <Label text="Gamcare" styleClass="titleLabel"/>
+                <Label text="Gamcare - Mansa Konko" styleClass="titleLabel"/>
             </HBox>
             <HBox HBox.hgrow="ALWAYS"/>
             <HBox styleClass="userBox">
@@ -26,7 +27,7 @@
     <VBox styleClass="bodyBox">
         <VBox styleClass="innerBodyBox">
             <HBox styleClass="hospitalSubHeadingBox">
-                <Label text="Mansa Konko Patients"/>
+                <Label text="Patients"/>
                 <HBox HBox.hgrow="ALWAYS"/>
                 <Button text="Add" onAction="#onAddPatientButtonClick"/>
             </HBox>
@@ -67,6 +68,10 @@
 
                     <HBox styleClass="action">
                         <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -87,6 +92,10 @@
 
                     <HBox styleClass="action">
                         <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -107,6 +116,10 @@
 
                     <HBox styleClass="action">
                         <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -127,6 +140,10 @@
 
                     <HBox styleClass="action">
                         <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -147,15 +164,25 @@
 
                     <HBox styleClass="action">
                         <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
+
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
             </VBox>
 
 
             <HBox styleClass="hospitalSubHeadingBox">
-                <Label text="Mansa Konko Patients"/>
+                <Label text="Doctors"/>
                 <HBox HBox.hgrow="ALWAYS"/>
-                <Button text="Add" onAction="#onAddPatientButtonClick"/>
+                <Button text="Add" onAction="#onAddDoctorButtonClick"/>
             </HBox>
             <VBox styleClass="tableDisplay">
                 <HBox styleClass="tableHeadings">
@@ -168,7 +195,7 @@
                     <Label>Age</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Score</Label>
+                    <Label>Level</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="address">Address</Label>
@@ -186,14 +213,18 @@
                     <Label>19 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.9</Label>
+                    <Label>Junior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="address">Jammeh Kunda, Brikama</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -206,14 +237,18 @@
                     <Label>39 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.6</Label>
+                    <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="address">Bojang Kunda, Bangsang River Road</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -226,14 +261,18 @@
                     <Label>27 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.3</Label>
+                    <Label>Mid Level</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="address">Badjie Kunda, Kiti Koto</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -246,14 +285,18 @@
                     <Label>28 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.3</Label>
+                    <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="address">Sanyang Kunda, Kloro Bakoto</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox>
@@ -266,14 +309,18 @@
                     <Label>66 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.8</Label>
+                    <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="address">Bajo Kunda, Casamace Road</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
+                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
             </VBox>
