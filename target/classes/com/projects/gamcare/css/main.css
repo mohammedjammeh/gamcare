@@ -113,7 +113,11 @@
 }
 
 .tableDisplay {
-    -fx-spacing: 20px;
+    -fx-spacing: 15px;
+}
+
+.tableDisplay Label {
+    -fx-padding: 10px 0;
 }
 
 .tableHeadings Label {
@@ -122,12 +126,29 @@
     -fx-font-family: sans-serif;
 }
 
-Label.shortColumn {
-    -fx-min-width: 115px;
+.tableDisplay Label,
+.tableDisplay HBox.action {
+    -fx-min-width: 120px;
+    -fx-max-width: 120px;
 }
 
-Label.longColumn {
-    -fx-min-width: 200px;
+Label.address {
+    -fx-min-width: 260px;
+    -fx-max-width: 260px;
 }
 
+HBox.action {
+    -fx-alignment: center-left;
+}
 
+HBox.action Button {
+    -fx-padding: 5px 40px;
+    -fx-cursor: hand;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-background-color: #d3d3d3;
+}
+
+HBox.action Button:hover {
+    -fx-background-color: #bfbfbf;
+}
