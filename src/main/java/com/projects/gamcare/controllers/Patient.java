@@ -32,10 +32,16 @@ public class Patient {
     private DatePicker dateOfBirthPicker;
 
     @FXML
-    private Label compoundFieldLabel;
+    private Label compoundNameFieldLabel;
 
     @FXML
-    private TextField compoundTextField;
+    private TextField compoundNameTextField;
+
+    @FXML
+    private Label townFieldLabel;
+
+    @FXML
+    private TextField townTextField;
 
     @FXML
     private Label regionFieldLabel;
@@ -59,5 +65,10 @@ public class Patient {
     @FXML
     protected void onLogOutButtonClick() {
         System.out.println("You are now logged out.");
+    }
+
+    @FXML
+    protected void onCreatePatientButtonClick() {
+        System.out.println("You have now created a patient.");
     }
 }

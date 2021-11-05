@@ -52,7 +52,7 @@
 }
 
 .innerBodyBox {
-    -fx-max-width: 1000px;
+    -fx-max-width: 900px;
     -fx-min-width: 900px;
     -fx-spacing: 20px;
 }
@@ -156,3 +156,85 @@ HBox.action Button:hover {
 /****************
     Patient
 ****************/
+.createPatientBodyBox {
+    -fx-padding: 0 125px;
+}
+
+.createPatientBodyBox > VBox {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-min-width: 650px;
+    -fx-max-width: 650px;
+    -fx-spacing: 25px;
+    -fx-padding: 30px 40px;
+}
+
+.createPatientBodyBox .firstNameBox,
+.createPatientBodyBox .lastNameBox,
+.createPatientBodyBox .emailBox,
+.createPatientBodyBox .dateOfBirthBox,
+.createPatientBodyBox .compoundNameBox,
+.createPatientBodyBox .townBox,
+.createPatientBodyBox .regionBox,
+.createPatientBodyBox .addressDescriptionBox {
+    -fx-min-width: 270px;
+    -fx-spacing: 10px;
+}
+
+.createPatientBodyBox DatePicker {
+    -fx-min-width: 270px;
+}
+
+.createPatientBodyBox ChoiceBox,
+.createPatientBodyBox TextArea {
+    -fx-min-width: 570px;
+}
+
+.createPatientBodyBox Label {
+    -fx-text-fill: #4d4d4d;
+}
+
+.createPatientBodyBox TextField,
+.createPatientBodyBox .text-field,
+.createPatientBodyBox ChoiceBox,
+.createPatientBodyBox TextArea {
+    -fx-padding: 10px;
+    -fx-background-color: white;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+.createPatientBodyBox .regionBox ChoiceBox {
+    -fx-padding: 5px 4px;
+}
+
+.createPatientBodyBox .addressDescriptionBox TextArea {
+    -fx-padding: 5px 3px;
+}
+
+.createPatientBodyBox .addressDescriptionBox TextArea .content {
+    -fx-background-color: white;
+}
+
+.createPatientBodyBox TextField:focused {
+    /*-fx-focus-background-color: red;*/
+}
+
+.createPatientBodyBox Button {
+    -fx-background-color: #80002a;
+    -fx-min-width: 150px;
+    -fx-padding: 12px 0;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 0;
+    -fx-border-color: black;
+}
+
+.createPatientBodyBox Button:hover {
+    -fx-background-color: #660022;
+}
