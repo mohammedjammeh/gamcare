@@ -130,14 +130,14 @@
 }
 
 Label.address {
-    -fx-min-width: 250px;
-    -fx-max-width: 250px;
+    -fx-min-width: 360px;
+    -fx-max-width: 360px;
 }
 
 Label.action,
 HBox.action {
-    -fx-min-width: 170px;
-    -fx-max-width: 170px;
+    -fx-min-width: 60px;
+    -fx-max-width: 60px;
 }
 
 HBox.action {
@@ -240,6 +240,10 @@ HBox.action Button:hover {
 .createPatientBodyBox .date-picker:focused {
     -fx-background-color: #660022;
     -fx-border-width: 0.3px;
+}
+
+.createPatientBodyBox .date-picker:focused > .arrow-button {
+    -fx-background-color: lightgrey;
 }
 
 .createPatientBodyBox .buttonBox Button {

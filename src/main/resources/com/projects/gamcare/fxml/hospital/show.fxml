@@ -45,10 +45,10 @@
                     <Label>Score</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Address</Label>
+                    <Label styleClass="address">Address - Compound, Town and Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="action">Actions</Label>
+                    <Label styleClass="action">Action</Label>
                 </HBox>
                 <HBox styleClass="tableBody">
                     <Label>Mohammed</Label>
@@ -63,15 +63,11 @@
                     <Label>0.9</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Jammeh Kunda, Brikama</Label>
+                    <Label styleClass="address">Jammeh Kunda, Brikama New Town, Western Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
+                        <Button text="Profile" onAction="#onShowPatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -87,15 +83,11 @@
                     <Label>0.6</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bojang Kunda, Bangsang River Road</Label>
+                    <Label styleClass="address">Bojang Kunda, Bangsang River Road, Central Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
+                        <Button text="Profile" onAction="#onShowPatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -111,15 +103,11 @@
                     <Label>0.3</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Badjie Kunda, Kiti Koto</Label>
+                    <Label styleClass="address">Badjie Kunda, Kiti Koto, Central River Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
+                        <Button text="Profile" onAction="#onShowPatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -135,15 +123,11 @@
                     <Label>0.3</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto</Label>
+                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto, Upper River Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
+                        <Button text="Profile" onAction="#onShowPatientButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -159,15 +143,11 @@
                     <Label>0.8</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bajo Kunda, Casamace Road</Label>
+                    <Label styleClass="address">Bajo Kunda, Casamace Road, Central River Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
+                        <Button text="Profile" onAction="#onShowPatientButtonClick"/>
                     </HBox>
                 </HBox>
 
@@ -198,10 +178,10 @@
                     <Label>Level</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Address</Label>
+                    <Label styleClass="address">Address - Compound, Town and Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="action">Actions</Label>
+                    <Label styleClass="action">Action</Label>
                 </HBox>
                 <HBox styleClass="tableBody">
                     <Label>Mohammed</Label>
@@ -216,15 +196,11 @@
                     <Label>Junior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Jammeh Kunda, Brikama</Label>
+                    <Label styleClass="address">Jammeh Kunda, Brikama New Town, Western Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
+                        <Button text="Profile" onAction="#onShowDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -240,15 +216,11 @@
                     <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bojang Kunda, Bangsang River Road</Label>
+                    <Label styleClass="address">Bojang Kunda, Bangsang River Road, Central Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
+                        <Button text="Profile" onAction="#onShowDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -264,15 +236,11 @@
                     <Label>Mid Level</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Badjie Kunda, Kiti Koto</Label>
+                    <Label styleClass="address">Badjie Kunda, Kiti Koto, Central River Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
+                        <Button text="Profile" onAction="#onShowDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -288,15 +256,11 @@
                     <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto</Label>
+                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto, Upper River Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
+                        <Button text="Profile" onAction="#onShowDoctorButtonClick"/>
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
@@ -312,15 +276,11 @@
                     <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bajo Kunda, Casamace Road</Label>
+                    <Label styleClass="address">Bajo Kunda, Casamace Road, Central River Region</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
-                        <Button text="View" onAction="#onShowDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
+                        <Button text="Profile" onAction="#onShowDoctorButtonClick"/>
                     </HBox>
                 </HBox>
             </VBox>
