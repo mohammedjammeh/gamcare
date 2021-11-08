@@ -50,7 +50,7 @@
 
                     <Label styleClass="action">Actions</Label>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Mohammed</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -74,7 +74,7 @@
                         <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Omar</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -98,7 +98,7 @@
                         <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Mustapha</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -122,7 +122,7 @@
                         <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Lamin</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -146,7 +146,7 @@
                         <Button text="Delete" onAction="#onDeletePatientButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Ousman</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -203,7 +203,7 @@
 
                     <Label styleClass="action">Actions</Label>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Mohammed</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -227,7 +227,7 @@
                         <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Omar</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -251,7 +251,7 @@
                         <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Mustapha</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -275,7 +275,7 @@
                         <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Lamin</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -299,7 +299,7 @@
                         <Button text="Delete" onAction="#onDeleteDoctorButtonClick"/>
                     </HBox>
                 </HBox>
-                <HBox>
+                <HBox styleClass="tableBody">
                     <Label>Ousman</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
