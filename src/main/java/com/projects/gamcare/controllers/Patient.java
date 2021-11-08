@@ -5,19 +5,20 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 public class Patient {
     @FXML
-    private Label firstNameFieldLabel;
+    private VBox errorBox;
 
     @FXML
-    private TextField firstNameTextField;
+    private Label errorLabel;
 
     @FXML
-    private Label lastNameFieldLabel;
+    private Label fullNameFieldLabel;
 
     @FXML
-    private TextField lastNameTextField;
+    private TextField fullNameTextField;
 
     @FXML
     private Label emailFieldLabel;
@@ -67,8 +68,15 @@ public class Patient {
         System.out.println("You are now logged out.");
     }
 
+    @FXML void initialize() {
+        errorBox.setVisible(false);
+        errorBox.setManaged(false);
+    }
+
     @FXML
     protected void onCreatePatientButtonClick() {
-        System.out.println("You have now created a patient.");
+        errorBox.setVisible(true);
+        errorBox.setManaged(true);
+        System.out.println("There is an error.");
     }
 }

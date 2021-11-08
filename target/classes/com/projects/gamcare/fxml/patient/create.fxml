@@ -37,21 +37,18 @@
 
             <VBox styleClass="createPatientBodyBox">
                 <VBox>
+                    <VBox fx:id="errorBox" styleClass="errorBox">
+                        <Label fx:id="errorLabel" text="Sorry, there is an error. Please check the highlighted fields." styleClass="errorLabel"/>
+                    </VBox>
+
                     <HBox>
-                        <VBox styleClass="firstNameBox">
-                            <Label fx:id="firstNameFieldLabel" text="First name"/>
-                            <TextField fx:id="firstNameTextField" promptText="First name"/>
+                        <VBox styleClass="fullNameBox">
+                            <Label fx:id="fullNameFieldLabel" text="Full name"/>
+                            <TextField fx:id="fullNameTextField" promptText="Full name"/>
                         </VBox>
 
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="lastNameBox">
-                            <Label fx:id="lastNameFieldLabel" text="Last name"/>
-                            <TextField fx:id="lastNameTextField" promptText="Last name"/>
-                        </VBox>
-                    </HBox>
-
-                    <HBox>
                         <VBox styleClass="emailBox">
                             <Label fx:id="emailFieldLabel" text="Email"/>
                             <TextField fx:id="emailTextField" promptText="Email"/>
@@ -77,9 +74,9 @@
                             <Label fx:id="townFieldLabel" text="Town"/>
                             <TextField fx:id="townTextField" promptText="Town"/>
                         </VBox>
-                    </HBox>
 
-                    <HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+
                         <VBox styleClass="regionBox">
                             <Label fx:id="regionFieldLabel" text="Region"/>
                             <ChoiceBox value="Western Region">
@@ -103,11 +100,9 @@
                         </VBox>
                     </HBox>
 
-                    <HBox>
-                        <VBox styleClass="buttonBox">
-                            <Button text="Create Patient" onAction="#onCreatePatientButtonClick"/>
-                        </VBox>
-                    </HBox>
+                    <VBox styleClass="buttonBox">
+                        <Button text="Create Patient" onAction="#onCreatePatientButtonClick"/>
+                    </VBox>
                 </VBox>
             </VBox>
         </VBox>
