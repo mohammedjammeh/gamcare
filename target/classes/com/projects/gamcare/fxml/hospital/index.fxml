@@ -12,7 +12,7 @@
 >
     <VBox styleClass="headingBox">
         <HBox styleClass="innerHeadingBox">
-            <HBox styleClass="titleBox">
+            <HBox styleClass="mainTitleBox">
                 <Label text="Gamcare" styleClass="titleLabel"/>
             </HBox>
             <HBox HBox.hgrow="ALWAYS"/>

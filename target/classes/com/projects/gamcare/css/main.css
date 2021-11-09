@@ -165,30 +165,37 @@ HBox.action Button:hover {
 /****************
     Patient
 ****************/
-.createPatientBodyBox {
-    /*-fx-padding: 0 125px;*/
-    -fx-padding: 0;
-}
-
 .createPatientBodyBox > VBox {
     -fx-background-color: white;
     -fx-background-radius: 6px;
     -fx-border-radius: 6px;
-    /*-fx-min-width: 650px;*/
-    /*-fx-max-width: 650px;*/
     -fx-spacing: 25px;
     -fx-padding: 30px 40px;
 }
 
-.createPatientBodyBox .fullNameBox,
+.createPatientBodyBox .firstNameBox,
+.createPatientBodyBox .middleNameBox,
+.createPatientBodyBox .lastNameBox,
+
+.createPatientBodyBox .titleBox,
+.createPatientBodyBox .genderBox,
+.createPatientBodyBox .tribeBox,
+
 .createPatientBodyBox .emailBox,
+.createPatientBodyBox .phoneNumberBox,
+.createPatientBodyBox .relevantLinkBox,
+
+.createPatientBodyBox .placeOfBirthBox,
 .createPatientBodyBox .dateOfBirthBox,
+.createPatientBodyBox .currentHospitalBox,
+
 .createPatientBodyBox .compoundNameBox,
 .createPatientBodyBox .townBox,
-.createPatientBodyBox ChoiceBox,
-.createPatientBodyBox .regionBox
-/*.createPatientBodyBox .addressDescriptionBox */
-{
+.createPatientBodyBox .regionBox,
+
+.createPatientBodyBox .otherDetailsBox,
+
+.createPatientBodyBox ChoiceBox {
     -fx-min-width: 255px;
     -fx-spacing: 10px;
 }
@@ -197,72 +204,77 @@ HBox.action Button:hover {
     -fx-min-width: 255px;
 }
 
-/*.createPatientBodyBox TextArea {*/
-/*    -fx-min-width: 570px;*/
-/*}*/
+.createPatientBodyBox TextArea {
+    -fx-min-width: 820px;
+}
 
-/*.createPatientBodyBox Label {*/
-/*    -fx-text-fill: #4d4d4d;*/
-/*}*/
+.createPatientBodyBox Label {
+    -fx-text-fill: #4d4d4d;
+}
 
-/*.createPatientBodyBox TextField,*/
-/*.createPatientBodyBox .text-field,*/
-/*.createPatientBodyBox ChoiceBox,*/
-/*.createPatientBodyBox TextArea {*/
-/*    -fx-padding: 10px;*/
-/*    -fx-background-color: white;*/
-/*    -fx-border-width: 1px;*/
-/*    -fx-border-color: lightgrey;*/
-/*    -fx-background-radius: 3px;*/
-/*    -fx-border-radius: 3px;*/
-/*}*/
+.createPatientBodyBox ChoiceBox Label {
+    -fx-text-fill: #262626;
+}
 
-/*.createPatientBodyBox .regionBox ChoiceBox {*/
-/*    -fx-padding: 5px 4px;*/
-/*}*/
+.createPatientBodyBox TextField,
+.createPatientBodyBox .text-field,
+.createPatientBodyBox ChoiceBox,
+.createPatientBodyBox TextArea {
+    -fx-padding: 10px;
+    -fx-background-color: white;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: #262626;
+}
 
-/*.createPatientBodyBox .addressDescriptionBox TextArea {*/
-/*    -fx-padding: 5px 3px;*/
-/*}*/
+.createPatientBodyBox ChoiceBox {
+    -fx-padding: 5px 4px;
+}
 
-/*.createPatientBodyBox .addressDescriptionBox TextArea .content {*/
-/*    -fx-background-color: white;*/
-/*}*/
+.createPatientBodyBox TextArea {
+    -fx-padding: 5px 3px;
+}
 
-/*.createPatientBodyBox TextField:focused,*/
-/*.createPatientBodyBox .text-field:focused,*/
-/*.createPatientBodyBox ChoiceBox:focused,*/
-/*.createPatientBodyBox TextArea:focused {*/
-/*    -fx-border-color: #660022;*/
-/*}*/
+.createPatientBodyBox TextArea .content {
+    -fx-background-color: white;
+}
 
-/*.createPatientBodyBox .date-picker:focused > .text-field,*/
-/*.createPatientBodyBox .date-picker > .text-field:focused {*/
-/*    -fx-border-color: #660022;*/
-/*    -fx-border-width: 0.3px;*/
-/*}*/
+.createPatientBodyBox TextField:focused,
+.createPatientBodyBox .text-field:focused,
+.createPatientBodyBox ChoiceBox:focused,
+.createPatientBodyBox TextArea:focused {
+    -fx-border-color: #660022;
+}
 
-/*.createPatientBodyBox .date-picker:focused {*/
-/*    -fx-background-color: #660022;*/
-/*    -fx-border-width: 0.3px;*/
-/*}*/
+.createPatientBodyBox .date-picker:focused > .text-field,
+.createPatientBodyBox .date-picker > .text-field:focused {
+    -fx-border-color: #660022;
+    -fx-border-width: 0.3px;
+}
 
-/*.createPatientBodyBox .date-picker:focused > .arrow-button {*/
-/*    -fx-background-color: lightgrey;*/
-/*}*/
+.createPatientBodyBox .date-picker:focused {
+    -fx-background-color: #660022;
+    -fx-border-width: 0.3px;
+}
 
-/*.createPatientBodyBox .buttonBox Button {*/
-/*    -fx-background-color: #80002a;*/
-/*    -fx-min-width: 150px;*/
-/*    -fx-padding: 12px 0;*/
-/*    -fx-cursor: hand;*/
-/*    -fx-text-fill: white;*/
-/*    -fx-background-radius: 4px;*/
-/*    -fx-border-radius: 4px;*/
-/*    -fx-border-width: 0;*/
-/*    -fx-border-color: black;*/
-/*}*/
+.createPatientBodyBox .date-picker:focused > .arrow-button {
+    -fx-background-color: lightgrey;
+}
 
-/*.createPatientBodyBox .buttonBox Button:hover {*/
-/*    -fx-background-color: #660022;*/
-/*}*/
+.createPatientBodyBox .buttonBox Button {
+    -fx-background-color: #80002a;
+    -fx-min-width: 150px;
+    -fx-padding: 12px 0;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 0;
+    -fx-border-color: black;
+}
+
+.createPatientBodyBox .buttonBox Button:hover {
+    -fx-background-color: #660022;
+}

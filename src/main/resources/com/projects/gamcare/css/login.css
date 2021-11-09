@@ -11,7 +11,7 @@
     -fx-spacing: 20px;
 }
 
-.titleBox,
+.mainTitleBox,
 .errorBox {
     -fx-alignment: center;
 }

@@ -11,7 +11,7 @@
     stylesheets="@../css/login.css"
 >
     <VBox styleClass="body">
-        <VBox styleClass="titleBox">
+        <VBox styleClass="mainTitleBox">
             <Label text="Gamcare" styleClass="titleLabel"/>
         </VBox>
 

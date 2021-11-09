@@ -13,7 +13,7 @@
 >
     <VBox styleClass="headingBox">
         <HBox styleClass="innerHeadingBox">
-            <HBox styleClass="titleBox">
+            <HBox styleClass="mainTitleBox">
                 <Label text="Gamcare - Mansa Konko" styleClass="titleLabel"/>
             </HBox>
             <HBox HBox.hgrow="ALWAYS"/>

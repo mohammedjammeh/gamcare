@@ -14,11 +14,38 @@ public class Patient {
     @FXML
     private Label errorLabel;
 
-    @FXML
-    private Label fullNameFieldLabel;
+
 
     @FXML
-    private TextField fullNameTextField;
+    private Label firstNameFieldLabel;
+
+    @FXML
+    private TextField firstNameTextField;
+
+    @FXML
+    private Label middleNameFieldLabel;
+
+    @FXML
+    private TextField middleNameTextField;
+
+    @FXML
+    private Label lastNameFieldLabel;
+
+    @FXML
+    private TextField lastNameTextField;
+
+
+
+    @FXML
+    private Label titleFieldLabel;
+
+    @FXML
+    private Label genderFieldLabel;
+
+    @FXML
+    private Label tribeFieldLabel;
+
+
 
     @FXML
     private Label emailFieldLabel;
@@ -27,10 +54,35 @@ public class Patient {
     private TextField emailTextField;
 
     @FXML
+    private Label phoneNumberFieldLabel;
+
+    @FXML
+    private TextField phoneNumberTextField;
+
+    @FXML
+    private Label relevantLinkFieldLabel;
+
+    @FXML
+    private TextField relevantLinkTextField;
+
+
+
+    @FXML
     private Label dateOfBirthFieldLabel;
 
     @FXML
     private DatePicker dateOfBirthPicker;
+
+    @FXML
+    private Label placeOfBirthFieldLabel;
+
+    @FXML
+    private TextField placeOfBirthTextField;
+
+    @FXML
+    private Label currentHospitalLabel;
+
+
 
     @FXML
     private Label compoundNameFieldLabel;
@@ -48,10 +100,10 @@ public class Patient {
     private Label regionFieldLabel;
 
     @FXML
-    private Label addressDescriptionFieldLabel;
+    private Label otherDetailsFieldLabel;
 
     @FXML
-    private TextArea addressDescriptionTextArea;
+    private TextArea otherDetailsTextArea;
 
     @FXML
     protected void onHospitalsButtonClick() {
