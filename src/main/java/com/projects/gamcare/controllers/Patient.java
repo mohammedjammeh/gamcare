@@ -107,6 +107,8 @@ public class Patient {
     @FXML
     private TextArea otherDetailsTextArea;
 
+
+
     @FXML
     protected void onHospitalsButtonClick() {
         System.out.println("You are now looking at hospitals.");

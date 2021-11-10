@@ -212,27 +212,8 @@
 
 
 /****************
-    Hospital
+    Table
 ****************/
-
-/*** Index ***/
-.hospitalIndexBodyBox {
-    -fx-spacing: 30px;
-}
-
-.hospitalIndexBodyBox Button {
-    -fx-cursor: hand;
-    -fx-min-width: 199px;
-    -fx-min-height: 150px;
-    -fx-background-color: #dbdbdb;
-    -fx-font-size: 15px;
-}
-
-.hospitalIndexBodyBox Button:hover {
-    -fx-background-color: #cccccc;
-}
-
-/*** Show ***/
 .tableDisplay {
     -fx-spacing: 15px;
     -fx-padding: 20px;
@@ -259,22 +240,22 @@
     -fx-max-width: 110px;
 }
 
-Label.email {
+.tableDisplay Label.email {
     -fx-min-width: 210px;
     -fx-max-width: 210px;
 }
 
-Label.action,
-HBox.action {
+.tableDisplay Label.action,
+.tableDisplay HBox.action {
     -fx-min-width: 60px;
     -fx-max-width: 60px;
 }
 
-HBox.action {
+.tableDisplay HBox.action {
     -fx-alignment: center-left;
 }
 
-HBox.action Button {
+.tableDisplay HBox.action Button {
     -fx-padding: 5px 10px;
     -fx-cursor: hand;
     -fx-background-radius: 3px;
@@ -283,8 +264,30 @@ HBox.action Button {
     -fx-text-fill: #404040;
 }
 
-HBox.action Button:hover {
+.tableDisplay HBox.action Button:hover {
     -fx-background-color: #bfbfbf;
+}
+
+
+/****************
+    Hospital
+****************/
+
+/*** Index ***/
+.hospitalIndexBodyBox {
+    -fx-spacing: 30px;
+}
+
+.hospitalIndexBodyBox Button {
+    -fx-cursor: hand;
+    -fx-min-width: 199px;
+    -fx-min-height: 150px;
+    -fx-background-color: #dbdbdb;
+    -fx-font-size: 15px;
+}
+
+.hospitalIndexBodyBox Button:hover {
+    -fx-background-color: #cccccc;
 }
 
 
