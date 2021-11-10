@@ -22,7 +22,7 @@
                 <Label text="Gamcare - Farokono" styleClass="titleLabel"/>
             </HBox>
             <HBox HBox.hgrow="ALWAYS"/>
-            <HBox styleClass="userBox">
+            <HBox styleClass="menuBox">
                 <Button text="Hospitals" onAction="#onHospitalsButtonClick"/>
                 <Button text="My Profile" onAction="#onMyProfileButtonClick"/>
                 <Button text="Log Out" onAction="#onLogOutButtonClick"/>
@@ -36,9 +36,9 @@
             </HBox>
 
             <VBox styleClass="createPatientBodyBox">
-                <VBox>
+                <VBox styleClass="form">
                     <VBox fx:id="errorBox" styleClass="errorBox">
-                        <Label fx:id="errorLabel" text="Sorry, there is an error. Please check the highlighted fields." styleClass="errorLabel"/>
+                        <Label fx:id="errorLabel" text="Sorry, there is an error."/>
                     </VBox>
 
                     <HBox>

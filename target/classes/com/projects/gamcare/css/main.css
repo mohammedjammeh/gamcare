@@ -3,10 +3,6 @@
     -fx-font-size: 14px;
 }
 
-.createPatientBodyBox .errorLabel {
-    -fx-text-fill: #80002a;
-    -fx-font-size: 14px;
-}
 
 /****************
     Heading
@@ -28,11 +24,11 @@
     -fx-padding: 5px 0 0 0;
 }
 
-.userBox {
+.menuBox {
     -fx-spacing: 10px;
 }
 
-.userBox Button {
+.menuBox Button {
     -fx-background-color: #4d0019;
     -fx-padding: 10px 15px;
     -fx-min-width: 70px;
@@ -43,9 +39,10 @@
     -fx-border-width: 0;
 }
 
-.userBox Button:hover {
+.menuBox Button:hover {
     -fx-background-color: #330011;
 }
+
 
 /****************
     Body
@@ -61,10 +58,6 @@
     -fx-spacing: 20px;
 }
 
-
-/****************
-    Index
-****************/
 .subHeadingBox {
     -fx-alignment: center;
     -fx-spacing: 30px;
@@ -88,6 +81,135 @@
 .subHeadingBox Button:hover {
     -fx-background-color: #660022;
 }
+
+
+/****************
+    Form
+****************/
+.form {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-spacing: 25px;
+    -fx-padding: 30px 40px;
+}
+
+.form .firstNameBox,
+.form .middleNameBox,
+.form .lastNameBox,
+
+.form .titleBox,
+.form .genderBox,
+.form .tribeBox,
+
+.form .emailBox,
+.form .phoneNumberBox,
+.form .relevantLinkBox,
+
+.form .placeOfBirthBox,
+.form .dateOfBirthBox,
+.form .currentHospitalBox,
+
+.form .compoundNameBox,
+.form .townBox,
+.form .regionBox,
+
+.form .otherDetailsBox,
+
+.form ChoiceBox {
+    -fx-min-width: 255px;
+    -fx-spacing: 10px;
+}
+
+.form DatePicker {
+    -fx-min-width: 255px;
+}
+
+.form TextArea {
+    -fx-min-width: 820px;
+}
+
+.form Label {
+    -fx-text-fill: #4d4d4d;
+}
+
+.form ChoiceBox Label {
+    -fx-text-fill: #262626;
+}
+
+.form .errorBox Label {
+    -fx-text-fill: #80002a;
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 5px 0;
+}
+
+.form TextField,
+.form .text-field,
+.form ChoiceBox,
+.form TextArea {
+    -fx-padding: 10px;
+    -fx-background-color: white;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: #262626;
+}
+
+.form ChoiceBox {
+    -fx-padding: 5px 4px;
+}
+
+.form TextArea {
+    -fx-padding: 5px 3px;
+}
+
+.form TextArea .content {
+    -fx-background-color: white;
+}
+
+.form TextField:focused,
+.form .text-field:focused,
+.form ChoiceBox:focused,
+.form TextArea:focused {
+    -fx-border-color: #660022;
+}
+
+.form .date-picker:focused > .text-field,
+.form .date-picker > .text-field:focused {
+    -fx-border-color: #660022;
+    -fx-border-width: 0.3px;
+}
+
+.form .date-picker:focused {
+    -fx-background-color: #660022;
+    -fx-border-width: 0.3px;
+}
+
+.form .date-picker:focused > .arrow-button {
+    -fx-background-color: lightgrey;
+}
+
+.form .buttonBox Button {
+    -fx-background-color: #80002a;
+    -fx-min-width: 150px;
+    -fx-padding: 12px 0;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 0;
+    -fx-border-color: black;
+}
+
+.form .buttonBox Button:hover {
+    -fx-background-color: #660022;
+}
+
+
+/****************
+    Hospital
+****************/
 
 /*** Index ***/
 .hospitalIndexBodyBox {
@@ -165,116 +287,15 @@ HBox.action Button:hover {
 /****************
     Patient
 ****************/
-.createPatientBodyBox > VBox {
-    -fx-background-color: white;
-    -fx-background-radius: 6px;
-    -fx-border-radius: 6px;
-    -fx-spacing: 25px;
-    -fx-padding: 30px 40px;
-}
 
-.createPatientBodyBox .firstNameBox,
-.createPatientBodyBox .middleNameBox,
-.createPatientBodyBox .lastNameBox,
+/*** Show ***/
 
-.createPatientBodyBox .titleBox,
-.createPatientBodyBox .genderBox,
-.createPatientBodyBox .tribeBox,
 
-.createPatientBodyBox .emailBox,
-.createPatientBodyBox .phoneNumberBox,
-.createPatientBodyBox .relevantLinkBox,
 
-.createPatientBodyBox .placeOfBirthBox,
-.createPatientBodyBox .dateOfBirthBox,
-.createPatientBodyBox .currentHospitalBox,
+/****************
+    Doctor
+****************/
 
-.createPatientBodyBox .compoundNameBox,
-.createPatientBodyBox .townBox,
-.createPatientBodyBox .regionBox,
+/*** Index ***/
 
-.createPatientBodyBox .otherDetailsBox,
-
-.createPatientBodyBox ChoiceBox {
-    -fx-min-width: 255px;
-    -fx-spacing: 10px;
-}
-
-.createPatientBodyBox DatePicker {
-    -fx-min-width: 255px;
-}
-
-.createPatientBodyBox TextArea {
-    -fx-min-width: 820px;
-}
-
-.createPatientBodyBox Label {
-    -fx-text-fill: #4d4d4d;
-}
-
-.createPatientBodyBox ChoiceBox Label {
-    -fx-text-fill: #262626;
-}
-
-.createPatientBodyBox TextField,
-.createPatientBodyBox .text-field,
-.createPatientBodyBox ChoiceBox,
-.createPatientBodyBox TextArea {
-    -fx-padding: 10px;
-    -fx-background-color: white;
-    -fx-border-width: 1px;
-    -fx-border-color: lightgrey;
-    -fx-background-radius: 3px;
-    -fx-border-radius: 3px;
-    -fx-text-fill: #262626;
-}
-
-.createPatientBodyBox ChoiceBox {
-    -fx-padding: 5px 4px;
-}
-
-.createPatientBodyBox TextArea {
-    -fx-padding: 5px 3px;
-}
-
-.createPatientBodyBox TextArea .content {
-    -fx-background-color: white;
-}
-
-.createPatientBodyBox TextField:focused,
-.createPatientBodyBox .text-field:focused,
-.createPatientBodyBox ChoiceBox:focused,
-.createPatientBodyBox TextArea:focused {
-    -fx-border-color: #660022;
-}
-
-.createPatientBodyBox .date-picker:focused > .text-field,
-.createPatientBodyBox .date-picker > .text-field:focused {
-    -fx-border-color: #660022;
-    -fx-border-width: 0.3px;
-}
-
-.createPatientBodyBox .date-picker:focused {
-    -fx-background-color: #660022;
-    -fx-border-width: 0.3px;
-}
-
-.createPatientBodyBox .date-picker:focused > .arrow-button {
-    -fx-background-color: lightgrey;
-}
-
-.createPatientBodyBox .buttonBox Button {
-    -fx-background-color: #80002a;
-    -fx-min-width: 150px;
-    -fx-padding: 12px 0;
-    -fx-cursor: hand;
-    -fx-text-fill: white;
-    -fx-background-radius: 4px;
-    -fx-border-radius: 4px;
-    -fx-border-width: 0;
-    -fx-border-color: black;
-}
-
-.createPatientBodyBox .buttonBox Button:hover {
-    -fx-background-color: #660022;
-}
+/*** Show ***/

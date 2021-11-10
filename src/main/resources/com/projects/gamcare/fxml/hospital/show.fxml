@@ -17,7 +17,7 @@
                 <Label text="Gamcare - Farokono" styleClass="titleLabel"/>
             </HBox>
             <HBox HBox.hgrow="ALWAYS"/>
-            <HBox styleClass="userBox">
+            <HBox styleClass="menuBox">
                 <Button text="Hospitals" onAction="#onHospitalsButtonClick"/>
                 <Button text="My Profile" onAction="#onMyProfileButtonClick"/>
                 <Button text="Log Out" onAction="#onLogOutButtonClick"/>
