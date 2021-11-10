@@ -18,7 +18,7 @@
     -fx-min-width: 900px;
 }
 
-.titleLabel {
+.mainTitleBox Label {
     -fx-text-fill: #e6e6e6;
     -fx-font-size: 20px;
     -fx-padding: 5px 0 0 0;

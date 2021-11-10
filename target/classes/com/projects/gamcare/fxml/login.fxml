@@ -12,25 +12,25 @@
 >
     <VBox styleClass="body">
         <VBox styleClass="mainTitleBox">
-            <Label text="Gamcare" styleClass="titleLabel"/>
+            <Label text="Gamcare"/>
         </VBox>
 
         <VBox styleClass="errorBox" fx:id="errorBox">
-            <Label fx:id="errorLabel" text="Sorry, authentication unsuccessful." styleClass="errorLabel"/>
+            <Label fx:id="errorLabel" text="Sorry, authentication unsuccessful."/>
         </VBox>
 
         <VBox styleClass="emailBox">
             <Label fx:id="emailFieldLabel" text="Email"/>
-            <TextField fx:id="emailTextField" promptText="Email" styleClass="emailTextField"/>
+            <TextField fx:id="emailTextField" promptText="Email"/>
         </VBox>
 
         <VBox styleClass="passwordBox">
             <Label fx:id="passwordFieldLabel" text="Password"/>
-            <TextField fx:id="passwordTextField" promptText="Password" styleClass="passwordTextField"/>
+            <TextField fx:id="passwordTextField" promptText="Password"/>
         </VBox>
 
         <VBox styleClass="logInButtonBox">
-            <Button text="Log In" onAction="#onLogInButtonClick" styleClass="logInButton"/>
+            <Button text="Log In" onAction="#onLogInButtonClick"/>
         </VBox>
     </VBox>
 </VBox>

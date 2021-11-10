@@ -1,13 +1,12 @@
 package com.projects.gamcare.controllers.hospital;
 
-import com.projects.gamcare.controllers.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-public class Create extends Main {
+public class Create {
     @FXML
     private VBox errorBox;
 

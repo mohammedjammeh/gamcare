@@ -1,9 +1,8 @@
 package com.projects.gamcare.controllers.doctor;
 
-import com.projects.gamcare.controllers.Main;
 import javafx.fxml.FXML;
 
-public class Index extends Main {
+public class Index {
     @FXML
     protected void onAddDoctorButtonClick() {
         System.out.println("You have now added a doctor.");

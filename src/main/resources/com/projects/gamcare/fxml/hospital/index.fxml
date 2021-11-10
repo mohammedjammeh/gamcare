@@ -10,19 +10,8 @@
     fx:controller="com.projects.gamcare.controllers.hospital.Index"
     stylesheets="@../../css/main.css"
 >
-    <VBox styleClass="headingBox">
-        <HBox styleClass="innerHeadingBox">
-            <HBox styleClass="mainTitleBox">
-                <Label text="Gamcare" styleClass="titleLabel"/>
-            </HBox>
-            <HBox HBox.hgrow="ALWAYS"/>
-            <HBox styleClass="menuBox">
-                <Button text="Hospitals" onAction="#onHospitalsButtonClick"/>
-                <Button text="My Profile" onAction="#onMyProfileButtonClick"/>
-                <Button text="Log Out" onAction="#onLogOutButtonClick"/>
-            </HBox>
-        </HBox>
-    </VBox>
+    <fx:include source="../header.fxml"/>
+
     <VBox styleClass="bodyBox">
         <VBox styleClass="innerBodyBox">
             <HBox styleClass="subHeadingBox">

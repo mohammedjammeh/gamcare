@@ -16,12 +16,12 @@
     -fx-alignment: center;
 }
 
-.titleLabel {
+.mainTitleBox Label {
     -fx-font-size: 20px;
     -fx-text-fill: #4d0019;
 }
 
-.errorLabel {
+.errorBox Label {
     -fx-text-fill: #80002a;
 }
 
@@ -30,13 +30,13 @@
     -fx-spacing: 8px;
 }
 
-.emailTextField,
-.passwordTextField {
+.emailBox TextField,
+.passwordBox TextField {
     -fx-padding: 10px;
 }
 
-.emailTextField:focused,
-.passwordTextField:focused {
+.emailBox TextField:focused,
+.passwordBox TextField:focused {
     -fx-focus-color: #80002a;
 }
 
@@ -45,7 +45,7 @@
     -fx-padding: 8px 0 0 0;
 }
 
-.logInButton {
+.logInButtonBox Button {
     -fx-background-color: #80002a;
     -fx-min-width: 150px;
     -fx-padding: 12px 10px;
@@ -57,6 +57,6 @@
     -fx-border-color: black;
 }
 
-.logInButton:hover {
+.logInButtonBox Button:hover {
     -fx-background-color: #660022;
 }

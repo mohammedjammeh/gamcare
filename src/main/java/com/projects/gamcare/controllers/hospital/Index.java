@@ -1,9 +1,8 @@
 package com.projects.gamcare.controllers.hospital;
 
-import com.projects.gamcare.controllers.Main;
 import javafx.fxml.FXML;
 
-public class Index extends Main {
+public class Index {
     @FXML
     protected void onAddHospitalButtonClick() {
         System.out.println("You have now added a hospital.");
