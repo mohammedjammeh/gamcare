@@ -63,7 +63,7 @@
 
 
 /****************
-    Hospital
+    Index
 ****************/
 .subHeadingBox {
     -fx-alignment: center;
@@ -131,7 +131,6 @@
     -fx-padding: 10px 0;
     -fx-min-width: 110px;
     -fx-max-width: 110px;
-    /*-fx-background-color: green;*/
 }
 
 Label.email {
