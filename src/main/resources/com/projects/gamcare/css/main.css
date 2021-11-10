@@ -133,9 +133,9 @@
     -fx-max-width: 110px;
 }
 
-Label.address {
-    -fx-min-width: 360px;
-    -fx-max-width: 360px;
+Label.email {
+    -fx-min-width: 210px;
+    -fx-max-width: 210px;
 }
 
 Label.action,

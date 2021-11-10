@@ -14,7 +14,7 @@
     <VBox styleClass="headingBox">
         <HBox styleClass="innerHeadingBox">
             <HBox styleClass="mainTitleBox">
-                <Label text="Gamcare - Mansa Konko" styleClass="titleLabel"/>
+                <Label text="Gamcare - Farokono" styleClass="titleLabel"/>
             </HBox>
             <HBox HBox.hgrow="ALWAYS"/>
             <HBox styleClass="userBox">
@@ -36,16 +36,19 @@
                     <Label>First name</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Middle name</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Last name</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>Age</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Score</Label>
+                    <Label styleClass="email">Email address</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Address - Compound, Town and Region</Label>
+                    <Label>Score</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="action">Action</Label>
@@ -54,16 +57,19 @@
                     <Label>Mohammed</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Lamin</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Jammeh</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>19 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.9</Label>
+                    <Label styleClass="email">jilanka@yahoo.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Jammeh Kunda, Brikama New Town, Western Region</Label>
+                    <Label>0.9</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -74,16 +80,19 @@
                     <Label>Omar</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Balafong</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Bojang</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>39 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.6</Label>
+                    <Label styleClass="email">balafong@gmail.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bojang Kunda, Bangsang River Road, Central Region</Label>
+                    <Label>0.6</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -94,16 +103,19 @@
                     <Label>Mustapha</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Idris</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Badjie</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>27 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.3</Label>
+                    <Label styleClass="email">mustapha@gmail.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Badjie Kunda, Kiti Koto, Central River Region</Label>
+                    <Label>0.3</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -111,6 +123,9 @@
                     </HBox>
                 </HBox>
                 <HBox styleClass="tableBody">
+                    <Label>Momodou</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Lamin</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
@@ -120,10 +135,10 @@
                     <Label>28 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.3</Label>
+                    <Label styleClass="email">laminsanyang@gmail.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto, Upper River Region</Label>
+                    <Label>0.3</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -134,16 +149,19 @@
                     <Label>Ousman</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Mballow</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Bajo</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>66 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>0.8</Label>
+                    <Label styleClass="email">mballow@gmail.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bajo Kunda, Casamace Road, Central River Region</Label>
+                    <Label>0.8</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -169,16 +187,19 @@
                     <Label>First name</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Middle name</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Last name</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>Age</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Level</Label>
+                    <Label styleClass="email">Email address</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Address - Compound, Town and Region</Label>
+                    <Label>Level</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label styleClass="action">Action</Label>
@@ -187,16 +208,19 @@
                     <Label>Mohammed</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Jammeh</Label>
+                    <Label>Ousman</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <Label>Jatta</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>19 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Junior</Label>
+                    <Label styleClass="email">ousman@hotmail.co.uk</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Jammeh Kunda, Brikama New Town, Western Region</Label>
+                    <Label>Junior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -207,16 +231,19 @@
                     <Label>Omar</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Musa</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Bojang</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>39 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Senior</Label>
+                    <Label styleClass="email">bojangba@yahoo.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bojang Kunda, Bangsang River Road, Central Region</Label>
+                    <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -227,16 +254,19 @@
                     <Label>Mustapha</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Bagga</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Badjie</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>27 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Mid Level</Label>
+                    <Label styleClass="email">badjiebolong@yahoo.co.uk</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Badjie Kunda, Kiti Koto, Central River Region</Label>
+                    <Label>Mid Level</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -247,16 +277,19 @@
                     <Label>Lamin</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Gassa</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Sanyang</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>28 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Senior</Label>
+                    <Label styleClass="email">lamino@gmail.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Sanyang Kunda, Kloro Bakoto, Upper River Region</Label>
+                    <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
@@ -267,16 +300,19 @@
                     <Label>Ousman</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
+                    <Label>Jerry</Label>
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <Label>Bajo</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <Label>66 years</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label>Senior</Label>
+                    <Label styleClass="email">ousboy@hotmail.com</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
-                    <Label styleClass="address">Bajo Kunda, Casamace Road, Central River Region</Label>
+                    <Label>Senior</Label>
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="action">
