@@ -1,4 +1,4 @@
-package com.projects.gamcare.controllers;
+package com.projects.gamcare.controllers.patient;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -7,7 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-public class Patient {
+public class Create {
     @FXML
     private VBox errorBox;
 

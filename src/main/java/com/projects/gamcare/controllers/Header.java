@@ -2,7 +2,7 @@ package com.projects.gamcare.controllers;
 
 import javafx.fxml.FXML;
 
-public class Main {
+public class Header {
     @FXML
     protected void onHospitalsButtonClick() {
         System.out.println("You are now looking at hospitals.");
