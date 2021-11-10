@@ -99,6 +99,8 @@ public class Patient {
     @FXML
     private Label regionFieldLabel;
 
+
+
     @FXML
     private Label otherDetailsFieldLabel;
 

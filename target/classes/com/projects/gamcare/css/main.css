@@ -94,6 +94,10 @@
     -fx-padding: 30px 40px;
 }
 
+.form .nameBox,
+.form .sizeBox,
+.form .leadDoctorBox,
+
 .form .firstNameBox,
 .form .middleNameBox,
 .form .lastNameBox,
