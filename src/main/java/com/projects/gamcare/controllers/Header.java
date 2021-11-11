@@ -9,6 +9,11 @@ public class Header {
     }
 
     @FXML
+    protected void onDoctorsButtonClick() {
+        System.out.println("You are now looking at doctors.");
+    }
+
+    @FXML
     protected void onMyProfileButtonClick() {
         System.out.println("You are now looking at your profile.");
     }

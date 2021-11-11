@@ -17,6 +17,7 @@
             <HBox HBox.hgrow="ALWAYS"/>
             <HBox styleClass="menuBox">
                 <Button text="Hospitals" onAction="#onHospitalsButtonClick"/>
+                <Button text="Doctors" onAction="#onDoctorsButtonClick"/>
                 <Button text="My Profile" onAction="#onMyProfileButtonClick"/>
                 <Button text="Log Out" onAction="#onLogOutButtonClick"/>
             </HBox>
