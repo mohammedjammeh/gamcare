@@ -118,6 +118,11 @@
 .form .townBox,
 .form .regionBox,
 
+.form .educationInstitutionBox,
+.form .fieldOfStudyBox,
+.form .careerBox,
+
+.form .hospitalsBox,
 .form .otherDetailsBox,
 
 .form ChoiceBox {
@@ -193,6 +198,45 @@
 .form .date-picker:focused > .arrow-button {
     -fx-background-color: lightgrey;
 }
+
+
+
+
+.form ListView {
+    -fx-min-width: 820px;
+    -fx-max-height: 80px;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+.form ListView:focused {
+    -fx-border-color: #660022;
+    -fx-background-color: none;
+}
+
+.form ListView .list-cell {
+    -fx-background-color: #fff;
+    -fx-padding: 5px 20px;
+    -fx-text-fill: #4d4d4d;
+}
+
+.form ListView .list-cell:hover {
+    -fx-background-color: #e6e6e6;
+    -fx-cursor: hand;
+}
+
+.form ListView .list-cell:selected {
+    -fx-background-color: #e6e6e6;
+}
+
+.form ListView .list-cell:empty:hover {
+    -fx-background-color: none;
+    -fx-cursor: pointer;
+}
+
+
 
 .form .buttonBox Button {
     -fx-background-color: #80002a;

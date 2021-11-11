@@ -1,10 +1,8 @@
-package com.projects.gamcare.controllers.patient;
+package com.projects.gamcare.controllers.doctor;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.geometry.Orientation;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 public class Create {
@@ -43,7 +41,27 @@ public class Create {
     private Label genderFieldLabel;
 
     @FXML
-    private Label tribeFieldLabel;
+    private Label dateOfBirthFieldLabel;
+
+    @FXML
+    private DatePicker dateOfBirthPicker;
+
+
+
+    @FXML
+    private Label educationInstitutionFieldLabel;
+
+    @FXML
+    private TextField educationInstitutionTextField;
+
+    @FXML
+    private Label fieldOfStudyFieldLabel;
+
+    @FXML
+    private TextField fieldOfStudyTextField;
+
+    @FXML
+    private Label careerFieldLabel;
 
 
 
@@ -68,23 +86,6 @@ public class Create {
 
 
     @FXML
-    private Label dateOfBirthFieldLabel;
-
-    @FXML
-    private DatePicker dateOfBirthPicker;
-
-    @FXML
-    private Label placeOfBirthFieldLabel;
-
-    @FXML
-    private TextField placeOfBirthTextField;
-
-    @FXML
-    private Label currentHospitalLabel;
-
-
-
-    @FXML
     private Label compoundNameFieldLabel;
 
     @FXML
@@ -102,6 +103,14 @@ public class Create {
 
 
     @FXML
+    private ListView<String> hospitalsListView;
+
+    @FXML
+    private Label hospitalsListViewLabel;
+
+
+
+    @FXML
     private Label otherDetailsFieldLabel;
 
     @FXML
@@ -109,13 +118,17 @@ public class Create {
 
 
 
+
     @FXML void initialize() {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
+
+        hospitalsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        hospitalsListView.setOrientation(Orientation.HORIZONTAL);
     }
 
     @FXML
-    protected void onCreatePatientButtonClick() {
+    protected void onCreateDoctorButtonClick() {
         errorBox.setVisible(true);
         errorBox.setManaged(true);
         System.out.println("There is an error.");
