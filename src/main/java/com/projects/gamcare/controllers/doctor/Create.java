@@ -7,6 +7,25 @@ import javafx.scene.layout.VBox;
 
 public class Create {
     @FXML
+    private ListView<String> juniorDoctorsListView;
+
+    @FXML
+    private Label juniorDoctorsListViewLabel;
+
+    @FXML
+    private ListView<String> midLevelDoctorsListView;
+
+    @FXML
+    private Label midLevelDoctorsListViewLabel;
+
+    @FXML
+    private ListView<String> seniorDoctorsListView;
+
+    @FXML
+    private Label seniorDoctorsListViewLabel;
+
+
+    @FXML
     private VBox errorBox;
 
     @FXML
@@ -122,6 +141,15 @@ public class Create {
     @FXML void initialize() {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
+
+        juniorDoctorsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        juniorDoctorsListView.setOrientation(Orientation.VERTICAL);
+
+        midLevelDoctorsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        midLevelDoctorsListView.setOrientation(Orientation.VERTICAL);
+
+        seniorDoctorsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        seniorDoctorsListView.setOrientation(Orientation.VERTICAL);
 
         hospitalsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);

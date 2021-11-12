@@ -10,10 +10,9 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-
-<?import javafx.scene.control.CheckBox?>
-<?import com.sun.javafx.webkit.theme.RenderThemeImpl.FormCheckBox?>
 <?import javafx.scene.control.ListView?>
+
+<?import javafx.geometry.Insets?>
 <VBox
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.projects.gamcare.controllers.doctor.Create"
@@ -24,180 +23,245 @@
     <VBox styleClass="bodyBox">
         <VBox styleClass="innerBodyBox">
             <HBox styleClass="subHeadingBox">
+                <Label text="Add Doctors"/>
+            </HBox>
+
+            <VBox styleClass="form">
+                <HBox styleClass="addDoctorsBox">
+                    <VBox styleClass="juniorDoctorsBox">
+                        <Label fx:id="juniorDoctorsListViewLabel" text="Junior doctors"/>
+                        <ListView fx:id="juniorDoctorsListView" styleClass="vertical">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Omar Jallow"/>
+                                    <String fx:value="Bora Fatty"/>
+                                    <String fx:value="Mohammed Touray"/>
+                                    <String fx:value="Wangari Maathai"/>
+                                </FXCollections>
+                            </items>
+                        </ListView>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="midLevelDoctorsBox">
+                        <Label fx:id="midLevelDoctorsListViewLabel" text="Mid level doctors"/>
+                        <ListView fx:id="midLevelDoctorsListView" styleClass="vertical">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Omar Jallow"/>
+                                    <String fx:value="Bora Fatty"/>
+                                    <String fx:value="Mohammed Touray"/>
+                                    <String fx:value="Wangari Maathai"/>
+                                </FXCollections>
+                            </items>
+                        </ListView>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="seniorDoctorsBox">
+                        <Label fx:id="seniorDoctorsListViewLabel" text="Senior doctors"/>
+                        <ListView fx:id="seniorDoctorsListView" styleClass="vertical">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Omar Jallow"/>
+                                    <String fx:value="Bora Fatty"/>
+                                    <String fx:value="Mohammed Touray"/>
+                                    <String fx:value="Wangari Maathai"/>
+                                </FXCollections>
+                            </items>
+                        </ListView>
+                    </VBox>
+                </HBox>
+
+                <VBox styleClass="buttonBox">
+                    <Button text="Add Doctors" onAction="#onCreateDoctorButtonClick"/>
+                </VBox>
+
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
+            </VBox>
+
+
+
+
+            <HBox styleClass="subHeadingBox">
                 <Label text="Create New Doctor"/>
             </HBox>
 
-            <VBox styleClass="createDoctorBodyBox">
-                <VBox styleClass="form">
-                    <VBox fx:id="errorBox" styleClass="errorBox">
-                        <Label fx:id="errorLabel" text="Sorry, there is an error."/>
+            <VBox styleClass="form">
+                <VBox fx:id="errorBox" styleClass="errorBox">
+                    <Label fx:id="errorLabel" text="Sorry, there is an error."/>
+                </VBox>
+
+                <HBox>
+                    <VBox styleClass="firstNameBox">
+                        <Label fx:id="firstNameFieldLabel" text="First name"/>
+                        <TextField fx:id="firstNameTextField" promptText="First name"/>
                     </VBox>
 
-                    <HBox>
-                        <VBox styleClass="firstNameBox">
-                            <Label fx:id="firstNameFieldLabel" text="First name"/>
-                            <TextField fx:id="firstNameTextField" promptText="First name"/>
-                        </VBox>
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="middleNameBox">
-                            <Label fx:id="middleNameFieldLabel" text="Middle name"/>
-                            <TextField fx:id="middleNameTextField" promptText="Middle name"/>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="lastNameBox">
-                            <Label fx:id="lastNameFieldLabel" text="Last name"/>
-                            <TextField fx:id="lastNameTextField" promptText="Last name"/>
-                        </VBox>
-                    </HBox>
-
-                    <HBox>
-                        <VBox styleClass="titleBox">
-                            <Label fx:id="titleFieldLabel" text="Title"/>
-                            <ChoiceBox value="Mr.">
-                                <items>
-                                    <FXCollections fx:factory="observableArrayList">
-                                        <String fx:value="Mr." />
-                                        <String fx:value="Mrs." />
-                                        <String fx:value="Miss" />
-                                    </FXCollections>
-                                </items>
-                            </ChoiceBox>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="genderBox">
-                            <Label fx:id="genderFieldLabel" text="Gender"/>
-                            <ChoiceBox value="Male">
-                                <items>
-                                    <FXCollections fx:factory="observableArrayList">
-                                        <String fx:value="Male" />
-                                        <String fx:value="Female" />
-                                    </FXCollections>
-                                </items>
-                            </ChoiceBox>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="dateOfBirthBox">
-                            <Label fx:id="dateOfBirthFieldLabel" text="Date of birth"/>
-                            <DatePicker fx:id="dateOfBirthPicker" promptText="Date of birth"/>
-                        </VBox>
-                    </HBox>
-
-                    <HBox>
-                        <VBox styleClass="educationInstitutionBox">
-                            <Label fx:id="educationInstitutionFieldLabel" text="Education institution"/>
-                            <TextField fx:id="educationInstitutionTextField" promptText="Education institution"/>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="fieldOfStudyBox">
-                            <Label fx:id="fieldOfStudyFieldLabel" text="Field of study"/>
-                            <TextField fx:id="fieldOfStudyTextField" promptText="Field of study"/>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="careerBox">
-                            <Label fx:id="careerFieldLabel" text="Career level"/>
-                            <ChoiceBox value="Senior">
-                                <items>
-                                    <FXCollections fx:factory="observableArrayList">
-                                        <String fx:value="Senior" />
-                                        <String fx:value="Mid Level" />
-                                        <String fx:value="Junior" />
-                                    </FXCollections>
-                                </items>
-                            </ChoiceBox>
-                        </VBox>
-                    </HBox>
-
-                    <HBox>
-                        <VBox styleClass="emailBox">
-                            <Label fx:id="emailFieldLabel" text="Email"/>
-                            <TextField fx:id="emailTextField" promptText="Email"/>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="phoneNumberBox">
-                            <Label fx:id="phoneNumberFieldLabel" text="Phone number"/>
-                            <TextField fx:id="phoneNumberTextField" promptText="Phone number"/>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="relevantLinkBox">
-                            <Label fx:id="relevantLinkFieldLabel" text="Relevant link"/>
-                            <TextField fx:id="relevantLinkTextField" promptText="Relevant link"/>
-                        </VBox>
-                    </HBox>
-
-                    <HBox>
-                        <VBox styleClass="compoundNameBox">
-                            <Label fx:id="compoundNameFieldLabel" text="Compound name"/>
-                            <TextField fx:id="compoundNameTextField" promptText="Compound name"/>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="townBox">
-                            <Label fx:id="townFieldLabel" text="Town"/>
-                            <TextField fx:id="townTextField" promptText="Town"/>
-                        </VBox>
-
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="regionBox">
-                            <Label fx:id="regionFieldLabel" text="Region"/>
-                            <ChoiceBox value="Western Region">
-                                <items>
-                                    <FXCollections fx:factory="observableArrayList">
-                                        <String fx:value="Western Region" />
-                                        <String fx:value="North Bank Region" />
-                                        <String fx:value="Lower River Region" />
-                                        <String fx:value="Central River Region" />
-                                        <String fx:value="Upper River Region" />
-                                    </FXCollections>
-                                </items>
-                            </ChoiceBox>
-                        </VBox>
-                    </HBox>
-
-                    <HBox>
-                        <VBox styleClass="hospitalsBox">
-                            <Label fx:id="hospitalsListViewLabel" text="Hospitals"/>
-                            <ListView fx:id="hospitalsListView">
-                                <items>
-                                    <FXCollections fx:factory="observableArrayList">
-                                        <String fx:value="Mansa Kono"/>
-                                        <String fx:value="Bungdung"/>
-                                        <String fx:value="Yundum"/>
-                                        <String fx:value="Farokono"/>
-                                        <String fx:value="Kabafita"/>
-                                    </FXCollections>
-                                </items>
-                            </ListView>
-                        </VBox>
-                    </HBox>
-
-                    <HBox>
-                        <VBox styleClass="otherDetailsBox">
-                            <Label fx:id="otherDetailsFieldLabel" text="Other details"/>
-                            <TextArea fx:id="otherDetailsTextArea" promptText="Other details"/>
-                        </VBox>
-                    </HBox>
-
-                    <VBox styleClass="buttonBox">
-                        <Button text="Create Doctor" onAction="#onCreateDoctorButtonClick"/>
+                    <VBox styleClass="middleNameBox">
+                        <Label fx:id="middleNameFieldLabel" text="Middle name"/>
+                        <TextField fx:id="middleNameTextField" promptText="Middle name"/>
                     </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="lastNameBox">
+                        <Label fx:id="lastNameFieldLabel" text="Last name"/>
+                        <TextField fx:id="lastNameTextField" promptText="Last name"/>
+                    </VBox>
+                </HBox>
+
+                <HBox>
+                    <VBox styleClass="titleBox">
+                        <Label fx:id="titleFieldLabel" text="Title"/>
+                        <ChoiceBox value="Mr.">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Mr." />
+                                    <String fx:value="Mrs." />
+                                    <String fx:value="Miss" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="genderBox">
+                        <Label fx:id="genderFieldLabel" text="Gender"/>
+                        <ChoiceBox value="Male">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Male" />
+                                    <String fx:value="Female" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="dateOfBirthBox">
+                        <Label fx:id="dateOfBirthFieldLabel" text="Date of birth"/>
+                        <DatePicker fx:id="dateOfBirthPicker" promptText="Date of birth"/>
+                    </VBox>
+                </HBox>
+
+                <HBox>
+                    <VBox styleClass="educationInstitutionBox">
+                        <Label fx:id="educationInstitutionFieldLabel" text="Education institution"/>
+                        <TextField fx:id="educationInstitutionTextField" promptText="Education institution"/>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="fieldOfStudyBox">
+                        <Label fx:id="fieldOfStudyFieldLabel" text="Field of study"/>
+                        <TextField fx:id="fieldOfStudyTextField" promptText="Field of study"/>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="careerBox">
+                        <Label fx:id="careerFieldLabel" text="Career level"/>
+                        <ChoiceBox value="Senior">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Senior" />
+                                    <String fx:value="Mid Level" />
+                                    <String fx:value="Junior" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </VBox>
+                </HBox>
+
+                <HBox>
+                    <VBox styleClass="emailBox">
+                        <Label fx:id="emailFieldLabel" text="Email"/>
+                        <TextField fx:id="emailTextField" promptText="Email"/>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="phoneNumberBox">
+                        <Label fx:id="phoneNumberFieldLabel" text="Phone number"/>
+                        <TextField fx:id="phoneNumberTextField" promptText="Phone number"/>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="relevantLinkBox">
+                        <Label fx:id="relevantLinkFieldLabel" text="Relevant link"/>
+                        <TextField fx:id="relevantLinkTextField" promptText="Relevant link"/>
+                    </VBox>
+                </HBox>
+
+                <HBox>
+                    <VBox styleClass="compoundNameBox">
+                        <Label fx:id="compoundNameFieldLabel" text="Compound name"/>
+                        <TextField fx:id="compoundNameTextField" promptText="Compound name"/>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="townBox">
+                        <Label fx:id="townFieldLabel" text="Town"/>
+                        <TextField fx:id="townTextField" promptText="Town"/>
+                    </VBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="regionBox">
+                        <Label fx:id="regionFieldLabel" text="Region"/>
+                        <ChoiceBox value="Western Region">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Western Region" />
+                                    <String fx:value="North Bank Region" />
+                                    <String fx:value="Lower River Region" />
+                                    <String fx:value="Central River Region" />
+                                    <String fx:value="Upper River Region" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </VBox>
+                </HBox>
+
+                <HBox>
+                    <VBox styleClass="hospitalsBox">
+                        <Label fx:id="hospitalsListViewLabel" text="Hospitals"/>
+                        <ListView fx:id="hospitalsListView" styleClass="horizontal">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Mansa Kono"/>
+                                    <String fx:value="Bungdung"/>
+                                    <String fx:value="Yundum"/>
+                                    <String fx:value="Farokono"/>
+                                    <String fx:value="Kabafita"/>
+                                </FXCollections>
+                            </items>
+                        </ListView>
+                    </VBox>
+                </HBox>
+
+                <HBox>
+                    <VBox styleClass="otherDetailsBox">
+                        <Label fx:id="otherDetailsFieldLabel" text="Other details"/>
+                        <TextArea fx:id="otherDetailsTextArea" promptText="Other details"/>
+                    </VBox>
+                </HBox>
+
+                <VBox styleClass="buttonBox">
+                    <Button text="Create Doctor" onAction="#onCreateDoctorButtonClick"/>
                 </VBox>
             </VBox>
         </VBox>

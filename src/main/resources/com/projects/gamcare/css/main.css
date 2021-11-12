@@ -122,7 +122,11 @@
 .form .fieldOfStudyBox,
 .form .careerBox,
 
+.form .juniorDoctorsBox,
+.form .midLevelDoctorsBox,
+.form .seniorDoctorsBox,
 .form .hospitalsBox,
+
 .form .otherDetailsBox,
 
 .form ChoiceBox {
@@ -199,12 +203,19 @@
     -fx-background-color: lightgrey;
 }
 
+.form ListView.vertical {
+    -fx-max-height: 155px;
+    -fx-min-height: 155px;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
 
-
-
-.form ListView {
+.form ListView.horizontal {
     -fx-min-width: 820px;
-    -fx-max-height: 80px;
+    -fx-max-height: 45px;
+    -fx-min-height: 45px;
     -fx-border-width: 1px;
     -fx-border-color: lightgrey;
     -fx-background-radius: 3px;
@@ -218,7 +229,6 @@
 
 .form ListView .list-cell {
     -fx-background-color: #fff;
-    -fx-padding: 5px 20px;
     -fx-text-fill: #4d4d4d;
 }
 
@@ -236,7 +246,13 @@
     -fx-cursor: pointer;
 }
 
+.form ListView.vertical .list-cell {
+    -fx-padding: 10px 10px;
+}
 
+.form ListView.horizontal .list-cell {
+    -fx-padding: 5px 20px;
+}
 
 .form .buttonBox Button {
     -fx-background-color: #80002a;
@@ -316,8 +332,7 @@
 /****************
     Hospital
 ****************/
-
-/*** Index ***/
+/** Index **/
 .hospitalIndexBodyBox {
     -fx-spacing: 30px;
 }
@@ -336,17 +351,17 @@
 
 
 /****************
-    Patient
+    Doctor
 ****************/
-
-/*** Create ***/
-
+/** Create **/
+.addDoctorsBox Label {
+    -fx-font-weight: bold;
+    -fx-font-family: sans-serif;
+    -fx-padding: 0 0 5px 0;
+}
 
 
 /****************
-    Doctor
+    Patient
 ****************/
-
-/*** Index ***/
-
-/*** Create ***/
+/** Create **/
