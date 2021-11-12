@@ -364,4 +364,24 @@
 /****************
     Patient
 ****************/
-/** Create **/
+/** Show **/
+.profileMain {
+    -fx-background-color: white;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-padding: 25px;
+    -fx-spacing: 15px;
+}
+
+.profileMain .attribute {
+    -fx-min-width: 250px;
+    -fx-max-width: 250px;
+    -fx-padding: 0 0 20px 0;
+}
+
+.profileMain .attributeLabel {
+    -fx-padding: 0 10px 0 0;
+    -fx-text-fill: #4d0019;
+    -fx-font-weight: bold;
+    -fx-font-family: sans-serif;
+}

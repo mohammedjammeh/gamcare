@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.projects.gamcare.controllers.patient.Show"
+    stylesheets="@../../css/main.css"
+>
+    <fx:include source="../header.fxml"/>
+
+    <VBox styleClass="bodyBox">
+        <VBox styleClass="innerBodyBox">
+            <HBox styleClass="subHeadingBox">
+                <Label text="Profile"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+                <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+            </HBox>
+
+            <VBox styleClass="profileMain">
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Title preference:" styleClass="attributeLabel"/>
+                        <Label text="Mr." styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Gender:" styleClass="attributeLabel"/>
+                        <Label text="Male" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Tribe:" styleClass="attributeLabel"/>
+                        <Label text="Serakhulle" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
+
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="First name:" styleClass="attributeLabel"/>
+                        <Label text="Mohammed" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Middle name:" styleClass="attributeLabel"/>
+                        <Label text="Lamin" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Last name:" styleClass="attributeLabel"/>
+                        <Label text="Jammeh" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
+
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Email:" styleClass="attributeLabel"/>
+                        <Label text="mohammedjammeh@yahoo.com" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Phone number:" styleClass="attributeLabel"/>
+                        <Label text="07506 259 330" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Link:" styleClass="attributeLabel"/>
+                        <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
+
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Date of birth:" styleClass="attributeLabel"/>
+                        <Label text="19th June 1996" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Place of birth:" styleClass="attributeLabel"/>
+                        <Label text="Greenwich, U.K." styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Current Hospital:" styleClass="attributeLabel"/>
+                        <Label text="Mansa Konko" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </VBox>
+</VBox>
+
