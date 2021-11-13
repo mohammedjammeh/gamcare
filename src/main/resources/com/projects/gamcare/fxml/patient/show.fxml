@@ -11,6 +11,7 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 
+<?import javafx.geometry.Insets?>
 <VBox
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.projects.gamcare.controllers.patient.Show"
@@ -29,7 +30,7 @@
             <VBox styleClass="profileMain">
                 <HBox>
                     <HBox styleClass="attribute">
-                        <Label text="Title preference:" styleClass="attributeLabel"/>
+                        <Label text="Title:" styleClass="attributeLabel"/>
                         <Label text="Mr." styleClass="attributeData"/>
                     </HBox>
 
@@ -71,8 +72,8 @@
 
                 <HBox>
                     <HBox styleClass="attribute">
-                        <Label text="Email:" styleClass="attributeLabel"/>
-                        <Label text="mohammedjammeh@yahoo.com" styleClass="attributeData"/>
+                        <Label text="Email address:" styleClass="attributeLabel"/>
+                        <Label text="mo@gmail.com" styleClass="attributeData"/>
                     </HBox>
 
                     <HBox HBox.hgrow="ALWAYS"/>
@@ -85,7 +86,7 @@
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="attribute">
-                        <Label text="Link:" styleClass="attributeLabel"/>
+                        <Label text="Relevant link:" styleClass="attributeLabel"/>
                         <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>
                     </HBox>
                 </HBox>
@@ -106,11 +107,109 @@
                     <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="attribute">
-                        <Label text="Current Hospital:" styleClass="attributeLabel"/>
+                        <Label text="Hospital:" styleClass="attributeLabel"/>
                         <Label text="Mansa Konko" styleClass="attributeData"/>
                     </HBox>
                 </HBox>
+
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Compound:" styleClass="attributeLabel"/>
+                        <Label text="Jammeh Kunda" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="City / Town:" styleClass="attributeLabel"/>
+                        <Label text="Tallinding Kungjang" styleClass="attributeData"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="attribute">
+                        <Label text="Region:" styleClass="attributeLabel"/>
+                        <Label text="Western Region" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
+
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
             </VBox>
+
+
+
+
+<!--            <HBox styleClass="subHeadingBox">-->
+<!--                <Label text="Other Details"/>-->
+<!--                <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                <Button text="Edit" onAction="#onEditPatientButtonClick"/>-->
+<!--            </HBox>-->
+
+<!--            <VBox styleClass="profileOtherDetails">-->
+<!--                <HBox>-->
+<!--                    <HBox>-->
+<!--                        <Label lineSpacing="15" wrapText="true" styleClass="attributeData">-->
+<!--                            Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.-->
+<!--                        </Label>-->
+<!--                    </HBox>-->
+<!--                </HBox>-->
+
+<!--                <VBox.margin>-->
+<!--                    <Insets>-->
+<!--                        <bottom>30</bottom>-->
+<!--                    </Insets>-->
+<!--                </VBox.margin>-->
+<!--            </VBox>-->
+
+
+            <HBox styleClass="subHeadingBox">
+                <Label text="Exercises"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <VBox>
+                <HBox styleClass="profileForm">
+                    <HBox styleClass="exerciseTypeBox">
+                        <Label fx:id="exerciseTypeFieldLabel" text="Type"/>
+                        <ChoiceBox value="Calisthenics">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Calisthenics" />
+                                    <String fx:value="Weight Lifting" />
+                                    <String fx:value="Cardio" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </HBox>
+
+                    <HBox styleClass="exerciseDateBox">
+                        <Label fx:id="exerciseDateFieldLabel" text="Date"/>
+                        <DatePicker fx:id="exerciseDatePicker" promptText="Date"/>
+                    </HBox>
+
+                    <HBox styleClass="exerciseButtonBox">
+                        <Button text="Add" onAction="#onAddExerciseButtonClick"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+
+
+
+            
+<!--            <HBox styleClass="subHeadingBox">-->
+<!--                <Label text="Actions"/>-->
+<!--                <HBox HBox.hgrow="ALWAYS"/>-->
+<!--            </HBox>-->
+
+<!--            <VBox styleClass="profileAction">-->
+<!--                <HBox >-->
+<!--                    <Button text="Delete My Account" onAction="#onDeletePatientButtonClick"/>-->
+<!--                </HBox>-->
+<!--            </VBox>-->
         </VBox>
     </VBox>
 </VBox>

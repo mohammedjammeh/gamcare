@@ -109,13 +109,29 @@ public class Show {
 
 
 
-//    @FXML void initialize() {
-//        errorBox.setVisible(false);
-//        errorBox.setManaged(false);
-//    }
-//
+    @FXML
+    private Label exerciseTypeFieldLabel;
+
+    @FXML
+    private Label exerciseDateFieldLabel;
+
+    @FXML
+    private DatePicker exerciseDatePicker;
+
+
+
     @FXML
     protected void onEditPatientButtonClick() {
         System.out.println("You can now edit patient profile.");
+    }
+
+    @FXML
+    protected void onDeletePatientButtonClick() {
+        System.out.println("You have now deleted patient profile.");
+    }
+
+    @FXML
+    protected void onAddExerciseButtonClick() {
+        System.out.println("You have now add an exercise.");
     }
 }

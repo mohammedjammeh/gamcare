@@ -365,23 +365,51 @@
     Patient
 ****************/
 /** Show **/
-.profileMain {
+.profileMain,
+.profileOtherDetails,
+.profileAction {
     -fx-background-color: white;
-    -fx-background-radius: 3px;
-    -fx-border-radius: 3px;
-    -fx-padding: 25px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
     -fx-spacing: 15px;
 }
 
+.profileMain {
+    -fx-padding: 30px 30px 10px 30px;
+}
+
 .profileMain .attribute {
-    -fx-min-width: 250px;
-    -fx-max-width: 250px;
-    -fx-padding: 0 0 20px 0;
+    -fx-min-width: 275px;
+    -fx-max-width: 275px;
+    -fx-padding: 0 0 25px 0;
 }
 
 .profileMain .attributeLabel {
-    -fx-padding: 0 10px 0 0;
+    -fx-min-width: 110px;
     -fx-text-fill: #4d0019;
     -fx-font-weight: bold;
     -fx-font-family: sans-serif;
 }
+
+.profileOtherDetails {
+    -fx-padding: 30px;
+}
+
+.profileAction {
+    -fx-padding: 25px 30px;
+}
+
+.profileAction Button {
+    -fx-background-color: #80002a;
+    -fx-padding: 12px 20px;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}
+
+.profileAction Button:hover {
+    -fx-background-color: #660022;
+}
+
+
