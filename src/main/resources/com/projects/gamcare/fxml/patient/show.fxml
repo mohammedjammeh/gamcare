@@ -171,10 +171,11 @@
                 <HBox HBox.hgrow="ALWAYS"/>
             </HBox>
 
-            <VBox>
-                <HBox styleClass="profileForm">
+            <VBox styleClass="profileForm">
+                <HBox>
                     <HBox styleClass="exerciseTypeBox">
                         <Label fx:id="exerciseTypeFieldLabel" text="Type"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
                         <ChoiceBox value="Calisthenics">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
@@ -186,10 +187,32 @@
                         </ChoiceBox>
                     </HBox>
 
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="exerciseSpanBox">
+                        <Label fx:id="exerciseSpanFieldLabel" text="Span"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <ChoiceBox value="15 minutes">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="15 minutes" />
+                                    <String fx:value="30 minutes" />
+                                    <String fx:value="45 minutes" />
+                                    <String fx:value="1 hour" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
                     <HBox styleClass="exerciseDateBox">
                         <Label fx:id="exerciseDateFieldLabel" text="Date"/>
-                        <DatePicker fx:id="exerciseDatePicker" promptText="Date"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <DatePicker fx:id="exerciseDatePicker" promptText="Format 28/06/2021"/>
                     </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
 
                     <HBox styleClass="exerciseButtonBox">
                         <Button text="Add" onAction="#onAddExerciseButtonClick"/>
@@ -199,7 +222,7 @@
 
 
 
-            
+
 <!--            <HBox styleClass="subHeadingBox">-->
 <!--                <Label text="Actions"/>-->
 <!--                <HBox HBox.hgrow="ALWAYS"/>-->

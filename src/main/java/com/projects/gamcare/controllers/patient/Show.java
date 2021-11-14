@@ -113,6 +113,9 @@ public class Show {
     private Label exerciseTypeFieldLabel;
 
     @FXML
+    private Label exerciseSpanFieldLabel;
+
+    @FXML
     private Label exerciseDateFieldLabel;
 
     @FXML

@@ -367,7 +367,8 @@
 /** Show **/
 .profileMain,
 .profileOtherDetails,
-.profileAction {
+.profileAction,
+.profileForm {
     -fx-background-color: white;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
@@ -377,6 +378,16 @@
 .profileMain {
     -fx-padding: 30px 30px 10px 30px;
 }
+
+.profileOtherDetails {
+    -fx-padding: 30px;
+}
+
+.profileAction,
+.profileForm {
+    -fx-padding: 25px 30px;
+}
+
 
 .profileMain .attribute {
     -fx-min-width: 275px;
@@ -391,13 +402,6 @@
     -fx-font-family: sans-serif;
 }
 
-.profileOtherDetails {
-    -fx-padding: 30px;
-}
-
-.profileAction {
-    -fx-padding: 25px 30px;
-}
 
 .profileAction Button {
     -fx-background-color: #80002a;
@@ -412,4 +416,84 @@
     -fx-background-color: #660022;
 }
 
+
+.profileForm .exerciseTypeBox,
+.profileForm .exerciseSpanBox,
+.profileForm .exerciseDateBox {
+    -fx-min-width: 225px;
+}
+
+.profileForm .exerciseTypeBox > Label,
+.profileForm .exerciseSpanBox > Label,
+.profileForm .exerciseDateBox > Label {
+    -fx-min-width: 40px;
+    -fx-max-width: 40px;
+    -fx-padding: 11px 0 0 0;
+    -fx-text-fill: #4d4d4d;
+}
+
+.profileForm ChoiceBox Label {
+    -fx-text-fill: #262626;
+}
+
+.profileForm .text-field,
+.profileForm ChoiceBox {
+    -fx-min-width: 180px;
+    -fx-background-color: white;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: #262626;
+}
+
+.profileForm .text-field {
+    -fx-padding: 10px;
+}
+
+.profileForm ChoiceBox {
+    -fx-padding: 5px 4px;
+}
+
+.profileForm DatePicker {
+    -fx-min-width: 180px;
+    -fx-max-width: 180px;
+}
+
+.profileForm ChoiceBox:focused {
+    -fx-border-color: #660022;
+}
+
+.profileForm .date-picker:focused > .text-field,
+.profileForm .date-picker > .text-field:focused {
+    -fx-border-color: #660022;
+    -fx-border-width: 0.3px;
+}
+
+.profileForm .date-picker:focused {
+    -fx-background-color: #660022;
+    -fx-border-width: 0.3px;
+}
+
+.profileForm .date-picker:focused > .arrow-button {
+    -fx-background-color: lightgrey;
+}
+
+.profileForm .exerciseButtonBox {
+    -fx-min-width: 60px;
+}
+
+.profileForm .exerciseButtonBox Button {
+    -fx-min-width: 60px;
+    -fx-padding: 10px 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-background-color: #d3d3d3;
+    -fx-text-fill: #404040;
+}
+
+.profileForm .exerciseButtonBox Button:hover {
+    -fx-background-color: #bfbfbf;
+}
 
