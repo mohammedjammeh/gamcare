@@ -128,13 +128,26 @@ public class Show {
         System.out.println("You can now edit patient profile.");
     }
 
-    @FXML
-    protected void onDeletePatientButtonClick() {
-        System.out.println("You have now deleted patient profile.");
-    }
+
 
     @FXML
     protected void onAddExerciseButtonClick() {
         System.out.println("You have now add an exercise.");
+    }
+
+    @FXML
+    protected void onPreviousWeekButtonClick() {
+        System.out.println("You are now looking at the previous week.");
+    }
+
+    @FXML
+    protected void onNextWeekButtonClick() {
+        System.out.println("You are now looking at the next week.");
+    }
+
+
+    @FXML
+    protected void onDeletePatientButtonClick() {
+        System.out.println("You have now deleted patient profile.");
     }
 }

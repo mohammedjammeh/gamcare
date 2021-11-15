@@ -171,8 +171,8 @@
                 <HBox HBox.hgrow="ALWAYS"/>
             </HBox>
 
-            <VBox styleClass="profileForm">
-                <HBox>
+            <VBox styleClass="profileExercise">
+                <HBox styleClass="profileForm">
                     <HBox styleClass="exerciseTypeBox">
                         <Label fx:id="exerciseTypeFieldLabel" text="Type"/>
                         <HBox HBox.hgrow="ALWAYS"/>
@@ -218,6 +218,72 @@
                         <Button text="Add" onAction="#onAddExerciseButtonClick"/>
                     </HBox>
                 </HBox>
+
+                <VBox>
+                    <HBox styleClass="weekBox">
+                        <HBox styleClass="title">
+                            <Label>Training Sessions</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <HBox styleClass="month">
+                            <Label>December 2021</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <HBox styleClass="buttons">
+                            <Button text="Prev" onAction="#onPreviousWeekButtonClick"/>
+                            <HBox HBox.hgrow="ALWAYS"/>
+                            <Button text="Next" onAction="#onNextWeekButtonClick"/>
+                        </HBox>
+                    </HBox>
+                    <HBox>
+                        <VBox styleClass="datesBox">
+                            <Label styleClass="date">Mon 11th</Label>
+                            <Label styleClass="border"/>
+                        </VBox>
+
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="datesBox">
+                            <Label styleClass="date">Tue 12th</Label>
+                            <Label styleClass="border"/>
+                        </VBox>
+
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="datesBox">
+                            <Label styleClass="date">Wed 13th</Label>
+                            <Label styleClass="border"/>
+                        </VBox>
+
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="datesBox">
+                            <Label styleClass="date">Thur 14th</Label>
+                            <Label styleClass="border"/>
+                        </VBox>
+
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="datesBox">
+                            <Label styleClass="date">Fri 15th</Label>
+                            <Label styleClass="border"/>
+                        </VBox>
+
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="datesBox">
+                            <Label styleClass="date">Sat 16th</Label>
+                            <Label styleClass="border"/>
+                        </VBox>
+
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="datesBox">
+                            <Label styleClass="date">Sun 17th</Label>
+                            <Label styleClass="border"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
             </VBox>
 
 
