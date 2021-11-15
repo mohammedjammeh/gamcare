@@ -179,9 +179,9 @@
                         <ChoiceBox value="Calisthenics">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Calisthenics" />
-                                    <String fx:value="Weight Lifting" />
-                                    <String fx:value="Cardio" />
+                                    <String fx:value="Calisthenics"/>
+                                    <String fx:value="Weight Lifting"/>
+                                    <String fx:value="Running"/>
                                 </FXCollections>
                             </items>
                         </ChoiceBox>
@@ -236,51 +236,80 @@
                         </HBox>
                     </HBox>
                     <HBox>
-                        <VBox styleClass="datesBox">
-                            <Label styleClass="date">Mon 11th</Label>
-                            <Label styleClass="border"/>
-                        </VBox>
-
+                        <HBox styleClass="dateBox">
+                            <Label>Mon 11th</Label>
+                        </HBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="datesBox">
-                            <Label styleClass="date">Tue 12th</Label>
-                            <Label styleClass="border"/>
-                        </VBox>
-
+                        <HBox styleClass="dateBox">
+                            <Label>Tue 12th</Label>
+                        </HBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="datesBox">
-                            <Label styleClass="date">Wed 13th</Label>
-                            <Label styleClass="border"/>
-                        </VBox>
-
+                        <HBox styleClass="dateBox">
+                            <Label>Wed 13th</Label>
+                        </HBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="datesBox">
-                            <Label styleClass="date">Thur 14th</Label>
-                            <Label styleClass="border"/>
-                        </VBox>
-
+                        <HBox styleClass="dateBox">
+                            <Label>Thur 14th</Label>
+                        </HBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="datesBox">
-                            <Label styleClass="date">Fri 15th</Label>
-                            <Label styleClass="border"/>
-                        </VBox>
-
+                        <HBox styleClass="dateBox">
+                            <Label>Fri 15th</Label>
+                        </HBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="datesBox">
-                            <Label styleClass="date">Sat 16th</Label>
-                            <Label styleClass="border"/>
-                        </VBox>
-
+                        <HBox styleClass="dateBox">
+                            <Label>Sat 16th</Label>
+                        </HBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="datesBox">
-                            <Label styleClass="date">Sun 17th</Label>
-                            <Label styleClass="border"/>
+                        <HBox styleClass="dateBox">
+                            <Label>Sat 17th</Label>
+                        </HBox>
+                    </HBox>
+                    <HBox>
+                        <VBox styleClass="exerciseHistoryBox">
+                            <Label>Calisthenics</Label>
+                            <Label>15 minutes</Label>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="exerciseHistoryBox">
+                            <Label>Calisthenics</Label>
+                            <Label>15 minutes</Label>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="exerciseHistoryBox">
+                            <Label>Weight Lifting</Label>
+                            <Label>45 minutes</Label>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="exerciseHistoryBox">
+                            <Label>Calisthenics</Label>
+                            <Label>30 minutes</Label>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="exerciseHistoryBox">
+                            <Label>Calisthenics</Label>
+                            <Label>15 minutes</Label>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="exerciseHistoryBox">
+                            <Label>Calisthenics</Label>
+                            <Label>15 minutes</Label>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+
+                        <VBox styleClass="exerciseHistoryBox">
+                            <Label>Calisthenics</Label>
+                            <Label>45 minutes</Label>
                         </VBox>
                     </HBox>
                 </VBox>

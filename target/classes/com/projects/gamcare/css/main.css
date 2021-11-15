@@ -1,5 +1,5 @@
 .root {
-    -fx-font-family: Helvetica;
+    -fx-font-family: sans-serif;
     -fx-font-size: 14px;
 }
 
@@ -287,7 +287,6 @@
 .tableHeadings Label {
     -fx-text-fill: #4d0019;
     -fx-font-weight: bold;
-    -fx-font-family: sans-serif;
 }
 
 .tableBody Label {
@@ -356,7 +355,6 @@
 /** Create **/
 .addDoctorsBox Label {
     -fx-font-weight: bold;
-    -fx-font-family: sans-serif;
     -fx-padding: 0 0 5px 0;
 }
 
@@ -399,7 +397,6 @@
     -fx-min-width: 110px;
     -fx-text-fill: #4d0019;
     -fx-font-weight: bold;
-    -fx-font-family: sans-serif;
 }
 
 
@@ -418,7 +415,7 @@
 
 
 .profileExercise .weekBox {
-    -fx-padding: 20px 0;
+    -fx-padding: 20px 0 25px 0;
 }
 
 .profileExercise .weekBox .title,
@@ -448,25 +445,29 @@
     -fx-background-color: #c4c4c4;
 }
 
-.profileExercise .datesBox {
-    /*-fx-background-color: yellow;*/
+.profileExercise .dateBox {
     -fx-min-width: 100px;
     -fx-max-width: 100px;
 }
 
-.profileExercise .date {
-    /*-fx-background-color: green;*/
-}
-
-.profileExercise .border {
-    /*-fx-background-color: brown;*/
-    -fx-min-width: 60px;
-    -fx-max-width: 60px;
+.profileExercise .dateBox Label {
+    -fx-padding: 0 0 10px 0;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 2px;
     -fx-border-color: lightgrey;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4d0019;
 }
 
+.profileExercise .exerciseHistoryBox {
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+    -fx-padding: 0 0 0 3px;
+}
+
+.profileExercise .exerciseHistoryBox Label {
+    -fx-padding: 22px 0 0 0;
+}
 
 /****************
   Profile Form
