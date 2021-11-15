@@ -366,7 +366,8 @@
 .profileMain,
 .profileOtherDetails,
 .profileAction,
-.profileExercise {
+.profileExercises,
+.profileMeals {
     -fx-background-color: white;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
@@ -382,7 +383,8 @@
 }
 
 .profileAction,
-.profileExercise {
+.profileExercises,
+.profileMeals {
     -fx-padding: 25px 30px;
 }
 
@@ -413,61 +415,6 @@
     -fx-background-color: #660022;
 }
 
-
-.profileExercise .weekBox {
-    -fx-padding: 20px 0 25px 0;
-}
-
-.profileExercise .weekBox .title,
-.profileExercise .weekBox .month {
-    -fx-padding: 7px 0 0 0;
-}
-
-.profileExercise .weekBox .buttons {
-    -fx-min-width: 130px;
-}
-
-.profileExercise .weekBox Label {
-    -fx-text-fill: black;
-}
-
-.profileExercise .weekBox Button {
-    -fx-min-width: 60px;
-    -fx-padding: 7px 0;
-    -fx-cursor: hand;
-    -fx-background-radius: 3px;
-    -fx-border-radius: 3px;
-    -fx-background-color: #d9d9d9;
-    -fx-text-fill: #404040;
-}
-
-.profileExercise .weekBox Button:hover {
-    -fx-background-color: #c4c4c4;
-}
-
-.profileExercise .dateBox {
-    -fx-min-width: 100px;
-    -fx-max-width: 100px;
-}
-
-.profileExercise .dateBox Label {
-    -fx-padding: 0 0 10px 0;
-    -fx-border-style: hidden hidden solid hidden;
-    -fx-border-width: 2px;
-    -fx-border-color: lightgrey;
-    -fx-font-weight: bold;
-    -fx-text-fill: #4d0019;
-}
-
-.profileExercise .exerciseHistoryBox {
-    -fx-min-width: 100px;
-    -fx-max-width: 100px;
-    -fx-padding: 0 0 0 3px;
-}
-
-.profileExercise .exerciseHistoryBox Label {
-    -fx-padding: 22px 0 0 0;
-}
 
 /****************
   Profile Form
@@ -551,4 +498,63 @@
 
 .profileForm .date-picker:focused > .arrow-button {
     -fx-background-color: lightgrey;
+}
+
+
+/****************
+Profile Calendar
+****************/
+.profileCalendar .weekBox {
+    -fx-padding: 20px 0 25px 0;
+}
+
+.profileCalendar .weekBox .title,
+.profileCalendar .weekBox .month {
+    -fx-padding: 7px 0 0 0;
+}
+
+.profileCalendar .weekBox .buttons {
+    -fx-min-width: 130px;
+}
+
+.profileCalendar .weekBox Label {
+    -fx-text-fill: black;
+}
+
+.profileCalendar .weekBox Button {
+    -fx-min-width: 60px;
+    -fx-padding: 7px 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #404040;
+}
+
+.profileCalendar .weekBox Button:hover {
+    -fx-background-color: #c4c4c4;
+}
+
+.profileCalendar .dateBox {
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+}
+
+.profileCalendar .dateBox Label {
+    -fx-padding: 0 0 10px 0;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 2px;
+    -fx-border-color: lightgrey;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4d0019;
+}
+
+.profileCalendar .exerciseHistoryBox {
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+    -fx-padding: 0 0 0 3px;
+}
+
+.profileCalendar .exerciseHistoryBox Label {
+    -fx-padding: 22px 0 0 0;
 }

@@ -21,124 +21,124 @@
 
     <VBox styleClass="bodyBox">
         <VBox styleClass="innerBodyBox">
-            <HBox styleClass="subHeadingBox">
-                <Label text="Profile"/>
-                <HBox HBox.hgrow="ALWAYS"/>
-                <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-            </HBox>
+<!--            <HBox styleClass="subHeadingBox">-->
+<!--                <Label text="Profile"/>-->
+<!--                <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                <Button text="Edit" onAction="#onEditPatientButtonClick"/>-->
+<!--            </HBox>-->
 
-            <VBox styleClass="profileMain">
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Title:" styleClass="attributeLabel"/>
-                        <Label text="Mr." styleClass="attributeData"/>
-                    </HBox>
+<!--            <VBox styleClass="profileMain">-->
+<!--                <HBox>-->
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Title:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Mr." styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Gender:" styleClass="attributeLabel"/>
-                        <Label text="Male" styleClass="attributeData"/>
-                    </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Gender:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Male" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Tribe:" styleClass="attributeLabel"/>
-                        <Label text="Serakhulle" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Tribe:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Serakhulle" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
+<!--                </HBox>-->
 
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="First name:" styleClass="attributeLabel"/>
-                        <Label text="Mohammed" styleClass="attributeData"/>
-                    </HBox>
+<!--                <HBox>-->
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="First name:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Mohammed" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Middle name:" styleClass="attributeLabel"/>
-                        <Label text="Lamin" styleClass="attributeData"/>
-                    </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Middle name:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Lamin" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Last name:" styleClass="attributeLabel"/>
-                        <Label text="Jammeh" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Last name:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Jammeh" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
+<!--                </HBox>-->
 
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Email address:" styleClass="attributeLabel"/>
-                        <Label text="mo@gmail.com" styleClass="attributeData"/>
-                    </HBox>
+<!--                <HBox>-->
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Email address:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="mo@gmail.com" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Phone number:" styleClass="attributeLabel"/>
-                        <Label text="07506 259 330" styleClass="attributeData"/>
-                    </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Phone number:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="07506 259 330" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Relevant link:" styleClass="attributeLabel"/>
-                        <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Relevant link:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
+<!--                </HBox>-->
 
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Date of birth:" styleClass="attributeLabel"/>
-                        <Label text="19th June 1996" styleClass="attributeData"/>
-                    </HBox>
+<!--                <HBox>-->
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Date of birth:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="19th June 1996" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Place of birth:" styleClass="attributeLabel"/>
-                        <Label text="Greenwich, U.K." styleClass="attributeData"/>
-                    </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Place of birth:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Greenwich, U.K." styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Hospital:" styleClass="attributeLabel"/>
-                        <Label text="Mansa Konko" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Hospital:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Mansa Konko" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
+<!--                </HBox>-->
 
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Compound:" styleClass="attributeLabel"/>
-                        <Label text="Jammeh Kunda" styleClass="attributeData"/>
-                    </HBox>
+<!--                <HBox>-->
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Compound:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Jammeh Kunda" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="City / Town:" styleClass="attributeLabel"/>
-                        <Label text="Tallinding Kungjang" styleClass="attributeData"/>
-                    </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="City / Town:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Tallinding Kungjang" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
 
-                    <HBox styleClass="attribute">
-                        <Label text="Region:" styleClass="attributeLabel"/>
-                        <Label text="Western Region" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
+<!--                    <HBox styleClass="attribute">-->
+<!--                        <Label text="Region:" styleClass="attributeLabel"/>-->
+<!--                        <Label text="Western Region" styleClass="attributeData"/>-->
+<!--                    </HBox>-->
+<!--                </HBox>-->
 
-                <VBox.margin>
-                    <Insets>
-                        <bottom>30</bottom>
-                    </Insets>
-                </VBox.margin>
-            </VBox>
+<!--                <VBox.margin>-->
+<!--                    <Insets>-->
+<!--                        <bottom>30</bottom>-->
+<!--                    </Insets>-->
+<!--                </VBox.margin>-->
+<!--            </VBox>-->
 
 
 
@@ -166,12 +166,15 @@
 <!--            </VBox>-->
 
 
+
+
+
             <HBox styleClass="subHeadingBox">
                 <Label text="Exercises"/>
                 <HBox HBox.hgrow="ALWAYS"/>
             </HBox>
 
-            <VBox styleClass="profileExercise">
+            <VBox styleClass="profileExercises">
                 <HBox styleClass="profileForm">
                     <HBox styleClass="exerciseTypeBox">
                         <Label fx:id="exerciseTypeFieldLabel" text="Type"/>
@@ -219,7 +222,7 @@
                     </HBox>
                 </HBox>
 
-                <VBox>
+                <VBox styleClass="profileCalendar">
                     <HBox styleClass="weekBox">
                         <HBox styleClass="title">
                             <Label>Training Sessions</Label>
@@ -313,7 +316,177 @@
                         </VBox>
                     </HBox>
                 </VBox>
+
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
             </VBox>
+
+
+
+
+
+
+
+            <HBox styleClass="subHeadingBox">
+                <Label text="Meals"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <VBox styleClass="profileMeals">
+                <HBox styleClass="profileForm">
+<!--                    <HBox styleClass="exerciseTypeBox">-->
+<!--                        <Label fx:id="exerciseTypeFieldLabel" text="Type"/>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                        <ChoiceBox value="Calisthenics">-->
+<!--                            <items>-->
+<!--                                <FXCollections fx:factory="observableArrayList">-->
+<!--                                    <String fx:value="Calisthenics"/>-->
+<!--                                    <String fx:value="Weight Lifting"/>-->
+<!--                                    <String fx:value="Running"/>-->
+<!--                                </FXCollections>-->
+<!--                            </items>-->
+<!--                        </ChoiceBox>-->
+<!--                    </HBox>-->
+
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                    <HBox styleClass="exerciseSpanBox">-->
+<!--                        <Label fx:id="exerciseSpanFieldLabel" text="Span"/>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                        <ChoiceBox value="15 minutes">-->
+<!--                            <items>-->
+<!--                                <FXCollections fx:factory="observableArrayList">-->
+<!--                                    <String fx:value="15 minutes" />-->
+<!--                                    <String fx:value="30 minutes" />-->
+<!--                                    <String fx:value="45 minutes" />-->
+<!--                                    <String fx:value="1 hour" />-->
+<!--                                </FXCollections>-->
+<!--                            </items>-->
+<!--                        </ChoiceBox>-->
+<!--                    </HBox>-->
+
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                    <HBox styleClass="exerciseDateBox">-->
+<!--                        <Label fx:id="exerciseDateFieldLabel" text="Date"/>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                        <DatePicker fx:id="exerciseDatePicker" promptText="Format 28/06/2021"/>-->
+<!--                    </HBox>-->
+
+<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                    <HBox styleClass="exerciseButtonBox">-->
+<!--                        <Button text="Add" onAction="#onAddExerciseButtonClick"/>-->
+<!--                    </HBox>-->
+                </HBox>
+
+<!--                <VBox styleClass="profileCalendar">-->
+<!--                    <HBox styleClass="weekBox">-->
+<!--                        <HBox styleClass="title">-->
+<!--                            <Label>Training Sessions</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                        <HBox styleClass="month">-->
+<!--                            <Label>December 2021</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                        <HBox styleClass="buttons">-->
+<!--                            <Button text="Prev" onAction="#onPreviousWeekButtonClick"/>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
+<!--                            <Button text="Next" onAction="#onNextWeekButtonClick"/>-->
+<!--                        </HBox>-->
+<!--                    </HBox>-->
+<!--                    <HBox>-->
+<!--                        <HBox styleClass="dateBox">-->
+<!--                            <Label>Mon 11th</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <HBox styleClass="dateBox">-->
+<!--                            <Label>Tue 12th</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <HBox styleClass="dateBox">-->
+<!--                            <Label>Wed 13th</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <HBox styleClass="dateBox">-->
+<!--                            <Label>Thur 14th</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <HBox styleClass="dateBox">-->
+<!--                            <Label>Fri 15th</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <HBox styleClass="dateBox">-->
+<!--                            <Label>Sat 16th</Label>-->
+<!--                        </HBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <HBox styleClass="dateBox">-->
+<!--                            <Label>Sat 17th</Label>-->
+<!--                        </HBox>-->
+<!--                    </HBox>-->
+<!--                    <HBox>-->
+<!--                        <VBox styleClass="exerciseHistoryBox">-->
+<!--                            <Label>Calisthenics</Label>-->
+<!--                            <Label>15 minutes</Label>-->
+<!--                        </VBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <VBox styleClass="exerciseHistoryBox">-->
+<!--                            <Label>Calisthenics</Label>-->
+<!--                            <Label>15 minutes</Label>-->
+<!--                        </VBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <VBox styleClass="exerciseHistoryBox">-->
+<!--                            <Label>Weight Lifting</Label>-->
+<!--                            <Label>45 minutes</Label>-->
+<!--                        </VBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <VBox styleClass="exerciseHistoryBox">-->
+<!--                            <Label>Calisthenics</Label>-->
+<!--                            <Label>30 minutes</Label>-->
+<!--                        </VBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <VBox styleClass="exerciseHistoryBox">-->
+<!--                            <Label>Calisthenics</Label>-->
+<!--                            <Label>15 minutes</Label>-->
+<!--                        </VBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <VBox styleClass="exerciseHistoryBox">-->
+<!--                            <Label>Calisthenics</Label>-->
+<!--                            <Label>15 minutes</Label>-->
+<!--                        </VBox>-->
+<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+
+<!--                        <VBox styleClass="exerciseHistoryBox">-->
+<!--                            <Label>Calisthenics</Label>-->
+<!--                            <Label>45 minutes</Label>-->
+<!--                        </VBox>-->
+<!--                    </HBox>-->
+<!--                </VBox>-->
+
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
+            </VBox>
+
+
+
 
 
 
