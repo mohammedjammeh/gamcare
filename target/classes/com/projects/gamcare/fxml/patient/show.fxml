@@ -21,149 +21,149 @@
 
     <VBox styleClass="bodyBox">
         <VBox styleClass="innerBodyBox">
-<!--            <HBox styleClass="subHeadingBox">-->
-<!--                <Label text="Profile"/>-->
-<!--                <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                <Button text="Edit" onAction="#onEditPatientButtonClick"/>-->
-<!--            </HBox>-->
+            <HBox styleClass="subHeadingBox">
+                <Label text="Profile"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+                <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+            </HBox>
 
-<!--            <VBox styleClass="profileMain">-->
-<!--                <HBox>-->
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Title:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Mr." styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+            <VBox styleClass="profileMain">
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Title:" styleClass="attributeLabel"/>
+                        <Label text="Mr." styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Gender:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Male" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Gender:" styleClass="attributeLabel"/>
+                        <Label text="Male" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Tribe:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Serakhulle" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
-<!--                </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Tribe:" styleClass="attributeLabel"/>
+                        <Label text="Serakhulle" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
 
-<!--                <HBox>-->
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="First name:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Mohammed" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="First name:" styleClass="attributeLabel"/>
+                        <Label text="Mohammed" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Middle name:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Lamin" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Middle name:" styleClass="attributeLabel"/>
+                        <Label text="Lamin" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Last name:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Jammeh" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
-<!--                </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Last name:" styleClass="attributeLabel"/>
+                        <Label text="Jammeh" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
 
-<!--                <HBox>-->
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Email address:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="mo@gmail.com" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Email address:" styleClass="attributeLabel"/>
+                        <Label text="mo@gmail.com" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Phone number:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="07506 259 330" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Phone number:" styleClass="attributeLabel"/>
+                        <Label text="07506 259 330" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Relevant link:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
-<!--                </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Relevant link:" styleClass="attributeLabel"/>
+                        <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
 
-<!--                <HBox>-->
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Date of birth:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="19th June 1996" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Date of birth:" styleClass="attributeLabel"/>
+                        <Label text="19th June 1996" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Place of birth:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Greenwich, U.K." styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Place of birth:" styleClass="attributeLabel"/>
+                        <Label text="Greenwich, U.K." styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Hospital:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Mansa Konko" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
-<!--                </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Hospital:" styleClass="attributeLabel"/>
+                        <Label text="Mansa Konko" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
 
-<!--                <HBox>-->
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Compound:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Jammeh Kunda" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                <HBox>
+                    <HBox styleClass="attribute">
+                        <Label text="Compound:" styleClass="attributeLabel"/>
+                        <Label text="Jammeh Kunda" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="City / Town:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Tallinding Kungjang" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="City / Town:" styleClass="attributeLabel"/>
+                        <Label text="Tallinding Kungjang" styleClass="attributeData"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="attribute">-->
-<!--                        <Label text="Region:" styleClass="attributeLabel"/>-->
-<!--                        <Label text="Western Region" styleClass="attributeData"/>-->
-<!--                    </HBox>-->
-<!--                </HBox>-->
+                    <HBox styleClass="attribute">
+                        <Label text="Region:" styleClass="attributeLabel"/>
+                        <Label text="Western Region" styleClass="attributeData"/>
+                    </HBox>
+                </HBox>
 
-<!--                <VBox.margin>-->
-<!--                    <Insets>-->
-<!--                        <bottom>30</bottom>-->
-<!--                    </Insets>-->
-<!--                </VBox.margin>-->
-<!--            </VBox>-->
-
-
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
+            </VBox>
 
 
-<!--            <HBox styleClass="subHeadingBox">-->
-<!--                <Label text="Other Details"/>-->
-<!--                <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                <Button text="Edit" onAction="#onEditPatientButtonClick"/>-->
-<!--            </HBox>-->
 
-<!--            <VBox styleClass="profileOtherDetails">-->
-<!--                <HBox>-->
-<!--                    <HBox>-->
-<!--                        <Label lineSpacing="15" wrapText="true" styleClass="attributeData">-->
-<!--                            Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.-->
-<!--                        </Label>-->
-<!--                    </HBox>-->
-<!--                </HBox>-->
 
-<!--                <VBox.margin>-->
-<!--                    <Insets>-->
-<!--                        <bottom>30</bottom>-->
-<!--                    </Insets>-->
-<!--                </VBox.margin>-->
-<!--            </VBox>-->
+            <HBox styleClass="subHeadingBox">
+                <Label text="Other Details"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+                <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+            </HBox>
+
+            <VBox styleClass="profileOtherDetails">
+                <HBox>
+                    <HBox>
+                        <Label lineSpacing="15" wrapText="true" styleClass="attributeData">
+                            Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
+                        </Label>
+                    </HBox>
+                </HBox>
+
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
+            </VBox>
 
 
 
@@ -351,6 +351,7 @@
                     </Insets>
                 </VBox.margin>
             </VBox>
+
 
 
 
@@ -560,16 +561,87 @@
 
 
 
-<!--            <HBox styleClass="subHeadingBox">-->
-<!--                <Label text="Actions"/>-->
-<!--                <HBox HBox.hgrow="ALWAYS"/>-->
-<!--            </HBox>-->
 
-<!--            <VBox styleClass="profileAction">-->
-<!--                <HBox >-->
-<!--                    <Button text="Delete My Account" onAction="#onDeletePatientButtonClick"/>-->
-<!--                </HBox>-->
-<!--            </VBox>-->
+            <HBox styleClass="subHeadingBox">
+                <Label text="Reports"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <VBox styleClass="profileMeals">
+                <HBox styleClass="profileForm">
+                    <HBox styleClass="reportDescriptionBox">
+                        <Label fx:id="reportDescriptionFieldLabel" text="Description"/>
+                        <TextArea fx:id="reportDescriptionTextArea" promptText="Description"/>
+                    </HBox>
+
+                    <HBox HBox.hgrow="ALWAYS"/>
+
+                    <HBox styleClass="reportButtonBox">
+                        <Button text="Add" onAction="#onAddReportButtonClick"/>
+                    </HBox>
+                </HBox>
+
+                <VBox styleClass="profileCalendar">
+                    <HBox styleClass="weekBox">
+                        <HBox styleClass="title">
+                            <Label>Report History</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <HBox styleClass="month">
+                            <Label>December 2021</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <HBox styleClass="buttons">
+                            <Button text="Prev" onAction="#onPreviousWeekReportsButtonClick"/>
+                            <HBox HBox.hgrow="ALWAYS"/>
+                            <Button text="Next" onAction="#onNextWeekReportsButtonClick"/>
+                        </HBox>
+                    </HBox>
+                    <HBox>
+                        <HBox styleClass="longDateBox">
+                            <Label>Mon 11th</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    <HBox>
+                        <VBox styleClass="longHistoryBox">
+                            <VBox>
+                                <Label lineSpacing="14" wrapText="true">
+                                    Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
+                                </Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Dr. Ismaila Drammeh</Label>
+                            </VBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox.margin>
+                    <Insets>
+                        <bottom>30</bottom>
+                    </Insets>
+                </VBox.margin>
+            </VBox>
+
+
+
+
+
+
+
+
+
+            <HBox styleClass="subHeadingBox">
+                <Label text="Actions"/>
+                <HBox HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <VBox styleClass="profileAction">
+                <HBox >
+                    <Button text="Delete My Account" onAction="#onDeletePatientButtonClick"/>
+                </HBox>
+            </VBox>
         </VBox>
     </VBox>
 </VBox>

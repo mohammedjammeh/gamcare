@@ -138,6 +138,14 @@ public class Show {
 
 
     @FXML
+    private Label reportDescriptionFieldLabel;
+
+    @FXML
+    private TextArea reportDescriptionTextArea;
+
+
+
+    @FXML
     protected void onEditPatientButtonClick() {
         System.out.println("You can now edit patient profile.");
     }
@@ -179,5 +187,22 @@ public class Show {
     @FXML
     protected void onNextMealWeekButtonClick() {
         System.out.println("You are now looking at the next meal week.");
+    }
+
+
+
+    @FXML
+    protected void onAddReportButtonClick() {
+        System.out.println("You have now added a meal.");
+    }
+
+    @FXML
+    protected void onPreviousWeekReportsButtonClick() {
+        System.out.println("You are now looking at the previous week reports.");
+    }
+
+    @FXML
+    protected void onNextWeekReportsButtonClick() {
+        System.out.println("You are now looking at the next week reports.");
     }
 }

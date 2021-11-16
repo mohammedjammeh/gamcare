@@ -422,15 +422,19 @@
 .exerciseTypeBox,
 .exerciseSpanBox,
 .exerciseDateBox,
-
 .mealNameBox,
 .mealSizeBox,
 .mealDateBox {
     -fx-min-width: 225px;
 }
 
+.reportDescriptionBox {
+    -fx-min-width: 760px;
+}
+
 .exerciseButtonBox,
-.mealButtonBox {
+.mealButtonBox,
+.reportButtonBox {
     -fx-min-width: 60px;
     -fx-padding: 1.5px 0 0 0;
 }
@@ -438,29 +442,36 @@
 .exerciseTypeBox > Label,
 .exerciseSpanBox > Label,
 .exerciseDateBox > Label,
-
 .mealNameBox > Label,
 .mealSizeBox > Label,
-.mealDateBox > Label {
+.mealDateBox > Label,
+.reportDescriptionBox > Label {
     -fx-min-width: 40px;
     -fx-max-width: 40px;
     -fx-padding: 11px 0 0 0;
-    -fx-text-fill: #4d4d4d;
+    -fx-text-fill: #262626;
+}
+
+.reportDescriptionBox > Label {
+    -fx-min-width: 85px;
+    -fx-max-width: 85px;
 }
 
 .exerciseButtonBox Button,
-.mealButtonBox Button {
+.mealButtonBox Button,
+.reportButtonBox Button {
     -fx-min-width: 60px;
     -fx-padding: 8px 0;
     -fx-cursor: hand;
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;
     -fx-background-color: #d9d9d9;
-    -fx-text-fill: #404040;
+    -fx-text-fill: black;
 }
 
 .exerciseButtonBox Button:hover,
-.mealButtonBox Button:hover {
+.mealButtonBox Button:hover,
+.reportButtonBox Button:hover {
     -fx-background-color: #c4c4c4;
 }
 
@@ -469,7 +480,8 @@
 }
 
 .profileForm .text-field,
-.profileForm ChoiceBox {
+.profileForm ChoiceBox,
+.profileForm TextArea {
     -fx-min-width: 180px;
     -fx-background-color: white;
     -fx-border-width: 1px;
@@ -487,12 +499,25 @@
     -fx-padding: 5px 4px;
 }
 
+.profileForm TextArea {
+    -fx-padding: 5px 3px;
+    -fx-min-width: 675px;
+    -fx-min-height: 60px;
+    -fx-max-height: 60px;
+}
+
+.profileForm TextArea .content {
+    -fx-background-color: white;
+}
+
 .profileForm DatePicker {
     -fx-min-width: 180px;
     -fx-max-width: 180px;
 }
 
-.profileForm ChoiceBox:focused {
+.profileForm .text-field:focused,
+.profileForm ChoiceBox:focused,
+.profileForm TextArea:focused {
     -fx-border-color: #660022;
 }
 
@@ -539,7 +564,7 @@ Profile Calendar
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;
     -fx-background-color: #d9d9d9;
-    -fx-text-fill: #404040;
+    -fx-text-fill: #262626;
 }
 
 .profileCalendar .weekBox Button:hover {
@@ -551,7 +576,13 @@ Profile Calendar
     -fx-max-width: 100px;
 }
 
-.profileCalendar .dateBox Label {
+.profileCalendar .longDateBox {
+    -fx-min-width: 840px;
+    -fx-max-width: 840px;
+}
+
+.profileCalendar .dateBox Label,
+.profileCalendar .longDateBox Label {
     -fx-padding: 0 0 10px 0;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 2px;
@@ -563,13 +594,24 @@ Profile Calendar
 .profileCalendar .historyBox {
     -fx-min-width: 100px;
     -fx-max-width: 100px;
+}
+
+.profileCalendar .longHistoryBox {
+    -fx-min-width: 840px;
+    -fx-max-width: 840px;
+}
+
+.profileCalendar .historyBox,
+.profileCalendar .longHistoryBox {
     -fx-padding: 0 0 0 3px;
 }
 
-.profileCalendar .historyBox VBox {
+.profileCalendar .historyBox VBox,
+.profileCalendar .longHistoryBox VBox {
     -fx-padding: 10px 0 0 0;
 }
 
-.profileCalendar .historyBox VBox Label {
+.profileCalendar .historyBox VBox Label,
+.profileCalendar .longHistoryBox VBox Label {
     -fx-padding: 12px 0 0 0;
 }
