@@ -421,25 +421,35 @@
 ****************/
 .exerciseTypeBox,
 .exerciseSpanBox,
-.exerciseDateBox {
+.exerciseDateBox,
+
+.mealNameBox,
+.mealSizeBox,
+.mealDateBox {
     -fx-min-width: 225px;
 }
 
-.exerciseButtonBox {
+.exerciseButtonBox,
+.mealButtonBox {
     -fx-min-width: 60px;
     -fx-padding: 1.5px 0 0 0;
 }
 
 .exerciseTypeBox > Label,
 .exerciseSpanBox > Label,
-.exerciseDateBox > Label {
+.exerciseDateBox > Label,
+
+.mealNameBox > Label,
+.mealSizeBox > Label,
+.mealDateBox > Label {
     -fx-min-width: 40px;
     -fx-max-width: 40px;
     -fx-padding: 11px 0 0 0;
     -fx-text-fill: #4d4d4d;
 }
 
-.exerciseButtonBox Button {
+.exerciseButtonBox Button,
+.mealButtonBox Button {
     -fx-min-width: 60px;
     -fx-padding: 8px 0;
     -fx-cursor: hand;
@@ -449,7 +459,8 @@
     -fx-text-fill: #404040;
 }
 
-.exerciseButtonBox Button:hover {
+.exerciseButtonBox Button:hover,
+.mealButtonBox Button:hover {
     -fx-background-color: #c4c4c4;
 }
 
@@ -549,12 +560,16 @@ Profile Calendar
     -fx-text-fill: #4d0019;
 }
 
-.profileCalendar .exerciseHistoryBox {
+.profileCalendar .historyBox {
     -fx-min-width: 100px;
     -fx-max-width: 100px;
     -fx-padding: 0 0 0 3px;
 }
 
-.profileCalendar .exerciseHistoryBox Label {
-    -fx-padding: 22px 0 0 0;
+.profileCalendar .historyBox VBox {
+    -fx-padding: 10px 0 0 0;
+}
+
+.profileCalendar .historyBox VBox Label {
+    -fx-padding: 12px 0 0 0;
 }

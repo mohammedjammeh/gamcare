@@ -198,10 +198,10 @@
                         <ChoiceBox value="15 minutes">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="15 minutes" />
-                                    <String fx:value="30 minutes" />
-                                    <String fx:value="45 minutes" />
-                                    <String fx:value="1 hour" />
+                                    <String fx:value="15 minutes"/>
+                                    <String fx:value="30 minutes"/>
+                                    <String fx:value="45 minutes"/>
+                                    <String fx:value="1 hour"/>
                                 </FXCollections>
                             </items>
                         </ChoiceBox>
@@ -233,9 +233,9 @@
                         </HBox>
                         <HBox HBox.hgrow="ALWAYS"/>
                         <HBox styleClass="buttons">
-                            <Button text="Prev" onAction="#onPreviousWeekButtonClick"/>
+                            <Button text="Prev" onAction="#onPreviousExerciseWeekButtonClick"/>
                             <HBox HBox.hgrow="ALWAYS"/>
-                            <Button text="Next" onAction="#onNextWeekButtonClick"/>
+                            <Button text="Next" onAction="#onNextExerciseWeekButtonClick"/>
                         </HBox>
                     </HBox>
                     <HBox>
@@ -274,45 +274,73 @@
                         </HBox>
                     </HBox>
                     <HBox>
-                        <VBox styleClass="exerciseHistoryBox">
-                            <Label>Calisthenics</Label>
-                            <Label>15 minutes</Label>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Calisthenics</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>15 minutes</Label>
+                            </VBox>
                         </VBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="exerciseHistoryBox">
-                            <Label>Calisthenics</Label>
-                            <Label>15 minutes</Label>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Calisthenics</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>15 minutes</Label>
+                            </VBox>
                         </VBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="exerciseHistoryBox">
-                            <Label>Weight Lifting</Label>
-                            <Label>45 minutes</Label>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Calisthenics</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>15 minutes</Label>
+                            </VBox>
                         </VBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="exerciseHistoryBox">
-                            <Label>Calisthenics</Label>
-                            <Label>30 minutes</Label>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Calisthenics</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>15 minutes</Label>
+                            </VBox>
                         </VBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="exerciseHistoryBox">
-                            <Label>Calisthenics</Label>
-                            <Label>15 minutes</Label>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Calisthenics</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>15 minutes</Label>
+                            </VBox>
                         </VBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="exerciseHistoryBox">
-                            <Label>Calisthenics</Label>
-                            <Label>15 minutes</Label>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Calisthenics</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>15 minutes</Label>
+                            </VBox>
                         </VBox>
                         <HBox HBox.hgrow="ALWAYS"/>
 
-                        <VBox styleClass="exerciseHistoryBox">
-                            <Label>Calisthenics</Label>
-                            <Label>45 minutes</Label>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Calisthenics</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>15 minutes</Label>
+                            </VBox>
                         </VBox>
                     </HBox>
                 </VBox>
@@ -337,146 +365,187 @@
 
             <VBox styleClass="profileMeals">
                 <HBox styleClass="profileForm">
-<!--                    <HBox styleClass="exerciseTypeBox">-->
-<!--                        <Label fx:id="exerciseTypeFieldLabel" text="Type"/>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                        <ChoiceBox value="Calisthenics">-->
-<!--                            <items>-->
-<!--                                <FXCollections fx:factory="observableArrayList">-->
-<!--                                    <String fx:value="Calisthenics"/>-->
-<!--                                    <String fx:value="Weight Lifting"/>-->
-<!--                                    <String fx:value="Running"/>-->
-<!--                                </FXCollections>-->
-<!--                            </items>-->
-<!--                        </ChoiceBox>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="mealNameBox">
+                        <Label fx:id="mealNameFieldLabel" text="Name"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <ChoiceBox value="Benechin">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Benechin"/>
+                                    <String fx:value="Domoda"/>
+                                    <String fx:value="Okra soup"/>
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="exerciseSpanBox">-->
-<!--                        <Label fx:id="exerciseSpanFieldLabel" text="Span"/>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                        <ChoiceBox value="15 minutes">-->
-<!--                            <items>-->
-<!--                                <FXCollections fx:factory="observableArrayList">-->
-<!--                                    <String fx:value="15 minutes" />-->
-<!--                                    <String fx:value="30 minutes" />-->
-<!--                                    <String fx:value="45 minutes" />-->
-<!--                                    <String fx:value="1 hour" />-->
-<!--                                </FXCollections>-->
-<!--                            </items>-->
-<!--                        </ChoiceBox>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="mealSizeBox">
+                        <Label fx:id="mealSizeFieldLabel" text="Size"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <ChoiceBox value="Small">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Small"/>
+                                    <String fx:value="Medium"/>
+                                    <String fx:value="Large"/>
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="exerciseDateBox">-->
-<!--                        <Label fx:id="exerciseDateFieldLabel" text="Date"/>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                        <DatePicker fx:id="exerciseDatePicker" promptText="Format 28/06/2021"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="mealDateBox">
+                        <Label fx:id="mealDateFieldLabel" text="Date"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <DatePicker fx:id="mealDatePicker" promptText="Format 28/06/2021"/>
+                    </HBox>
 
-<!--                    <HBox HBox.hgrow="ALWAYS"/>-->
+                    <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                    <HBox styleClass="exerciseButtonBox">-->
-<!--                        <Button text="Add" onAction="#onAddExerciseButtonClick"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="mealButtonBox">
+                        <Button text="Add" onAction="#onAddMealButtonClick"/>
+                    </HBox>
                 </HBox>
 
-<!--                <VBox styleClass="profileCalendar">-->
-<!--                    <HBox styleClass="weekBox">-->
-<!--                        <HBox styleClass="title">-->
-<!--                            <Label>Training Sessions</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                        <HBox styleClass="month">-->
-<!--                            <Label>December 2021</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                        <HBox styleClass="buttons">-->
-<!--                            <Button text="Prev" onAction="#onPreviousWeekButtonClick"/>-->
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-<!--                            <Button text="Next" onAction="#onNextWeekButtonClick"/>-->
-<!--                        </HBox>-->
-<!--                    </HBox>-->
-<!--                    <HBox>-->
-<!--                        <HBox styleClass="dateBox">-->
-<!--                            <Label>Mon 11th</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                <VBox styleClass="profileCalendar">
+                    <HBox styleClass="weekBox">
+                        <HBox styleClass="title">
+                            <Label>Meal History</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <HBox styleClass="month">
+                            <Label>December 2021</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <HBox styleClass="buttons">
+                            <Button text="Prev" onAction="#onPreviousMealWeekButtonClick"/>
+                            <HBox HBox.hgrow="ALWAYS"/>
+                            <Button text="Next" onAction="#onNextMealWeekButtonClick"/>
+                        </HBox>
+                    </HBox>
+                    <HBox>
+                        <HBox styleClass="dateBox">
+                            <Label>Mon 11th</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <HBox styleClass="dateBox">-->
-<!--                            <Label>Tue 12th</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <HBox styleClass="dateBox">
+                            <Label>Tue 12th</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <HBox styleClass="dateBox">-->
-<!--                            <Label>Wed 13th</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <HBox styleClass="dateBox">
+                            <Label>Wed 13th</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <HBox styleClass="dateBox">-->
-<!--                            <Label>Thur 14th</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <HBox styleClass="dateBox">
+                            <Label>Thur 14th</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <HBox styleClass="dateBox">-->
-<!--                            <Label>Fri 15th</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <HBox styleClass="dateBox">
+                            <Label>Fri 15th</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <HBox styleClass="dateBox">-->
-<!--                            <Label>Sat 16th</Label>-->
-<!--                        </HBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <HBox styleClass="dateBox">
+                            <Label>Sat 16th</Label>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <HBox styleClass="dateBox">-->
-<!--                            <Label>Sat 17th</Label>-->
-<!--                        </HBox>-->
-<!--                    </HBox>-->
-<!--                    <HBox>-->
-<!--                        <VBox styleClass="exerciseHistoryBox">-->
-<!--                            <Label>Calisthenics</Label>-->
-<!--                            <Label>15 minutes</Label>-->
-<!--                        </VBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <HBox styleClass="dateBox">
+                            <Label>Sat 17th</Label>
+                        </HBox>
+                    </HBox>
+                    <HBox>
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Score: 0.6</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Cereal</Label>
+                                <Label>Domoda</Label>
+                                <Label>Bread &amp; butter</Label>
+                            </VBox>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <VBox styleClass="exerciseHistoryBox">-->
-<!--                            <Label>Calisthenics</Label>-->
-<!--                            <Label>15 minutes</Label>-->
-<!--                        </VBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Score: 0.6</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Cereal</Label>
+                                <Label>Domoda</Label>
+                                <Label>Bread &amp; butter</Label>
+                            </VBox>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <VBox styleClass="exerciseHistoryBox">-->
-<!--                            <Label>Weight Lifting</Label>-->
-<!--                            <Label>45 minutes</Label>-->
-<!--                        </VBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Score: 0.6</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Cereal</Label>
+                                <Label>Domoda</Label>
+                                <Label>Bread &amp; butter</Label>
+                            </VBox>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <VBox styleClass="exerciseHistoryBox">-->
-<!--                            <Label>Calisthenics</Label>-->
-<!--                            <Label>30 minutes</Label>-->
-<!--                        </VBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Score: 0.6</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Cereal</Label>
+                                <Label>Domoda</Label>
+                                <Label>Bread &amp; butter</Label>
+                            </VBox>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <VBox styleClass="exerciseHistoryBox">-->
-<!--                            <Label>Calisthenics</Label>-->
-<!--                            <Label>15 minutes</Label>-->
-<!--                        </VBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Score: 0.6</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Cereal</Label>
+                                <Label>Domoda</Label>
+                                <Label>Bread &amp; butter</Label>
+                            </VBox>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <VBox styleClass="exerciseHistoryBox">-->
-<!--                            <Label>Calisthenics</Label>-->
-<!--                            <Label>15 minutes</Label>-->
-<!--                        </VBox>-->
-<!--                        <HBox HBox.hgrow="ALWAYS"/>-->
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Score: 0.6</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Cereal</Label>
+                                <Label>Domoda</Label>
+                                <Label>Bread &amp; butter</Label>
+                            </VBox>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                        <VBox styleClass="exerciseHistoryBox">-->
-<!--                            <Label>Calisthenics</Label>-->
-<!--                            <Label>45 minutes</Label>-->
-<!--                        </VBox>-->
-<!--                    </HBox>-->
-<!--                </VBox>-->
+                        <VBox styleClass="historyBox">
+                            <VBox>
+                                <Label>Score: 0.6</Label>
+                            </VBox>
+                            <VBox>
+                                <Label>Cereal</Label>
+                                <Label>Domoda</Label>
+                                <Label>Bread &amp; butter</Label>
+                            </VBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
 
                 <VBox.margin>
                     <Insets>

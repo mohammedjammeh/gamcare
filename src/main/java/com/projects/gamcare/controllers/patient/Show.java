@@ -124,30 +124,60 @@ public class Show {
 
 
     @FXML
+    private Label mealNameFieldLabel;
+
+    @FXML
+    private Label mealSizeFieldLabel;
+
+    @FXML
+    private Label mealDateFieldLabel;
+
+    @FXML
+    private DatePicker mealDatePicker;
+
+
+
+    @FXML
     protected void onEditPatientButtonClick() {
         System.out.println("You can now edit patient profile.");
+    }
+
+    @FXML
+    protected void onDeletePatientButtonClick() {
+        System.out.println("You have now deleted patient profile.");
     }
 
 
 
     @FXML
     protected void onAddExerciseButtonClick() {
-        System.out.println("You have now add an exercise.");
+        System.out.println("You have now added an exercise session.");
     }
 
     @FXML
-    protected void onPreviousWeekButtonClick() {
-        System.out.println("You are now looking at the previous week.");
+    protected void onPreviousExerciseWeekButtonClick() {
+        System.out.println("You are now looking at the previous exercise week.");
     }
 
     @FXML
-    protected void onNextWeekButtonClick() {
-        System.out.println("You are now looking at the next week.");
+    protected void onNextExerciseWeekButtonClick() {
+        System.out.println("You are now looking at the next exercise week.");
     }
 
 
+
     @FXML
-    protected void onDeletePatientButtonClick() {
-        System.out.println("You have now deleted patient profile.");
+    protected void onAddMealButtonClick() {
+        System.out.println("You have now added a meal.");
+    }
+
+    @FXML
+    protected void onPreviousMealWeekButtonClick() {
+        System.out.println("You are now looking at the previous meal week.");
+    }
+
+    @FXML
+    protected void onNextMealWeekButtonClick() {
+        System.out.println("You are now looking at the next meal week.");
     }
 }
