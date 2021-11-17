@@ -340,6 +340,7 @@
 .profileExercises,
 .profileMeals,
 .profileReports,
+.profileHospitals,
 .profileAction {
     -fx-background-color: white;
     -fx-background-radius: 5px;
@@ -352,7 +353,7 @@
 }
 
 .profileOtherDetails,
-.profileAction {
+.profileAction{
     -fx-padding: 30px;
 }
 
@@ -360,6 +361,10 @@
 .profileExercises,
 .profileMeals {
     -fx-padding: 30px 30px 35px 30px;
+}
+
+.profileHospitals {
+    -fx-padding: 25px 30px;
 }
 
 
@@ -371,8 +376,29 @@
 
 .profileMain .attributeLabel {
     -fx-min-width: 110px;
+    -fx-max-width: 110px;
     -fx-text-fill: #4d0019;
     -fx-font-weight: bold;
+}
+
+
+.profileHospitals HBox {
+    -fx-spacing: 25px;
+}
+
+.profileHospitals HBox Button {
+    -fx-padding: 12px 10px;
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
+    -fx-cursor: hand;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-background-color: #e6e6e6;
+    -fx-text-fill: #333333;
+}
+
+.profileHospitals HBox Button:hover {
+    -fx-background-color: #cccccc;
 }
 
 
@@ -595,19 +621,26 @@ Profile Calendar
     Hospital
 ****************/
 /** Index **/
-.hospitalIndexBodyBox {
-    -fx-spacing: 30px;
+.hospitalBodyBox {
+    -fx-padding: 10px 0;
+    -fx-spacing: 35px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
 }
 
-.hospitalIndexBodyBox Button {
+.hospitalBodyBox HBox {
+    -fx-spacing: 36px;
+}
+
+.hospitalBodyBox Button {
     -fx-cursor: hand;
-    -fx-min-width: 199px;
-    -fx-min-height: 150px;
-    -fx-background-color: #dbdbdb;
-    -fx-font-size: 15px;
+    -fx-min-width: 198px;
+    -fx-min-height: 140px;
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #262626;
 }
 
-.hospitalIndexBodyBox Button:hover {
+.hospitalBodyBox Button:hover {
     -fx-background-color: #cccccc;
 }
 

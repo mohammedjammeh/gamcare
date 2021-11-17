@@ -22,23 +22,17 @@
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Add" onAction="#onAddHospitalButtonClick"/>
                     </HBox>
-                    <VBox styleClass="hospitalIndexBodyBox">
+                    <VBox styleClass="hospitalBodyBox">
                         <HBox>
                             <Button text="Brikama" onAction="#onShowHospitalButtonClick"/>
-                            <HBox HBox.hgrow="ALWAYS"/>
                             <Button text="Mansa Konko" onAction="#onShowHospitalButtonClick"/>
-                            <HBox HBox.hgrow="ALWAYS"/>
                             <Button text="Farro Kono" onAction="#onShowHospitalButtonClick"/>
-                            <HBox HBox.hgrow="ALWAYS"/>
                             <Button text="Katong" onAction="#onShowHospitalButtonClick"/>
                         </HBox>
                         <HBox>
                             <Button text="Juffureh" onAction="#onShowHospitalButtonClick"/>
-                            <HBox HBox.hgrow="ALWAYS"/>
                             <Button text="Niumi" onAction="#onShowHospitalButtonClick"/>
-                            <HBox HBox.hgrow="ALWAYS"/>
                             <Button text="Kloro" onAction="#onShowHospitalButtonClick"/>
-                            <HBox HBox.hgrow="ALWAYS"/>
                             <Button text="Bansang" onAction="#onShowHospitalButtonClick"/>
                         </HBox>
                     </VBox>

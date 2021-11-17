@@ -19,7 +19,7 @@
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
                     <HBox styleClass="subHeadingBox">
-                        <Label text="Main Details"/>
+                        <Label text="Main"/>
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
                     </HBox>
