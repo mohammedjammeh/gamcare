@@ -4,645 +4,649 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+
 <VBox
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.projects.gamcare.controllers.patient.Show"
     stylesheets="@../../css/main.css"
 >
-    <fx:include source="../header.fxml"/>
+    <ScrollPane styleClass="outerBodyBox" fitToWidth="true">
+        <VBox>
+            <fx:include source="../header.fxml"/>
 
-    <VBox styleClass="bodyBox">
-        <VBox styleClass="innerBodyBox">
-            <HBox styleClass="subHeadingBox">
-                <Label text="Profile"/>
-                <HBox HBox.hgrow="ALWAYS"/>
-                <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-            </HBox>
-
-            <VBox styleClass="profileMain">
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Title:" styleClass="attributeLabel"/>
-                        <Label text="Mr." styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Gender:" styleClass="attributeLabel"/>
-                        <Label text="Male" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Tribe:" styleClass="attributeLabel"/>
-                        <Label text="Serakhulle" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
-
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="First name:" styleClass="attributeLabel"/>
-                        <Label text="Mohammed" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Middle name:" styleClass="attributeLabel"/>
-                        <Label text="Lamin" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Last name:" styleClass="attributeLabel"/>
-                        <Label text="Jammeh" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
-
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Email address:" styleClass="attributeLabel"/>
-                        <Label text="mo@gmail.com" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Phone number:" styleClass="attributeLabel"/>
-                        <Label text="07506 259 330" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Relevant link:" styleClass="attributeLabel"/>
-                        <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
-
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Date of birth:" styleClass="attributeLabel"/>
-                        <Label text="19th June 1996" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Place of birth:" styleClass="attributeLabel"/>
-                        <Label text="Greenwich, U.K." styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Hospital:" styleClass="attributeLabel"/>
-                        <Label text="Mansa Konko" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
-
-                <HBox>
-                    <HBox styleClass="attribute">
-                        <Label text="Compound:" styleClass="attributeLabel"/>
-                        <Label text="Jammeh Kunda" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="City / Town:" styleClass="attributeLabel"/>
-                        <Label text="Tallinding Kungjang" styleClass="attributeData"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="attribute">
-                        <Label text="Region:" styleClass="attributeLabel"/>
-                        <Label text="Western Region" styleClass="attributeData"/>
-                    </HBox>
-                </HBox>
-
-                <VBox.margin>
-                    <Insets>
-                        <bottom>30</bottom>
-                    </Insets>
-                </VBox.margin>
-            </VBox>
-
-
-
-
-            <HBox styleClass="subHeadingBox">
-                <Label text="Other Details"/>
-                <HBox HBox.hgrow="ALWAYS"/>
-                <Button text="Edit" onAction="#onEditPatientButtonClick"/>
-            </HBox>
-
-            <VBox styleClass="profileOtherDetails">
-                <HBox>
-                    <HBox>
-                        <Label lineSpacing="15" wrapText="true" styleClass="attributeData">
-                            Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
-                        </Label>
-                    </HBox>
-                </HBox>
-
-                <VBox.margin>
-                    <Insets>
-                        <bottom>30</bottom>
-                    </Insets>
-                </VBox.margin>
-            </VBox>
-
-
-
-
-
-            <HBox styleClass="subHeadingBox">
-                <Label text="Exercises"/>
-                <HBox HBox.hgrow="ALWAYS"/>
-            </HBox>
-
-            <VBox styleClass="profileExercises">
-                <HBox styleClass="profileForm">
-                    <HBox styleClass="exerciseTypeBox">
-                        <Label fx:id="exerciseTypeFieldLabel" text="Type"/>
+            <VBox styleClass="bodyBox">
+                <VBox styleClass="innerBodyBox">
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Profile"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <ChoiceBox value="Calisthenics">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Calisthenics"/>
-                                    <String fx:value="Weight Lifting"/>
-                                    <String fx:value="Running"/>
-                                </FXCollections>
-                            </items>
-                        </ChoiceBox>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
                     </HBox>
 
-                    <HBox HBox.hgrow="ALWAYS"/>
+                    <VBox styleClass="profileMain">
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Title:" styleClass="attributeLabel"/>
+                                <Label text="Mr." styleClass="attributeData"/>
+                            </HBox>
 
-                    <HBox styleClass="exerciseSpanBox">
-                        <Label fx:id="exerciseSpanFieldLabel" text="Span"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <ChoiceBox value="15 minutes">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="15 minutes"/>
-                                    <String fx:value="30 minutes"/>
-                                    <String fx:value="45 minutes"/>
-                                    <String fx:value="1 hour"/>
-                                </FXCollections>
-                            </items>
-                        </ChoiceBox>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="exerciseDateBox">
-                        <Label fx:id="exerciseDateFieldLabel" text="Date"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <DatePicker fx:id="exerciseDatePicker" promptText="Format 28/06/2021"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="exerciseButtonBox">
-                        <Button text="Add" onAction="#onAddExerciseButtonClick"/>
-                    </HBox>
-                </HBox>
-
-                <VBox styleClass="profileCalendar">
-                    <HBox styleClass="weekBox">
-                        <HBox styleClass="title">
-                            <Label>Training Sessions</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <HBox styleClass="month">
-                            <Label>December 2021</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <HBox styleClass="buttons">
-                            <Button text="Prev" onAction="#onPreviousExerciseWeekButtonClick"/>
                             <HBox HBox.hgrow="ALWAYS"/>
-                            <Button text="Next" onAction="#onNextExerciseWeekButtonClick"/>
-                        </HBox>
-                    </HBox>
-                    <HBox>
-                        <HBox styleClass="dateBox">
-                            <Label>Mon 11th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox styleClass="dateBox">
-                            <Label>Tue 12th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                            <HBox styleClass="attribute">
+                                <Label text="Gender:" styleClass="attributeLabel"/>
+                                <Label text="Male" styleClass="attributeData"/>
+                            </HBox>
 
-                        <HBox styleClass="dateBox">
-                            <Label>Wed 13th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Thur 14th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Fri 15th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Sat 16th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Sat 17th</Label>
-                        </HBox>
-                    </HBox>
-                    <HBox>
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Calisthenics</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>15 minutes</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Calisthenics</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>15 minutes</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Calisthenics</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>15 minutes</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Calisthenics</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>15 minutes</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Calisthenics</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>15 minutes</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Calisthenics</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>15 minutes</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Calisthenics</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>15 minutes</Label>
-                            </VBox>
-                        </VBox>
-                    </HBox>
-                </VBox>
-
-                <VBox.margin>
-                    <Insets>
-                        <bottom>30</bottom>
-                    </Insets>
-                </VBox.margin>
-            </VBox>
-
-
-
-
-
-
-
-
-            <HBox styleClass="subHeadingBox">
-                <Label text="Meals"/>
-                <HBox HBox.hgrow="ALWAYS"/>
-            </HBox>
-
-            <VBox styleClass="profileMeals">
-                <HBox styleClass="profileForm">
-                    <HBox styleClass="mealNameBox">
-                        <Label fx:id="mealNameFieldLabel" text="Name"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <ChoiceBox value="Benechin">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Benechin"/>
-                                    <String fx:value="Domoda"/>
-                                    <String fx:value="Okra soup"/>
-                                </FXCollections>
-                            </items>
-                        </ChoiceBox>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="mealSizeBox">
-                        <Label fx:id="mealSizeFieldLabel" text="Size"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <ChoiceBox value="Small">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Small"/>
-                                    <String fx:value="Medium"/>
-                                    <String fx:value="Large"/>
-                                </FXCollections>
-                            </items>
-                        </ChoiceBox>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="mealDateBox">
-                        <Label fx:id="mealDateFieldLabel" text="Date"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <DatePicker fx:id="mealDatePicker" promptText="Format 28/06/2021"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="mealButtonBox">
-                        <Button text="Add" onAction="#onAddMealButtonClick"/>
-                    </HBox>
-                </HBox>
-
-                <VBox styleClass="profileCalendar">
-                    <HBox styleClass="weekBox">
-                        <HBox styleClass="title">
-                            <Label>Meal History</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <HBox styleClass="month">
-                            <Label>December 2021</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <HBox styleClass="buttons">
-                            <Button text="Prev" onAction="#onPreviousMealWeekButtonClick"/>
                             <HBox HBox.hgrow="ALWAYS"/>
-                            <Button text="Next" onAction="#onNextMealWeekButtonClick"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Tribe:" styleClass="attributeLabel"/>
+                                <Label text="Serakhulle" styleClass="attributeData"/>
+                            </HBox>
                         </HBox>
-                    </HBox>
-                    <HBox>
-                        <HBox styleClass="dateBox">
-                            <Label>Mon 11th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
 
-                        <HBox styleClass="dateBox">
-                            <Label>Tue 12th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="First name:" styleClass="attributeLabel"/>
+                                <Label text="Mohammed" styleClass="attributeData"/>
+                            </HBox>
 
-                        <HBox styleClass="dateBox">
-                            <Label>Wed 13th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Thur 14th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Fri 15th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Sat 16th</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <HBox styleClass="dateBox">
-                            <Label>Sat 17th</Label>
-                        </HBox>
-                    </HBox>
-                    <HBox>
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Score: 0.6</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Cereal</Label>
-                                <Label>Domoda</Label>
-                                <Label>Bread &amp; butter</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Score: 0.6</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Cereal</Label>
-                                <Label>Domoda</Label>
-                                <Label>Bread &amp; butter</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Score: 0.6</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Cereal</Label>
-                                <Label>Domoda</Label>
-                                <Label>Bread &amp; butter</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Score: 0.6</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Cereal</Label>
-                                <Label>Domoda</Label>
-                                <Label>Bread &amp; butter</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Score: 0.6</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Cereal</Label>
-                                <Label>Domoda</Label>
-                                <Label>Bread &amp; butter</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Score: 0.6</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Cereal</Label>
-                                <Label>Domoda</Label>
-                                <Label>Bread &amp; butter</Label>
-                            </VBox>
-                        </VBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-
-                        <VBox styleClass="historyBox">
-                            <VBox>
-                                <Label>Score: 0.6</Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Cereal</Label>
-                                <Label>Domoda</Label>
-                                <Label>Bread &amp; butter</Label>
-                            </VBox>
-                        </VBox>
-                    </HBox>
-                </VBox>
-
-                <VBox.margin>
-                    <Insets>
-                        <bottom>30</bottom>
-                    </Insets>
-                </VBox.margin>
-            </VBox>
-
-
-
-
-
-
-
-
-            <HBox styleClass="subHeadingBox">
-                <Label text="Reports"/>
-                <HBox HBox.hgrow="ALWAYS"/>
-            </HBox>
-
-            <VBox styleClass="profileMeals">
-                <HBox styleClass="profileForm">
-                    <HBox styleClass="reportDescriptionBox">
-                        <Label fx:id="reportDescriptionFieldLabel" text="Description"/>
-                        <TextArea fx:id="reportDescriptionTextArea" promptText="Description"/>
-                    </HBox>
-
-                    <HBox HBox.hgrow="ALWAYS"/>
-
-                    <HBox styleClass="reportButtonBox">
-                        <Button text="Add" onAction="#onAddReportButtonClick"/>
-                    </HBox>
-                </HBox>
-
-                <VBox styleClass="profileCalendar">
-                    <HBox styleClass="weekBox">
-                        <HBox styleClass="title">
-                            <Label>Report History</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <HBox styleClass="month">
-                            <Label>December 2021</Label>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                        <HBox styleClass="buttons">
-                            <Button text="Prev" onAction="#onPreviousWeekReportsButtonClick"/>
                             <HBox HBox.hgrow="ALWAYS"/>
-                            <Button text="Next" onAction="#onNextWeekReportsButtonClick"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Middle name:" styleClass="attributeLabel"/>
+                                <Label text="Lamin" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Last name:" styleClass="attributeLabel"/>
+                                <Label text="Jammeh" styleClass="attributeData"/>
+                            </HBox>
                         </HBox>
-                    </HBox>
-                    <HBox>
-                        <HBox styleClass="longDateBox">
-                            <Label>Mon 11th</Label>
+
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Email address:" styleClass="attributeLabel"/>
+                                <Label text="mo@gmail.com" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Phone number:" styleClass="attributeLabel"/>
+                                <Label text="07506 259 330" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Relevant link:" styleClass="attributeLabel"/>
+                                <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>
+                            </HBox>
                         </HBox>
+
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Date of birth:" styleClass="attributeLabel"/>
+                                <Label text="19th June 1996" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Place of birth:" styleClass="attributeLabel"/>
+                                <Label text="Greenwich, U.K." styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Hospital:" styleClass="attributeLabel"/>
+                                <Label text="Mansa Konko" styleClass="attributeData"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Compound:" styleClass="attributeLabel"/>
+                                <Label text="Jammeh Kunda" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="City / Town:" styleClass="attributeLabel"/>
+                                <Label text="Tallinding Kungjang" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Region:" styleClass="attributeLabel"/>
+                                <Label text="Western Region" styleClass="attributeData"/>
+                            </HBox>
+                        </HBox>
+
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
+
+
+
+
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Other Details"/>
                         <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
                     </HBox>
-                    <HBox>
-                        <VBox styleClass="longHistoryBox">
-                            <VBox>
-                                <Label lineSpacing="14" wrapText="true">
+
+                    <VBox styleClass="profileOtherDetails">
+                        <HBox>
+                            <HBox>
+                                <Label lineSpacing="15" wrapText="true" styleClass="attributeData">
                                     Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
                                 </Label>
-                            </VBox>
-                            <VBox>
-                                <Label>Dr. Ismaila Drammeh</Label>
-                            </VBox>
-                        </VBox>
+                            </HBox>
+                        </HBox>
+
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
+
+
+
+
+
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Exercises"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
                     </HBox>
+
+                    <VBox styleClass="profileExercises">
+                        <HBox styleClass="profileForm">
+                            <HBox styleClass="exerciseTypeBox">
+                                <Label fx:id="exerciseTypeFieldLabel" text="Type"/>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <ChoiceBox value="Calisthenics">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Calisthenics"/>
+                                            <String fx:value="Weight Lifting"/>
+                                            <String fx:value="Running"/>
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="exerciseSpanBox">
+                                <Label fx:id="exerciseSpanFieldLabel" text="Span"/>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <ChoiceBox value="15 minutes">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="15 minutes"/>
+                                            <String fx:value="30 minutes"/>
+                                            <String fx:value="45 minutes"/>
+                                            <String fx:value="1 hour"/>
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="exerciseDateBox">
+                                <Label fx:id="exerciseDateFieldLabel" text="Date"/>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <DatePicker fx:id="exerciseDatePicker" promptText="Format 28/06/2021"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="exerciseButtonBox">
+                                <Button text="Add" onAction="#onAddExerciseButtonClick"/>
+                            </HBox>
+                        </HBox>
+
+                        <VBox styleClass="profileCalendar">
+                            <HBox styleClass="weekBox">
+                                <HBox styleClass="title">
+                                    <Label>Training Sessions</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <HBox styleClass="month">
+                                    <Label>December 2021</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <HBox styleClass="buttons">
+                                    <Button text="Prev" onAction="#onPreviousExerciseWeekButtonClick"/>
+                                    <HBox HBox.hgrow="ALWAYS"/>
+                                    <Button text="Next" onAction="#onNextExerciseWeekButtonClick"/>
+                                </HBox>
+                            </HBox>
+                            <HBox>
+                                <HBox styleClass="dateBox">
+                                    <Label>Mon 11th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Tue 12th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Wed 13th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Thur 14th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Fri 15th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Sat 16th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Sat 17th</Label>
+                                </HBox>
+                            </HBox>
+                            <HBox>
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Calisthenics</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>15 minutes</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Calisthenics</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>15 minutes</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Calisthenics</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>15 minutes</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Calisthenics</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>15 minutes</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Calisthenics</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>15 minutes</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Calisthenics</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>15 minutes</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Calisthenics</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>15 minutes</Label>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
+
+
+
+
+
+
+
+
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Meals"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                    </HBox>
+
+                    <VBox styleClass="profileMeals">
+                        <HBox styleClass="profileForm">
+                            <HBox styleClass="mealNameBox">
+                                <Label fx:id="mealNameFieldLabel" text="Name"/>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <ChoiceBox value="Benechin">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Benechin"/>
+                                            <String fx:value="Domoda"/>
+                                            <String fx:value="Okra soup"/>
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="mealSizeBox">
+                                <Label fx:id="mealSizeFieldLabel" text="Size"/>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <ChoiceBox value="Small">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Small"/>
+                                            <String fx:value="Medium"/>
+                                            <String fx:value="Large"/>
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="mealDateBox">
+                                <Label fx:id="mealDateFieldLabel" text="Date"/>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <DatePicker fx:id="mealDatePicker" promptText="Format 28/06/2021"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="mealButtonBox">
+                                <Button text="Add" onAction="#onAddMealButtonClick"/>
+                            </HBox>
+                        </HBox>
+
+                        <VBox styleClass="profileCalendar">
+                            <HBox styleClass="weekBox">
+                                <HBox styleClass="title">
+                                    <Label>Meal History</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <HBox styleClass="month">
+                                    <Label>December 2021</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <HBox styleClass="buttons">
+                                    <Button text="Prev" onAction="#onPreviousMealWeekButtonClick"/>
+                                    <HBox HBox.hgrow="ALWAYS"/>
+                                    <Button text="Next" onAction="#onNextMealWeekButtonClick"/>
+                                </HBox>
+                            </HBox>
+                            <HBox>
+                                <HBox styleClass="dateBox">
+                                    <Label>Mon 11th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Tue 12th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Wed 13th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Thur 14th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Fri 15th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Sat 16th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <HBox styleClass="dateBox">
+                                    <Label>Sat 17th</Label>
+                                </HBox>
+                            </HBox>
+                            <HBox>
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Score: 0.6</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Cereal</Label>
+                                        <Label>Domoda</Label>
+                                        <Label>Bread &amp; butter</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Score: 0.6</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Cereal</Label>
+                                        <Label>Domoda</Label>
+                                        <Label>Bread &amp; butter</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Score: 0.6</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Cereal</Label>
+                                        <Label>Domoda</Label>
+                                        <Label>Bread &amp; butter</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Score: 0.6</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Cereal</Label>
+                                        <Label>Domoda</Label>
+                                        <Label>Bread &amp; butter</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Score: 0.6</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Cereal</Label>
+                                        <Label>Domoda</Label>
+                                        <Label>Bread &amp; butter</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Score: 0.6</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Cereal</Label>
+                                        <Label>Domoda</Label>
+                                        <Label>Bread &amp; butter</Label>
+                                    </VBox>
+                                </VBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="historyBox">
+                                    <VBox>
+                                        <Label>Score: 0.6</Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Cereal</Label>
+                                        <Label>Domoda</Label>
+                                        <Label>Bread &amp; butter</Label>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
+
+
+
+
+
+
+
+
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Reports"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                    </HBox>
+
+                    <VBox styleClass="profileMeals">
+                        <HBox styleClass="profileForm">
+                            <HBox styleClass="reportDescriptionBox">
+                                <Label fx:id="reportDescriptionFieldLabel" text="Description"/>
+                                <TextArea fx:id="reportDescriptionTextArea" promptText="Description"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="reportButtonBox">
+                                <Button text="Add" onAction="#onAddReportButtonClick"/>
+                            </HBox>
+                        </HBox>
+
+                        <VBox styleClass="profileCalendar">
+                            <HBox styleClass="weekBox">
+                                <HBox styleClass="title">
+                                    <Label>Report History</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <HBox styleClass="month">
+                                    <Label>December 2021</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                                <HBox styleClass="buttons">
+                                    <Button text="Prev" onAction="#onPreviousWeekReportsButtonClick"/>
+                                    <HBox HBox.hgrow="ALWAYS"/>
+                                    <Button text="Next" onAction="#onNextWeekReportsButtonClick"/>
+                                </HBox>
+                            </HBox>
+                            <HBox>
+                                <HBox styleClass="longDateBox">
+                                    <Label>Mon 11th</Label>
+                                </HBox>
+                                <HBox HBox.hgrow="ALWAYS"/>
+                            </HBox>
+                            <HBox>
+                                <VBox styleClass="longHistoryBox">
+                                    <VBox>
+                                        <Label lineSpacing="14" wrapText="true">
+                                            Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
+                                        </Label>
+                                    </VBox>
+                                    <VBox>
+                                        <Label>Dr. Ismaila Drammeh</Label>
+                                    </VBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
+
+
+
+
+
+
+
+
+
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Actions"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                    </HBox>
+
+                    <VBox styleClass="profileAction">
+                        <HBox >
+                            <Button text="Delete My Account" onAction="#onDeletePatientButtonClick"/>
+                        </HBox>
+                    </VBox>
                 </VBox>
-
-                <VBox.margin>
-                    <Insets>
-                        <bottom>30</bottom>
-                    </Insets>
-                </VBox.margin>
-            </VBox>
-
-
-
-
-
-
-
-
-
-            <HBox styleClass="subHeadingBox">
-                <Label text="Actions"/>
-                <HBox HBox.hgrow="ALWAYS"/>
-            </HBox>
-
-            <VBox styleClass="profileAction">
-                <HBox >
-                    <Button text="Delete My Account" onAction="#onDeletePatientButtonClick"/>
-                </HBox>
             </VBox>
         </VBox>
-    </VBox>
+    </ScrollPane>
 </VBox>
 

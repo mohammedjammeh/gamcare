@@ -47,6 +47,10 @@
 /****************
     Body
 ****************/
+.outerBodyBox {
+    -fx-padding: 0;
+}
+
 .bodyBox {
     -fx-alignment: top-center;
     -fx-padding: 25px 40px;
@@ -329,40 +333,8 @@
 
 
 /****************
-    Hospital
+    Profile
 ****************/
-/** Index **/
-.hospitalIndexBodyBox {
-    -fx-spacing: 30px;
-}
-
-.hospitalIndexBodyBox Button {
-    -fx-cursor: hand;
-    -fx-min-width: 199px;
-    -fx-min-height: 150px;
-    -fx-background-color: #dbdbdb;
-    -fx-font-size: 15px;
-}
-
-.hospitalIndexBodyBox Button:hover {
-    -fx-background-color: #cccccc;
-}
-
-
-/****************
-    Doctor
-****************/
-/** Create **/
-.addDoctorsBox Label {
-    -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
-}
-
-
-/****************
-    Patient
-****************/
-/** Show **/
 .profileMain,
 .profileOtherDetails,
 .profileAction,
@@ -419,66 +391,6 @@
 /****************
   Profile Form
 ****************/
-.exerciseTypeBox,
-.exerciseSpanBox,
-.exerciseDateBox,
-.mealNameBox,
-.mealSizeBox,
-.mealDateBox {
-    -fx-min-width: 225px;
-}
-
-.reportDescriptionBox {
-    -fx-min-width: 760px;
-}
-
-.exerciseButtonBox,
-.mealButtonBox,
-.reportButtonBox {
-    -fx-min-width: 60px;
-    -fx-padding: 1.5px 0 0 0;
-}
-
-.exerciseTypeBox > Label,
-.exerciseSpanBox > Label,
-.exerciseDateBox > Label,
-.mealNameBox > Label,
-.mealSizeBox > Label,
-.mealDateBox > Label,
-.reportDescriptionBox > Label {
-    -fx-min-width: 40px;
-    -fx-max-width: 40px;
-    -fx-padding: 11px 0 0 0;
-    -fx-text-fill: #262626;
-}
-
-.reportDescriptionBox > Label {
-    -fx-min-width: 85px;
-    -fx-max-width: 85px;
-}
-
-.exerciseButtonBox Button,
-.mealButtonBox Button,
-.reportButtonBox Button {
-    -fx-min-width: 60px;
-    -fx-padding: 8px 0;
-    -fx-cursor: hand;
-    -fx-background-radius: 3px;
-    -fx-border-radius: 3px;
-    -fx-background-color: #d9d9d9;
-    -fx-text-fill: black;
-}
-
-.exerciseButtonBox Button:hover,
-.mealButtonBox Button:hover,
-.reportButtonBox Button:hover {
-    -fx-background-color: #c4c4c4;
-}
-
-.profileForm ChoiceBox Label {
-    -fx-text-fill: #262626;
-}
-
 .profileForm .text-field,
 .profileForm ChoiceBox,
 .profileForm TextArea {
@@ -497,6 +409,10 @@
 
 .profileForm ChoiceBox {
     -fx-padding: 5px 4px;
+}
+
+.profileForm ChoiceBox Label {
+    -fx-text-fill: #262626;
 }
 
 .profileForm TextArea {
@@ -534,6 +450,62 @@
 
 .profileForm .date-picker:focused > .arrow-button {
     -fx-background-color: lightgrey;
+}
+
+.exerciseTypeBox,
+.exerciseSpanBox,
+.exerciseDateBox,
+.mealNameBox,
+.mealSizeBox,
+.mealDateBox {
+    -fx-min-width: 225px;
+}
+
+.reportDescriptionBox {
+    -fx-min-width: 760px;
+}
+
+.exerciseTypeBox > Label,
+.exerciseSpanBox > Label,
+.exerciseDateBox > Label,
+.mealNameBox > Label,
+.mealSizeBox > Label,
+.mealDateBox > Label,
+.reportDescriptionBox > Label {
+    -fx-min-width: 40px;
+    -fx-max-width: 40px;
+    -fx-padding: 11px 0 0 0;
+    -fx-text-fill: #262626;
+}
+
+.reportDescriptionBox > Label {
+    -fx-min-width: 85px;
+    -fx-max-width: 85px;
+}
+
+.exerciseButtonBox,
+.mealButtonBox,
+.reportButtonBox {
+    -fx-min-width: 60px;
+    -fx-padding: 1.5px 0 0 0;
+}
+
+.exerciseButtonBox Button,
+.mealButtonBox Button,
+.reportButtonBox Button {
+    -fx-min-width: 60px;
+    -fx-padding: 8px 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: black;
+}
+
+.exerciseButtonBox Button:hover,
+.mealButtonBox Button:hover,
+.reportButtonBox Button:hover {
+    -fx-background-color: #c4c4c4;
 }
 
 
@@ -614,4 +586,35 @@ Profile Calendar
 .profileCalendar .historyBox VBox Label,
 .profileCalendar .longHistoryBox VBox Label {
     -fx-padding: 12px 0 0 0;
+}
+
+
+/****************
+    Hospital
+****************/
+/** Index **/
+.hospitalIndexBodyBox {
+    -fx-spacing: 30px;
+}
+
+.hospitalIndexBodyBox Button {
+    -fx-cursor: hand;
+    -fx-min-width: 199px;
+    -fx-min-height: 150px;
+    -fx-background-color: #dbdbdb;
+    -fx-font-size: 15px;
+}
+
+.hospitalIndexBodyBox Button:hover {
+    -fx-background-color: #cccccc;
+}
+
+
+/****************
+    Doctor
+****************/
+/** Create **/
+.addDoctorsBox Label {
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5px 0;
 }
