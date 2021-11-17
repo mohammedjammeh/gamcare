@@ -337,9 +337,10 @@
 ****************/
 .profileMain,
 .profileOtherDetails,
-.profileAction,
 .profileExercises,
-.profileMeals {
+.profileMeals,
+.profileReports,
+.profileAction {
     -fx-background-color: white;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
@@ -350,14 +351,15 @@
     -fx-padding: 30px 30px 10px 30px;
 }
 
-.profileOtherDetails {
+.profileOtherDetails,
+.profileAction {
     -fx-padding: 30px;
 }
 
-.profileAction,
+.profileReports,
 .profileExercises,
 .profileMeals {
-    -fx-padding: 25px 30px;
+    -fx-padding: 30px 30px 35px 30px;
 }
 
 
@@ -498,14 +500,14 @@
     -fx-cursor: hand;
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;
-    -fx-background-color: #d9d9d9;
-    -fx-text-fill: black;
+    -fx-background-color: #e6e6e6;
+    -fx-text-fill: #262626;
 }
 
 .exerciseButtonBox Button:hover,
 .mealButtonBox Button:hover,
 .reportButtonBox Button:hover {
-    -fx-background-color: #c4c4c4;
+    -fx-background-color: #cccccc;
 }
 
 
@@ -535,12 +537,12 @@ Profile Calendar
     -fx-cursor: hand;
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;
-    -fx-background-color: #d9d9d9;
+    -fx-background-color: #e6e6e6;
     -fx-text-fill: #262626;
 }
 
 .profileCalendar .weekBox Button:hover {
-    -fx-background-color: #c4c4c4;
+    -fx-background-color: #cccccc;
 }
 
 .profileCalendar .dateBox {

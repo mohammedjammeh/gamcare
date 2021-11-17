@@ -154,7 +154,7 @@
                     <VBox styleClass="profileOtherDetails">
                         <HBox>
                             <HBox>
-                                <Label lineSpacing="15" wrapText="true" styleClass="attributeData">
+                                <Label lineSpacing="14" wrapText="true" styleClass="attributeData">
                                     Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
                                 </Label>
                             </HBox>
@@ -472,7 +472,7 @@
                                     <VBox>
                                         <Label>Cereal</Label>
                                         <Label>Domoda</Label>
-                                        <Label>Bread &amp; butter</Label>
+                                        <Label>Nyebbeh</Label>
                                     </VBox>
                                 </VBox>
                                 <HBox HBox.hgrow="ALWAYS"/>
@@ -484,7 +484,7 @@
                                     <VBox>
                                         <Label>Cereal</Label>
                                         <Label>Domoda</Label>
-                                        <Label>Bread &amp; butter</Label>
+                                        <Label>Nyebbeh</Label>
                                     </VBox>
                                 </VBox>
                                 <HBox HBox.hgrow="ALWAYS"/>
@@ -496,7 +496,7 @@
                                     <VBox>
                                         <Label>Cereal</Label>
                                         <Label>Domoda</Label>
-                                        <Label>Bread &amp; butter</Label>
+                                        <Label>Nyebbeh</Label>
                                     </VBox>
                                 </VBox>
                                 <HBox HBox.hgrow="ALWAYS"/>
@@ -508,7 +508,7 @@
                                     <VBox>
                                         <Label>Cereal</Label>
                                         <Label>Domoda</Label>
-                                        <Label>Bread &amp; butter</Label>
+                                        <Label>Nyebbeh</Label>
                                     </VBox>
                                 </VBox>
                                 <HBox HBox.hgrow="ALWAYS"/>
@@ -520,7 +520,7 @@
                                     <VBox>
                                         <Label>Cereal</Label>
                                         <Label>Domoda</Label>
-                                        <Label>Bread &amp; butter</Label>
+                                        <Label>Nyebbeh</Label>
                                     </VBox>
                                 </VBox>
                                 <HBox HBox.hgrow="ALWAYS"/>
@@ -532,7 +532,7 @@
                                     <VBox>
                                         <Label>Cereal</Label>
                                         <Label>Domoda</Label>
-                                        <Label>Bread &amp; butter</Label>
+                                        <Label>Nyebbeh</Label>
                                     </VBox>
                                 </VBox>
                                 <HBox HBox.hgrow="ALWAYS"/>
@@ -544,7 +544,7 @@
                                     <VBox>
                                         <Label>Cereal</Label>
                                         <Label>Domoda</Label>
-                                        <Label>Bread &amp; butter</Label>
+                                        <Label>Nyebbeh</Label>
                                     </VBox>
                                 </VBox>
                             </HBox>
@@ -569,7 +569,7 @@
                         <HBox HBox.hgrow="ALWAYS"/>
                     </HBox>
 
-                    <VBox styleClass="profileMeals">
+                    <VBox styleClass="profileReports">
                         <HBox styleClass="profileForm">
                             <HBox styleClass="reportDescriptionBox">
                                 <Label fx:id="reportDescriptionFieldLabel" text="Description"/>
