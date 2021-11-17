@@ -4,6 +4,12 @@ import javafx.fxml.FXML;
 
 public class Show {
     @FXML
+    protected void onEditHospitalButtonClick() {
+        System.out.println("You have now edit a hospital.");
+    }
+
+
+    @FXML
     protected void onAddPatientButtonClick() {
         System.out.println("You have now added a patient.");
     }

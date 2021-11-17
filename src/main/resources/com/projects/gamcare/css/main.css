@@ -323,12 +323,12 @@
     -fx-cursor: hand;
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;
-    -fx-background-color: #d3d3d3;
-    -fx-text-fill: #404040;
+    -fx-background-color: #e6e6e6;
+    -fx-text-fill: #262626;
 }
 
 .tableDisplay HBox.action Button:hover {
-    -fx-background-color: #bfbfbf;
+    -fx-background-color: #cccccc;
 }
 
 

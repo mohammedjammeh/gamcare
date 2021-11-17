@@ -19,6 +19,119 @@
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
                     <HBox styleClass="subHeadingBox">
+                        <Label text="Main"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
+                    </HBox>
+
+                    <VBox styleClass="profileMain">
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Name:" styleClass="attributeLabel"/>
+                                <Label text="Mansa Konko"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Size:" styleClass="attributeLabel"/>
+                                <Label text="Large"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Lead doctor:" styleClass="attributeLabel"/>
+                                <Label text="Bubacarr Jallow"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Email address:" styleClass="attributeLabel"/>
+                                <Label text="mansa@gmail.com"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Number:" styleClass="attributeLabel"/>
+                                <Label text="07506 259 330"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Relevant link:" styleClass="attributeLabel"/>
+                                <Label text="www.mansakonko.com"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Compound:" styleClass="attributeLabel"/>
+                                <Label text="Jammeh Kunda"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="City / Town:" styleClass="attributeLabel"/>
+                                <Label text="Tallinding Kungjang"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Region:" styleClass="attributeLabel"/>
+                                <Label text="Western Region"/>
+                            </HBox>
+                        </HBox>
+
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
+
+
+
+
+
+
+
+
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Other Details"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
+                    </HBox>
+
+                    <VBox styleClass="profileOtherDetails">
+                        <HBox>
+                            <HBox>
+                                <Label lineSpacing="14" wrapText="true" styleClass="attributeData">
+                                    Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
+                                </Label>
+                            </HBox>
+                        </HBox>
+
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
+
+
+
+
+
+
+
+
+                    <HBox styleClass="subHeadingBox">
                         <Label text="Patients"/>
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Add" onAction="#onAddPatientButtonClick"/>
@@ -167,6 +280,12 @@
                             </Insets>
                         </VBox.margin>
                     </VBox>
+
+
+
+
+
+
 
 
                     <HBox styleClass="subHeadingBox">
