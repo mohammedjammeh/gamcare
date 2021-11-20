@@ -14,17 +14,17 @@ public class Main extends Application {
         try {
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
 
-            // PREPARE STATMENT
-            String selectSql = "SELECT * FROM users WHERE email = ?";
-            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
-            myStmt.setString(1, "mohammedjammeh@yahoo.com");
-            myStmt.executeQuery();
-
-            ResultSet myRs = myStmt.executeQuery("SELECT * FROM users");
-
-            while (myRs.next()) {
-                System.out.println(myRs.getString("first_name"));
-            }
+//            // PREPARE STATMENT
+//            String selectSql = "SELECT * FROM users WHERE email = ?";
+//            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
+//            myStmt.setString(1, "mohammedjammeh@yahoo.com");
+//            myStmt.executeQuery();
+//
+//            ResultSet myRs = myStmt.executeQuery("SELECT * FROM users");
+//
+//            while (myRs.next()) {
+//                System.out.println(myRs.getString("first_name"));
+//            }
 
 
 
