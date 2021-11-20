@@ -339,6 +339,10 @@
 /****************
     Profile
 ****************/
+.profileIncludeBox {
+    -fx-spacing: 20px;
+}
+
 .profileMain,
 .profileOtherDetails,
 .profileExercises,

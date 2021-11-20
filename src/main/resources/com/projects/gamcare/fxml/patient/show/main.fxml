@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.geometry.Insets?>
+
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.projects.gamcare.controllers.patient.show.Main"
+    styleClass="profileIncludeBox"
+>
+    <HBox styleClass="subHeadingBox">
+        <Label text="Profile"/>
+        <HBox HBox.hgrow="ALWAYS"/>
+        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+    </HBox>
+
+    <VBox styleClass="profileMain">
+        <HBox>
+            <HBox styleClass="attribute">
+                <Label text="Title:" styleClass="attributeLabel"/>
+                <Label text="Mr." styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Gender:" styleClass="attributeLabel"/>
+                <Label text="Male" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Tribe:" styleClass="attributeLabel"/>
+                <Label text="Serakhulle" styleClass="attributeData"/>
+            </HBox>
+        </HBox>
+
+        <HBox>
+            <HBox styleClass="attribute">
+                <Label text="First name:" styleClass="attributeLabel"/>
+                <Label text="Mohammed" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Middle name:" styleClass="attributeLabel"/>
+                <Label text="Lamin" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Last name:" styleClass="attributeLabel"/>
+                <Label text="Jammeh" styleClass="attributeData"/>
+            </HBox>
+        </HBox>
+
+        <HBox>
+            <HBox styleClass="attribute">
+                <Label text="Date of birth:" styleClass="attributeLabel"/>
+                <Label text="19th June 1996" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Place of birth:" styleClass="attributeLabel"/>
+                <Label text="Greenwich, U.K." styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Hospital:" styleClass="attributeLabel"/>
+                <Label text="Mansa Konko" styleClass="attributeData"/>
+            </HBox>
+        </HBox>
+
+        <HBox>
+            <HBox styleClass="attribute">
+                <Label text="Blood type:" styleClass="attributeLabel"/>
+                <Label text="AB" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Body weight:" styleClass="attributeLabel"/>
+                <Label text="110 kg" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Height:" styleClass="attributeLabel"/>
+                <Label text="183 cm" styleClass="attributeData"/>
+            </HBox>
+        </HBox>
+
+        <HBox>
+            <HBox styleClass="attribute">
+                <Label text="Email address:" styleClass="attributeLabel"/>
+                <Label text="mo@gmail.com" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Phone number:" styleClass="attributeLabel"/>
+                <Label text="07506 259 330" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Relevant link:" styleClass="attributeLabel"/>
+                <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>
+            </HBox>
+        </HBox>
+
+
+        <HBox>
+            <HBox styleClass="attribute">
+                <Label text="Compound:" styleClass="attributeLabel"/>
+                <Label text="Jammeh Kunda" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="City / Town:" styleClass="attributeLabel"/>
+                <Label text="Tallinding Kungjang" styleClass="attributeData"/>
+            </HBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="attribute">
+                <Label text="Region:" styleClass="attributeLabel"/>
+                <Label text="Western Region" styleClass="attributeData"/>
+            </HBox>
+        </HBox>
+
+        <VBox.margin>
+            <Insets>
+                <bottom>30</bottom>
+            </Insets>
+        </VBox.margin>
+    </VBox>
+
+
+
+
+    <HBox styleClass="subHeadingBox">
+        <Label text="Other Details"/>
+        <HBox HBox.hgrow="ALWAYS"/>
+        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+    </HBox>
+
+    <VBox styleClass="profileOtherDetails">
+        <HBox>
+            <HBox>
+                <Label lineSpacing="14" wrapText="true" styleClass="attributeData">
+                    Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
+                </Label>
+            </HBox>
+        </HBox>
+
+        <VBox.margin>
+            <Insets>
+                <bottom>30</bottom>
+            </Insets>
+        </VBox.margin>
+    </VBox>
+</VBox>
