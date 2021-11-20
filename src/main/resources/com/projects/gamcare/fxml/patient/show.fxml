@@ -74,6 +74,48 @@
 
                         <HBox>
                             <HBox styleClass="attribute">
+                                <Label text="Date of birth:" styleClass="attributeLabel"/>
+                                <Label text="19th June 1996" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Place of birth:" styleClass="attributeLabel"/>
+                                <Label text="Greenwich, U.K." styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Hospital:" styleClass="attributeLabel"/>
+                                <Label text="Mansa Konko" styleClass="attributeData"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox>
+                            <HBox styleClass="attribute">
+                                <Label text="Blood type:" styleClass="attributeLabel"/>
+                                <Label text="AB" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Body weight:" styleClass="attributeLabel"/>
+                                <Label text="110 kg" styleClass="attributeData"/>
+                            </HBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <HBox styleClass="attribute">
+                                <Label text="Height:" styleClass="attributeLabel"/>
+                                <Label text="183 cm" styleClass="attributeData"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox>
+                            <HBox styleClass="attribute">
                                 <Label text="Email address:" styleClass="attributeLabel"/>
                                 <Label text="mo@gmail.com" styleClass="attributeData"/>
                             </HBox>
@@ -93,26 +135,6 @@
                             </HBox>
                         </HBox>
 
-                        <HBox>
-                            <HBox styleClass="attribute">
-                                <Label text="Date of birth:" styleClass="attributeLabel"/>
-                                <Label text="19th June 1996" styleClass="attributeData"/>
-                            </HBox>
-
-                            <HBox HBox.hgrow="ALWAYS"/>
-
-                            <HBox styleClass="attribute">
-                                <Label text="Place of birth:" styleClass="attributeLabel"/>
-                                <Label text="Greenwich, U.K." styleClass="attributeData"/>
-                            </HBox>
-
-                            <HBox HBox.hgrow="ALWAYS"/>
-
-                            <HBox styleClass="attribute">
-                                <Label text="Hospital:" styleClass="attributeLabel"/>
-                                <Label text="Mansa Konko" styleClass="attributeData"/>
-                            </HBox>
-                        </HBox>
 
                         <HBox>
                             <HBox styleClass="attribute">
