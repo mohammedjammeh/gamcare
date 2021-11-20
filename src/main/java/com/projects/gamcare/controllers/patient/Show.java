@@ -113,9 +113,4 @@ public class Show {
     protected void onEditPatientButtonClick() {
         System.out.println("You can now edit patient profile.");
     }
-
-    @FXML
-    protected void onDeletePatientButtonClick() {
-        System.out.println("You have now deleted patient profile.");
-    }
 }

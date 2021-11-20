@@ -189,25 +189,14 @@
                         </VBox.margin>
                     </VBox>
 
-
                     <fx:include source="show/exercises.fxml"/>
 
                     <fx:include source="show/meals.fxml"/>
 
                     <fx:include source="show/reports.fxml"/>
 
+                    <fx:include source="show/actions.fxml"/>
 
-
-                    <HBox styleClass="subHeadingBox">
-                        <Label text="Actions"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                    </HBox>
-
-                    <VBox styleClass="profileAction">
-                        <HBox >
-                            <Button text="Delete My Account" onAction="#onDeletePatientButtonClick"/>
-                        </HBox>
-                    </VBox>
                 </VBox>
             </VBox>
         </VBox>
