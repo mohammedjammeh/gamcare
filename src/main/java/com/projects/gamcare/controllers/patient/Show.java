@@ -109,33 +109,6 @@ public class Show {
 
 
 
-    @FXML
-    private Label exerciseTypeFieldLabel;
-
-    @FXML
-    private Label exerciseSpanFieldLabel;
-
-    @FXML
-    private Label exerciseDateFieldLabel;
-
-    @FXML
-    private DatePicker exerciseDatePicker;
-
-
-
-    @FXML
-    private Label mealNameFieldLabel;
-
-    @FXML
-    private Label mealSizeFieldLabel;
-
-    @FXML
-    private Label mealDateFieldLabel;
-
-    @FXML
-    private DatePicker mealDatePicker;
-
-
 
     @FXML
     private Label reportDescriptionFieldLabel;
@@ -155,39 +128,6 @@ public class Show {
         System.out.println("You have now deleted patient profile.");
     }
 
-
-
-    @FXML
-    protected void onAddExerciseButtonClick() {
-        System.out.println("You have now added an exercise session.");
-    }
-
-    @FXML
-    protected void onPreviousExerciseWeekButtonClick() {
-        System.out.println("You are now looking at the previous exercise week.");
-    }
-
-    @FXML
-    protected void onNextExerciseWeekButtonClick() {
-        System.out.println("You are now looking at the next exercise week.");
-    }
-
-
-
-    @FXML
-    protected void onAddMealButtonClick() {
-        System.out.println("You have now added a meal.");
-    }
-
-    @FXML
-    protected void onPreviousMealWeekButtonClick() {
-        System.out.println("You are now looking at the previous meal week.");
-    }
-
-    @FXML
-    protected void onNextMealWeekButtonClick() {
-        System.out.println("You are now looking at the next meal week.");
-    }
 
 
 
