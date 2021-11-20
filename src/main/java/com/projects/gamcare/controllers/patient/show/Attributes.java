@@ -7,7 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-public class Main {
+public class Attributes {
 
     @FXML
     private VBox errorBox;
