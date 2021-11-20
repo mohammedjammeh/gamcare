@@ -47,6 +47,41 @@ public class Create {
 
 
 
+
+    @FXML
+    private Label dateOfBirthFieldLabel;
+
+    @FXML
+    private DatePicker dateOfBirthPicker;
+
+    @FXML
+    private Label placeOfBirthFieldLabel;
+
+    @FXML
+    private TextField placeOfBirthTextField;
+
+    @FXML
+    private Label currentHospitalLabel;
+
+
+
+    @FXML
+    private Label weightFieldLabel;
+
+    @FXML
+    private TextField weightTextField;
+
+    @FXML
+    private Label heightFieldLabel;
+
+    @FXML
+    private TextField heightTextField;
+
+    @FXML
+    private Label bloodTypeFieldLabel;
+
+
+
     @FXML
     private Label emailFieldLabel;
 
@@ -65,22 +100,6 @@ public class Create {
     @FXML
     private TextField relevantLinkTextField;
 
-
-
-    @FXML
-    private Label dateOfBirthFieldLabel;
-
-    @FXML
-    private DatePicker dateOfBirthPicker;
-
-    @FXML
-    private Label placeOfBirthFieldLabel;
-
-    @FXML
-    private TextField placeOfBirthTextField;
-
-    @FXML
-    private Label currentHospitalLabel;
 
 
 

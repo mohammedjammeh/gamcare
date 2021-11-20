@@ -110,13 +110,17 @@
 .form .genderBox,
 .form .tribeBox,
 
-.form .emailBox,
-.form .phoneNumberBox,
-.form .relevantLinkBox,
-
 .form .placeOfBirthBox,
 .form .dateOfBirthBox,
 .form .currentHospitalBox,
+
+.form .weightBox,
+.form .heightBox,
+.form .bloodTypeBox,
+
+.form .emailBox,
+.form .phoneNumberBox,
+.form .relevantLinkBox,
 
 .form .compoundNameBox,
 .form .townBox,

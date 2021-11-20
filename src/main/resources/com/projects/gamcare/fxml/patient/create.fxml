@@ -102,27 +102,6 @@
                             </HBox>
 
                             <HBox>
-                                <VBox styleClass="emailBox">
-                                    <Label fx:id="emailFieldLabel" text="Email"/>
-                                    <TextField fx:id="emailTextField" promptText="Email"/>
-                                </VBox>
-
-                                <HBox HBox.hgrow="ALWAYS"/>
-
-                                <VBox styleClass="phoneNumberBox">
-                                    <Label fx:id="phoneNumberFieldLabel" text="Phone number"/>
-                                    <TextField fx:id="phoneNumberTextField" promptText="Phone number"/>
-                                </VBox>
-
-                                <HBox HBox.hgrow="ALWAYS"/>
-
-                                <VBox styleClass="relevantLinkBox">
-                                    <Label fx:id="relevantLinkFieldLabel" text="Relevant link"/>
-                                    <TextField fx:id="relevantLinkTextField" promptText="Relevant link"/>
-                                </VBox>
-                            </HBox>
-
-                            <HBox>
                                 <VBox styleClass="currentHospitalBox">
                                     <Label fx:id="currentHospitalLabel" text="Current hospital"/>
                                     <ChoiceBox value="Mansa Konko">
@@ -147,6 +126,57 @@
                                 <VBox styleClass="dateOfBirthBox">
                                     <Label fx:id="dateOfBirthFieldLabel" text="Date of birth"/>
                                     <DatePicker fx:id="dateOfBirthPicker" promptText="Date of birth"/>
+                                </VBox>
+                            </HBox>
+
+                            <HBox>
+                                <VBox styleClass="weightBox">
+                                    <Label fx:id="weightFieldLabel" text="Weight"/>
+                                    <TextField fx:id="weightTextField" promptText="Weight"/>
+                                </VBox>
+
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="heightBox">
+                                    <Label fx:id="heightFieldLabel" text="Height"/>
+                                    <TextField fx:id="heightTextField" promptText="Height"/>
+                                </VBox>
+
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="bloodTypeBox">
+                                    <Label fx:id="bloodTypeFieldLabel" text="Blood Type"/>
+                                    <ChoiceBox value="AB">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                                <String fx:value="A" />
+                                                <String fx:value="B" />
+                                                <String fx:value="AB" />
+                                                <String fx:value="0" />
+                                            </FXCollections>
+                                        </items>
+                                    </ChoiceBox>
+                                </VBox>
+                            </HBox>
+
+                            <HBox>
+                                <VBox styleClass="emailBox">
+                                    <Label fx:id="emailFieldLabel" text="Email"/>
+                                    <TextField fx:id="emailTextField" promptText="Email"/>
+                                </VBox>
+
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="phoneNumberBox">
+                                    <Label fx:id="phoneNumberFieldLabel" text="Phone number"/>
+                                    <TextField fx:id="phoneNumberTextField" promptText="Phone number"/>
+                                </VBox>
+
+                                <HBox HBox.hgrow="ALWAYS"/>
+
+                                <VBox styleClass="relevantLinkBox">
+                                    <Label fx:id="relevantLinkFieldLabel" text="Relevant link"/>
+                                    <TextField fx:id="relevantLinkTextField" promptText="Relevant link"/>
                                 </VBox>
                             </HBox>
 
