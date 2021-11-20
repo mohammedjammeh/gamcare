@@ -194,75 +194,7 @@
 
                     <fx:include source="show/meals.fxml"/>
 
-
-
-                    <HBox styleClass="subHeadingBox">
-                        <Label text="Reports"/>
-                        <HBox HBox.hgrow="ALWAYS"/>
-                    </HBox>
-
-                    <VBox styleClass="profileReports">
-                        <HBox styleClass="profileForm">
-                            <HBox styleClass="reportDescriptionBox">
-                                <Label fx:id="reportDescriptionFieldLabel" text="Description"/>
-                                <TextArea fx:id="reportDescriptionTextArea" promptText="Description"/>
-                            </HBox>
-
-                            <HBox HBox.hgrow="ALWAYS"/>
-
-                            <HBox styleClass="reportButtonBox">
-                                <Button text="Add" onAction="#onAddReportButtonClick"/>
-                            </HBox>
-                        </HBox>
-
-                        <VBox styleClass="profileCalendar">
-                            <HBox styleClass="weekBox">
-                                <HBox styleClass="title">
-                                    <Label>Report History</Label>
-                                </HBox>
-                                <HBox HBox.hgrow="ALWAYS"/>
-                                <HBox styleClass="month">
-                                    <Label>December 2021</Label>
-                                </HBox>
-                                <HBox HBox.hgrow="ALWAYS"/>
-                                <HBox styleClass="buttons">
-                                    <Button text="Prev" onAction="#onPreviousWeekReportsButtonClick"/>
-                                    <HBox HBox.hgrow="ALWAYS"/>
-                                    <Button text="Next" onAction="#onNextWeekReportsButtonClick"/>
-                                </HBox>
-                            </HBox>
-                            <HBox>
-                                <HBox styleClass="longDateBox">
-                                    <Label>Mon 11th</Label>
-                                </HBox>
-                                <HBox HBox.hgrow="ALWAYS"/>
-                            </HBox>
-                            <HBox>
-                                <VBox styleClass="longHistoryBox">
-                                    <VBox>
-                                        <Label lineSpacing="14" wrapText="true">
-                                            Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
-                                        </Label>
-                                    </VBox>
-                                    <VBox>
-                                        <Label>Dr. Ismaila Drammeh</Label>
-                                    </VBox>
-                                </VBox>
-                            </HBox>
-                        </VBox>
-
-                        <VBox.margin>
-                            <Insets>
-                                <bottom>30</bottom>
-                            </Insets>
-                        </VBox.margin>
-                    </VBox>
-
-
-
-
-
-
+                    <fx:include source="show/reports.fxml"/>
 
 
 
