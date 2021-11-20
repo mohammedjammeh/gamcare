@@ -343,7 +343,7 @@
     -fx-spacing: 20px;
 }
 
-.profileMain,
+.profileAttributes,
 .profileOtherDetails,
 .profileExercises,
 .profileMeals,
@@ -356,7 +356,7 @@
     -fx-spacing: 15px;
 }
 
-.profileMain {
+.profileAttributes {
     -fx-padding: 30px 30px 10px 30px;
 }
 
@@ -376,13 +376,13 @@
 }
 
 
-.profileMain .attribute {
+.profileAttributes .attribute {
     -fx-min-width: 275px;
     -fx-max-width: 275px;
     -fx-padding: 0 0 25px 0;
 }
 
-.profileMain .attributeLabel {
+.profileAttributes .attributeLabel {
     -fx-min-width: 110px;
     -fx-max-width: 110px;
     -fx-text-fill: #4d0019;
