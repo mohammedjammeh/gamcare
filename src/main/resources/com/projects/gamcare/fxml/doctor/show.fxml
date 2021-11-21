@@ -24,7 +24,7 @@
                         <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
                     </HBox>
 
-                    <VBox styleClass="profileMain">
+                    <VBox styleClass="profileAttributes">
                         <HBox>
                             <HBox styleClass="attribute">
                                 <Label text="First name:" styleClass="attributeLabel"/>
