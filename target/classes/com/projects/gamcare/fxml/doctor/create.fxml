@@ -152,16 +152,27 @@
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
-                            <VBox styleClass="dateOfBirthBox">
-                                <Label fx:id="dateOfBirthFieldLabel" text="Date of birth"/>
-                                <DatePicker fx:id="dateOfBirthPicker" promptText="Date of birth"/>
+                            <VBox styleClass="tribeBox">
+                                <Label fx:id="tribeFieldLabel" text="Tribe"/>
+                                <ChoiceBox value="Mandinka">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Mandinka" />
+                                            <String fx:value="Jola" />
+                                            <String fx:value="Fula" />
+                                            <String fx:value="Wollof" />
+                                            <String fx:value="Serer" />
+                                            <String fx:value="Manjago" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
                             </VBox>
                         </HBox>
 
                         <HBox>
-                            <VBox styleClass="educationInstitutionBox">
-                                <Label fx:id="educationInstitutionFieldLabel" text="Education institution"/>
-                                <TextField fx:id="educationInstitutionTextField" promptText="Education institution"/>
+                            <VBox styleClass="universityBox">
+                                <Label fx:id="universityFieldLabel" text="University"/>
+                                <TextField fx:id="universityTextField" promptText="University"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
@@ -173,8 +184,8 @@
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
-                            <VBox styleClass="careerBox">
-                                <Label fx:id="careerFieldLabel" text="Career level"/>
+                            <VBox styleClass="careerLevelBox">
+                                <Label fx:id="careerLevelFieldLabel" text="Career level"/>
                                 <ChoiceBox value="Senior">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
@@ -184,6 +195,35 @@
                                         </FXCollections>
                                     </items>
                                 </ChoiceBox>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="specialityBox">
+                                <Label fx:id="specialityFieldLabel" text="Speciality"/>
+                                <ChoiceBox value="Neurosurgeon">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Neurosurgeon" />
+                                            <String fx:value="Optician" />
+                                            <String fx:value="Dentist" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="placeOfBirthBox">
+                                <Label fx:id="placeOfBirthFieldLabel" text="Place of birth"/>
+                                <TextField fx:id="placeOfBirthTextField" promptText="Place of birth"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="dateOfBirthBox">
+                                <Label fx:id="dateOfBirthFieldLabel" text="Date of birth"/>
+                                <DatePicker fx:id="dateOfBirthPicker" promptText="Date of birth"/>
                             </VBox>
                         </HBox>
 

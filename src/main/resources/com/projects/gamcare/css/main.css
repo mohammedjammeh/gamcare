@@ -110,6 +110,7 @@
 .form .genderBox,
 .form .tribeBox,
 
+.form .specialityBox,
 .form .placeOfBirthBox,
 .form .dateOfBirthBox,
 .form .currentHospitalBox,
@@ -126,9 +127,9 @@
 .form .townBox,
 .form .regionBox,
 
-.form .educationInstitutionBox,
+.form .universityBox,
 .form .fieldOfStudyBox,
-.form .careerBox,
+.form .careerLevelBox,
 
 .form .juniorDoctorsBox,
 .form .midLevelDoctorsBox,

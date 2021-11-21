@@ -4,8 +4,16 @@ import javafx.fxml.FXML;
 import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import org.w3c.dom.Text;
 
 public class Create {
+    @FXML
+    private VBox errorBox;
+
+    @FXML
+    private Label errorLabel;
+
+
     @FXML
     private ListView<String> juniorDoctorsListView;
 
@@ -23,13 +31,6 @@ public class Create {
 
     @FXML
     private Label seniorDoctorsListViewLabel;
-
-
-    @FXML
-    private VBox errorBox;
-
-    @FXML
-    private Label errorLabel;
 
 
 
@@ -60,18 +61,16 @@ public class Create {
     private Label genderFieldLabel;
 
     @FXML
-    private Label dateOfBirthFieldLabel;
+    private Label tribeFieldLabel;
+
+
+
 
     @FXML
-    private DatePicker dateOfBirthPicker;
-
-
+    private Label universityFieldLabel;
 
     @FXML
-    private Label educationInstitutionFieldLabel;
-
-    @FXML
-    private TextField educationInstitutionTextField;
+    private TextField universityTextField;
 
     @FXML
     private Label fieldOfStudyFieldLabel;
@@ -80,7 +79,27 @@ public class Create {
     private TextField fieldOfStudyTextField;
 
     @FXML
-    private Label careerFieldLabel;
+    private Label careerLevelFieldLabel;
+
+
+
+    @FXML
+    private Label specialityFieldLabel;
+
+    @FXML
+    private DatePicker specialityPicker;
+
+    @FXML
+    private Label placeOfBirthFieldLabel;
+
+    @FXML
+    private TextField placeOfBirthTextField;
+
+    @FXML
+    private Label dateOfBirthFieldLabel;
+
+    @FXML
+    private DatePicker dateOfBirthPicker;
 
 
 

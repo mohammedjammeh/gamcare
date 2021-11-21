@@ -18,7 +18,7 @@
 
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
-                    <fx:include source="show/main.fxml"/>
+                    <fx:include source="show/attributes.fxml"/>
 
                     <fx:include source="show/exercises.fxml"/>
 
