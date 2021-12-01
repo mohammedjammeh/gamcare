@@ -1,5 +1,6 @@
 package com.projects.gamcare.controllers.patient;
 
+import com.mysql.cj.util.StringUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -11,7 +12,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.time.LocalDate;
+import java.util.Locale;
 import java.util.ResourceBundle;
+import java.sql.*;
 
 public class Create implements Initializable {
     @FXML
@@ -39,7 +42,7 @@ public class Create implements Initializable {
 
 
     @FXML
-    private ChoiceBox<String> currentHospitalChoiceBox;
+    private ChoiceBox<String> hospitalChoiceBox;
 
     @FXML
     private TextField placeOfBirthTextField;
@@ -86,6 +89,39 @@ public class Create implements Initializable {
     public void initialize(URL var1, ResourceBundle var2) {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
+
+
+        addItemsFromTableToChoiceBox("titles", titleChoiceBox);
+        addItemsFromTableToChoiceBox("genders", genderChoiceBox);
+        addItemsFromTableToChoiceBox("tribes", tribeChoiceBox);
+        addItemsFromTableToChoiceBox("hospitals", hospitalChoiceBox);
+        addItemsFromTableToChoiceBox("blood_types", bloodTypeChoiceBox);
+        addItemsFromTableToChoiceBox("regions", regionChoiceBox);
+    }
+
+    public static void addItemsFromTableToChoiceBox(String table, ChoiceBox<String> choiceBox) {
+        try {
+            Connection dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+
+            PreparedStatement statement = dbConnection.prepareStatement("SELECT name FROM " + table + " ORDER BY id");
+            ResultSet results = statement.executeQuery();
+            while (results.next()) {
+                String title = capitalizeString(results.getString("name"));
+                choiceBox.getItems().add(title);
+
+                if(results.isFirst())
+                    choiceBox.setValue(title);
+            }
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+        }
+    }
+
+
+    public static String capitalizeString(String string) {
+        return string.substring(0, 1).toUpperCase() + string.substring(1);
     }
 
 
@@ -100,7 +136,7 @@ public class Create implements Initializable {
         String gender = genderChoiceBox.getValue();
         String tribe = tribeChoiceBox.getValue();
 
-        String currentHospital = currentHospitalChoiceBox.getValue();
+        String hospital = hospitalChoiceBox.getValue();
         String placeOfBirth = placeOfBirthTextField.getText();
         LocalDate dateOfBirth = dateOfBirthPicker.getValue();
 
@@ -117,8 +153,6 @@ public class Create implements Initializable {
         String region = regionChoiceBox.getValue();
 
         String otherDetails = otherDetailsTextArea.getText();
-
-
 
 
         String data = "Hello World";

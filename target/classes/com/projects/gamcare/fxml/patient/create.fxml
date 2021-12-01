@@ -56,61 +56,28 @@
                         <HBox>
                             <VBox styleClass="titleBox">
                                 <Label text="Title"/>
-                                <ChoiceBox value="Mr." fx:id="titleChoiceBox">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Mr." />
-                                            <String fx:value="Mrs." />
-                                            <String fx:value="Miss" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <ChoiceBox fx:id="titleChoiceBox"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
                             <VBox styleClass="genderBox">
                                 <Label text="Gender"/>
-                                <ChoiceBox value="Male" fx:id="genderChoiceBox">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Male" />
-                                            <String fx:value="Female" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <ChoiceBox fx:id="genderChoiceBox"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
                             <VBox styleClass="tribeBox">
                                 <Label text="Tribe"/>
-                                <ChoiceBox value="Mandinka" fx:id="tribeChoiceBox">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Mandinka" />
-                                            <String fx:value="Jola" />
-                                            <String fx:value="Fula" />
-                                            <String fx:value="Wollof" />
-                                            <String fx:value="Serer" />
-                                            <String fx:value="Manjago" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <ChoiceBox fx:id="tribeChoiceBox"/>
                             </VBox>
                         </HBox>
 
                         <HBox>
-                            <VBox styleClass="currentHospitalBox">
-                                <Label text="Current hospital"/>
-                                <ChoiceBox value="Mansa Konko" fx:id="currentHospitalChoiceBox">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Mansa Konko" />
-                                            <String fx:value="Bansang" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                            <VBox styleClass="hospitalBox">
+                                <Label text="Hospital"/>
+                                <ChoiceBox fx:id="hospitalChoiceBox"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
@@ -145,16 +112,7 @@
 
                             <VBox styleClass="bloodTypeBox">
                                 <Label text="Blood Type"/>
-                                <ChoiceBox value="AB" fx:id="bloodTypeChoiceBox">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="A" />
-                                            <String fx:value="B" />
-                                            <String fx:value="AB" />
-                                            <String fx:value="0" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <ChoiceBox fx:id="bloodTypeChoiceBox"/>
                             </VBox>
                         </HBox>
 
@@ -196,17 +154,7 @@
 
                             <VBox styleClass="regionBox">
                                 <Label text="Region"/>
-                                <ChoiceBox value="Western Region" fx:id="regionChoiceBox">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Western Region" />
-                                            <String fx:value="North Bank Region" />
-                                            <String fx:value="Lower River Region" />
-                                            <String fx:value="Central River Region" />
-                                            <String fx:value="Upper River Region" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <ChoiceBox fx:id="regionChoiceBox"/>
                             </VBox>
                         </HBox>
 
