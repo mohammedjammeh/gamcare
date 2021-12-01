@@ -57,7 +57,7 @@
                             <HBox>
                                 <VBox styleClass="titleBox">
                                     <Label fx:id="titleFieldLabel" text="Title"/>
-                                    <ChoiceBox value="Mr.">
+                                    <ChoiceBox value="Mr." fx:id="titleChoiceBox">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
                                                 <String fx:value="Mr." />
@@ -72,7 +72,7 @@
 
                                 <VBox styleClass="genderBox">
                                     <Label fx:id="genderFieldLabel" text="Gender"/>
-                                    <ChoiceBox value="Male">
+                                    <ChoiceBox value="Male" fx:id="genderChoiceBox">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
                                                 <String fx:value="Male" />
@@ -86,7 +86,7 @@
 
                                 <VBox styleClass="tribeBox">
                                     <Label fx:id="tribeFieldLabel" text="Tribe"/>
-                                    <ChoiceBox value="Mandinka">
+                                    <ChoiceBox value="Mandinka" fx:id="tribeChoiceBox">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
                                                 <String fx:value="Mandinka" />
@@ -104,7 +104,7 @@
                             <HBox>
                                 <VBox styleClass="currentHospitalBox">
                                     <Label fx:id="currentHospitalLabel" text="Current hospital"/>
-                                    <ChoiceBox value="Mansa Konko">
+                                    <ChoiceBox value="Mansa Konko" fx:id="currentHospitalChoiceBox">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
                                                 <String fx:value="Mansa Konko" />
@@ -146,7 +146,7 @@
 
                                 <VBox styleClass="bloodTypeBox">
                                     <Label fx:id="bloodTypeFieldLabel" text="Blood Type"/>
-                                    <ChoiceBox value="AB">
+                                    <ChoiceBox value="AB" fx:id="bloodTypeChoiceBox">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
                                                 <String fx:value="A" />
@@ -160,9 +160,9 @@
                             </HBox>
 
                             <HBox>
-                                <VBox styleClass="emailBox">
-                                    <Label fx:id="emailFieldLabel" text="Email"/>
-                                    <TextField fx:id="emailTextField" promptText="Email"/>
+                                <VBox styleClass="emailAddressBox">
+                                    <Label fx:id="emailAddressFieldLabel" text="Email address"/>
+                                    <TextField fx:id="emailAddressTextField" promptText="Email address"/>
                                 </VBox>
 
                                 <HBox HBox.hgrow="ALWAYS"/>
@@ -197,7 +197,7 @@
 
                                 <VBox styleClass="regionBox">
                                     <Label fx:id="regionFieldLabel" text="Region"/>
-                                    <ChoiceBox value="Western Region">
+                                    <ChoiceBox value="Western Region" fx:id="regionChoiceBox">
                                         <items>
                                             <FXCollections fx:factory="observableArrayList">
                                                 <String fx:value="Western Region" />
@@ -219,7 +219,7 @@
                             </HBox>
 
                             <VBox styleClass="buttonBox">
-                                <Button fx:id="createPatientButton" text="Create Patient" onAction="#onCreatePatientButtonClick"/>
+                                <Button text="Create Patient" onAction="#onCreatePatientButtonClick"/>
                             </VBox>
                         </VBox>
                     </VBox>

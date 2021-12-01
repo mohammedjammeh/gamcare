@@ -1,15 +1,19 @@
 package com.projects.gamcare.controllers.patient;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class Create {
+public class Create implements Initializable {
     @FXML
     private VBox errorBox;
 
@@ -42,19 +46,27 @@ public class Create {
     private Label titleFieldLabel;
 
     @FXML
+    private ChoiceBox<String> titleChoiceBox;
+
+    @FXML
     private Label genderFieldLabel;
+
+    @FXML
+    private ChoiceBox<String> genderChoiceBox;
 
     @FXML
     private Label tribeFieldLabel;
 
+    @FXML
+    private ChoiceBox<String> tribeChoiceBox;
 
 
 
     @FXML
-    private Label dateOfBirthFieldLabel;
+    private Label currentHospitalLabel;
 
     @FXML
-    private DatePicker dateOfBirthPicker;
+    private ChoiceBox<String> currentHospitalChoiceBox;
 
     @FXML
     private Label placeOfBirthFieldLabel;
@@ -63,7 +75,10 @@ public class Create {
     private TextField placeOfBirthTextField;
 
     @FXML
-    private Label currentHospitalLabel;
+    private Label dateOfBirthFieldLabel;
+
+    @FXML
+    private DatePicker dateOfBirthPicker;
 
 
 
@@ -82,13 +97,16 @@ public class Create {
     @FXML
     private Label bloodTypeFieldLabel;
 
+    @FXML
+    private ChoiceBox<String> bloodTypeChoiceBox;
+
 
 
     @FXML
-    private Label emailFieldLabel;
+    private Label emailAddressFieldLabel;
 
     @FXML
-    private TextField emailTextField;
+    private TextField emailAddressTextField;
 
     @FXML
     private Label phoneNumberFieldLabel;
@@ -101,7 +119,6 @@ public class Create {
 
     @FXML
     private TextField relevantLinkTextField;
-
 
 
 
@@ -120,6 +137,9 @@ public class Create {
     @FXML
     private Label regionFieldLabel;
 
+    @FXML
+    private ChoiceBox<String> regionChoiceBox;
+
 
 
     @FXML
@@ -130,12 +150,8 @@ public class Create {
 
 
 
-    @FXML
-    private Button createPatientButton;
-
-
-
-    @FXML void initialize() {
+    @Override
+    public void initialize(URL var1, ResourceBundle var2) {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
     }
@@ -143,12 +159,43 @@ public class Create {
     @FXML
     protected void onCreatePatientButtonClick() throws NoSuchAlgorithmException {
 
+        String firstName = firstNameTextField.getText();
+        String middleName = middleNameTextField.getText();
+        String lastName = lastNameTextField.getText();
 
-        String data = "Hello World";
-        String algorithm = "SHA-256";
-        byte[] salt = createSalt();
+        String title = titleChoiceBox.getValue();
+        String gender = genderChoiceBox.getValue();
+        String tribe = tribeChoiceBox.getValue();
 
-        System.out.println(generateHash(data, algorithm, salt));
+        String currentHospital = currentHospitalChoiceBox.getValue();
+        String placeOfBirth = placeOfBirthTextField.getText();
+        LocalDate dateOfBirth = dateOfBirthPicker.getValue();
+
+        String weight = weightTextField.getText();
+        String height = heightTextField.getText();
+        String bloodType = bloodTypeChoiceBox.getValue();
+
+        String emailAddress = emailAddressTextField.getText();
+        String phoneNumber = phoneNumberTextField.getText();
+        String relevantLink = relevantLinkTextField.getText();
+
+        String compoundName = compoundNameTextField.getText();
+        String town = townTextField.getText();
+        String region = regionChoiceBox.getValue();
+
+        String otherDetails = otherDetailsTextArea.getText();
+
+
+        System.out.println(otherDetails);
+
+
+
+
+//        String data = "Hello World";
+//        String algorithm = "SHA-256";
+//        byte[] salt = createSalt();
+//
+//        System.out.println(generateHash(data, algorithm, salt));
     }
 
     public static byte[] createSalt() {
