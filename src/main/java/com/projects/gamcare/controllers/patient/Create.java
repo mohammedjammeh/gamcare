@@ -17,25 +17,13 @@ public class Create implements Initializable {
     @FXML
     private VBox errorBox;
 
-    @FXML
-    private Label errorLabel;
 
-
-
-    @FXML
-    private Label firstNameFieldLabel;
 
     @FXML
     private TextField firstNameTextField;
 
     @FXML
-    private Label middleNameFieldLabel;
-
-    @FXML
     private TextField middleNameTextField;
-
-    @FXML
-    private Label lastNameFieldLabel;
 
     @FXML
     private TextField lastNameTextField;
@@ -43,19 +31,10 @@ public class Create implements Initializable {
 
 
     @FXML
-    private Label titleFieldLabel;
-
-    @FXML
     private ChoiceBox<String> titleChoiceBox;
 
     @FXML
-    private Label genderFieldLabel;
-
-    @FXML
     private ChoiceBox<String> genderChoiceBox;
-
-    @FXML
-    private Label tribeFieldLabel;
 
     @FXML
     private ChoiceBox<String> tribeChoiceBox;
@@ -63,19 +42,10 @@ public class Create implements Initializable {
 
 
     @FXML
-    private Label currentHospitalLabel;
-
-    @FXML
     private ChoiceBox<String> currentHospitalChoiceBox;
 
     @FXML
-    private Label placeOfBirthFieldLabel;
-
-    @FXML
     private TextField placeOfBirthTextField;
-
-    @FXML
-    private Label dateOfBirthFieldLabel;
 
     @FXML
     private DatePicker dateOfBirthPicker;
@@ -83,19 +53,10 @@ public class Create implements Initializable {
 
 
     @FXML
-    private Label weightFieldLabel;
-
-    @FXML
     private TextField weightTextField;
 
     @FXML
-    private Label heightFieldLabel;
-
-    @FXML
     private TextField heightTextField;
-
-    @FXML
-    private Label bloodTypeFieldLabel;
 
     @FXML
     private ChoiceBox<String> bloodTypeChoiceBox;
@@ -103,19 +64,10 @@ public class Create implements Initializable {
 
 
     @FXML
-    private Label emailAddressFieldLabel;
-
-    @FXML
     private TextField emailAddressTextField;
 
     @FXML
-    private Label phoneNumberFieldLabel;
-
-    @FXML
     private TextField phoneNumberTextField;
-
-    @FXML
-    private Label relevantLinkFieldLabel;
 
     @FXML
     private TextField relevantLinkTextField;
@@ -123,27 +75,15 @@ public class Create implements Initializable {
 
 
     @FXML
-    private Label compoundNameFieldLabel;
-
-    @FXML
     private TextField compoundNameTextField;
-
-    @FXML
-    private Label townFieldLabel;
 
     @FXML
     private TextField townTextField;
 
     @FXML
-    private Label regionFieldLabel;
-
-    @FXML
     private ChoiceBox<String> regionChoiceBox;
 
 
-
-    @FXML
-    private Label otherDetailsFieldLabel;
 
     @FXML
     private TextArea otherDetailsTextArea;
@@ -186,16 +126,13 @@ public class Create implements Initializable {
         String otherDetails = otherDetailsTextArea.getText();
 
 
-        System.out.println(otherDetails);
 
 
+        String data = "Hello World";
+        String algorithm = "SHA-256";
+        byte[] salt = createSalt();
 
-
-//        String data = "Hello World";
-//        String algorithm = "SHA-256";
-//        byte[] salt = createSalt();
-//
-//        System.out.println(generateHash(data, algorithm, salt));
+        System.out.println(generateHash(data, algorithm, salt));
     }
 
     public static byte[] createSalt() {
