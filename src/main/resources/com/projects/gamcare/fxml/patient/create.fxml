@@ -219,7 +219,7 @@
                             </HBox>
 
                             <VBox styleClass="buttonBox">
-                                <Button text="Create Patient" onAction="#onCreatePatientButtonClick"/>
+                                <Button fx:id="createPatientButton" text="Create Patient" onAction="#onCreatePatientButtonClick"/>
                             </VBox>
                         </VBox>
                     </VBox>
