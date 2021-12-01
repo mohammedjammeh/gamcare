@@ -18,7 +18,6 @@ public class Create implements Initializable {
     private VBox errorBox;
 
 
-
     @FXML
     private TextField firstNameTextField;
 
@@ -27,7 +26,6 @@ public class Create implements Initializable {
 
     @FXML
     private TextField lastNameTextField;
-
 
 
     @FXML
@@ -40,7 +38,6 @@ public class Create implements Initializable {
     private ChoiceBox<String> tribeChoiceBox;
 
 
-
     @FXML
     private ChoiceBox<String> currentHospitalChoiceBox;
 
@@ -49,7 +46,6 @@ public class Create implements Initializable {
 
     @FXML
     private DatePicker dateOfBirthPicker;
-
 
 
     @FXML
@@ -62,7 +58,6 @@ public class Create implements Initializable {
     private ChoiceBox<String> bloodTypeChoiceBox;
 
 
-
     @FXML
     private TextField emailAddressTextField;
 
@@ -71,7 +66,6 @@ public class Create implements Initializable {
 
     @FXML
     private TextField relevantLinkTextField;
-
 
 
     @FXML
@@ -84,17 +78,16 @@ public class Create implements Initializable {
     private ChoiceBox<String> regionChoiceBox;
 
 
-
     @FXML
     private TextArea otherDetailsTextArea;
-
-
+    
 
     @Override
     public void initialize(URL var1, ResourceBundle var2) {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
     }
+
 
     @FXML
     protected void onCreatePatientButtonClick() throws NoSuchAlgorithmException {
