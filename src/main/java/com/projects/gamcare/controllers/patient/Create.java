@@ -124,7 +124,6 @@ public class Create implements Initializable {
 
     @FXML
     protected void onCreatePatientButtonClick() throws NoSuchAlgorithmException {
-
         String firstName = firstNameTextField.getText();
         String middleName = middleNameTextField.getText();
         String lastName = lastNameTextField.getText();
@@ -151,13 +150,10 @@ public class Create implements Initializable {
 
         String otherDetails = otherDetailsTextArea.getText();
 
-
-        String data = "Hello World";
-        String algorithm = "SHA-256";
         byte[] salt = createSalt();
-
-        System.out.println(generateHash(data, algorithm, salt));
+        String hash = generateHash("password123", "SHA-256", salt);
     }
+
 
     public static byte[] createSalt() {
         byte[] bytes = new byte[20];
@@ -167,14 +163,16 @@ public class Create implements Initializable {
         return bytes;
     }
 
-    public static String generateHash(String data, String algorithm, byte[] salt) throws NoSuchAlgorithmException {
+
+    public static String generateHash(String password, String algorithm, byte[] salt) throws NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance(algorithm);
         digest.reset();
         digest.update(salt);
-        byte[] hash = digest.digest(data.getBytes());
+        byte[] hash = digest.digest(password.getBytes());
 
         return bytesToHex(hash);
     }
+
 
     public static String bytesToHex(byte[] bytes) {
         byte[] hexChars = new byte[bytes.length * 2];
@@ -187,5 +185,6 @@ public class Create implements Initializable {
         return new String(hexChars, StandardCharsets.UTF_8);
     }
 
+    
     private static final byte[] HEX_ARRAY = "0123456789ABCDEF".getBytes(StandardCharsets.US_ASCII);
 }
