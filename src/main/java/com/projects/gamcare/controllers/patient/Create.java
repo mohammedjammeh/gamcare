@@ -87,7 +87,6 @@ public class Create implements Initializable {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
 
-
         addItemsFromTableToChoiceBox("titles", titleChoiceBox);
         addItemsFromTableToChoiceBox("genders", genderChoiceBox);
         addItemsFromTableToChoiceBox("tribes", tribeChoiceBox);
@@ -185,6 +184,6 @@ public class Create implements Initializable {
         return new String(hexChars, StandardCharsets.UTF_8);
     }
 
-    
+
     private static final byte[] HEX_ARRAY = "0123456789ABCDEF".getBytes(StandardCharsets.US_ASCII);
 }
