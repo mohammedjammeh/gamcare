@@ -129,17 +129,17 @@ public class Create implements Initializable {
         String middleName = middleNameTextField.getText();
         String lastName = lastNameTextField.getText();
 
-        String title = titleChoiceBox.getValue();
-        String gender = genderChoiceBox.getValue();
-        String tribe = tribeChoiceBox.getValue();
+        Integer titleIndex = titleChoiceBox.getSelectionModel().getSelectedIndex();
+        Integer genderIndex = genderChoiceBox.getSelectionModel().getSelectedIndex();
+        Integer tribeIndex = tribeChoiceBox.getSelectionModel().getSelectedIndex();
 
-        String hospital = hospitalChoiceBox.getValue();
+        Integer hospitalIndex = hospitalChoiceBox.getSelectionModel().getSelectedIndex();
         String placeOfBirth = placeOfBirthTextField.getText();
         LocalDate dateOfBirth = dateOfBirthPicker.getValue();
 
         String weight = weightTextField.getText();
         String height = heightTextField.getText();
-        String bloodType = bloodTypeChoiceBox.getValue();
+        Integer bloodTypeIndex = bloodTypeChoiceBox.getSelectionModel().getSelectedIndex();
 
         String emailAddress = emailAddressTextField.getText();
         String phoneNumber = phoneNumberTextField.getText();
@@ -147,7 +147,7 @@ public class Create implements Initializable {
 
         String compoundName = compoundNameTextField.getText();
         String town = townTextField.getText();
-        String region = regionChoiceBox.getValue();
+        Integer regionIndex = regionChoiceBox.getSelectionModel().getSelectedIndex();
 
         String otherDetails = otherDetailsTextArea.getText();
 
