@@ -1,18 +1,15 @@
 package com.projects.gamcare.controllers.patient;
 
-import com.mysql.cj.util.StringUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.time.LocalDate;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.sql.*;
 
