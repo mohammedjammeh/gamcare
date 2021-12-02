@@ -4,119 +4,74 @@ import javafx.fxml.FXML;
 import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import org.w3c.dom.Text;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.util.List;
 
 public class Create {
     @FXML
     private VBox errorBox;
-
-    @FXML
-    private Label errorLabel;
 
 
     @FXML
     private ListView<String> juniorDoctorsListView;
 
     @FXML
-    private Label juniorDoctorsListViewLabel;
-
-    @FXML
-    private ListView<String> midLevelDoctorsListView;
-
-    @FXML
-    private Label midLevelDoctorsListViewLabel;
+    private ListView<String> studentDoctorsListView;
 
     @FXML
     private ListView<String> seniorDoctorsListView;
 
-    @FXML
-    private Label seniorDoctorsListViewLabel;
-
-
-
-    @FXML
-    private Label firstNameFieldLabel;
 
     @FXML
     private TextField firstNameTextField;
 
     @FXML
-    private Label middleNameFieldLabel;
-
-    @FXML
     private TextField middleNameTextField;
-
-    @FXML
-    private Label lastNameFieldLabel;
 
     @FXML
     private TextField lastNameTextField;
 
 
+    @FXML
+    private ChoiceBox<String> titleChoiceBox;
 
     @FXML
-    private Label titleFieldLabel;
+    private ChoiceBox<String> genderChoiceBox;
 
     @FXML
-    private Label genderFieldLabel;
+    private ChoiceBox<String> tribeChoiceBox;
 
-    @FXML
-    private Label tribeFieldLabel;
-
-
-
-
-    @FXML
-    private Label universityFieldLabel;
 
     @FXML
     private TextField universityTextField;
 
     @FXML
-    private Label fieldOfStudyFieldLabel;
-
-    @FXML
     private TextField fieldOfStudyTextField;
 
     @FXML
-    private Label careerLevelFieldLabel;
-
+    private ChoiceBox<String> careerLevelChoiceBox;
 
 
     @FXML
-    private Label specialityFieldLabel;
-
-    @FXML
-    private DatePicker specialityPicker;
-
-    @FXML
-    private Label placeOfBirthFieldLabel;
+    private ChoiceBox<String> specialityChoiceBox;
 
     @FXML
     private TextField placeOfBirthTextField;
 
     @FXML
-    private Label dateOfBirthFieldLabel;
-
-    @FXML
     private DatePicker dateOfBirthPicker;
 
 
-
     @FXML
-    private Label emailFieldLabel;
-
-    @FXML
-    private TextField emailTextField;
-
-    @FXML
-    private Label phoneNumberFieldLabel;
+    private TextField emailAddressTextField;
 
     @FXML
     private TextField phoneNumberTextField;
-
-    @FXML
-    private Label relevantLinkFieldLabel;
 
     @FXML
     private TextField relevantLinkTextField;
@@ -124,60 +79,116 @@ public class Create {
 
 
     @FXML
-    private Label compoundNameFieldLabel;
-
-    @FXML
     private TextField compoundNameTextField;
-
-    @FXML
-    private Label townFieldLabel;
 
     @FXML
     private TextField townTextField;
 
     @FXML
-    private Label regionFieldLabel;
-
+    private ChoiceBox<String> regionChoiceBox;
 
 
     @FXML
     private ListView<String> hospitalsListView;
 
-    @FXML
-    private Label hospitalsListViewLabel;
-
-
-
-    @FXML
-    private Label otherDetailsFieldLabel;
 
     @FXML
     private TextArea otherDetailsTextArea;
-
-
 
 
     @FXML void initialize() {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
 
+
+
+        studentDoctorsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        studentDoctorsListView.setOrientation(Orientation.VERTICAL);
+
         juniorDoctorsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         juniorDoctorsListView.setOrientation(Orientation.VERTICAL);
-
-        midLevelDoctorsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        midLevelDoctorsListView.setOrientation(Orientation.VERTICAL);
 
         seniorDoctorsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         seniorDoctorsListView.setOrientation(Orientation.VERTICAL);
 
         hospitalsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
+
+
+
+//        studentDoctorsListView
+//        juniorDoctorsListView
+//        seniorDoctorsListView
+//        hospitalsListView
+
+        addItemsFromTableToChoiceBox("titles", titleChoiceBox);
+        addItemsFromTableToChoiceBox("genders", genderChoiceBox);
+        addItemsFromTableToChoiceBox("tribes", tribeChoiceBox);
+        addItemsFromTableToChoiceBox("specialities", specialityChoiceBox);
+        addItemsFromTableToChoiceBox("regions", regionChoiceBox);
     }
+
+
+    public static void addItemsFromTableToChoiceBox(String table, ChoiceBox<String> choiceBox) {
+        try {
+            Connection dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+
+            PreparedStatement statement = dbConnection.prepareStatement("SELECT name FROM " + table + " ORDER BY id");
+            ResultSet results = statement.executeQuery();
+            while (results.next()) {
+                String title = capitalizeString(results.getString("name"));
+                choiceBox.getItems().add(title);
+
+                if(results.isFirst())
+                    choiceBox.setValue(title);
+            }
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+        }
+    }
+
+
+    public static String capitalizeString(String string) {
+        return string.substring(0, 1).toUpperCase() + string.substring(1);
+    }
+
+
+    @FXML
+    protected void onAddDoctorsButtonClick() {
+        List<Integer> juniorDoctorsIndices = juniorDoctorsListView.getSelectionModel().getSelectedIndices();
+        List<Integer> midLevelDoctorsIndices = studentDoctorsListView.getSelectionModel().getSelectedIndices();
+        List<Integer> seniorDoctorsIndices = seniorDoctorsListView.getSelectionModel().getSelectedIndices();
+    }
+
 
     @FXML
     protected void onCreateDoctorButtonClick() {
-        errorBox.setVisible(true);
-        errorBox.setManaged(true);
-        System.out.println("There is an error.");
+        String firstName = firstNameTextField.getText();
+        String middleName = middleNameTextField.getText();
+        String lastName = lastNameTextField.getText();
+
+        Integer titleIndex = titleChoiceBox.getSelectionModel().getSelectedIndex();
+        Integer genderIndex = genderChoiceBox.getSelectionModel().getSelectedIndex();
+        Integer tribeIndex = tribeChoiceBox.getSelectionModel().getSelectedIndex();
+
+        String university = universityTextField.getText();
+        String fieldOfStudy = fieldOfStudyTextField.getText();
+        String careerLevel = careerLevelChoiceBox.getValue();
+
+        Integer specialityIndex = specialityChoiceBox.getSelectionModel().getSelectedIndex();
+        String placeOfBirth = placeOfBirthTextField.getText();
+        LocalDate dateOfBirth = dateOfBirthPicker.getValue();
+
+        String emailAddress = emailAddressTextField.getText();
+        String phoneNumber = phoneNumberTextField.getText();
+        String relevantLink = relevantLinkTextField.getText();
+
+        String compoundName = compoundNameTextField.getText();
+        String town = townTextField.getText();
+        String region = regionChoiceBox.getValue();
+
+        String otherDetails = otherDetailsTextArea.getText();
     }
 }
