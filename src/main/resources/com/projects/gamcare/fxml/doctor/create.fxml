@@ -238,17 +238,7 @@
                         <HBox>
                             <VBox styleClass="hospitalsBox">
                                 <Label text="Hospitals"/>
-                                <ListView fx:id="hospitalsListView" styleClass="horizontal">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Mansa Kono"/>
-                                            <String fx:value="Bungdung"/>
-                                            <String fx:value="Yundum"/>
-                                            <String fx:value="Farokono"/>
-                                            <String fx:value="Kabafita"/>
-                                        </FXCollections>
-                                    </items>
-                                </ListView>
+                                <ListView fx:id="hospitalsListView" styleClass="horizontal"/>
                             </VBox>
                         </HBox>
 

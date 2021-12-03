@@ -5,6 +5,7 @@ import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
+import java.lang.constant.Constable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -119,13 +120,30 @@ public class Create {
 //        studentDoctorsListView
 //        juniorDoctorsListView
 //        seniorDoctorsListView
-//        hospitalsListView
-
         addItemsFromTableToChoiceBox("titles", titleChoiceBox);
         addItemsFromTableToChoiceBox("genders", genderChoiceBox);
         addItemsFromTableToChoiceBox("tribes", tribeChoiceBox);
         addItemsFromTableToChoiceBox("specialities", specialityChoiceBox);
         addItemsFromTableToChoiceBox("regions", regionChoiceBox);
+        addItemsFromTableToListView("hospitals", hospitalsListView);
+    }
+
+
+    public static void addItemsFromTableToListView(String table, ListView<String> listView) {
+        try {
+            Connection dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+
+            PreparedStatement statement = dbConnection.prepareStatement("SELECT name FROM " + table + " ORDER BY id");
+            ResultSet results = statement.executeQuery();
+            while (results.next()) {
+                String name = capitalizeString(results.getString("name"));
+                listView.getItems().add(name);
+            }
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+        }
     }
 
 
@@ -136,11 +154,11 @@ public class Create {
             PreparedStatement statement = dbConnection.prepareStatement("SELECT name FROM " + table + " ORDER BY id");
             ResultSet results = statement.executeQuery();
             while (results.next()) {
-                String title = capitalizeString(results.getString("name"));
-                choiceBox.getItems().add(title);
+                String name = capitalizeString(results.getString("name"));
+                choiceBox.getItems().add(name);
 
                 if(results.isFirst())
-                    choiceBox.setValue(title);
+                    choiceBox.setValue(name);
             }
         }
         catch (Exception exception)
