@@ -16,18 +16,18 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="com.projects.gamcare.controllers.models.user.doctor.Create"
+    fx:controller="com.projects.gamcare.controllers.doctor.Create"
     stylesheets="@../../css/main.css"
 >
     <ScrollPane styleClass="outerBodyBox" fitToWidth="true">
         <VBox>
-<!--            <fx:include source="../header.fxml"/>-->
+            <fx:include source="../header.fxml"/>
 
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
-<!--                    <HBox styleClass="subHeadingBox">-->
-<!--                        <Label text="Add Doctors"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Add Doctors"/>
+                    </HBox>
 
                     <VBox styleClass="form">
                         <HBox styleClass="addDoctorsBox">
@@ -92,9 +92,9 @@
 
 
 
-<!--                    <HBox styleClass="subHeadingBox">-->
-<!--                        <Label text="Create New Doctor"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Create New Doctor"/>
+                    </HBox>
 
                     <VBox styleClass="form">
                         <VBox fx:id="errorBox" styleClass="errorBox">
