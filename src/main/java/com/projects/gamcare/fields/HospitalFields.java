@@ -1,8 +1,8 @@
 package com.projects.gamcare.fields;
 
 import com.projects.gamcare.fields.main.BaseFields;
+import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -11,10 +11,10 @@ public class HospitalFields extends BaseFields {
     protected TextField nameTextField;
 
     @FXML
-    protected ChoiceBox<String> sizeChoiceBox;
+    protected ChoiceBox sizeChoiceBox;
 
     @FXML
-    protected ChoiceBox<String> leadDoctorChoiceBox;
+    protected ChoiceBox leadDoctorChoiceBox;
 
     @FXML
     protected TextField emailAddressTextField;
@@ -32,7 +32,7 @@ public class HospitalFields extends BaseFields {
     protected TextField townTextField;
 
     @FXML
-    protected ChoiceBox<String> regionChoiceBox;
+    protected ChoiceBox regionChoiceBox;
 
     @FXML
     protected TextArea otherDetailsTextArea;
@@ -75,5 +75,11 @@ public class HospitalFields extends BaseFields {
 
     public String getOtherDetails() {
         return otherDetailsTextArea.getText();
+    }
+
+    public void initialize() {
+        super.initialize();
+
+        regionChoiceBox.addItemsFrom("regions");
     }
 }

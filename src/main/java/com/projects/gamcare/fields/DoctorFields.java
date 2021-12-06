@@ -1,20 +1,23 @@
 package com.projects.gamcare.fields;
 
 import com.projects.gamcare.fields.main.UserFields;
+import com.projects.gamcare.wrappers.ChoiceBox;
+import com.projects.gamcare.wrappers.ListView;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
+import javafx.geometry.Orientation;
 import javafx.scene.control.TextField;
+
+import java.util.List;
 
 public class DoctorFields extends UserFields {
     @FXML
-    protected ListView<String> juniorDoctorsListView;
+    protected ListView studentDoctorsListView;
 
     @FXML
-    protected ListView<String> studentDoctorsListView;
+    protected ListView juniorDoctorsListView;
 
     @FXML
-    protected ListView<String> seniorDoctorsListView;
+    protected ListView seniorDoctorsListView;
 
     @FXML
     protected TextField universityTextField;
@@ -23,13 +26,13 @@ public class DoctorFields extends UserFields {
     protected TextField fieldOfStudyTextField;
 
     @FXML
-    protected ChoiceBox<String> careerLevelChoiceBox;
+    protected ChoiceBox careerLevelChoiceBox;
 
     @FXML
-    protected ChoiceBox<String> specialityChoiceBox;
+    protected ChoiceBox specialityChoiceBox;
 
     @FXML
-    protected ListView<String> hospitalsListView;
+    protected ListView hospitalsListView;
 
     public String getUniversity() {
         return universityTextField.getText();
@@ -43,8 +46,28 @@ public class DoctorFields extends UserFields {
         return careerLevelChoiceBox.getValue();
     }
 
-
     public Integer getSpecialityIndex() {
         return specialityChoiceBox.getSelectionModel().getSelectedIndex();
+    }
+
+    public List<Integer> getStudentDoctorsIndices() {
+        return studentDoctorsListView.getSelectionModel().getSelectedIndices();
+    }
+
+    public List<Integer> getJuniorDoctorsIndices() {
+        return juniorDoctorsListView.getSelectionModel().getSelectedIndices();
+    }
+
+    public List<Integer> getSeniorDoctorsIndices() {
+        return seniorDoctorsListView.getSelectionModel().getSelectedIndices();
+    }
+
+    public void initialize() {
+        super.initialize();
+
+        specialityChoiceBox.addItemsFrom("specialities");
+        hospitalsListView.addItemsFrom("hospitals");
+
+        hospitalsListView.setOrientation(Orientation.HORIZONTAL);
     }
 }

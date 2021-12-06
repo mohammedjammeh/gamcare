@@ -1,13 +1,13 @@
 package com.projects.gamcare.fields;
 
 import com.projects.gamcare.fields.main.UserFields;
+import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 public class PatientFields extends UserFields {
     @FXML
-    protected ChoiceBox<String> hospitalChoiceBox;
+    protected ChoiceBox hospitalChoiceBox;
 
     @FXML
     protected TextField weightTextField;
@@ -16,7 +16,7 @@ public class PatientFields extends UserFields {
     protected TextField heightTextField;
 
     @FXML
-    protected ChoiceBox<String> bloodTypeChoiceBox;
+    protected ChoiceBox bloodTypeChoiceBox;
 
     public Integer getHospitalIndex() {
         return hospitalChoiceBox.getSelectionModel().getSelectedIndex();
@@ -32,5 +32,12 @@ public class PatientFields extends UserFields {
 
     public Integer getBloodTypeIndex() {
         return bloodTypeChoiceBox.getSelectionModel().getSelectedIndex();
+    }
+
+    public void initialize() {
+        super.initialize();
+
+        hospitalChoiceBox.addItemsFrom("hospitals");
+        bloodTypeChoiceBox.addItemsFrom("blood_types");
     }
 }

@@ -2,17 +2,12 @@ package com.projects.gamcare.controllers.create;
 
 import com.projects.gamcare.fields.HospitalFields;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class Hospital extends HospitalFields implements Initializable {
-    @Override
-    public void initialize(URL var1, ResourceBundle var2) {
-        hideErrorBox();
+public class Hospital extends HospitalFields {
+    public void initialize() {
+        super.initialize();
 
 //        leadDoctorChoiceBox
-        addItemsFromTableToChoiceBox("regions", regionChoiceBox);
     }
 
 

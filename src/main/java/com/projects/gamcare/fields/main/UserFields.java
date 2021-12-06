@@ -1,7 +1,7 @@
 package com.projects.gamcare.fields.main;
 
+import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -19,13 +19,13 @@ public class UserFields extends BaseFields {
     protected TextField lastNameTextField;
 
     @FXML
-    protected ChoiceBox<String> titleChoiceBox;
+    protected ChoiceBox titleChoiceBox;
 
     @FXML
-    protected ChoiceBox<String> genderChoiceBox;
+    protected ChoiceBox genderChoiceBox;
 
     @FXML
-    protected ChoiceBox<String> tribeChoiceBox;
+    protected ChoiceBox tribeChoiceBox;
 
     @FXML
     protected TextField emailAddressTextField;
@@ -49,7 +49,7 @@ public class UserFields extends BaseFields {
     protected TextField townTextField;
 
     @FXML
-    protected ChoiceBox<String> regionChoiceBox;
+    protected ChoiceBox regionChoiceBox;
 
     @FXML
     protected TextArea otherDetailsTextArea;
@@ -112,5 +112,14 @@ public class UserFields extends BaseFields {
 
     public String getOtherDetails() {
         return otherDetailsTextArea.getText();
+    }
+
+    public void initialize() {
+        super.initialize();
+
+        titleChoiceBox.addItemsFrom("titles");
+        genderChoiceBox.addItemsFrom("genders");
+        tribeChoiceBox.addItemsFrom("tribes");
+        regionChoiceBox.addItemsFrom("regions");
     }
 }

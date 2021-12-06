@@ -7,10 +7,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<?import javafx.scene.control.ListView?>
+<?import com.projects.gamcare.wrappers.ChoiceBox?>
+<?import com.projects.gamcare.wrappers.ListView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 
@@ -31,9 +31,9 @@
 
                     <VBox styleClass="form">
                         <HBox styleClass="addDoctorsBox">
-                            <VBox styleClass="juniorDoctorsBox">
-                                <Label text="Junior doctors"/>
-                                <ListView fx:id="juniorDoctorsListView" styleClass="vertical">
+                            <VBox styleClass="studentDoctorsBox">
+                                <Label text="Student doctors"/>
+                                <ListView fx:id="studentDoctorsListView" styleClass="vertical">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
                                             <String fx:value="Omar Jallow"/>
@@ -47,9 +47,9 @@
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
-                            <VBox styleClass="midLevelDoctorsBox">
-                                <Label text="Mid level doctors"/>
-                                <ListView fx:id="studentDoctorsListView" styleClass="vertical">
+                            <VBox styleClass="juniorDoctorsBox">
+                                <Label text="Junior doctors"/>
+                                <ListView fx:id="juniorDoctorsListView" styleClass="vertical">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
                                             <String fx:value="Omar Jallow"/>
@@ -160,7 +160,7 @@
 
                             <VBox styleClass="careerLevelBox">
                                 <Label text="Career level"/>
-                                <ChoiceBox fx:id="careerLevelChoiceBox">
+                                <ChoiceBox fx:id="careerLevelChoiceBox" value="Student">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
                                             <String fx:value="Student" />
