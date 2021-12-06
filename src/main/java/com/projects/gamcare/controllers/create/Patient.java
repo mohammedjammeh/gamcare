@@ -1,5 +1,6 @@
 package com.projects.gamcare.controllers.create;
 
+import com.projects.gamcare.core.Hash;
 import com.projects.gamcare.fields.PatientFields;
 import javafx.fxml.FXML;
 import java.nio.charset.StandardCharsets;
@@ -37,41 +38,7 @@ public class Patient extends PatientFields {
 
         String otherDetails = getOtherDetails();
 
-        byte[] salt = createSalt();
-        String hash = generateHash("password123", "SHA-256", salt);
+        byte[] salt = Hash.createSalt();
+        String hash = Hash.generate("password123", salt);
     }
-
-
-    public static byte[] createSalt() {
-        byte[] bytes = new byte[20];
-        SecureRandom random = new SecureRandom();
-        random.nextBytes(bytes);
-
-        return bytes;
-    }
-
-
-    public static String generateHash(String password, String algorithm, byte[] salt) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance(algorithm);
-        digest.reset();
-        digest.update(salt);
-        byte[] hash = digest.digest(password.getBytes());
-
-        return bytesToHex(hash);
-    }
-
-
-    public static String bytesToHex(byte[] bytes) {
-        byte[] hexChars = new byte[bytes.length * 2];
-        for (int j = 0; j < bytes.length; j++) {
-            int v = bytes[j] & 0xFF;
-            hexChars[j * 2] = HEX_ARRAY[v >>> 4];
-            hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
-        }
-
-        return new String(hexChars, StandardCharsets.UTF_8);
-    }
-
-
-    private static final byte[] HEX_ARRAY = "0123456789ABCDEF".getBytes(StandardCharsets.US_ASCII);
 }
