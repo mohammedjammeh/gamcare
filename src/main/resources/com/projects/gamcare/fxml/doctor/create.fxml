@@ -16,7 +16,7 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="com.projects.gamcare.controllers.create.Doctor"
+    fx:controller="com.projects.gamcare.controllers.doctor.Create"
     stylesheets="@../../css/main.css"
 >
     <ScrollPane styleClass="outerBodyBox" fitToWidth="true">
