@@ -9,7 +9,7 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="com.projects.gamcare.controllers.patient.show.Attributes"
+    fx:controller="com.projects.gamcare.controllers.show.sections.patient.Attributes"
     styleClass="profileIncludeBox"
 >
     <HBox styleClass="subHeadingBox">

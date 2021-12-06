@@ -9,7 +9,7 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="com.projects.gamcare.controllers.doctor.Show"
+    fx:controller="com.projects.gamcare.controllers.show.Doctor"
     stylesheets="@../../css/main.css"
 >
     <ScrollPane styleClass="outerBodyBox" fitToWidth="true">
@@ -21,7 +21,7 @@
                     <HBox styleClass="subHeadingBox">
                         <Label text="Main"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
                     </HBox>
 
                     <VBox styleClass="profileAttributes">
@@ -147,7 +147,7 @@
                     <HBox styleClass="subHeadingBox">
                         <Label text="Other Details"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
                     </HBox>
 
                     <VBox styleClass="profileOtherDetails">
@@ -175,15 +175,15 @@
                     <HBox styleClass="subHeadingBox">
                         <Label text="Hospitals"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
+                        <Button text="Edit" onAction="#onEditDoctorButtonClick"/>
                     </HBox>
 
                     <VBox styleClass="profileHospitals">
                         <HBox>
-                            <Button text="Brikama" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Mansa Konko" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Farro Kono" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Katong" onAction="#onShowHospitalButtonClick"/>
+                            <Button text="Brikama" onAction="#onShowDoctorButtonClick"/>
+                            <Button text="Mansa Konko" onAction="#onShowDoctorButtonClick"/>
+                            <Button text="Farro Kono" onAction="#onShowDoctorButtonClick"/>
+                            <Button text="Katong" onAction="#onShowDoctorButtonClick"/>
                         </HBox>
                     </VBox>
                 </VBox>
