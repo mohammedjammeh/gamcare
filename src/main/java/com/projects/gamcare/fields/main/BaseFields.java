@@ -1,4 +1,4 @@
-package com.projects.gamcare.models.main;
+package com.projects.gamcare.fields.main;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class BaseModel {
+public class BaseFields {
     @FXML
     private VBox errorBox;
 

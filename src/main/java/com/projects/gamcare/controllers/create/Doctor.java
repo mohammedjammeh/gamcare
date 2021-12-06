@@ -1,6 +1,6 @@
 package com.projects.gamcare.controllers.create;
 
-import com.projects.gamcare.models.DoctorModel;
+import com.projects.gamcare.fields.DoctorFields;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Orientation;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Doctor extends DoctorModel implements Initializable {
+public class Doctor extends DoctorFields implements Initializable {
 
     @Override
     public void initialize(URL var1, ResourceBundle var2) {

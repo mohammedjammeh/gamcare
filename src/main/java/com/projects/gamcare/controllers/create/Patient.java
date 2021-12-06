@@ -1,6 +1,6 @@
 package com.projects.gamcare.controllers.create;
 
-import com.projects.gamcare.models.PatientModel;
+import com.projects.gamcare.fields.PatientFields;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -12,7 +12,7 @@ import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class Patient extends PatientModel implements Initializable {
+public class Patient extends PatientFields implements Initializable {
     @Override
     public void initialize(URL var1, ResourceBundle var2) {
         hideErrorBox();

@@ -1,4 +1,4 @@
-package com.projects.gamcare.models.main;
+package com.projects.gamcare.fields.main;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
 
-public class UserModel extends BaseModel {
+public class UserFields extends BaseFields {
     @FXML
     protected TextField firstNameTextField;
 

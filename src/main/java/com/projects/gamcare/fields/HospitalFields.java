@@ -1,12 +1,12 @@
-package com.projects.gamcare.models;
+package com.projects.gamcare.fields;
 
-import com.projects.gamcare.models.main.BaseModel;
+import com.projects.gamcare.fields.main.BaseFields;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class HospitalModel extends BaseModel {
+public class HospitalFields extends BaseFields {
     @FXML
     protected TextField nameTextField;
 

@@ -1,11 +1,11 @@
-package com.projects.gamcare.models;
+package com.projects.gamcare.fields;
 
-import com.projects.gamcare.models.main.UserModel;
+import com.projects.gamcare.fields.main.UserFields;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
-public class PatientModel extends UserModel {
+public class PatientFields extends UserFields {
     @FXML
     protected ChoiceBox<String> hospitalChoiceBox;
 

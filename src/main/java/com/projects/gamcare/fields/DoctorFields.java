@@ -1,12 +1,12 @@
-package com.projects.gamcare.models;
+package com.projects.gamcare.fields;
 
-import com.projects.gamcare.models.main.UserModel;
+import com.projects.gamcare.fields.main.UserFields;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-public class DoctorModel extends UserModel {
+public class DoctorFields extends UserFields {
     @FXML
     protected ListView<String> juniorDoctorsListView;
 
