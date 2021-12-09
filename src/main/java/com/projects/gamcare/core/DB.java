@@ -5,30 +5,53 @@ import java.sql.*;
 import java.util.*;
 
 public class DB {
-    private Boolean error;
+    public String sql;
+    private Connection dbConnection;
     private ResultSet rawResults;
 
-    public DB(String sql) {
+    public DB() {
         try {
             Properties properties = new Properties();
             FileInputStream propertiesFile = new FileInputStream("src/main/java/com/projects/gamcare/config/config.properties");
             properties.load(propertiesFile);
 
-            Connection dbConnection = DriverManager.getConnection(
+            dbConnection = DriverManager.getConnection(
                 properties.getProperty("database_url"),
                 properties.getProperty("database_user"),
                 properties.getProperty("database_password")
             );
-
-            PreparedStatement statement = dbConnection.prepareStatement(sql);
-            rawResults = statement.executeQuery();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
 
-    public Boolean getError() {
-        return error;
+    public DB select(String column) {
+        sql = "SELECT " + column + " ";
+
+        return this;
+    }
+
+    public DB from(String table) {
+        sql += "FROM " + table + " ";
+
+        return this;
+    }
+
+    public DB orderBy(String column) {
+        sql += "ORDER BY " + column;
+
+        return this;
+    }
+
+    public DB query() {
+        try {
+            PreparedStatement statement = dbConnection.prepareStatement(sql);
+            rawResults = statement.executeQuery();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        return this;
     }
 
     public List<Map<String, String>> getResults() {

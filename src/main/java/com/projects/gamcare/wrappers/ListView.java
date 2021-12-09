@@ -13,8 +13,8 @@ public class ListView extends javafx.scene.control.ListView<String> {
         this.setOrientation(Orientation.VERTICAL);
     }
 
-    public void addItemsFrom(String tableName) {
-        DB db = new DB("SELECT * FROM " + tableName + " ORDER BY id");
+    public void addItemsFrom(String table) {
+        DB db = new DB().select("name").from(table).orderBy("id").query();
         List<Map<String, String>> results = db.getResults();
 
         for (Map<String, String> result: results) {
