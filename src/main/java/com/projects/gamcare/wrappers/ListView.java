@@ -1,9 +1,10 @@
 package com.projects.gamcare.wrappers;
 
+import com.projects.gamcare.core.DB;
 import javafx.geometry.Orientation;
 import javafx.scene.control.SelectionMode;
-
-import java.sql.*;
+import java.util.List;
+import java.util.Map;
 
 public class ListView extends javafx.scene.control.ListView<String> {
     public ListView() {
@@ -13,23 +14,12 @@ public class ListView extends javafx.scene.control.ListView<String> {
     }
 
     public void addItemsFrom(String tableName) {
-        try {
-            Connection dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+        DB db = new DB("SELECT * FROM " + tableName + " ORDER BY id");
+        List<Map<String, String>> results = db.getResults();
 
-            PreparedStatement statement = dbConnection.prepareStatement("SELECT name FROM " + tableName + " ORDER BY id");
-            ResultSet results = statement.executeQuery();
-            while (results.next()) {
-                String name = capitalizeString(results.getString("name"));
-                this.getItems().add(name);
-            }
+        for (Map<String, String> result: results) {
+            String name = result.get("name");
+            this.getItems().add(name);
         }
-        catch (Exception exception)
-        {
-            exception.printStackTrace();
-        }
-    }
-
-    public static String capitalizeString(String string) {
-        return string.substring(0, 1).toUpperCase() + string.substring(1);
     }
 }

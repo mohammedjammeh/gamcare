@@ -2,20 +2,17 @@ package com.projects.gamcare.core;
 
 import java.io.FileInputStream;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Properties;
+import java.util.*;
 
 public class DB {
     private Boolean error;
-    private ResultSet results;
-
+    private ResultSet rawResults;
 
     public DB(String sql) {
         try {
             Properties properties = new Properties();
-            FileInputStream ip = new FileInputStream("src/main/java/com/projects/gamcare/config/config.properties");
-            properties.load(ip);
+            FileInputStream propertiesFile = new FileInputStream("src/main/java/com/projects/gamcare/config/config.properties");
+            properties.load(propertiesFile);
 
             Connection dbConnection = DriverManager.getConnection(
                 properties.getProperty("database_url"),
@@ -24,10 +21,8 @@ public class DB {
             );
 
             PreparedStatement statement = dbConnection.prepareStatement(sql);
-            results = statement.executeQuery();
-        }
-        catch (Exception exception)
-        {
+            rawResults = statement.executeQuery();
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
@@ -36,22 +31,33 @@ public class DB {
         return error;
     }
 
-    public void getResults() {
-        System.out.println(this.getColumnNames(results));
+    public List<Map<String, String>> getResults() {
+        List<Map<String, String>> results = new ArrayList<>();
+
+        try {
+            while (rawResults.next()) {
+                Map<String, String> row = new HashMap<>();
+                for (String columnName : getColumnNames(rawResults)) {
+                    row.put(columnName, rawResults.getString(columnName));
+                }
+                results.add(row);
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        return results;
     }
 
-    private Collection<String> getColumnNames(ResultSet results) {
+    private Collection<String> getColumnNames(ResultSet rawResults) {
         Collection<String> columnNames = new ArrayList<>();
 
         try {
-            ResultSetMetaData metaData = results.getMetaData();
-
+            ResultSetMetaData metaData = rawResults.getMetaData();
             for (int i = 1; i <= metaData.getColumnCount(); i++) {
                 columnNames.add(metaData.getColumnName(i));
             }
-        }
-        catch (Exception exception)
-        {
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
 
