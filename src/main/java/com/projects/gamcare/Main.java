@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.*;
-import java.util.Properties;
 
 public class Main extends Application {
     @Override
@@ -77,11 +74,6 @@ public class Main extends Application {
 //            exception.printStackTrace();
 //        }
 
-        Properties properties = new Properties();
-        FileInputStream ip = new FileInputStream("src/main/java/com/projects/gamcare/config/config.properties");
-        properties.load(ip);
-
-        System.out.println(properties.getProperty("database_url"));
 
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
