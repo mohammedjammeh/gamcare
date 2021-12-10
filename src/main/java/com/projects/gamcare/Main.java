@@ -1,29 +1,30 @@
 package com.projects.gamcare;
 
+import com.projects.gamcare.enums.DoctorLevel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
 
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-//        try {
-//            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+        try {
+            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
 
-//            // PREPARE STATMENT
-//            String selectSql = "SELECT * FROM users WHERE email = ?";
-//            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
-//            myStmt.setString(1, "mohammedjammeh@yahoo.com");
-//            myStmt.executeQuery();
-//
-//            ResultSet myRs = myStmt.executeQuery("SELECT * FROM users");
-//
-//            while (myRs.next()) {
-//                System.out.println(myRs.getString("first_name"));
-//            }
+            // PREPARE STATMENT
+            String selectSql = "SELECT * FROM doctors WHERE career_level = ?";
+            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
+            myStmt.setString(1, DoctorLevel.SENIOR.toString());
+
+            ResultSet myRs = myStmt.executeQuery();
+
+            while (myRs.next()) {
+                System.out.println(myRs.getString("school"));
+            }
 
 
 
@@ -68,22 +69,22 @@ public class Main extends Application {
 //
 //            System.out.println("Number of rows affected: " + rowsAffected);
 
-//        }
-//        catch (Exception exception)
-//        {
-//            exception.printStackTrace();
-//        }
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+        }
 
 
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
