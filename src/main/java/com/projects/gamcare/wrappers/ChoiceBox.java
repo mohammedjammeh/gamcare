@@ -7,19 +7,19 @@ import java.util.Map;
 
 public class ChoiceBox extends javafx.scene.control.ChoiceBox<String> {
     public void addItemsFrom(String table) {
-        DB db = new DB().select("name").from(table).orderBy("id").query();
-        List<Map<String, String>> results = db.getResults();
+        List<Map<String, String>> dbItems = new DB()
+            .select("name")
+            .from(table)
+            .orderBy("id")
+            .query()
+            .getResults();
 
-        for (Map<String, String> result: results) {
-            String name = result.get("name");
-            this.getItems().add(name);
+        List<String> items = dbItems
+            .stream()
+            .map(result -> result.get("name"))
+            .toList();
 
-            if(isItemFirst(result, results))
-                this.setValue(name);
-        }
-    }
-
-    private boolean isItemFirst(Map<String, String> result, List<Map<String, String>> results) {
-        return results.indexOf(result) == 0;
+        this.getItems().addAll(items);
+        this.setValue(items.get(0));
     }
 }
