@@ -16,16 +16,16 @@
         </VBox>
 
         <VBox styleClass="errorBox" fx:id="errorBox">
-            <Label fx:id="errorLabel" text="Sorry, authentication unsuccessful."/>
+            <Label text="Sorry, authentication unsuccessful."/>
         </VBox>
 
         <VBox styleClass="emailBox">
-            <Label fx:id="emailFieldLabel" text="Email"/>
-            <TextField fx:id="emailTextField" promptText="Email"/>
+            <Label text="Email"/>
+            <TextField fx:id="emailAddressTextField" promptText="Email"/>
         </VBox>
 
         <VBox styleClass="passwordBox">
-            <Label fx:id="passwordFieldLabel" text="Password"/>
+            <Label text="Password"/>
             <TextField fx:id="passwordTextField" promptText="Password"/>
         </VBox>
 

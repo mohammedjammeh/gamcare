@@ -1,6 +1,5 @@
 package com.projects.gamcare.fields;
 
-import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.enums.HospitalSize;
 import com.projects.gamcare.fields.main.BaseFields;
 import com.projects.gamcare.wrappers.ChoiceBox;
