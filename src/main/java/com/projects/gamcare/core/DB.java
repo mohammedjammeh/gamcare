@@ -7,7 +7,6 @@ import java.util.*;
 public class DB {
     public String sql;
     private Connection dbConnection;
-    private ResultSet rawResults;
 
     public DB() {
         try {
@@ -43,26 +42,13 @@ public class DB {
         return this;
     }
 
-    public DB query() {
-        try {
-            PreparedStatement statement = dbConnection.prepareStatement(sql);
-            rawResults = statement.executeQuery();
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-
-        return this;
-    }
-
-    public List<Map<String, String>> getResults() {
+    public List<Map<String, String>> get() {
         List<Map<String, String>> results = new ArrayList<>();
 
         try {
-            while (rawResults.next()) {
-                Map<String, String> row = new HashMap<>();
-                for (String columnName : getColumnNames(rawResults)) {
-                    row.put(columnName, rawResults.getString(columnName));
-                }
+            ResultSet queryResults = this.query();
+            while (queryResults.next()) {
+                Map<String, String> row = getRowValues(queryResults);
                 results.add(row);
             }
         } catch (Exception exception) {
@@ -72,16 +58,30 @@ public class DB {
         return results;
     }
 
-    private Collection<String> getColumnNames(ResultSet rawResults) {
-        Collection<String> columnNames = new ArrayList<>();
+    private ResultSet query() throws SQLException {
+        PreparedStatement statement = dbConnection.prepareStatement(sql);
 
-        try {
-            ResultSetMetaData metaData = rawResults.getMetaData();
-            for (int i = 1; i <= metaData.getColumnCount(); i++) {
-                columnNames.add(metaData.getColumnName(i));
-            }
-        } catch (Exception exception) {
-            exception.printStackTrace();
+        return statement.executeQuery();
+    }
+
+
+    private Map<String, String> getRowValues(ResultSet queryResults) throws SQLException {
+        Map<String, String> row = new HashMap<>();
+
+        for (String columnName : getColumnNames(queryResults)) {
+            row.put(columnName, queryResults.getString(columnName));
+        }
+
+        return row;
+    }
+
+
+    private Collection<String> getColumnNames(ResultSet queryResults) throws SQLException {
+        Collection<String> columnNames = new ArrayList<>();
+        ResultSetMetaData metaData = queryResults.getMetaData();
+
+        for (int i = 1; i <= metaData.getColumnCount(); i++) {
+            columnNames.add(metaData.getColumnName(i));
         }
 
         return columnNames;

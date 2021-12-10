@@ -11,8 +11,7 @@ public class ChoiceBox extends javafx.scene.control.ChoiceBox<String> {
             .select("name")
             .from(table)
             .orderBy("id")
-            .query()
-            .getResults();
+            .get();
 
         List<String> items = dbItems
             .stream()

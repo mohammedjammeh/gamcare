@@ -17,8 +17,7 @@ public class ListView extends javafx.scene.control.ListView<String> {
             .select("name")
             .from(table)
             .orderBy("id")
-            .query()
-            .getResults();
+            .get();
 
         List<String> items = dbItems
             .stream()
