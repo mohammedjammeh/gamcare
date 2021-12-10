@@ -42,15 +42,7 @@
 
                             <VBox styleClass="sizeBox">
                                 <Label text="Size"/>
-                                <ChoiceBox fx:id="sizeChoiceBox" value="Large">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Small" />
-                                            <String fx:value="Medium" />
-                                            <String fx:value="Large" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <ChoiceBox fx:id="sizeChoiceBox"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>

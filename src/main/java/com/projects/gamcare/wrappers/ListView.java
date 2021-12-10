@@ -21,7 +21,7 @@ public class ListView extends javafx.scene.control.ListView<String> {
 
         List<String> items = dbItems
             .stream()
-            .map(result -> result.get("name"))
+            .map(item -> item.get("name"))
             .toList();
 
         this.getItems().addAll(items);

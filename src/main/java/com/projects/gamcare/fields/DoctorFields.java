@@ -1,5 +1,6 @@
 package com.projects.gamcare.fields;
 
+import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.fields.main.UserFields;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import com.projects.gamcare.wrappers.ListView;
@@ -67,6 +68,8 @@ public class DoctorFields extends UserFields {
 
         specialityChoiceBox.addItemsFrom("specialities");
         hospitalsListView.addItemsFrom("hospitals");
+
+        careerLevelChoiceBox.addEnumsFrom(DoctorLevel.class);
 
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
     }

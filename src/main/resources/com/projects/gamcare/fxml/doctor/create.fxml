@@ -159,16 +159,8 @@
                             <HBox HBox.hgrow="ALWAYS"/>
 
                             <VBox styleClass="careerLevelBox">
-                                <Label text="Career level"/>
-                                <ChoiceBox fx:id="careerLevelChoiceBox" value="Student">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Student" />
-                                            <String fx:value="Junior" />
-                                            <String fx:value="Senior" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <Label text="Level"/>
+                                <ChoiceBox fx:id="careerLevelChoiceBox"/>
                             </VBox>
                         </HBox>
 
