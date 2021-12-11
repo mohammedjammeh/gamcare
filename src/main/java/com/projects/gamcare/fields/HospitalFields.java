@@ -1,11 +1,15 @@
 package com.projects.gamcare.fields;
 
+import com.projects.gamcare.core.DB;
+import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.enums.HospitalSize;
 import com.projects.gamcare.fields.main.BaseFields;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import java.util.List;
 
 public class HospitalFields extends BaseFields {
     @FXML
@@ -82,7 +86,22 @@ public class HospitalFields extends BaseFields {
         super.initialize();
 
         regionChoiceBox.setItems(getDatabaseItems("regions"));
-
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
+
+//        "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctor_id WHERE doctors.career_level = ? "
+        List<String> leadDoctors = new DB()
+            .select("*")
+            .from("doctors")
+            .innerJoin("users")
+            .on("doctors.id", "=", "users.id")
+            .where("doctors.career_level", "=", DoctorLevel.SENIOR.toString())
+            .orderBy("id")
+            .get()
+            .stream()
+            .map(item -> item.get("name"))
+            .toList();
+
+//        leadDoctorChoiceBox.setItems(getEnumItems(HospitalSize.class));
+
     }
 }
