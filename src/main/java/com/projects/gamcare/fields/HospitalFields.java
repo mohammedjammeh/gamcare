@@ -89,17 +89,17 @@ public class HospitalFields extends BaseFields {
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
 
 //        "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctor_id WHERE doctors.career_level = ? "
-        List<String> leadDoctors = new DB()
-            .select("*")
-            .from("doctors")
-            .innerJoin("users")
-            .on("doctors.id", "=", "users.id")
-            .where("doctors.career_level", "=", DoctorLevel.SENIOR.toString())
-            .orderBy("id")
-            .get()
-            .stream()
-            .map(item -> item.get("name"))
-            .toList();
+//        List<String> leadDoctors = new DB()
+//            .select("*")
+//            .from("doctors")
+//            .innerJoin("users")
+//            .on("doctors.id", "=", "users.id")
+//            .where("doctors.career_level", "=", DoctorLevel.SENIOR.toString())
+//            .orderBy("id")
+//            .get()
+//            .stream()
+//            .map(item -> item.get("name"))
+//            .toList();
 
 //        leadDoctorChoiceBox.setItems(getEnumItems(HospitalSize.class));
 
