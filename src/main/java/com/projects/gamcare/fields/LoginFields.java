@@ -1,5 +1,6 @@
-package com.projects.gamcare.fields.main;
+package com.projects.gamcare.fields;
 
+import com.projects.gamcare.fields.main.BaseFields;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 

@@ -66,11 +66,10 @@ public class DoctorFields extends UserFields {
     public void initialize() {
         super.initialize();
 
-        specialityChoiceBox.addItemsFrom("specialities");
-        hospitalsListView.addItemsFrom("hospitals");
+        specialityChoiceBox.setItems(getDatabaseItems("specialities"));
+        careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
 
-        careerLevelChoiceBox.addEnumsFrom(DoctorLevel.class);
-
+        hospitalsListView.setItems(getDatabaseItems("hospitals"));
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
     }
 }

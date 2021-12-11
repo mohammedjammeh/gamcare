@@ -37,7 +37,7 @@ public class PatientFields extends UserFields {
     public void initialize() {
         super.initialize();
 
-        hospitalChoiceBox.addItemsFrom("hospitals");
-        bloodTypeChoiceBox.addItemsFrom("blood_types");
+        hospitalChoiceBox.setItems(getDatabaseItems("hospitals"));
+        bloodTypeChoiceBox.setItems(getDatabaseItems("blood_types"));
     }
 }

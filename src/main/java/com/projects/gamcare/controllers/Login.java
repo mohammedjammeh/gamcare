@@ -1,6 +1,6 @@
 package com.projects.gamcare.controllers;
 
-import com.projects.gamcare.fields.main.LoginFields;
+import com.projects.gamcare.fields.LoginFields;
 import javafx.fxml.FXML;
 
 public class Login extends LoginFields {

@@ -14,17 +14,20 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         try {
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
-
-            // PREPARE STATMENT
-            String selectSql = "SELECT * FROM doctors WHERE career_level = ?";
-            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
-            myStmt.setString(1, DoctorLevel.SENIOR.toString());
-
-            ResultSet myRs = myStmt.executeQuery();
-
-            while (myRs.next()) {
-                System.out.println(myRs.getString("school"));
-            }
+//
+//            // PREPARE STATMENT
+//            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctor_id WHERE doctors.career_level = ? ";
+//            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
+//            myStmt.setString(1, DoctorLevel.SENIOR.toString());
+//
+//            ResultSet myRs = myStmt.executeQuery();
+//
+//            while (myRs.next()) {
+//                System.out.println(myRs.getString("COUNT(*)"));
+////                ResultSetMetaData metaData = myRs.getMetaData();
+////                System.out.println(metaData);
+//
+//            }
 
 
 
@@ -55,7 +58,7 @@ public class Main extends Application {
 
 
 //            UPDATE
-//            String updateSql = "update users set middle_name='Musa' where id=2";
+//            String updateSql = "update users setItems middle_name='Musa' where id=2";
 //
 //            myStmt.executeUpdate(updateSql);
 
@@ -80,11 +83,11 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));

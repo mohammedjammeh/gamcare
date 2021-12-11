@@ -117,9 +117,9 @@ public class UserFields extends BaseFields {
     public void initialize() {
         super.initialize();
 
-        titleChoiceBox.addItemsFrom("titles");
-        genderChoiceBox.addItemsFrom("genders");
-        tribeChoiceBox.addItemsFrom("tribes");
-        regionChoiceBox.addItemsFrom("regions");
+        titleChoiceBox.setItems(getDatabaseItems("titles"));
+        genderChoiceBox.setItems(getDatabaseItems("genders"));
+        tribeChoiceBox.setItems(getDatabaseItems("tribes"));
+        regionChoiceBox.setItems(getDatabaseItems("regions"));
     }
 }
