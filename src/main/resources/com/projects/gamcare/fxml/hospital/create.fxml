@@ -49,15 +49,7 @@
 
                             <VBox styleClass="leadDoctorBox">
                                 <Label text="Lead Doctor"/>
-                                <ChoiceBox fx:id="leadDoctorChoiceBox" value="Buba Barry">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Ousman Jallow" />
-                                            <String fx:value="Buba Barry" />
-                                            <String fx:value="Momodou Jallow" />
-                                        </FXCollections>
-                                    </items>
-                                </ChoiceBox>
+                                <ChoiceBox fx:id="leadDoctorChoiceBox"/>
                             </VBox>
                         </HBox>
 

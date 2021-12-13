@@ -2,6 +2,7 @@ package com.projects.gamcare.fields.main;
 
 import com.projects.gamcare.core.DB;
 import com.projects.gamcare.core.StringTool;
+import com.projects.gamcare.enums.DoctorLevel;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
@@ -25,6 +26,19 @@ public class BaseFields {
             .get()
             .stream()
             .map(item -> item.get("name"))
+            .toList();
+    }
+
+    public List<String> getDatabaseItems(String mainTable, String withTable, String whereColumn, String whereValue) {
+        return new DB()
+            .select(List.of("*"))
+            .from(mainTable)
+            .with(withTable)
+            .where(whereColumn, "=", whereValue)
+            .orderBy("first_name")
+            .get()
+            .stream()
+            .map(item -> item.get("first_name") + " " + item.get("last_name"))
             .toList();
     }
 

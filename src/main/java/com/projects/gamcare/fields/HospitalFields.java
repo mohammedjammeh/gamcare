@@ -87,22 +87,11 @@ public class HospitalFields extends BaseFields {
 
         regionChoiceBox.setItems(getDatabaseItems("regions"));
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-
-//        "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctor_id WHERE doctors.career_level = ? "
-        List<String> leadDoctors = new DB()
-            .select(List.of("*"))
-            .from("doctors")
-            .with("users")
-            .where("doctors.career_level", "=", DoctorLevel.SENIOR.toString())
-            .orderBy("first_name")
-            .get()
-            .stream()
-            .map(item -> item.get("first_name"))
-            .toList();
-
-        System.out.println(leadDoctors);
-
-//        leadDoctorChoiceBox.setItems(getDatabaseItems("doctors"));
-
+        leadDoctorChoiceBox.setItems(getDatabaseItems(
+            "doctors",
+            "users",
+            "career_level",
+            DoctorLevel.SENIOR.toString()
+        ));
     }
 }
