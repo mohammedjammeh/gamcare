@@ -16,7 +16,7 @@ public class Main extends Application {
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
 //
 //            // PREPARE STATMENT
-//            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctor_id WHERE doctors.career_level = ? ";
+//            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctors_id WHERE doctors.career_level = ?";
 //            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
 //            myStmt.setString(1, DoctorLevel.SENIOR.toString());
 //

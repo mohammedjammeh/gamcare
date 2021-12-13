@@ -19,7 +19,7 @@ public class BaseFields {
 
     public List<String> getDatabaseItems(String table) {
         return new DB()
-            .select("name")
+            .select(List.of("*"))
             .from(table)
             .orderBy("id")
             .get()

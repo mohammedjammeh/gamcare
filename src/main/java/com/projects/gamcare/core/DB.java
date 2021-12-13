@@ -5,8 +5,11 @@ import java.sql.*;
 import java.util.*;
 
 public class DB {
-    public String sql;
     private Connection dbConnection;
+    private String sql;
+    private String mainTable;
+
+    private List<String> whereValues = new ArrayList<>();
 
     public DB() {
         try {
@@ -24,14 +27,45 @@ public class DB {
         }
     }
 
-    public DB select(String column) {
-        sql = "SELECT " + column + " ";
+    public DB select(List<String> columns) {
+        StringBuilder selectStatement = new StringBuilder("SELECT ");
+
+        for (String column: columns) {
+            selectStatement
+                .append(column)
+                .append(finaliseSelectColumn(column, columns));
+        }
+
+        sql = selectStatement.toString();
 
         return this;
     }
 
+    private String finaliseSelectColumn(String column, List<String> columns) {
+        return isLastColumn(column, columns) ? " " : ", ";
+    }
+
+    private Boolean isLastColumn(String column, List<String> columns) {
+        return columns.indexOf(column) == columns.size() - 1;
+    }
+
     public DB from(String table) {
         sql += "FROM " + table + " ";
+        mainTable = table;
+
+        return this;
+    }
+
+    public DB with(String secondTable) {
+        sql += "INNER JOIN " + secondTable + " ON " + mainTable +  ".id = " + secondTable + "." + mainTable + "_id ";
+
+        return this;
+    }
+
+    public DB where(String column, String operator, String value) {
+        sql += "WHERE " + column + " " + operator + " ? ";
+
+        whereValues.add(value);
 
         return this;
     }
@@ -60,6 +94,10 @@ public class DB {
 
     private ResultSet query() throws SQLException {
         PreparedStatement statement = dbConnection.prepareStatement(sql);
+
+        for (int i = 0; i < whereValues.size(); i++) {
+            statement.setString(i + 1, whereValues.get(i));
+        }
 
         return statement.executeQuery();
     }
