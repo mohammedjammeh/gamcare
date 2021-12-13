@@ -1,5 +1,6 @@
 package com.projects.gamcare.fields;
 
+import com.projects.gamcare.core.DB;
 import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.fields.main.UserFields;
 import com.projects.gamcare.wrappers.ChoiceBox;
@@ -71,5 +72,26 @@ public class DoctorFields extends UserFields {
 
         hospitalsListView.setItems(getDatabaseItems("hospitals"));
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
+
+//        only doctors who are not assigned to other 3 or more hospitals
+//        only doctors are not already assigned to the current hospital
+
+//        studentDoctorsListView
+//        juniorDoctorsListView
+//        seniorDoctorsListView
+
+//        SELECT * FROM doctors INNER JOIN users ON doctors.id = users.doctors_id INNER JOIN hospitals_doctors ON doctors.id = hospitals_doctors.doctors_id WHERE hospitals_doctors.hospitals_id != 1;
+//        List<String> doctors = new DB()
+//                .select(List.of("*"))
+//                .from(mainTable)
+//                .with(withTable)
+//                .where(whereColumn, "=", whereValue)
+//                .orderBy("first_name")
+//                .get()
+//                .stream()
+//                .map(item -> item.get("first_name") + " " + item.get("last_name"))
+//                .toList();
+//
+//        System.out.println(doctors);
     }
 }

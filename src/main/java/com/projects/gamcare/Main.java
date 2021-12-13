@@ -13,12 +13,15 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+//            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
 //
 //            // PREPARE STATMENT
-//            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctors_id WHERE doctors.career_level = ?";
+////            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctors_id WHERE doctors.career_level = ?";
+//            SELECT * FROM doctors INNER JOIN users ON doctors.id = users.doctors_id INNER JOIN hospitals_doctors ON doctors.id = hospitals_doctors.doctors_id AND hospitals_doctors.hospitals_id = 1;
+//
+//            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctors_id";
+//
 //            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
-//            myStmt.setString(1, DoctorLevel.SENIOR.toString());
 //
 //            ResultSet myRs = myStmt.executeQuery();
 //
@@ -83,11 +86,11 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));

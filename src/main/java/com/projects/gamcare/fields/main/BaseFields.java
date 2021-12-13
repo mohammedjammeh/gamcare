@@ -38,6 +38,7 @@ public class BaseFields {
             .orderBy("first_name")
             .get()
             .stream()
+                .distinct()
             .map(item -> item.get("first_name") + " " + item.get("last_name"))
             .toList();
     }

@@ -6,18 +6,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Create extends DoctorFields {
-    public void initialize() {
-        super.initialize();
-
-//        only doctors who are not assigned to other 3 or more hospitals
-//        only doctors are not already assigned to the currect hospital
-
-//        studentDoctorsListView
-//        juniorDoctorsListView
-//        seniorDoctorsListView
-    }
-
-
     @FXML
     protected void onAddDoctorsButtonClick() {
         List<Integer> studentDoctorsIndices = getStudentDoctorsIndices();
