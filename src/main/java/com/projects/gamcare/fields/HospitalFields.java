@@ -87,11 +87,19 @@ public class HospitalFields extends BaseFields {
 
         regionChoiceBox.setItems(getDatabaseItems("regions"));
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-        leadDoctorChoiceBox.setItems(getDatabaseItems(
-            "doctors",
-            "users",
-            "career_level",
-            DoctorLevel.SENIOR.toString()
-        ));
+        leadDoctorChoiceBox.setItems(getSeniorDoctors());
+    }
+
+    public List<String> getSeniorDoctors() {
+        return new DB()
+            .select(List.of("first_name", "last_name", "career_level"))
+            .from("doctors")
+            .with("users")
+            .where("career_level", "=", DoctorLevel.SENIOR.toString())
+            .orderBy("first_name")
+            .get()
+            .stream()
+            .map(item -> item.get("first_name") + " " + item.get("last_name"))
+            .toList();
     }
 }

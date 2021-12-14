@@ -29,20 +29,6 @@ public class BaseFields {
             .toList();
     }
 
-    public List<String> getDatabaseItems(String mainTable, String withTable, String whereColumn, String whereValue) {
-        return new DB()
-            .select(List.of("*"))
-            .from(mainTable)
-            .with(withTable)
-            .where(whereColumn, "=", whereValue)
-            .orderBy("first_name")
-            .get()
-            .stream()
-                .distinct()
-            .map(item -> item.get("first_name") + " " + item.get("last_name"))
-            .toList();
-    }
-
     public List<String> getEnumItems(Class<?> enumClass) {
         return Arrays
             .stream(enumClass.getEnumConstants())
