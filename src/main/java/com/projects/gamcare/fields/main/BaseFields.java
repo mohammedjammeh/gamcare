@@ -2,7 +2,6 @@ package com.projects.gamcare.fields.main;
 
 import com.projects.gamcare.core.DB;
 import com.projects.gamcare.core.StringTool;
-import com.projects.gamcare.enums.DoctorLevel;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
