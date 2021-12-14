@@ -1,6 +1,5 @@
 package com.projects.gamcare.fields.main;
 
-import com.projects.gamcare.core.DB;
 import com.projects.gamcare.core.StringTool;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
@@ -15,17 +14,6 @@ public class BaseFields {
     public void initialize() {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
-    }
-
-    public List<String> getDatabaseItems(String table) {
-        return new DB()
-            .select(List.of("*"))
-            .from(table)
-            .orderBy("id")
-            .get()
-            .stream()
-            .map(item -> item.get("name"))
-            .toList();
     }
 
     public List<String> getEnumItems(Class<?> enumClass) {

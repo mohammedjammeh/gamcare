@@ -3,6 +3,7 @@ package com.projects.gamcare.fields;
 import com.projects.gamcare.enums.HospitalSize;
 import com.projects.gamcare.fields.main.BaseFields;
 import com.projects.gamcare.models.Doctor;
+import com.projects.gamcare.models.Region;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -82,7 +83,7 @@ public class HospitalFields extends BaseFields {
     public void initialize() {
         super.initialize();
 
-        regionChoiceBox.setItems(getDatabaseItems("regions"));
+        regionChoiceBox.setItems(Region.getItems());
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
         leadDoctorChoiceBox.setItems(Doctor.getAvailableSeniors());
     }

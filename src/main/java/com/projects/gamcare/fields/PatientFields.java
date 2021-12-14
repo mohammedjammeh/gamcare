@@ -1,6 +1,8 @@
 package com.projects.gamcare.fields;
 
 import com.projects.gamcare.fields.main.UserFields;
+import com.projects.gamcare.models.BloodType;
+import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -37,7 +39,7 @@ public class PatientFields extends UserFields {
     public void initialize() {
         super.initialize();
 
-        hospitalChoiceBox.setItems(getDatabaseItems("hospitals"));
-        bloodTypeChoiceBox.setItems(getDatabaseItems("blood_types"));
+        hospitalChoiceBox.setItems(Hospital.getItems());
+        bloodTypeChoiceBox.setItems(BloodType.getItems());
     }
 }

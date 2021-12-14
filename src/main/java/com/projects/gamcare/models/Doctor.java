@@ -8,6 +8,15 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Doctor extends BaseModel {
+    private static final String table = "doctors";
+
+    public static List<String> getItems() {
+        return getNames(table);
+    }
+
+
+
+
     public static List<String> getAvailableSeniors(Integer hospitalId) {
         List<Map<String, String>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.SENIOR.name());
 

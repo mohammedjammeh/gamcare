@@ -3,6 +3,8 @@ package com.projects.gamcare.fields;
 import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.fields.main.UserFields;
 import com.projects.gamcare.models.Doctor;
+import com.projects.gamcare.models.Hospital;
+import com.projects.gamcare.models.Speciality;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import com.projects.gamcare.wrappers.ListView;
 import javafx.fxml.FXML;
@@ -67,10 +69,10 @@ public class DoctorFields extends UserFields {
     public void initialize() {
         super.initialize();
 
-        specialityChoiceBox.setItems(getDatabaseItems("specialities"));
+        specialityChoiceBox.setItems(Speciality.getItems());
         careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
 
-        hospitalsListView.setItems(getDatabaseItems("hospitals"));
+        hospitalsListView.setItems(Hospital.getItems());
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
 
         studentDoctorsListView.setItems(Doctor.getAvailableStudents(1));

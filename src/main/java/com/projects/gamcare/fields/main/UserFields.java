@@ -1,5 +1,9 @@
 package com.projects.gamcare.fields.main;
 
+import com.projects.gamcare.models.Gender;
+import com.projects.gamcare.models.Region;
+import com.projects.gamcare.models.Title;
+import com.projects.gamcare.models.Tribe;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -117,9 +121,9 @@ public class UserFields extends BaseFields {
     public void initialize() {
         super.initialize();
 
-        titleChoiceBox.setItems(getDatabaseItems("titles"));
-        genderChoiceBox.setItems(getDatabaseItems("genders"));
-        tribeChoiceBox.setItems(getDatabaseItems("tribes"));
-        regionChoiceBox.setItems(getDatabaseItems("regions"));
+        titleChoiceBox.setItems(Title.getItems());
+        genderChoiceBox.setItems(Gender.getItems());
+        tribeChoiceBox.setItems(Tribe.getItems());
+        regionChoiceBox.setItems(Region.getItems());
     }
 }
