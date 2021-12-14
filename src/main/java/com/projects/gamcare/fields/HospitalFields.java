@@ -1,15 +1,12 @@
 package com.projects.gamcare.fields;
 
-import com.projects.gamcare.core.DB;
-import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.enums.HospitalSize;
 import com.projects.gamcare.fields.main.BaseFields;
+import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
-import java.util.List;
 
 public class HospitalFields extends BaseFields {
     @FXML
@@ -87,19 +84,6 @@ public class HospitalFields extends BaseFields {
 
         regionChoiceBox.setItems(getDatabaseItems("regions"));
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-        leadDoctorChoiceBox.setItems(getSeniorDoctors());
-    }
-
-    public List<String> getSeniorDoctors() {
-        return new DB()
-            .select(List.of("first_name", "last_name", "career_level"))
-            .from("doctors")
-            .with("users")
-            .where("career_level", "=", DoctorLevel.SENIOR.toString())
-            .orderBy("first_name")
-            .get()
-            .stream()
-            .map(item -> item.get("first_name") + " " + item.get("last_name"))
-            .toList();
+        leadDoctorChoiceBox.setItems(Doctor.getAvailableSeniors());
     }
 }

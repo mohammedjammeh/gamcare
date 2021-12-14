@@ -33,48 +33,21 @@
                         <HBox styleClass="addDoctorsBox">
                             <VBox styleClass="studentDoctorsBox">
                                 <Label text="Student doctors"/>
-                                <ListView fx:id="studentDoctorsListView" styleClass="vertical">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Omar Jallow"/>
-                                            <String fx:value="Bora Fatty"/>
-                                            <String fx:value="Mohammed Touray"/>
-                                            <String fx:value="Wangari Maathai"/>
-                                        </FXCollections>
-                                    </items>
-                                </ListView>
+                                <ListView fx:id="studentDoctorsListView" styleClass="vertical"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
                             <VBox styleClass="juniorDoctorsBox">
                                 <Label text="Junior doctors"/>
-                                <ListView fx:id="juniorDoctorsListView" styleClass="vertical">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Omar Jallow"/>
-                                            <String fx:value="Bora Fatty"/>
-                                            <String fx:value="Mohammed Touray"/>
-                                            <String fx:value="Wangari Maathai"/>
-                                        </FXCollections>
-                                    </items>
-                                </ListView>
+                                <ListView fx:id="juniorDoctorsListView" styleClass="vertical"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
                             <VBox styleClass="seniorDoctorsBox">
                                 <Label text="Senior doctors"/>
-                                <ListView fx:id="seniorDoctorsListView" styleClass="vertical">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="Omar Jallow"/>
-                                            <String fx:value="Bora Fatty"/>
-                                            <String fx:value="Mohammed Touray"/>
-                                            <String fx:value="Wangari Maathai"/>
-                                        </FXCollections>
-                                    </items>
-                                </ListView>
+                                <ListView fx:id="seniorDoctorsListView" styleClass="vertical"/>
                             </VBox>
                         </HBox>
 
