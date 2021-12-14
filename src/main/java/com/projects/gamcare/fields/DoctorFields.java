@@ -10,6 +10,10 @@ import javafx.geometry.Orientation;
 import javafx.scene.control.TextField;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class DoctorFields extends UserFields {
     @FXML
@@ -80,18 +84,39 @@ public class DoctorFields extends UserFields {
 //        juniorDoctorsListView
 //        seniorDoctorsListView
 
-//        SELECT * FROM doctors INNER JOIN users ON doctors.id = users.doctors_id INNER JOIN hospitals_doctors ON doctors.id = hospitals_doctors.doctors_id WHERE hospitals_doctors.hospitals_id != 1;
-//        List<String> doctors = new DB()
-//                .select(List.of("*"))
-//                .from(mainTable)
-//                .with(withTable)
-//                .where(whereColumn, "=", whereValue)
-//                .orderBy("first_name")
-//                .get()
-//                .stream()
-//                .map(item -> item.get("first_name") + " " + item.get("last_name"))
-//                .toList();
-//
-//        System.out.println(doctors);
+
+
+        List<Map<String, String>> doctors = getOtherHospitalDoctors(DoctorLevel.JUNIOR.toString());
+
+        List<String> availableDoctors = doctors.stream()
+            .filter(doctor -> isAvailable(doctor, doctors))
+            .map(this::getFullName)
+            .toList();
+
+        System.out.println(availableDoctors);
+    }
+
+    public List<Map<String, String>> getOtherHospitalDoctors(String level) {
+        List<String> fields = List.of("*");
+
+        return new DB()
+            .select(fields)
+            .from("doctors")
+            .with("users")
+            .with("hospitals_doctors")
+            .where("hospitals_doctors.hospitals_id", "!=", "1")
+            .where("doctors.career_level", "=", level)
+            .orderBy("first_name")
+            .get();
+    }
+
+    public Boolean isAvailable(Map<String, String> doctor, List<Map<String, String>> doctors) {
+        return doctors.stream()
+            .filter(filteredDoctor -> Objects.equals(filteredDoctor.get("id"), doctor.get("id")))
+            .count() < 3;
+    }
+
+    public String getFullName(Map<String, String> doctor) {
+        return doctor.get("first_name") + " " + doctor.get("last_name");
     }
 }

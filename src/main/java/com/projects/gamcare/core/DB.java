@@ -8,7 +8,6 @@ public class DB {
     private Connection dbConnection;
     private String sql;
     private String mainTable;
-
     private List<String> whereValues = new ArrayList<>();
 
     public DB() {
@@ -63,7 +62,8 @@ public class DB {
     }
 
     public DB where(String column, String operator, String value) {
-        sql += "WHERE " + column + " " + operator + " ? ";
+        sql += whereValues.isEmpty() ? "WHERE " : "AND ";
+        sql += column + " " + operator + " ? ";
 
         whereValues.add(value);
 
