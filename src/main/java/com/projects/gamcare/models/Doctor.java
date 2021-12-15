@@ -17,6 +17,7 @@ public class Doctor extends BaseModel {
 
 
 
+
     public static List<String> getAvailableSeniors(Integer hospitalId) {
         List<Map<String, String>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.SENIOR.name());
 
@@ -52,6 +53,7 @@ public class Doctor extends BaseModel {
 
 
 
+
     public static List<String> getAvailableSeniors() {
         List<Map<String, String>> doctors = getOtherHospitalDoctors(DoctorLevel.SENIOR.name());
 
@@ -82,6 +84,7 @@ public class Doctor extends BaseModel {
             .orderBy("first_name")
             .get();
     }
+
 
 
 
