@@ -18,11 +18,17 @@ public class Hash {
         return bytes;
     }
 
-    public static String generate(String password, byte[] salt) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance(ALGORITHM);
-        digest.reset();
-        digest.update(salt);
-        byte[] hash = digest.digest(password.getBytes());
+    public static String generate(String password, byte[] salt) {
+        byte[] hash = new byte[0];
+
+        try {
+            MessageDigest digest = MessageDigest.getInstance(ALGORITHM);
+            digest.reset();
+            digest.update(salt);
+            hash = digest.digest(password.getBytes());
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
 
         return bytesToHex(hash);
     }

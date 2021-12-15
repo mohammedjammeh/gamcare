@@ -1,5 +1,6 @@
 package com.projects.gamcare;
 
+import com.projects.gamcare.core.Hash;
 import com.projects.gamcare.enums.DoctorLevel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,23 +14,21 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-//            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+
+//            PREPARE STATMENT
+
+//            String selectSql = "SELECT * FROM users WHERE email_address = ?";
+//            PreparedStatement statement = myConn.prepareStatement(selectSql);
+//            statement.setString(1, "mohammedjammeh@yahoo.com");
 //
-//            // PREPARE STATMENT
-////            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctors_id WHERE doctors.career_level = ?";
-//            SELECT * FROM doctors INNER JOIN users ON doctors.id = users.doctors_id INNER JOIN hospitals_doctors ON doctors.id = hospitals_doctors.doctors_id AND hospitals_doctors.hospitals_id = 1;
+//            ResultSet results = statement.executeQuery();
+//            while (results.next()) {
+//                byte[] userSalt = results.getBytes("salt");
+//                String userHash = results.getString("hash");
 //
-//            String selectSql = "SELECT COUNT(*) FROM doctors INNER JOIN users ON doctors.id = users.doctors_id";
-//
-//            PreparedStatement myStmt = myConn.prepareStatement(selectSql);
-//
-//            ResultSet myRs = myStmt.executeQuery();
-//
-//            while (myRs.next()) {
-//                System.out.println(myRs.getString("COUNT(*)"));
-////                ResultSetMetaData metaData = myRs.getMetaData();
-////                System.out.println(metaData);
-//
+//                String inputHash = Hash.generate("password13", userSalt);
+//                System.out.println(inputHash);
 //            }
 
 
@@ -61,9 +60,17 @@ public class Main extends Application {
 
 
 //            UPDATE
-//            String updateSql = "update users setItems middle_name='Musa' where id=2";
+//            String updateSql = "update users set salt = ?, hash = ? where id = ?";
+//            PreparedStatement statement = myConn.prepareStatement(updateSql);
 //
-//            myStmt.executeUpdate(updateSql);
+//            byte[] salt = Hash.createSalt();
+//            String hash = Hash.generate("password123", salt);
+//
+//            statement.setBytes(1, salt);
+//            statement.setString(2, hash);
+//            statement.setInt(3, 4);
+//
+//            statement.executeUpdate();
 
 
 
@@ -83,7 +90,7 @@ public class Main extends Application {
 
 
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
@@ -93,13 +100,13 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/show.fxml"));
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/show.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
-        stage.setTitle("Gamcare");
-        stage.setScene(scene);
-        stage.show();
+//        stage.setTitle("Gamcare");
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     public static void main(String[] args) {

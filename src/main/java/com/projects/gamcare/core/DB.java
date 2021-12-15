@@ -8,7 +8,12 @@ public class DB {
     private Connection dbConnection;
     private String sql;
     private String mainTable;
-    private List<String> whereValues = new ArrayList<>();
+
+    protected List<String> whereValues = new ArrayList<>();
+
+
+
+
 
     public DB() {
         try {
@@ -25,6 +30,10 @@ public class DB {
             exception.printStackTrace();
         }
     }
+
+
+
+
 
     public DB select(List<String> columns) {
         StringBuilder selectStatement = new StringBuilder("SELECT ");
@@ -76,6 +85,10 @@ public class DB {
         return this;
     }
 
+
+
+
+
     public List<Map<String, String>> get() {
         List<Map<String, String>> results = new ArrayList<>();
 
@@ -102,7 +115,6 @@ public class DB {
         return statement.executeQuery();
     }
 
-
     private Map<String, String> getRowValues(ResultSet queryResults) throws SQLException {
         Map<String, String> row = new HashMap<>();
 
@@ -113,7 +125,6 @@ public class DB {
         return row;
     }
 
-
     private Collection<String> getColumnNames(ResultSet queryResults) throws SQLException {
         Collection<String> columnNames = new ArrayList<>();
         ResultSetMetaData metaData = queryResults.getMetaData();
@@ -123,5 +134,13 @@ public class DB {
         }
 
         return columnNames;
+    }
+
+
+
+
+
+    public Map<String, String> first() {
+        return get().stream().toList().get(0);
     }
 }
