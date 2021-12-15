@@ -16,35 +16,25 @@ public class Main extends Application {
         try {
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
 
-//            PREPARE STATMENT
-
+//          SELECT
 //            String selectSql = "SELECT * FROM users WHERE email_address = ?";
 //            PreparedStatement statement = myConn.prepareStatement(selectSql);
 //            statement.setString(1, "mohammedjammeh@yahoo.com");
 //
 //            ResultSet results = statement.executeQuery();
+//
+//            System.out.println(results.getMetaData());
+//            System.out.println(results.getMetaData().getColumnTypeName(7));
+
 //            while (results.next()) {
 //                byte[] userSalt = results.getBytes("salt");
 //                String userHash = results.getString("hash");
 //
-//                String inputHash = Hash.generate("password13", userSalt);
+//                String inputHash = Hash.generate("password123", userSalt);
 //                System.out.println(inputHash);
 //            }
 
 
-
-
-
-
-//            Statement myStmt = myConn.createStatement();
-
-
-//            SELECT
-//            ResultSet myRs = myStmt.executeQuery("SELECT * FROM users");
-//
-//            while (myRs.next()) {
-//                System.out.println(myRs.getString("first_name"));
-//            }
 
 
 
@@ -55,6 +45,7 @@ public class Main extends Application {
 //                    + "values(1, 'Omar', 'Bailo', 'Jallow', 'bailo@gmail.com', '07506259330', 'https://bailo.com/', '1986-08-21', 1, 'Jallow kunda', 'Brikama', 1, 'I am chilling')";
 //
 //            myStmt.executeUpdate(insertSql);
+
 
 
 

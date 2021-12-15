@@ -89,13 +89,13 @@ public class DB {
 
 
 
-    public List<Map<String, String>> get() {
-        List<Map<String, String>> results = new ArrayList<>();
+    public List<Map<String, Object>> get() {
+        List<Map<String, Object>> results = new ArrayList<>();
 
         try {
             ResultSet queryResults = this.query();
             while (queryResults.next()) {
-                Map<String, String> row = getRowValues(queryResults);
+                Map<String, Object> row = getRowValues(queryResults);
                 results.add(row);
             }
         } catch (Exception exception) {
@@ -115,32 +115,64 @@ public class DB {
         return statement.executeQuery();
     }
 
-    private Map<String, String> getRowValues(ResultSet queryResults) throws SQLException {
-        Map<String, String> row = new HashMap<>();
+    private Map<String, Object> getRowValues(ResultSet queryResults) throws SQLException {
+        Map<String, Object> row = new HashMap<>();
 
-        for (String columnName : getColumnNames(queryResults)) {
-            row.put(columnName, queryResults.getString(columnName));
+        for (Map<String, String> columnData : getColumnsData(queryResults)) {
+            putData(row, columnData, queryResults);
         }
 
         return row;
     }
 
-    private Collection<String> getColumnNames(ResultSet queryResults) throws SQLException {
-        Collection<String> columnNames = new ArrayList<>();
+    private Map<String, Object> putData(Map<String, Object> row, Map<String, String> columnData, ResultSet queryResults) throws SQLException {
+        String columnName = columnData.get("name");
+        String columnType = columnData.get("type");
+
+        if(Objects.equals(columnType, "INT")) {
+            row.put(columnName, queryResults.getInt(columnName));
+        }
+
+        if(Objects.equals(columnType, "VARCHAR") || Objects.equals(columnType, "CHAR")) {
+            row.put(columnName, queryResults.getString(columnName));
+        }
+
+        if(Objects.equals(columnType, "DATETIME")) {
+            row.put(columnName, queryResults.getDate(columnName));
+        }
+
+        if(Objects.equals(columnType, "BLOB")) {
+            row.put(columnName, queryResults.getBytes(columnName));
+        }
+
+        return row;
+    }
+
+    private Collection<Map<String, String>> getColumnsData(ResultSet queryResults) throws SQLException {
+        Collection<Map<String, String>> columnsData = new ArrayList<>();
         ResultSetMetaData metaData = queryResults.getMetaData();
 
         for (int i = 1; i <= metaData.getColumnCount(); i++) {
-            columnNames.add(metaData.getColumnName(i));
+            Map<String, String> column = new HashMap<>();
+
+            column.put("name", metaData.getColumnName(i));
+            column.put("type", metaData.getColumnTypeName(i));
+
+            columnsData.add(column);
         }
 
-        return columnNames;
+        return columnsData;
     }
 
 
 
 
 
-    public Map<String, String> first() {
-        return get().stream().toList().get(0);
+    public Map<String, Object> first() {
+        List<Map<String, Object>> resultsList = get().stream().toList();
+
+        return resultsList.isEmpty()
+            ? new HashMap<>()
+            : resultsList.get(0);
     }
 }

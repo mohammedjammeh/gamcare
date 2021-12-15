@@ -5,7 +5,10 @@ import com.projects.gamcare.fields.LoginFields;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class Login extends LoginFields {
     public void initialize() {
@@ -21,13 +24,16 @@ public class Login extends LoginFields {
         String emailAddress = getEmailAddress();
         String password = getPassword();
 
+        Map<String, Object> user = User.where("email_address", emailAddress).first();
 
+        System.out.println(user);
 
-        System.out.println(User.where("email_address", emailAddress).first());
+//        byte[] userSalt = user.get("salt");
+//        String userHash = user.get("hash");
 
-
-        byte[] salt = Hash.createSalt();
-        String hash = Hash.generate("password123", salt);
+//        String expectedHash = Hash.generate("password123", userSalt);
+//
+//        System.out.println(expectedHash);
     }
 
     @FXML

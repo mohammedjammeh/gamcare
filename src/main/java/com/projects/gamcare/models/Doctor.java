@@ -19,24 +19,24 @@ public class Doctor extends BaseModel {
 
 
     public static List<String> getAvailableSeniors(Integer hospitalId) {
-        List<Map<String, String>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.SENIOR.name());
+        List<Map<String, Object>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.SENIOR.name());
 
         return getAvailable(doctors);
     }
 
     public static List<String> getAvailableJuniors(Integer hospitalId) {
-        List<Map<String, String>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.JUNIOR.name());
+        List<Map<String, Object>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.JUNIOR.name());
 
         return getAvailable(doctors);
     }
 
     public static List<String> getAvailableStudents(Integer hospitalId) {
-        List<Map<String, String>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.STUDENT.name());
+        List<Map<String, Object>> doctors = getOtherHospitalDoctors(hospitalId, DoctorLevel.STUDENT.name());
 
         return getAvailable(doctors);
     }
 
-    private static List<Map<String, String>> getOtherHospitalDoctors(Integer hospitalId, String level) {
+    private static List<Map<String, Object>> getOtherHospitalDoctors(Integer hospitalId, String level) {
         List<String> fields = List.of("*");
 
         return database()
@@ -55,24 +55,24 @@ public class Doctor extends BaseModel {
 
 
     public static List<String> getAvailableSeniors() {
-        List<Map<String, String>> doctors = getOtherHospitalDoctors(DoctorLevel.SENIOR.name());
+        List<Map<String, Object>> doctors = getOtherHospitalDoctors(DoctorLevel.SENIOR.name());
 
         return getAvailable(doctors);
     }
 
     public static List<String> getAvailableJuniors() {
-        List<Map<String, String>> doctors = getOtherHospitalDoctors(DoctorLevel.JUNIOR.name());
+        List<Map<String, Object>> doctors = getOtherHospitalDoctors(DoctorLevel.JUNIOR.name());
 
         return getAvailable(doctors);
     }
 
     public static List<String> getAvailableStudents() {
-        List<Map<String, String>> doctors = getOtherHospitalDoctors(DoctorLevel.STUDENT.name());
+        List<Map<String, Object>> doctors = getOtherHospitalDoctors(DoctorLevel.STUDENT.name());
 
         return getAvailable(doctors);
     }
 
-    private static List<Map<String, String>> getOtherHospitalDoctors(String level) {
+    private static List<Map<String, Object>> getOtherHospitalDoctors(String level) {
         List<String> fields = List.of("*");
 
         return database()
@@ -89,20 +89,20 @@ public class Doctor extends BaseModel {
 
 
 
-    private static List<String> getAvailable(List<Map<String, String>> doctors) {
+    private static List<String> getAvailable(List<Map<String, Object>> doctors) {
         return doctors.stream()
             .filter(doctor -> isAvailable(doctor, doctors))
             .map(Doctor::getFullName)
             .toList();
     }
 
-    private static Boolean isAvailable(Map<String, String> doctor, List<Map<String, String>> doctors) {
+    private static Boolean isAvailable(Map<String, Object> doctor, List<Map<String, Object>> doctors) {
         return doctors.stream()
             .filter(filteredDoctor -> Objects.equals(filteredDoctor.get("id"), doctor.get("id")))
             .count() < 3;
     }
 
-    private static String getFullName(Map<String, String> doctor) {
+    private static String getFullName(Map<String, Object> doctor) {
         return doctor.get("first_name") + " " + doctor.get("last_name");
     }
 }
