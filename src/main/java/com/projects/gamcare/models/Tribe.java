@@ -7,7 +7,7 @@ import java.util.List;
 public class Tribe extends BaseModel {
     private static final String table = "tribes";
 
-    public static List<String> getItems() {
-        return getNames(table);
-    }
+//    public static List<String> getItems() {
+//        return getNames(table);
+//    }
 }

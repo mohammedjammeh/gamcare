@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.sql.*;
 
 public class Main extends Application {
@@ -23,9 +23,6 @@ public class Main extends Application {
 //
 //            ResultSet results = statement.executeQuery();
 //
-//            System.out.println(results.getMetaData());
-//            System.out.println(results.getMetaData().getColumnTypeName(7));
-
 //            while (results.next()) {
 //                byte[] userSalt = results.getBytes("salt");
 //                String userHash = results.getString("hash");
@@ -81,23 +78,23 @@ public class Main extends Application {
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/show.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
-//        stage.setTitle("Gamcare");
-//        stage.setScene(scene);
-//        stage.show();
+        stage.setTitle("Gamcare");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {

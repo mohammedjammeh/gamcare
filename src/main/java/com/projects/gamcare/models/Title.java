@@ -7,7 +7,7 @@ import java.util.List;
 public class Title extends BaseModel {
     private static final String table = "titles";
 
-    public static List<String> getItems() {
-        return getNames(table);
+    public String getTableName() {
+        return table;
     }
 }

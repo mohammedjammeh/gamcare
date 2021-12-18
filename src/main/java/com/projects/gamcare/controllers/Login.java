@@ -1,14 +1,11 @@
 package com.projects.gamcare.controllers;
 
-import com.projects.gamcare.core.Hash;
+import com.projects.gamcare.core.DatabaseModel;
 import com.projects.gamcare.fields.LoginFields;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class Login extends LoginFields {
     public void initialize() {
@@ -24,7 +21,9 @@ public class Login extends LoginFields {
         String emailAddress = getEmailAddress();
         String password = getPassword();
 
-        Map<String, Object> user = User.where("email_address", emailAddress).first();
+//        User user = (new User()).where("email_address", emailAddress);
+
+        User user = (new User()).where("middle_name", "Musa").first();
 
         System.out.println(user);
 

@@ -69,14 +69,14 @@ public class DoctorFields extends UserFields {
     public void initialize() {
         super.initialize();
 
-        specialityChoiceBox.setItems(Speciality.getItems());
-        careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
+//        specialityChoiceBox.setItems(Speciality.getItems());
+//        careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
+//
+//        hospitalsListView.setItems(Hospital.getItems());
+//        hospitalsListView.setOrientation(Orientation.HORIZONTAL);
 
-        hospitalsListView.setItems(Hospital.getItems());
-        hospitalsListView.setOrientation(Orientation.HORIZONTAL);
-
-        studentDoctorsListView.setItems(Doctor.getAvailableStudents(1));
-        juniorDoctorsListView.setItems(Doctor.getAvailableJuniors(1));
-        seniorDoctorsListView.setItems(Doctor.getAvailableSeniors(1));
+//        studentDoctorsListView.setItems(Doctor.getAvailableStudents(1));
+//        juniorDoctorsListView.setItems(Doctor.getAvailableJuniors(1));
+//        seniorDoctorsListView.setItems(Doctor.getAvailableSeniors(1));
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public class Gender extends BaseModel {
     private static final String table = "genders";
 
-    public static List<String> getItems() {
-        return getNames(table);
-    }
+//    public static List<String> getItems() {
+//        return getNames(table);
+//    }
 }

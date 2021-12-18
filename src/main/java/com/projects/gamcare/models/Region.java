@@ -7,7 +7,7 @@ import java.util.List;
 public class Region extends BaseModel {
     private static final String table = "regions";
 
-    public static List<String> getItems() {
-        return getNames(table);
-    }
+//    public static List<String> getItems() {
+//        return getNames(table);
+//    }
 }

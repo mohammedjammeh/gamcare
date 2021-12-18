@@ -4,18 +4,18 @@ import java.io.FileInputStream;
 import java.sql.*;
 import java.util.*;
 
-public class DB {
+public class DatabaseModel {
     private Connection dbConnection;
     private String sql;
-    private String mainTable;
 
     protected List<String> whereValues = new ArrayList<>();
+    protected Map<String, Object> attributes = new HashMap<>();
 
 
 
 
 
-    public DB() {
+    public DatabaseModel() {
         try {
             Properties properties = new Properties();
             FileInputStream propertiesFile = new FileInputStream("src/main/java/com/projects/gamcare/config/config.properties");
@@ -35,7 +35,7 @@ public class DB {
 
 
 
-    public DB select(List<String> columns) {
+    public DatabaseModel select(List<String> columns) {
         StringBuilder selectStatement = new StringBuilder("SELECT ");
 
         for (String column: columns) {
@@ -45,6 +45,7 @@ public class DB {
         }
 
         sql = selectStatement.toString();
+        sql += "FROM " + getTableName() + " ";
 
         return this;
     }
@@ -57,20 +58,15 @@ public class DB {
         return columns.indexOf(column) == columns.size() - 1;
     }
 
-    public DB from(String table) {
-        sql += "FROM " + table + " ";
-        mainTable = table;
+    public DatabaseModel with(String secondTable) {
+        sql += "INNER JOIN " + secondTable + " ON " + getTableName() +  ".id = " + secondTable + "." + getTableName() + "_id ";
 
         return this;
     }
 
-    public DB with(String secondTable) {
-        sql += "INNER JOIN " + secondTable + " ON " + mainTable +  ".id = " + secondTable + "." + mainTable + "_id ";
+    public DatabaseModel where(String column, String operator, String value) {
+        prepareSql();
 
-        return this;
-    }
-
-    public DB where(String column, String operator, String value) {
         sql += whereValues.isEmpty() ? "WHERE " : "AND ";
         sql += column + " " + operator + " ? ";
 
@@ -79,7 +75,9 @@ public class DB {
         return this;
     }
 
-    public DB orderBy(String column) {
+    public DatabaseModel orderBy(String column) {
+        prepareSql();
+
         sql += "ORDER BY " + column;
 
         return this;
@@ -89,14 +87,15 @@ public class DB {
 
 
 
-    public List<Map<String, Object>> get() {
-        List<Map<String, Object>> results = new ArrayList<>();
+
+    public List<DatabaseModel> getAll() {
+        List<DatabaseModel> results = new ArrayList<>();
 
         try {
             ResultSet queryResults = this.query();
             while (queryResults.next()) {
-                Map<String, Object> row = getRowValues(queryResults);
-                results.add(row);
+                DatabaseModel rowInstance = getRowInstance(queryResults);
+                results.add(rowInstance);
             }
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -106,6 +105,8 @@ public class DB {
     }
 
     private ResultSet query() throws SQLException {
+        prepareSql();
+
         PreparedStatement statement = dbConnection.prepareStatement(sql);
 
         for (int i = 0; i < whereValues.size(); i++) {
@@ -115,14 +116,35 @@ public class DB {
         return statement.executeQuery();
     }
 
-    private Map<String, Object> getRowValues(ResultSet queryResults) throws SQLException {
-        Map<String, Object> row = new HashMap<>();
+    private void prepareSql() {
+        if(sql == null)
+            sql = "SELECT * FROM " + getTableName() + " ";
+    }
+
+    private DatabaseModel getRowInstance(ResultSet queryResults) throws SQLException {
+        DatabaseModel instance = this.newInstance();
 
         for (Map<String, String> columnData : getColumnsData(queryResults)) {
-            putData(row, columnData, queryResults);
+            putData(instance.attributes, columnData, queryResults);
         }
 
-        return row;
+        return instance;
+    }
+
+    private Collection<Map<String, String>> getColumnsData(ResultSet queryResults) throws SQLException {
+        Collection<Map<String, String>> columnsData = new ArrayList<>();
+        ResultSetMetaData metaData = queryResults.getMetaData();
+
+        for (int i = 1; i <= metaData.getColumnCount(); i++) {
+            Map<String, String> column = new HashMap<>();
+
+            column.put("name", metaData.getColumnName(i));
+            column.put("type", metaData.getColumnTypeName(i));
+
+            columnsData.add(column);
+        }
+
+        return columnsData;
     }
 
     private Map<String, Object> putData(Map<String, Object> row, Map<String, String> columnData, ResultSet queryResults) throws SQLException {
@@ -148,31 +170,44 @@ public class DB {
         return row;
     }
 
-    private Collection<Map<String, String>> getColumnsData(ResultSet queryResults) throws SQLException {
-        Collection<Map<String, String>> columnsData = new ArrayList<>();
-        ResultSetMetaData metaData = queryResults.getMetaData();
 
-        for (int i = 1; i <= metaData.getColumnCount(); i++) {
-            Map<String, String> column = new HashMap<>();
 
-            column.put("name", metaData.getColumnName(i));
-            column.put("type", metaData.getColumnTypeName(i));
 
-            columnsData.add(column);
-        }
 
-        return columnsData;
+    public Object first() {
+        List<DatabaseModel> resultsList = getAll();
+
+        return resultsList.isEmpty()
+            ? null
+            : resultsList.get(0);
+    }
+
+    public Object last() {
+        List<DatabaseModel> resultsList = getAll();
+        int lastResultIndex = resultsList.size() - 1;
+
+        return resultsList.isEmpty()
+            ? null
+            : resultsList.get(lastResultIndex);
     }
 
 
 
 
 
-    public Map<String, Object> first() {
-        List<Map<String, Object>> resultsList = get().stream().toList();
+    public String getName() {
+        return (String) this.attributes.get("name");
+    }
 
-        return resultsList.isEmpty()
-            ? new HashMap<>()
-            : resultsList.get(0);
+
+
+
+
+    public String getTableName() {
+        return "";
+    }
+
+    public DatabaseModel newInstance() {
+        return new DatabaseModel();
     }
 }
