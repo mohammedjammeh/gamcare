@@ -1,13 +1,12 @@
 package com.projects.gamcare.models;
 
+import com.projects.gamcare.interfaces.Model;
 import com.projects.gamcare.models.main.BaseModel;
 
-import java.util.List;
+public class Tribe extends BaseModel implements Model {
+    protected final String table = "tribes";
 
-public class Tribe extends BaseModel {
-    private static final String table = "tribes";
-
-//    public static List<String> getItems() {
-//        return getNames(table);
-//    }
+    public String getTableName() {
+        return table;
+    }
 }

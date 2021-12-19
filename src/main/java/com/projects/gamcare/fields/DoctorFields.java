@@ -5,6 +5,7 @@ import com.projects.gamcare.fields.main.UserFields;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Speciality;
+import com.projects.gamcare.models.Title;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import com.projects.gamcare.wrappers.ListView;
 import javafx.fxml.FXML;
@@ -69,14 +70,14 @@ public class DoctorFields extends UserFields {
     public void initialize() {
         super.initialize();
 
-//        specialityChoiceBox.setItems(Speciality.getItems());
-//        careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
-//
-//        hospitalsListView.setItems(Hospital.getItems());
-//        hospitalsListView.setOrientation(Orientation.HORIZONTAL);
+        specialityChoiceBox.setItems((new Speciality()).getNames());
+        careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
 
-//        studentDoctorsListView.setItems(Doctor.getAvailableStudents(1));
-//        juniorDoctorsListView.setItems(Doctor.getAvailableJuniors(1));
-//        seniorDoctorsListView.setItems(Doctor.getAvailableSeniors(1));
+        hospitalsListView.setItems((new Hospital()).getNames());
+        hospitalsListView.setOrientation(Orientation.HORIZONTAL);
+
+        studentDoctorsListView.setItems((new Doctor()).getAvailableStudents(1));
+        juniorDoctorsListView.setItems((new Doctor()).getAvailableJuniors(1));
+        seniorDoctorsListView.setItems((new Doctor()).getAvailableSeniors(1));
     }
 }

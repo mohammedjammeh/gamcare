@@ -83,8 +83,8 @@ public class HospitalFields extends BaseFields {
     public void initialize() {
         super.initialize();
 
-//        regionChoiceBox.setItems(Region.getItems());
-//        sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-//        leadDoctorChoiceBox.setItems(Doctor.getAvailableSeniors());
+        regionChoiceBox.setItems((new Region()).getNames());
+        sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
+        leadDoctorChoiceBox.setItems((new Doctor()).getAvailableSeniors());
     }
 }

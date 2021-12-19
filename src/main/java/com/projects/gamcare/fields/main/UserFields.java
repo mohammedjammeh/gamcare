@@ -122,8 +122,8 @@ public class UserFields extends BaseFields {
         super.initialize();
 
         titleChoiceBox.setItems((new Title()).getNames());
-//        genderChoiceBox.setItems(Gender.getItems());
-//        tribeChoiceBox.setItems(Tribe.getItems());
-//        regionChoiceBox.setItems(Region.getItems());
+        genderChoiceBox.setItems((new Gender()).getNames());
+        tribeChoiceBox.setItems((new Tribe()).getNames());
+        regionChoiceBox.setItems((new Region()).getNames());
     }
 }

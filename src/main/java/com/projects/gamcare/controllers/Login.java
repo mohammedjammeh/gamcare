@@ -23,7 +23,7 @@ public class Login extends LoginFields {
 
 //        User user = (new User()).where("email_address", emailAddress);
 
-        User user = (new User()).where("middle_name", "Musa").first();
+        User user = (new User()).where("middle_name", "Musa").last();
 
         System.out.println(user);
 

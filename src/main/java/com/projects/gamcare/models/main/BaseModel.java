@@ -2,15 +2,15 @@ package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.DatabaseModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BaseModel extends DatabaseModel {
     public List<String> getNames() {
-        return orderBy("id")
+        return select(List.of("*"))
+            .orderBy("id")
             .getAll()
             .stream()
-            .map(DatabaseModel::getName)
+            .map(DatabaseModel::getNameAttribute)
             .toList();
     }
 }

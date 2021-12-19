@@ -8,8 +8,8 @@ public class DatabaseModel {
     private Connection dbConnection;
     private String sql;
 
-    protected List<String> whereValues = new ArrayList<>();
-    protected Map<String, Object> attributes = new HashMap<>();
+    protected List<Object> whereValues = new ArrayList<>();
+    public Map<String, Object> attributes = new HashMap<>();
 
 
 
@@ -64,7 +64,7 @@ public class DatabaseModel {
         return this;
     }
 
-    public DatabaseModel where(String column, String operator, String value) {
+    public DatabaseModel where(String column, String operator, Object value) {
         prepareSql();
 
         sql += whereValues.isEmpty() ? "WHERE " : "AND ";
@@ -94,7 +94,7 @@ public class DatabaseModel {
         try {
             ResultSet queryResults = this.query();
             while (queryResults.next()) {
-                DatabaseModel rowInstance = getRowInstance(queryResults);
+                DatabaseModel rowInstance = newRowInstance(queryResults);
                 results.add(rowInstance);
             }
         } catch (Exception exception) {
@@ -110,7 +110,7 @@ public class DatabaseModel {
         PreparedStatement statement = dbConnection.prepareStatement(sql);
 
         for (int i = 0; i < whereValues.size(); i++) {
-            statement.setString(i + 1, whereValues.get(i));
+            setStatementValue(statement, i+1, whereValues.get(i));
         }
 
         return statement.executeQuery();
@@ -121,14 +121,38 @@ public class DatabaseModel {
             sql = "SELECT * FROM " + getTableName() + " ";
     }
 
-    private DatabaseModel getRowInstance(ResultSet queryResults) throws SQLException {
-        DatabaseModel instance = this.newInstance();
+
+    private void setStatementValue(PreparedStatement statement, Integer index, Object value) throws SQLException {
+        if(value instanceof Integer) {
+            statement.setInt(index, (int) value);
+        }
+
+        if(value instanceof String) {
+            statement.setString(index, (String) value);
+        }
+    }
+
+    private DatabaseModel newRowInstance(ResultSet queryResults) throws SQLException {
+        DatabaseModel instance = this.newInstanceOfThis();
 
         for (Map<String, String> columnData : getColumnsData(queryResults)) {
             putData(instance.attributes, columnData, queryResults);
         }
 
         return instance;
+    }
+
+    private DatabaseModel newInstanceOfThis() {
+        DatabaseModel newInstance;
+
+        try {
+            newInstance = this.getClass().getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            newInstance = new DatabaseModel();
+            e.printStackTrace();
+        }
+
+        return newInstance;
     }
 
     private Collection<Map<String, String>> getColumnsData(ResultSet queryResults) throws SQLException {
@@ -191,12 +215,12 @@ public class DatabaseModel {
             : resultsList.get(lastResultIndex);
     }
 
-
-
-
-
-    public String getName() {
+    public String getNameAttribute() {
         return (String) this.attributes.get("name");
+    }
+
+    public String getFullName() {
+        return this.attributes.get("first_name") + " " + this.attributes.get("last_name");
     }
 
 
@@ -204,10 +228,6 @@ public class DatabaseModel {
 
 
     public String getTableName() {
-        return "";
-    }
-
-    public DatabaseModel newInstance() {
-        return new DatabaseModel();
+        return null;
     }
 }
