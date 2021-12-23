@@ -1,9 +1,6 @@
 package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.Database;
-import com.projects.gamcare.models.User;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,18 +14,26 @@ public class Model {
         database = new Database(this);
     }
 
-    public List<String> getNames() {
-//        return select(List.of("*"))
-//            .orderBy("id")
-//            .getAll()
-//            .stream()
-//            .map(DatabaseModel::getNameAttribute)
-//            .toList();
-
-        return new ArrayList<>();
-    }
-
     public String getTableName() {
         return null;
     }
+
+    public List<String> getAllNames() {
+        return database.
+            select(List.of("*"))
+            .orderBy("id")
+            .getAll()
+            .stream()
+            .map(Model::getNameAttribute)
+            .toList();
+    }
+
+    public String getFullName() {
+        return this.attributes.get("first_name") + " " + this.attributes.get("last_name");
+    }
+
+    public String getNameAttribute() {
+        return (String) this.attributes.get("name");
+    }
+
 }

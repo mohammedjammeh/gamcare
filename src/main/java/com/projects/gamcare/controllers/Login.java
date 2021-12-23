@@ -20,7 +20,7 @@ public class Login extends LoginFields {
 
         User user = (new User()).where("middle_name", "Musa").last();
 
-        System.out.println(user);
+//        System.out.println(user);
 
 //        byte[] userSalt = user.get("salt");
 //        String userHash = user.get("hash");

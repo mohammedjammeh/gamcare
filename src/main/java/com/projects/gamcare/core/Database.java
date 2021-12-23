@@ -63,10 +63,10 @@ public class Database {
         return columns.indexOf(column) == columns.size() - 1;
     }
 
-    public Database with(String secondTableName) {
+    public Database with(String anotherTableName) {
         prepareSql();
 
-        sql += "INNER JOIN " + secondTableName + " ON " + model.getTableName() +  ".id = " + secondTableName + "." + model.getTableName() + "_id ";
+        sql += "INNER JOIN " + anotherTableName + " ON " + model.getTableName() +  ".id = " + anotherTableName + "." + model.getTableName() + "_id ";
 
         return this;
     }
@@ -221,12 +221,4 @@ public class Database {
             ? null
             : resultsList.get(lastResultIndex);
     }
-
-//    public String getNameAttribute() {
-//        return (String) this.attributes.get("name");
-//    }
-//
-//    public String getFullName() {
-//        return this.attributes.get("first_name") + " " + this.attributes.get("last_name");
-//    }
 }
