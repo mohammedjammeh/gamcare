@@ -18,9 +18,9 @@ public class Login extends LoginFields {
         String emailAddress = getEmailAddress();
         String password = getPassword();
 
-        User user = (new User()).where("middle_name", "Musa").last();
+        User user = (new User()).where("middle_name", "Musa").first();
 
-//        System.out.println(user);
+        System.out.println(user.getFullName());
 
 //        byte[] userSalt = user.get("salt");
 //        String userHash = user.get("hash");

@@ -15,12 +15,4 @@ public class User extends Model implements ModelInterface {
 
         return this;
     }
-
-    public User first() {
-        return (User) database.first();
-    }
-
-    public User last() {
-        return (User) database.last();
-    }
 }
