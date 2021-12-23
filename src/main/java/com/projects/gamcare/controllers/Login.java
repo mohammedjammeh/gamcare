@@ -2,6 +2,7 @@ package com.projects.gamcare.controllers;
 
 import com.projects.gamcare.fields.LoginFields;
 import com.projects.gamcare.models.User;
+import com.projects.gamcare.models.main.Model;
 import javafx.fxml.FXML;
 
 public class Login extends LoginFields {
@@ -18,7 +19,7 @@ public class Login extends LoginFields {
         String emailAddress = getEmailAddress();
         String password = getPassword();
 
-        User user = (new User()).where("middle_name", "Musa").first();
+        Model user = (new User()).where("middle_name", "Musa").first();
 
         System.out.println(user.getFullName());
 

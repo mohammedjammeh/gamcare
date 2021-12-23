@@ -9,10 +9,4 @@ public class User extends Model implements ModelInterface {
     public String getTableName() {
         return table;
     }
-
-    public User where(String column, String value) {
-        database.where(column, "=", value);
-
-        return this;
-    }
 }

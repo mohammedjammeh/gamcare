@@ -1,7 +1,6 @@
 package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.Database;
-import com.projects.gamcare.models.User;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,33 +20,22 @@ public class Model {
     }
 
 
-
-
-
-    public User first() {
-        return (User) database.first();
+    /**
+     * Query Methods
+     */
+    public Model first() {
+        return (Model) database.first();
     }
 
-    public User last() {
-        return (User) database.last();
+    public Model last() {
+        return (Model) database.last();
     }
 
+    public Model where(String column, String value) {
+        database.where(column, "=", value);
 
-
-
-
-    public String getFullName() {
-        return this.attributes.get("first_name") + " "
-            + this.attributes.get("last_name");
+        return this;
     }
-
-    public String getName() {
-        return (String) this.attributes.get("name");
-    }
-
-
-
-
 
     public List<String> getAllNames() {
         return database.
@@ -57,5 +45,18 @@ public class Model {
             .stream()
             .map(Model::getName)
             .toList();
+    }
+
+
+    /**
+     * Attributes Methods
+     */
+    public String getFullName() {
+        return this.attributes.get("first_name") + " "
+            + this.attributes.get("last_name");
+    }
+
+    public String getName() {
+        return (String) this.attributes.get("name");
     }
 }

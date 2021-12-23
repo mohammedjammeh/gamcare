@@ -1,6 +1,5 @@
 package com.projects.gamcare.core;
 
-import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 
 import java.io.FileInputStream;
@@ -13,10 +12,6 @@ public class Database {
     private Model model;
 
     protected List<Object> whereValues = new ArrayList<>();
-
-
-
-
 
     public Database(Model model) {
         try {
@@ -37,9 +32,9 @@ public class Database {
     }
 
 
-
-
-
+    /**
+     * Query Builders
+     */
     public Database select(List<String> columns) {
         StringBuilder selectStatement = new StringBuilder("SELECT ");
 
@@ -91,10 +86,9 @@ public class Database {
     }
 
 
-
-
-
-
+    /**
+     * Query Methods
+     */
     public List<Model> getAll() {
         List<Model> results = new ArrayList<>();
 
@@ -202,9 +196,9 @@ public class Database {
     }
 
 
-
-
-
+    /**
+     * Results Methods
+     */
     public Object first() {
         List<Model> resultsList = getAll();
 
