@@ -1,9 +1,9 @@
 package com.projects.gamcare.models;
 
-import com.projects.gamcare.interfaces.Model;
-import com.projects.gamcare.models.main.BaseModel;
+import com.projects.gamcare.interfaces.ModelInterface;
+import com.projects.gamcare.models.main.Model;
 
-public class User extends BaseModel implements Model {
+public class User extends Model implements ModelInterface {
     protected final String table = "users";
 
     public String getTableName() {
@@ -11,16 +11,16 @@ public class User extends BaseModel implements Model {
     }
 
     public User where(String column, String value) {
-        super.where(column, "=", value);
+        database.where(column, "=", value);
 
         return this;
     }
 
     public User first() {
-        return (User) super.first();
+        return (User) database.first();
     }
 
     public User last() {
-        return (User) super.last();
+        return (User) database.last();
     }
 }

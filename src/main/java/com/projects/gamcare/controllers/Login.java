@@ -1,11 +1,8 @@
 package com.projects.gamcare.controllers;
 
-import com.projects.gamcare.core.DatabaseModel;
 import com.projects.gamcare.fields.LoginFields;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
-
-import java.util.List;
 
 public class Login extends LoginFields {
     public void initialize() {
@@ -20,8 +17,6 @@ public class Login extends LoginFields {
 
         String emailAddress = getEmailAddress();
         String password = getPassword();
-
-//        User user = (new User()).where("email_address", emailAddress);
 
         User user = (new User()).where("middle_name", "Musa").last();
 

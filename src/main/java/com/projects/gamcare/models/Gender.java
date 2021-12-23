@@ -1,9 +1,9 @@
 package com.projects.gamcare.models;
 
-import com.projects.gamcare.interfaces.Model;
-import com.projects.gamcare.models.main.BaseModel;
+import com.projects.gamcare.interfaces.ModelInterface;
+import com.projects.gamcare.models.main.Model;
 
-public class Gender extends BaseModel implements Model {
+public class Gender extends Model implements ModelInterface {
     protected final String table = "genders";
 
     public String getTableName() {

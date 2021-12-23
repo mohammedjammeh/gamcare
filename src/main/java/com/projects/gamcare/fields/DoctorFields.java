@@ -76,8 +76,8 @@ public class DoctorFields extends UserFields {
         hospitalsListView.setItems((new Hospital()).getNames());
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
 
-        studentDoctorsListView.setItems((new Doctor()).getAvailableStudents(1));
-        juniorDoctorsListView.setItems((new Doctor()).getAvailableJuniors(1));
-        seniorDoctorsListView.setItems((new Doctor()).getAvailableSeniors(1));
+//        studentDoctorsListView.setItems((new Doctor()).getAvailableStudents(1));
+//        juniorDoctorsListView.setItems((new Doctor()).getAvailableJuniors(1));
+//        seniorDoctorsListView.setItems((new Doctor()).getAvailableSeniors(1));
     }
 }

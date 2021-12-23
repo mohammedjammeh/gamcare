@@ -1,31 +1,36 @@
 package com.projects.gamcare.core;
 
+import com.projects.gamcare.models.User;
+import com.projects.gamcare.models.main.Model;
+
 import java.io.FileInputStream;
 import java.sql.*;
 import java.util.*;
 
-public class DatabaseModel {
-    private Connection dbConnection;
+public class Database {
+    private Connection connection;
     private String sql;
+    private Model model;
 
     protected List<Object> whereValues = new ArrayList<>();
-    public Map<String, Object> attributes = new HashMap<>();
 
 
 
 
 
-    public DatabaseModel() {
+    public Database(Model model) {
         try {
             Properties properties = new Properties();
             FileInputStream propertiesFile = new FileInputStream("src/main/java/com/projects/gamcare/config/config.properties");
             properties.load(propertiesFile);
 
-            dbConnection = DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                 properties.getProperty("database_url"),
                 properties.getProperty("database_user"),
                 properties.getProperty("database_password")
             );
+
+            this.model = model;
         } catch (Exception exception) {
             exception.printStackTrace();
         }
@@ -35,7 +40,7 @@ public class DatabaseModel {
 
 
 
-    public DatabaseModel select(List<String> columns) {
+    public Database select(List<String> columns) {
         StringBuilder selectStatement = new StringBuilder("SELECT ");
 
         for (String column: columns) {
@@ -45,7 +50,7 @@ public class DatabaseModel {
         }
 
         sql = selectStatement.toString();
-        sql += "FROM " + getTableName() + " ";
+        sql += "FROM " + model.getTableName() + " ";
 
         return this;
     }
@@ -58,13 +63,15 @@ public class DatabaseModel {
         return columns.indexOf(column) == columns.size() - 1;
     }
 
-    public DatabaseModel with(String secondTable) {
-        sql += "INNER JOIN " + secondTable + " ON " + getTableName() +  ".id = " + secondTable + "." + getTableName() + "_id ";
+    public Database with(String secondTableName) {
+        prepareSql();
+
+        sql += "INNER JOIN " + secondTableName + " ON " + model.getTableName() +  ".id = " + secondTableName + "." + model.getTableName() + "_id ";
 
         return this;
     }
 
-    public DatabaseModel where(String column, String operator, Object value) {
+    public Database where(String column, String operator, Object value) {
         prepareSql();
 
         sql += whereValues.isEmpty() ? "WHERE " : "AND ";
@@ -75,7 +82,7 @@ public class DatabaseModel {
         return this;
     }
 
-    public DatabaseModel orderBy(String column) {
+    public Database orderBy(String column) {
         prepareSql();
 
         sql += "ORDER BY " + column;
@@ -88,13 +95,13 @@ public class DatabaseModel {
 
 
 
-    public List<DatabaseModel> getAll() {
-        List<DatabaseModel> results = new ArrayList<>();
+    public List<Model> getAll() {
+        List<Model> results = new ArrayList<>();
 
         try {
             ResultSet queryResults = this.query();
             while (queryResults.next()) {
-                DatabaseModel rowInstance = newRowInstance(queryResults);
+                Model rowInstance = newModelInstance(queryResults);
                 results.add(rowInstance);
             }
         } catch (Exception exception) {
@@ -107,7 +114,7 @@ public class DatabaseModel {
     private ResultSet query() throws SQLException {
         prepareSql();
 
-        PreparedStatement statement = dbConnection.prepareStatement(sql);
+        PreparedStatement statement = connection.prepareStatement(sql);
 
         for (int i = 0; i < whereValues.size(); i++) {
             setStatementValue(statement, i+1, whereValues.get(i));
@@ -118,7 +125,7 @@ public class DatabaseModel {
 
     private void prepareSql() {
         if(sql == null)
-            sql = "SELECT * FROM " + getTableName() + " ";
+            sql = "SELECT * FROM " + model.getTableName() + " ";
     }
 
 
@@ -132,27 +139,27 @@ public class DatabaseModel {
         }
     }
 
-    private DatabaseModel newRowInstance(ResultSet queryResults) throws SQLException {
-        DatabaseModel instance = this.newInstanceOfThis();
+    private Model newModelInstance(ResultSet queryResults) throws SQLException {
+        Model modelInstance = this.createModelInstance();
 
         for (Map<String, String> columnData : getColumnsData(queryResults)) {
-            putData(instance.attributes, columnData, queryResults);
+            putData(modelInstance.attributes, columnData, queryResults);
         }
 
-        return instance;
+        return modelInstance;
     }
 
-    private DatabaseModel newInstanceOfThis() {
-        DatabaseModel newInstance;
+    private Model createModelInstance() {
+        Model modelInstance;
 
         try {
-            newInstance = this.getClass().getDeclaredConstructor().newInstance();
+            modelInstance = model.getClass().getDeclaredConstructor().newInstance();
         } catch (Exception e) {
-            newInstance = new DatabaseModel();
+            modelInstance = new Model();
             e.printStackTrace();
         }
 
-        return newInstance;
+        return modelInstance;
     }
 
     private Collection<Map<String, String>> getColumnsData(ResultSet queryResults) throws SQLException {
@@ -199,7 +206,7 @@ public class DatabaseModel {
 
 
     public Object first() {
-        List<DatabaseModel> resultsList = getAll();
+        List<Model> resultsList = getAll();
 
         return resultsList.isEmpty()
             ? null
@@ -207,7 +214,7 @@ public class DatabaseModel {
     }
 
     public Object last() {
-        List<DatabaseModel> resultsList = getAll();
+        List<Model> resultsList = getAll();
         int lastResultIndex = resultsList.size() - 1;
 
         return resultsList.isEmpty()
@@ -215,19 +222,11 @@ public class DatabaseModel {
             : resultsList.get(lastResultIndex);
     }
 
-    public String getNameAttribute() {
-        return (String) this.attributes.get("name");
-    }
-
-    public String getFullName() {
-        return this.attributes.get("first_name") + " " + this.attributes.get("last_name");
-    }
-
-
-
-
-
-    public String getTableName() {
-        return null;
-    }
+//    public String getNameAttribute() {
+//        return (String) this.attributes.get("name");
+//    }
+//
+//    public String getFullName() {
+//        return this.attributes.get("first_name") + " " + this.attributes.get("last_name");
+//    }
 }

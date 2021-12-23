@@ -1,8 +1,8 @@
 package com.projects.gamcare.models;
 
-import com.projects.gamcare.models.main.BaseModel;
+import com.projects.gamcare.models.main.Model;
 
-public class Title extends BaseModel {
+public class Title extends Model {
     private static final String table = "titles";
 
     public String getTableName() {
