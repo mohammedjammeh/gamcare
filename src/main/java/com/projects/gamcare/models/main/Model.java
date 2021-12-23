@@ -37,6 +37,13 @@ public class Model {
         return this;
     }
 
+    public byte[] getSalt() {
+        return database
+            .select(List.of("salt"))
+            .where("id", "=", this.attributes.get("id"))
+            .getBytes("salt");
+    }
+
     public List<String> getAllNames() {
         return database.
             select(List.of("*"))

@@ -105,6 +105,21 @@ public class Database {
         return results;
     }
 
+    public byte[] getBytes(String column) {
+        byte[] bytesData = new byte[0];
+
+        try {
+            ResultSet queryResults = this.query();
+            while (queryResults.next()) {
+                bytesData = queryResults.getBytes(column);
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        return bytesData;
+    }
+
     private ResultSet query() throws SQLException {
         prepareSql();
 
@@ -177,7 +192,8 @@ public class Database {
         String columnType = columnData.get("type");
 
         if(Objects.equals(columnType, "INT")) {
-            row.put(columnName, queryResults.getInt(columnName));
+            Integer columnValue = queryResults.getInt(columnName) == 0 ? null : queryResults.getInt(columnName);
+            row.put(columnName, columnValue);
         }
 
         if(Objects.equals(columnType, "VARCHAR") || Objects.equals(columnType, "CHAR")) {

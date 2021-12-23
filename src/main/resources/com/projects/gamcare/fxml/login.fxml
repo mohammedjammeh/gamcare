@@ -30,7 +30,7 @@
         </VBox>
 
         <VBox styleClass="logInButtonBox">
-            <Button text="Log In" onAction="#onLogInButtonClick"/>
+            <Button fx:id="logInButton" text="Log In" onAction="#onLogInButtonClick"/>
         </VBox>
     </VBox>
 </VBox>
