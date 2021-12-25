@@ -30,8 +30,7 @@ public class Login extends LoginFields {
         String expectedHash = Hash.generate(password, userSalt);
 
         if (userHash.equals(expectedHash)) {
-            Stage stage = (Stage) logInButton.getScene().getWindow();
-            (new SceneTool()).switchTo(stage, "fxml/hospital/index.fxml");
+            SceneTool.switchTo("hospital/index.fxml", logInButton.getScene().getWindow());
         }
     }
 }

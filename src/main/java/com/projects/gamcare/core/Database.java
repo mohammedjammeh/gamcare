@@ -11,6 +11,7 @@ public class Database {
     private String sql;
     private Model model;
 
+    protected List<String> selectColumns = new ArrayList<>();
     protected List<Object> whereValues = new ArrayList<>();
 
     public Database(Model model) {
@@ -36,12 +37,14 @@ public class Database {
      * Query Builders
      */
     public Database select(List<String> columns) {
+        selectColumns = columns;
+
         StringBuilder selectStatement = new StringBuilder("SELECT ");
 
         for (String column: columns) {
             selectStatement
                 .append(column)
-                .append(finaliseSelectColumn(column, columns));
+                .append(endOf(column));
         }
 
         sql = selectStatement.toString();
@@ -50,8 +53,8 @@ public class Database {
         return this;
     }
 
-    private String finaliseSelectColumn(String column, List<String> columns) {
-        return isLastColumn(column, columns) ? " " : ", ";
+    private String endOf(String column) {
+        return isLastColumn(column, selectColumns) ? " " : ", ";
     }
 
     private Boolean isLastColumn(String column, List<String> columns) {
@@ -105,13 +108,13 @@ public class Database {
         return results;
     }
 
-    public byte[] getBytes(String column) {
+    public byte[] getBytes() {
         byte[] bytesData = new byte[0];
 
         try {
             ResultSet queryResults = this.query();
             while (queryResults.next()) {
-                bytesData = queryResults.getBytes(column);
+                bytesData = queryResults.getBytes(selectColumns.get(0));
             }
         } catch (Exception exception) {
             exception.printStackTrace();

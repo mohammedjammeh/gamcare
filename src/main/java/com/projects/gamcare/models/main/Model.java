@@ -41,7 +41,7 @@ public class Model {
         return database
             .select(List.of("salt"))
             .where("id", "=", this.attributes.get("id"))
-            .getBytes("salt");
+            .getBytes();
     }
 
     public List<String> getAllNames() {
