@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class SceneTool {
     public static void switchTo(String resourceName, Window window) throws IOException {
-        String fullResourceName = "fxml/" + resourceName;
+        String fullResourceName = "fxml/" + resourceName + ".fxml";
         Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(fullResourceName)));
 
         Scene scene = new Scene(root, 1000, 1000);
@@ -20,6 +20,7 @@ public class SceneTool {
 
         stage.setTitle("Gamcare");
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 }
