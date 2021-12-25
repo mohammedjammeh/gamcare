@@ -50,7 +50,7 @@ public class Model {
             .orderBy("id")
             .getAll()
             .stream()
-            .map(Model::getName)
+            .map(Model::nameAttribute)
             .toList();
     }
 
@@ -58,12 +58,12 @@ public class Model {
     /**
      * Attributes Methods
      */
-    public String getFullName() {
+    public String fullNameAttribute() {
         return this.attributes.get("first_name") + " "
             + this.attributes.get("last_name");
     }
 
-    public String getName() {
+    public String nameAttribute() {
         return (String) this.attributes.get("name");
     }
 }

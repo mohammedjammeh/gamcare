@@ -86,7 +86,7 @@ public class Doctor extends Model implements ModelInterface {
     private List<String> getAvailable(List<Model> doctors) {
         return doctors.stream()
             .filter(doctor -> isAvailable(doctor, doctors))
-            .map(Model::getFullName)
+            .map(Model::fullNameAttribute)
             .toList();
     }
 
