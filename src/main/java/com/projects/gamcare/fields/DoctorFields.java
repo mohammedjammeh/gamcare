@@ -1,7 +1,6 @@
 package com.projects.gamcare.fields;
 
 import com.projects.gamcare.enums.DoctorLevel;
-import com.projects.gamcare.fields.main.UserFields;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Speciality;

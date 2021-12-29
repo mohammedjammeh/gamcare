@@ -1,6 +1,5 @@
 package com.projects.gamcare.fields;
 
-import com.projects.gamcare.fields.main.UserFields;
 import com.projects.gamcare.models.BloodType;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.wrappers.ChoiceBox;

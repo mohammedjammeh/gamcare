@@ -1,4 +1,4 @@
-package com.projects.gamcare.fields.main;
+package com.projects.gamcare.fields;
 
 import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.models.Gender;
