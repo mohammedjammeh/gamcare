@@ -1,7 +1,7 @@
 package com.projects.gamcare.fields;
 
 import com.projects.gamcare.enums.HospitalSize;
-import com.projects.gamcare.fields.main.BaseFields;
+import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Region;
 import com.projects.gamcare.wrappers.ChoiceBox;
@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class HospitalFields extends BaseFields {
+public class HospitalFields extends Controller {
     @FXML
     protected TextField nameTextField;
 

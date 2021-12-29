@@ -1,8 +1,7 @@
-package com.projects.gamcare.fields.main;
+package com.projects.gamcare.core;
 
 import com.projects.gamcare.Main;
 import com.projects.gamcare.controllers.Header;
-import com.projects.gamcare.core.StringTool;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,14 +11,14 @@ import javafx.scene.layout.VBox;
 import java.util.Arrays;
 import java.util.List;
 
-public class BaseFields {
+public class Controller {
     private User user;
 
     @FXML
-    private VBox outerBodyBox;
+    private VBox errorBox;
 
     @FXML
-    protected VBox errorBox;
+    private VBox outerBodyBox;
 
     public void hideErrorBox() {
         errorBox.setVisible(false);

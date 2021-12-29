@@ -1,7 +1,7 @@
 package com.projects.gamcare.controllers.patient;
 
-import com.projects.gamcare.fields.main.BaseFields;
+import com.projects.gamcare.core.Controller;
 
-public class Show extends BaseFields {
+public class Show extends Controller {
 
 }

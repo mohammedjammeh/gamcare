@@ -1,12 +1,9 @@
 package com.projects.gamcare.controllers;
 
 import com.projects.gamcare.core.SceneTool;
-import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
-import java.io.IOException;
 
 public class Header {
     private User user;
@@ -24,11 +21,8 @@ public class Header {
     protected Button logOutButton;
 
     public void initialize() {
-        hospitalsMenuButton.setVisible(false);
-        hospitalsMenuButton.setManaged(false);
-
-        doctorsMenuButton.setVisible(false);
-        doctorsMenuButton.setManaged(false);
+        setHospitalsMenuButtonVisible(false);
+        setDoctorsMenuButtonVisible(false);
     }
 
     @FXML
@@ -56,14 +50,23 @@ public class Header {
     }
 
     public void displayButtons() {
-        if (user.isAdmin() || user.isDoctor()) {
-            hospitalsMenuButton.setVisible(true);
-            hospitalsMenuButton.setManaged(true);
+        if (user.isDoctor()) {
+            setHospitalsMenuButtonVisible(true);
         }
 
         if (user.isAdmin()) {
-            doctorsMenuButton.setVisible(true);
-            doctorsMenuButton.setManaged(true);
+            setHospitalsMenuButtonVisible(true);
+            setDoctorsMenuButtonVisible(true);
         }
+    }
+    
+    private void setHospitalsMenuButtonVisible(Boolean value) {
+        hospitalsMenuButton.setVisible(value);
+        hospitalsMenuButton.setManaged(value);
+    }
+
+    private void setDoctorsMenuButtonVisible(Boolean value) {
+        doctorsMenuButton.setVisible(value);
+        doctorsMenuButton.setManaged(value);
     }
 }

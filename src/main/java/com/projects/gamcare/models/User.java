@@ -46,7 +46,7 @@ public class User extends Model implements ModelInterface {
         Map<String, String> resourceNames = new HashMap<>();
 
         resourceNames.put(UserType.ADMIN.name(), "hospital/index");
-        resourceNames.put(UserType.DOCTOR.name(), "doctor/show");
+        resourceNames.put(UserType.DOCTOR.name(), "hospital/index");
         resourceNames.put(UserType.PATIENT.name(), "patient/show");
 
         return resourceNames.get(type());
