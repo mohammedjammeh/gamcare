@@ -16,10 +16,10 @@
             </HBox>
             <HBox HBox.hgrow="ALWAYS"/>
             <HBox styleClass="menuBox">
-                <Button text="Hospitals" onAction="#onHospitalsButtonClick"/>
-                <Button text="Doctors" onAction="#onDoctorsButtonClick"/>
-                <Button text="My Profile" onAction="#onMyProfileButtonClick"/>
-                <Button text="Log Out" onAction="#onLogOutButtonClick"/>
+                <Button fx:id="hospitalsMenuButton" text="Hospitals" onAction="#onHospitalsMenuButtonClick"/>
+                <Button fx:id="doctorsMenuButton" text="Doctors" onAction="#onDoctorsMenuButtonClick"/>
+                <Button fx:id="myProfileMenuButton" text="My Profile" onAction="#onMyProfileMenuButtonClick"/>
+                <Button fx:id="logOutButton" text="Log Out" onAction="#onLogOutMenuButtonClick"/>
             </HBox>
         </HBox>
     </VBox>

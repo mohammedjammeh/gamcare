@@ -4,6 +4,7 @@ import com.projects.gamcare.fields.main.BaseFields;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 public class LoginFields extends BaseFields {
     @FXML
@@ -14,6 +15,10 @@ public class LoginFields extends BaseFields {
 
     @FXML
     protected Button logInButton;
+
+    public void initialize() {
+        hideErrorBox();
+    }
 
     public String getEmailAddress() {
         return emailAddressTextField.getText();

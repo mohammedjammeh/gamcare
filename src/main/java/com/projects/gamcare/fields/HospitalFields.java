@@ -40,6 +40,14 @@ public class HospitalFields extends BaseFields {
     @FXML
     protected TextArea otherDetailsTextArea;
 
+    public void initialize() {
+        hideErrorBox();
+
+        regionChoiceBox.setItems((new Region()).getAllNames());
+        sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
+        leadDoctorChoiceBox.setItems((new Doctor()).getAvailableSeniors());
+    }
+
     public String getName() {
         return nameTextField.getText();
     }
@@ -78,13 +86,5 @@ public class HospitalFields extends BaseFields {
 
     public String getOtherDetails() {
         return otherDetailsTextArea.getText();
-    }
-
-    public void initialize() {
-        super.initialize();
-
-        regionChoiceBox.setItems((new Region()).getAllNames());
-        sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-        leadDoctorChoiceBox.setItems((new Doctor()).getAvailableSeniors());
     }
 }

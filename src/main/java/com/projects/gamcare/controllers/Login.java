@@ -6,8 +6,6 @@ import com.projects.gamcare.fields.LoginFields;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
 
-import java.io.IOException;
-
 public class Login extends LoginFields {
     public void initialize() {
         super.initialize();
@@ -16,7 +14,7 @@ public class Login extends LoginFields {
     }
 
     @FXML
-    protected void onLogInButtonClick() throws IOException {
+    protected void onLogInButtonClick() throws Exception {
         String emailAddress = getEmailAddress();
         String password = getPassword();
 
@@ -28,7 +26,7 @@ public class Login extends LoginFields {
         String expectedHash = Hash.generate(password, userSalt);
 
         if (userHash.equals(expectedHash)) {
-            SceneTool.switchTo(user.afterLoginResourceName(), logInButton.getScene().getWindow());
+            SceneTool.switchTo(logInButton.getScene().getWindow(), user.afterLoginResourceName(), user);
         }
     }
 }

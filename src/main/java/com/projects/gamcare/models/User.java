@@ -56,7 +56,16 @@ public class User extends Model implements ModelInterface {
     /**
      * Attributes Methods
      */
+    public Boolean isAdmin() {
+        return type().equals(UserType.ADMIN.name());
+    }
+
+    public Boolean isDoctor() {
+        return type().equals(UserType.DOCTOR.name());
+    }
+
     public String  type() {
         return (String) this.attributes.get("type");
     }
+
 }

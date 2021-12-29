@@ -47,7 +47,7 @@
 /****************
     Body
 ****************/
-.outerBodyBox {
+.bodyScrollPane {
     -fx-padding: 0;
 }
 

@@ -1,8 +1,9 @@
 package com.projects.gamcare.controllers.doctor;
 
+import com.projects.gamcare.fields.main.BaseFields;
 import javafx.fxml.FXML;
 
-public class Show {
+public class Show extends BaseFields {
     @FXML
     protected void onEditDoctorButtonClick() {
         System.out.println("You have now edit a hospital.");

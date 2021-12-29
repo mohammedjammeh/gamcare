@@ -119,7 +119,7 @@ public class UserFields extends BaseFields {
     }
 
     public void initialize() {
-        super.initialize();
+        hideErrorBox();
 
         titleChoiceBox.setItems((new Title()).getAllNames());
         genderChoiceBox.setItems((new Gender()).getAllNames());
