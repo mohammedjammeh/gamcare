@@ -15,6 +15,50 @@ public class User extends Model implements ModelInterface {
         return table;
     }
 
+    public void prepareQuery() {
+        if (database.sqlIsNull()) {
+            database.select(List.of("*"));
+        }
+    }
+
+
+    /**
+     * Attributes Methods
+     */
+    public Integer idAttribute() {
+        return super.idAttribute();
+    }
+
+    public String typeAttribute() {
+        return (String) this.attributes.get("type");
+    }
+
+
+    /**
+     * General Methods
+     */
+    public Boolean isAdmin() {
+        return typeAttribute().equals(UserType.ADMIN.name());
+    }
+
+    public Boolean isDoctor() {
+        return typeAttribute().equals(UserType.DOCTOR.name());
+    }
+
+    public Boolean isPatient() {
+        return typeAttribute().equals(UserType.PATIENT.name());
+    }
+
+    public String afterLoginResourceName() {
+        Map<String, String> resourceNames = new HashMap<>();
+
+        resourceNames.put(UserType.ADMIN.name(), "hospital/index");
+        resourceNames.put(UserType.DOCTOR.name(), "hospital/index");
+        resourceNames.put(UserType.PATIENT.name(), "patient/show");
+
+        return resourceNames.get(typeAttribute());
+    }
+
 
     /**
      * Query Methods
@@ -27,45 +71,18 @@ public class User extends Model implements ModelInterface {
         return (User) super.last();
     }
 
-    public User where(String column, String value) {
+    public User where(String column, Object value) {
         return (User) super.where(column, value);
     }
 
     public byte[] getSalt() {
         return database
             .select(List.of("salt"))
-            .where("id", "=", this.attributes.get("id"))
+            .where("id", "=", idAttribute())
             .getBytes();
     }
 
-
-    /**
-     * General Methods
-     */
-    public String afterLoginResourceName() {
-        Map<String, String> resourceNames = new HashMap<>();
-
-        resourceNames.put(UserType.ADMIN.name(), "hospital/index");
-        resourceNames.put(UserType.DOCTOR.name(), "hospital/index");
-        resourceNames.put(UserType.PATIENT.name(), "patient/show");
-
-        return resourceNames.get(type());
+    public Doctor getDoctor() {
+        return (new Doctor()).where("id", idAttribute()).first();
     }
-
-
-    /**
-     * Attributes Methods
-     */
-    public Boolean isAdmin() {
-        return type().equals(UserType.ADMIN.name());
-    }
-
-    public Boolean isDoctor() {
-        return type().equals(UserType.DOCTOR.name());
-    }
-
-    public String  type() {
-        return (String) this.attributes.get("type");
-    }
-
 }

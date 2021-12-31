@@ -49,7 +49,7 @@ public class Header {
         this.user = user;
     }
 
-    public void displayButtons() {
+    public void setButtonsVisible() {
         if (user.isDoctor()) {
             setHospitalsMenuButtonVisible(true);
         }

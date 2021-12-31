@@ -3,8 +3,10 @@ package com.projects.gamcare.core;
 import com.projects.gamcare.Main;
 import com.projects.gamcare.controllers.Header;
 import com.projects.gamcare.models.User;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 
@@ -37,20 +39,29 @@ public class Controller {
         this.user = user;
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public void setUpHeader() throws Exception {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/header.fxml"));
         Parent header = loader.load();
 
         Header headerController = loader.getController();
         headerController.setUser(user);
-        headerController.displayButtons();
+        headerController.setButtonsVisible();
 
         addToOuterBodyTop(header);
     }
 
-    public void addToOuterBodyTop(Parent header) {
-        outerBodyBox.getChildren().add(header);
-        int headerIndex = outerBodyBox.getChildren().indexOf(header);
-        outerBodyBox.getChildren().get(headerIndex).toBack();
+    private void addToOuterBodyTop(Parent header) {
+        ObservableList<Node> outerBodyChildren = outerBodyBox.getChildren();
+
+        outerBodyChildren.add(header);
+
+        int headerIndex = outerBodyChildren.indexOf(header);
+        outerBodyChildren.get(headerIndex).toBack();
     }
+
+    public void setUpBody() {}
 }

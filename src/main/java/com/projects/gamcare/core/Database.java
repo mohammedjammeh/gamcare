@@ -62,15 +62,24 @@ public class Database {
     }
 
     public Database with(String anotherTableName) {
-        prepareSql();
+        model.prepareQuery();
 
         sql += "INNER JOIN " + anotherTableName + " ON " + model.getTableName() +  ".id = " + anotherTableName + "." + model.getTableName() + "_id ";
 
         return this;
     }
 
+    public Database withMany( String anotherTableName, String pivotTableName) {
+        model.prepareQuery();
+
+        sql += "INNER JOIN " + pivotTableName + " ON " + model.getTableName() +  ".id = " + pivotTableName + "." + model.getTableName() + "_id ";
+        sql += "INNER JOIN " + anotherTableName + " ON " + pivotTableName + "." + anotherTableName + "_id = " + anotherTableName + ".id";
+
+        return this;
+    }
+
     public Database where(String column, String operator, Object value) {
-        prepareSql();
+        model.prepareQuery();
 
         sql += whereValues.isEmpty() ? "WHERE " : "AND ";
         sql += column + " " + operator + " ? ";
@@ -81,7 +90,7 @@ public class Database {
     }
 
     public Database orderBy(String column) {
-        prepareSql();
+        model.prepareQuery();
 
         sql += "ORDER BY " + column;
 
@@ -124,7 +133,7 @@ public class Database {
     }
 
     private ResultSet query() throws SQLException {
-        prepareSql();
+        model.prepareQuery();
 
         PreparedStatement statement = connection.prepareStatement(sql);
 
@@ -133,11 +142,6 @@ public class Database {
         }
 
         return statement.executeQuery();
-    }
-
-    private void prepareSql() {
-        if(sql == null)
-            sql = "SELECT * FROM " + model.getTableName() + " ";
     }
 
 
@@ -190,6 +194,7 @@ public class Database {
         return columnsData;
     }
 
+    // sort out
     private Map<String, Object> putData(Map<String, Object> row, Map<String, String> columnData, ResultSet queryResults) throws SQLException {
         String columnName = columnData.get("name");
         String columnType = columnData.get("type");
@@ -233,5 +238,18 @@ public class Database {
         return resultsList.isEmpty()
             ? null
             : resultsList.get(lastResultIndex);
+    }
+
+    /**
+     * General Methods
+     */
+    public Boolean sqlIsNull() {
+        return sql == null;
+    }
+
+    public Database setSql(String sql) {
+        this.sql = sql;
+
+        return this;
     }
 }

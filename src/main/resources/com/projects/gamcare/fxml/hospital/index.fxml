@@ -20,7 +20,7 @@
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Add" onAction="#onAddHospitalButtonClick"/>
                     </HBox>
-                    <VBox styleClass="hospitalBodyBox">
+                    <VBox styleClass="hospitalBodyBox" fx:id="hospitalBodyBox">
                         <HBox>
                             <Button text="Brikama" onAction="#onShowHospitalButtonClick"/>
                             <Button text="Mansa Konko" onAction="#onShowHospitalButtonClick"/>

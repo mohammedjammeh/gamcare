@@ -19,6 +19,33 @@ public class Model {
         return null;
     }
 
+    public void prepareQuery() {}
+
+
+    /**
+     * Attributes Methods
+     */
+    public Integer idAttribute() {
+        return (Integer) this.attributes.get("id");
+    }
+
+    public String fullNameAttribute() {
+        return this.attributes.get("first_name") + " "
+            + this.attributes.get("last_name");
+    }
+
+    public String nameAttribute() {
+        return (String) this.attributes.get("name");
+    }
+
+
+    /**
+     * General Methods
+     */
+    public Database getDatabase() {
+        return database;
+    }
+
 
     /**
      * Query Methods
@@ -31,7 +58,7 @@ public class Model {
         return (Model) database.last();
     }
 
-    public Model where(String column, String value) {
+    public Model where(String column, Object value) {
         database.where(column, "=", value);
 
         return this;
@@ -39,24 +66,11 @@ public class Model {
 
     public List<String> getAllNames() {
         return database.
-            select(List.of("*"))
-            .orderBy("id")
-            .getAll()
-            .stream()
-            .map(Model::nameAttribute)
-            .toList();
-    }
-
-
-    /**
-     * Attributes Methods
-     */
-    public String fullNameAttribute() {
-        return this.attributes.get("first_name") + " "
-            + this.attributes.get("last_name");
-    }
-
-    public String nameAttribute() {
-        return (String) this.attributes.get("name");
+                select(List.of("*"))
+                .orderBy("id")
+                .getAll()
+                .stream()
+                .map(Model::nameAttribute)
+                .toList();
     }
 }

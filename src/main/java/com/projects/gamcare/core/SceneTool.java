@@ -16,6 +16,7 @@ public class SceneTool {
         Controller controller = loader.getController();
         controller.setUser(user);
         controller.setUpHeader();
+        controller.setUpBody();
 
         showStage(root, (Stage) window);
     }
