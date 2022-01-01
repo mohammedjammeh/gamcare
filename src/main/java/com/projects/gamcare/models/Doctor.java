@@ -14,12 +14,6 @@ public class Doctor extends Model implements ModelInterface {
         return table;
     }
 
-    public void prepareQuery() {
-        if (database.sqlIsNull()) {
-            database.select(List.of("*"));
-        }
-    }
-
 
     /**
      * Get Available Doctors

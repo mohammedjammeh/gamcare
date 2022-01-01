@@ -1,11 +1,14 @@
 package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.core.Controller;
-import com.projects.gamcare.models.Doctor;
+import com.projects.gamcare.models.Hospital;
+import com.projects.gamcare.models.main.Model;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import java.util.List;
 
 public class Index extends Controller {
     @FXML
@@ -22,21 +25,30 @@ public class Index extends Controller {
     }
 
     public void setUpBody() {
+        List<Model> hospitals = getUser().getHospitals();
         HBox row = new HBox();
 
-        Button button = new Button();
-        button.setText("Real Friends");
-        button.setOnAction(event -> onShowHospitalButtonClick());
+        for (int i = 0; i < hospitals.size(); i++) {
+            Model hospital = hospitals.get(i);
 
-        row.getChildren().add(button);
+            Button button = new Button();
+            button.setText(hospital.nameAttribute());
+            button.setOnAction(event -> onShowHospitalButtonClick());
 
-        hospitalBodyBox.getChildren().add(row);
+            row = hasNoSpace(row) ?  new HBox() : row;
+            row.getChildren().add(button);
 
+            if (hasNoSpace(row) || isLastItem(hospitals, i)) {
+                hospitalBodyBox.getChildren().add(row);
+            }
+        }
+    }
 
-        
-        Doctor doctor = getUser().getDoctor();
-//        System.out.println(doctor.getHospitals().get(0).attributes);
-//        doctor.getHospitals().stream().map(item -> item.attributes.get("name")).forEach(System.out::println);
+    private Boolean hasNoSpace(HBox row) {
+        return (long) row.getChildren().size() >= 4;
+    }
 
+    private Boolean isLastItem( List<Model> hospitals, Integer hospitalIndex) {
+        return hospitals.size() - 1 == hospitalIndex;
     }
 }

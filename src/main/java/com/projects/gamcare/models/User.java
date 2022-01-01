@@ -4,6 +4,7 @@ import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,18 +16,12 @@ public class User extends Model implements ModelInterface {
         return table;
     }
 
-    public void prepareQuery() {
-        if (database.sqlIsNull()) {
-            database.select(List.of("*"));
-        }
-    }
-
 
     /**
      * Attributes Methods
      */
-    public Integer idAttribute() {
-        return super.idAttribute();
+    public Integer doctorIdAttribute() {
+        return (Integer) this.attributes.get("doctors_id");
     }
 
     public String typeAttribute() {
@@ -83,6 +78,18 @@ public class User extends Model implements ModelInterface {
     }
 
     public Doctor getDoctor() {
-        return (new Doctor()).where("id", idAttribute()).first();
+        return (new Doctor()).where("id", doctorIdAttribute()).first();
+    }
+
+    public List<Model> getHospitals() {
+        if (isAdmin()) {
+            return (new Hospital()).getDatabase().getAll();
+        }
+
+        if (isDoctor()) {
+            return this.getDoctor().getHospitals();
+        }
+
+        return new ArrayList<>();
     }
 }

@@ -21,18 +21,6 @@
                         <Button text="Add" onAction="#onAddHospitalButtonClick"/>
                     </HBox>
                     <VBox styleClass="hospitalBodyBox" fx:id="hospitalBodyBox">
-                        <HBox>
-                            <Button text="Brikama" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Mansa Konko" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Farro Kono" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Katong" onAction="#onShowHospitalButtonClick"/>
-                        </HBox>
-                        <HBox>
-                            <Button text="Juffureh" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Niumi" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Kloro" onAction="#onShowHospitalButtonClick"/>
-                            <Button text="Bansang" onAction="#onShowHospitalButtonClick"/>
-                        </HBox>
                     </VBox>
                 </VBox>
             </VBox>

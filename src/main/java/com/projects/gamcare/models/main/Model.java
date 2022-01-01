@@ -19,7 +19,11 @@ public class Model {
         return null;
     }
 
-    public void prepareQuery() {}
+    public void prepareQuery() {
+        if (database.sqlIsNull()) {
+            database.select(List.of("*"));
+        }
+    }
 
 
     /**
@@ -66,11 +70,11 @@ public class Model {
 
     public List<String> getAllNames() {
         return database.
-                select(List.of("*"))
-                .orderBy("id")
-                .getAll()
-                .stream()
-                .map(Model::nameAttribute)
-                .toList();
+            select(List.of("*"))
+            .orderBy("id")
+            .getAll()
+            .stream()
+            .map(Model::nameAttribute)
+            .toList();
     }
 }
