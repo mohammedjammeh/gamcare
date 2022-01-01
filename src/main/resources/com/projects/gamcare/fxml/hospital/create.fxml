@@ -14,16 +14,13 @@
     fx:controller="com.projects.gamcare.controllers.hospital.Create"
     stylesheets="@../../css/main.css"
 >
-    <ScrollPane styleClass="outerBodyBox" fitToWidth="true">
-        <VBox>
-            <fx:include source="../header.fxml"/>
-
+    <ScrollPane styleClass="bodyScrollPane" fitToWidth="true">
+        <VBox fx:id="outerBodyBox">
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
                     <HBox styleClass="subHeadingBox">
                         <Label text="Create New Hospital"/>
                     </HBox>
-
 
                     <VBox styleClass="form">
                         <VBox fx:id="errorBox" styleClass="errorBox">

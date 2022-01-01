@@ -1,8 +1,9 @@
 package com.projects.gamcare.controllers.hospital;
 
+import com.projects.gamcare.core.Controller;
 import javafx.fxml.FXML;
 
-public class Show {
+public class Show extends Controller {
     @FXML
     protected void onEditHospitalButtonClick() {
         System.out.println("You have now edit a hospital.");

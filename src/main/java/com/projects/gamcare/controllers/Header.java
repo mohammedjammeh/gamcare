@@ -26,22 +26,22 @@ public class Header {
     }
 
     @FXML
-    protected void onHospitalsMenuButtonClick() throws Exception {
+    protected void onHospitalsMenuButtonClick() {
         SceneTool.switchTo(hospitalsMenuButton.getScene().getWindow(), "hospital/index", user);
     }
 
     @FXML
-    protected void onDoctorsMenuButtonClick() throws Exception {
+    protected void onDoctorsMenuButtonClick() {
         SceneTool.switchTo(doctorsMenuButton.getScene().getWindow(), "doctor/index", user);
     }
 
     @FXML
-    protected void onMyProfileMenuButtonClick() throws Exception {
+    protected void onMyProfileMenuButtonClick() {
         SceneTool.switchTo(myProfileMenuButton.getScene().getWindow(), "patient/show", user);
     }
 
     @FXML
-    protected void onLogOutMenuButtonClick() throws Exception {
+    protected void onLogOutMenuButtonClick() {
         SceneTool.switchToLogin(logOutButton.getScene().getWindow());
     }
 

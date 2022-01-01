@@ -18,7 +18,7 @@
                     <HBox styleClass="subHeadingBox">
                         <Label text="Hospitals"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Add" onAction="#onAddHospitalButtonClick"/>
+                        <Button text="Add" onAction="#onAddHospitalButtonClick" fx:id="addHospitalButton"/>
                     </HBox>
                     <VBox styleClass="hospitalBodyBox" fx:id="hospitalBodyBox">
                     </VBox>

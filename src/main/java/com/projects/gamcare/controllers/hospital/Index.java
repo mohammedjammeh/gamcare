@@ -1,6 +1,7 @@
 package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.main.Model;
 import javafx.fxml.FXML;
@@ -15,27 +16,51 @@ public class Index extends Controller {
     protected VBox hospitalBodyBox;
 
     @FXML
+    protected Button addHospitalButton;
+
+    @FXML
     protected void onAddHospitalButtonClick() {
-        System.out.println("You have now added a hospital.");
+        SceneTool.switchTo(
+            addHospitalButton.getScene().getWindow(),
+            "hospital/create",
+            getUser()
+        );
     }
 
     @FXML
-    protected void onShowHospitalButtonClick() {
-        System.out.println("You can now see a hospital.");
+    protected void onShowHospitalButtonClick(Hospital hospital) {
+        SceneTool.switchTo(
+            hospitalBodyBox.getScene().getWindow(),
+            "hospital/show",
+            getUser(),
+            hospital
+        );
     }
 
     public void setUpBody() {
+        updateAddHospitalButtonVisibility();
+        showHospitals();
+    }
+
+    private void updateAddHospitalButtonVisibility() {
+        if (! getUser().isAdmin()) {
+            addHospitalButton.setVisible(false);
+            addHospitalButton.setManaged(false);
+        }
+    }
+
+    private void showHospitals() {
         List<Model> hospitals = getUser().getHospitals();
         HBox row = new HBox();
 
         for (int i = 0; i < hospitals.size(); i++) {
-            Model hospital = hospitals.get(i);
+            Hospital hospital = (Hospital) hospitals.get(i);
 
             Button button = new Button();
             button.setText(hospital.nameAttribute());
-            button.setOnAction(event -> onShowHospitalButtonClick());
+            button.setOnAction(event -> onShowHospitalButtonClick(hospital));
 
-            row = hasNoSpace(row) ?  new HBox() : row;
+            row = hasNoSpace(row) ? new HBox() : row;
             row.getChildren().add(button);
 
             if (hasNoSpace(row) || isLastItem(hospitals, i)) {

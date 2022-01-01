@@ -14,7 +14,7 @@ public class Login extends LoginFields {
     }
 
     @FXML
-    protected void onLogInButtonClick() throws Exception {
+    protected void onLogInButtonClick() {
         String emailAddress = getEmailAddress();
         String password = getPassword();
 
