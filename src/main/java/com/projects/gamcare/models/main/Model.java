@@ -1,6 +1,7 @@
 package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.Database;
+import com.projects.gamcare.models.Region;
 
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +43,10 @@ public class Model {
         return (String) this.attributes.get("name");
     }
 
+    public Integer regionIdAttribute() {
+        return (Integer) this.attributes.get("regions_id");
+    }
+
 
     /**
      * General Methods
@@ -76,5 +81,12 @@ public class Model {
             .stream()
             .map(Model::nameAttribute)
             .toList();
+    }
+
+    public Region getRegion() {
+        return (Region) (new Region())
+            .getDatabase()
+            .where("id", "=", regionIdAttribute())
+            .first();
     }
 }

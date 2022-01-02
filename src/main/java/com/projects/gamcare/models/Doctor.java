@@ -37,7 +37,7 @@ public class Doctor extends Model implements ModelInterface {
     }
 
     public List<Model> getAllWhere(String level) {
-        return database
+        return getDatabase()
             .select(List.of("*"))
             .with("users")
             .with("hospitals_doctors")

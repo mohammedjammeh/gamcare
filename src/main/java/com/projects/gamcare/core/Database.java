@@ -73,7 +73,7 @@ public class Database {
         model.prepareQuery();
 
         sql += "INNER JOIN " + pivotTableName + " ON " + model.getTableName() +  ".id = " + pivotTableName + "." + model.getTableName() + "_id ";
-        sql += "INNER JOIN " + anotherTableName + " ON " + pivotTableName + "." + anotherTableName + "_id = " + anotherTableName + ".id";
+        sql += "INNER JOIN " + anotherTableName + " ON " + pivotTableName + "." + anotherTableName + "_id = " + anotherTableName + ".id ";
 
         return this;
     }
@@ -144,7 +144,6 @@ public class Database {
         return statement.executeQuery();
     }
 
-
     private void setStatementValue(PreparedStatement statement, Integer index, Object value) throws SQLException {
         if(value instanceof Integer) {
             statement.setInt(index, (int) value);
@@ -194,29 +193,27 @@ public class Database {
         return columnsData;
     }
 
-    // sort out
-    private Map<String, Object> putData(Map<String, Object> row, Map<String, String> columnData, ResultSet queryResults) throws SQLException {
+    private void putData(Map<String, Object> row, Map<String, String> columnData, ResultSet queryResults) throws SQLException {
         String columnName = columnData.get("name");
         String columnType = columnData.get("type");
 
         if(Objects.equals(columnType, "INT")) {
             Integer columnValue = queryResults.getInt(columnName) == 0 ? null : queryResults.getInt(columnName);
             row.put(columnName, columnValue);
-        }
-
-        if(Objects.equals(columnType, "VARCHAR") || Objects.equals(columnType, "CHAR")) {
-            row.put(columnName, queryResults.getString(columnName));
+            return;
         }
 
         if(Objects.equals(columnType, "DATETIME")) {
             row.put(columnName, queryResults.getDate(columnName));
+            return;
         }
 
         if(Objects.equals(columnType, "BLOB")) {
             row.put(columnName, queryResults.getBytes(columnName));
+            return;
         }
 
-        return row;
+        row.put(columnName, queryResults.getString(columnName));
     }
 
 
@@ -239,6 +236,7 @@ public class Database {
             ? null
             : resultsList.get(lastResultIndex);
     }
+
 
     /**
      * General Methods

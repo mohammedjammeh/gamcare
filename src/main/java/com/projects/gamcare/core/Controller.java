@@ -51,6 +51,10 @@ public class Controller {
         this.hospital = hospital;
     }
 
+    public Hospital getHospital() {
+        return hospital;
+    }
+
     public void setUpHeader() {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/header.fxml"));
         Parent header = null;
