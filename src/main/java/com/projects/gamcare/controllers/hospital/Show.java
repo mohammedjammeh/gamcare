@@ -18,6 +18,9 @@ public class Show extends Controller {
     protected VBox profileAttributes;
 
     @FXML
+    protected VBox profileOtherDetails;
+
+    @FXML
     protected void onEditHospitalButtonClick() {
         System.out.println("You have now edit a hospital.");
     }
@@ -44,6 +47,21 @@ public class Show extends Controller {
 
     public void setUpBody() {
         buildProfileAttributes();
+        buildOtherDetailsSection();
+    }
+
+    private void buildOtherDetailsSection() {
+        Label otherDetails = new Label();
+        otherDetails.setLineSpacing(14);
+        otherDetails.setWrapText(true);
+        otherDetails.setText(getHospitalAttribute("other_details"));
+
+        HBox otherDetailsBox = new HBox();
+        HBox row = new HBox();
+
+        otherDetailsBox.getChildren().add(otherDetails);
+        row.getChildren().add(otherDetailsBox);
+        profileOtherDetails.getChildren().add(row);
     }
 
     private void buildProfileAttributes() {
