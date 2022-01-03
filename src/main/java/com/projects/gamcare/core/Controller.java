@@ -1,17 +1,14 @@
 package com.projects.gamcare.core;
 
-import com.projects.gamcare.Main;
-import com.projects.gamcare.controllers.Header;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,10 +18,10 @@ public class Controller {
     private Hospital hospital;
 
     @FXML
-    private VBox errorBox;
+    private VBox headingBox;
 
     @FXML
-    private VBox outerBodyBox;
+    private VBox errorBox;
 
     public void hideErrorBox() {
         errorBox.setVisible(false);
@@ -56,29 +53,47 @@ public class Controller {
     }
 
     public void setUpHeader() {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/header.fxml"));
-        Parent header = null;
+        Label titleLabel = new Label("Gamcare - Farokono");
 
-        try {
-            header = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        HBox mainTitleBox = new HBox();
+        HBox.setHgrow(mainTitleBox, Priority.ALWAYS);
+        mainTitleBox.getStyleClass().add("mainTitleBox");
+        mainTitleBox.getChildren().add(titleLabel);
 
-        Header headerController = loader.getController();
-        headerController.setUser(user);
-        headerController.setButtonsVisible();
+        HBox menuBox = new HBox();
+        menuBox.getStyleClass().add("menuBox");
+        menuBox.getChildren().addAll(headerButtons());
 
-        addToOuterBodyTop(header);
+        HBox innerHeadingBox = new HBox();
+        innerHeadingBox.getStyleClass().add("innerHeadingBox");
+        innerHeadingBox.getChildren().add(mainTitleBox);
+        innerHeadingBox.getChildren().add(menuBox);
+
+        headingBox.getChildren().add(innerHeadingBox);
     }
 
-    private void addToOuterBodyTop(Parent header) {
-        ObservableList<Node> outerBodyChildren = outerBodyBox.getChildren();
+    private List<Button> headerButtons() {
+        Button hospitalsButton = new Button("Hospitals");
+        setAction(hospitalsButton, "hospital/index");
 
-        outerBodyChildren.add(header);
+        Button doctorsMenuButton = new Button("Doctors");
+        setAction(doctorsMenuButton, "doctor/index");
 
-        int headerIndex = outerBodyChildren.indexOf(header);
-        outerBodyChildren.get(headerIndex).toBack();
+        Button myProfileMenuButton = new Button("My Profile");
+        setAction(myProfileMenuButton, "patient/show");
+
+        Button logOutButton = new Button("Log Out");
+        setAction(logOutButton);
+
+        return List.of(hospitalsButton, doctorsMenuButton, myProfileMenuButton, logOutButton);
+    }
+
+    private void setAction(Button button, String nextResourceName) {
+        button.setOnAction(event -> SceneTool.switchTo(button.getScene().getWindow(), nextResourceName, user));
+    }
+
+    private void setAction(Button button) {
+        button.setOnAction(event -> SceneTool.switchToLogin(button.getScene().getWindow()));
     }
 
     public void setUpBody() {}

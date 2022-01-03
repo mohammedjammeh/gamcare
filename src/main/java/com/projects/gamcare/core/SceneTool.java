@@ -18,7 +18,7 @@ public class SceneTool {
 
         Controller controller = loader.getController();
         controller.setUser(user);
-//        controller.setUpHeader();
+        controller.setUpHeader();
         controller.setUpBody();
 
         showStage(root, (Stage) window);
@@ -31,7 +31,7 @@ public class SceneTool {
         Controller controller = loader.getController();
         controller.setUser(user);
         controller.setHospital(hospital);
-//        controller.setUpHeader();
+        controller.setUpHeader();
         controller.setUpBody();
 
         showStage(root, (Stage) window);

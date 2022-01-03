@@ -56,8 +56,7 @@ public class Index extends Controller {
         for (int i = 0; i < hospitals.size(); i++) {
             Hospital hospital = (Hospital) hospitals.get(i);
 
-            Button button = new Button();
-            button.setText(hospital.nameAttribute());
+            Button button = new Button(hospital.nameAttribute());
             button.setOnAction(event -> onShowHospitalButtonClick(hospital));
 
             row = hasNoSpace(row) ? new HBox() : row;

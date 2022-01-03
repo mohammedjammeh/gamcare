@@ -15,9 +15,9 @@
     fx:controller="com.projects.gamcare.controllers.patient.Create"
     stylesheets="@../../css/main.css"
 >
-    <ScrollPane styleClass="outerBodyBox" fitToWidth="true">
+    <ScrollPane styleClass="bodyScrollPane" fitToWidth="true">
         <VBox>
-            <fx:include source="../header.fxml"/>
+            <VBox styleClass="headingBox" fx:id="headingBox"/>
 
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">

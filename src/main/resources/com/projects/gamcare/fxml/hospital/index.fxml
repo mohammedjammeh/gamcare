@@ -12,7 +12,9 @@
     stylesheets="@../../css/main.css"
 >
     <ScrollPane styleClass="bodyScrollPane" fitToWidth="true">
-        <VBox fx:id="outerBodyBox">
+        <VBox>
+            <VBox styleClass="headingBox" fx:id="headingBox"/>
+
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
                     <HBox styleClass="subHeadingBox">
