@@ -47,7 +47,6 @@ public class Show extends Controller {
         buildOtherDetailsSection();
     }
 
-    // Add or at least check <HBox HBox.hgrow="ALWAYS"/>
     private void buildProfileAttributes() {
         ObservableList<Node> row01Children = new HBox().getChildren();
         ObservableList<Node> row02Children = new HBox().getChildren();

@@ -26,7 +26,7 @@ public class Login extends LoginFields {
         String expectedHash = Hash.generate(password, userSalt);
 
         if (userHash.equals(expectedHash)) {
-            SceneTool.switchTo(logInButton.getScene().getWindow(), user.afterLoginResourceName(), user);
+            SceneTool.switchTo(user.afterLoginResourceName(), user);
         }
     }
 }

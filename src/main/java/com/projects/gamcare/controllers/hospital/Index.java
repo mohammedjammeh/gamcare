@@ -20,21 +20,12 @@ public class Index extends Controller {
 
     @FXML
     protected void onAddHospitalButtonClick() {
-        SceneTool.switchTo(
-            addHospitalButton.getScene().getWindow(),
-            "hospital/create",
-            getUser()
-        );
+        SceneTool.switchTo("hospital/create", getUser());
     }
 
     @FXML
     protected void onShowHospitalButtonClick(Hospital hospital) {
-        SceneTool.switchTo(
-            hospitalBodyBox.getScene().getWindow(),
-            "hospital/show",
-            getUser(),
-            hospital
-        );
+        SceneTool.switchTo("hospital/show", getUser(), hospital);
     }
 
     public void setUpBody() {

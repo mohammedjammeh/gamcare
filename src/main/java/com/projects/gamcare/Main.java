@@ -97,7 +97,7 @@ public class Main extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
-        SceneTool.switchToLogin(stage);
+        SceneTool.switchToLogin();
     }
 
     public static void main(String[] args) {

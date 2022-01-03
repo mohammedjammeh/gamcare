@@ -12,7 +12,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 
 public class SceneTool {
-    public static void switchTo(Window window, String resourceName, User user) {
+    public static void switchTo(String resourceName, User user) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
 
@@ -21,10 +21,10 @@ public class SceneTool {
         controller.setUpHeader();
         controller.setUpBody();
 
-        showStage(root, (Stage) window);
+        showStage(root);
     }
 
-    public static void switchTo(Window window, String resourceName, User user, Hospital hospital) {
+    public static void switchTo(String resourceName, User user, Hospital hospital) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
 
@@ -34,14 +34,14 @@ public class SceneTool {
         controller.setUpHeader();
         controller.setUpBody();
 
-        showStage(root, (Stage) window);
+        showStage(root);
     }
 
-    public static void switchToLogin(Window window) {
+    public static void switchToLogin() {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
         Parent root = getLoadedRoot(loader);
 
-        showStage(root, (Stage) window);
+        showStage(root);
     }
 
     private static Parent getLoadedRoot(FXMLLoader loader) {
@@ -56,9 +56,10 @@ public class SceneTool {
         return root;
     }
 
-    private static void showStage(Parent root, Stage stage) {
+    private static void showStage(Parent root) {
         Scene scene = new Scene(root, 1000, 1000);
 
+        Stage stage = new Stage();
         stage.setTitle("Gamcare");
         stage.setScene(scene);
         stage.centerOnScreen();

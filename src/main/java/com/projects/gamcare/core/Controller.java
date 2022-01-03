@@ -89,11 +89,11 @@ public class Controller {
     }
 
     private void setAction(Button button, String nextResourceName) {
-        button.setOnAction(event -> SceneTool.switchTo(button.getScene().getWindow(), nextResourceName, user));
+        button.setOnAction(event -> SceneTool.switchTo(nextResourceName, user));
     }
 
     private void setAction(Button button) {
-        button.setOnAction(event -> SceneTool.switchToLogin(button.getScene().getWindow()));
+        button.setOnAction(event -> SceneTool.switchToLogin());
     }
 
     public void setUpBody() {}
