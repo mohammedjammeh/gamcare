@@ -85,7 +85,7 @@ public class Controller {
         Button logOutButton = new Button("Log Out");
         setAction(logOutButton);
 
-        return List.of(hospitalsButton, doctorsMenuButton, myProfileMenuButton, logOutButton);
+        return userHeaderButtons(hospitalsButton, doctorsMenuButton, myProfileMenuButton, logOutButton);
     }
 
     private void setAction(Button button, String nextResourceName) {
@@ -94,6 +94,18 @@ public class Controller {
 
     private void setAction(Button button) {
         button.setOnAction(event -> SceneTool.switchToLogin());
+    }
+
+    private List<Button> userHeaderButtons(Button hospitalsButton, Button doctorsMenuButton, Button myProfileMenuButton, Button logOutButton) {
+        if (user.isPatient()) {
+            return List.of(myProfileMenuButton, logOutButton);
+        }
+
+        if (user.isDoctor()) {
+            return List.of(hospitalsButton, myProfileMenuButton, logOutButton);
+        }
+
+        return List.of(hospitalsButton, doctorsMenuButton, myProfileMenuButton, logOutButton);
     }
 
     public void setUpBody() {}
