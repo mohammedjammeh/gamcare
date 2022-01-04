@@ -65,7 +65,7 @@
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Add" onAction="#onAddPatientButtonClick"/>
                     </HBox>
-                    <VBox styleClass="tableDisplay">
+                    <VBox styleClass="tableDisplay" fx:id="profilePatients">
                         <HBox styleClass="tableHeadings">
                             <Label>First name</Label>
                             <HBox HBox.hgrow="ALWAYS"/>
@@ -87,121 +87,121 @@
 
                             <Label styleClass="action">Action</Label>
                         </HBox>
-                        <HBox styleClass="tableBody">
-                            <Label>Mohammed</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                        <HBox styleClass="tableBody">-->
+<!--                            <Label>Mohammed</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Lamin</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Lamin</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Jammeh</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Jammeh</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>19 years</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>19 years</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label styleClass="email">jilanka@yahoo.com</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label styleClass="email">jilanka@yahoo.com</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>0.9</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>0.9</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="action">
-                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>
-                            </HBox>
-                        </HBox>
-                        <HBox styleClass="tableBody">
-                            <Label>Omar</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox styleClass="action">-->
+<!--                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
+<!--                        <HBox styleClass="tableBody">-->
+<!--                            <Label>Omar</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Balafong</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Balafong</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Bojang</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Bojang</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>39 years</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>39 years</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label styleClass="email">balafong@gmail.com</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label styleClass="email">balafong@gmail.com</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>0.6</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>0.6</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="action">
-                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>
-                            </HBox>
-                        </HBox>
-                        <HBox styleClass="tableBody">
-                            <Label>Mustapha</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox styleClass="action">-->
+<!--                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
+<!--                        <HBox styleClass="tableBody">-->
+<!--                            <Label>Mustapha</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Idris</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Idris</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Badjie</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Badjie</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>27 years</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>27 years</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label styleClass="email">mustapha@gmail.com</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label styleClass="email">mustapha@gmail.com</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>0.3</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>0.3</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="action">
-                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>
-                            </HBox>
-                        </HBox>
-                        <HBox styleClass="tableBody">
-                            <Label>Momodou</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox styleClass="action">-->
+<!--                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
+<!--                        <HBox styleClass="tableBody">-->
+<!--                            <Label>Momodou</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Lamin</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Lamin</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Sanyang</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Sanyang</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>28 years</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>28 years</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label styleClass="email">laminsanyang@gmail.com</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label styleClass="email">laminsanyang@gmail.com</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>0.3</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>0.3</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="action">
-                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>
-                            </HBox>
-                        </HBox>
-                        <HBox styleClass="tableBody">
-                            <Label>Ousman</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox styleClass="action">-->
+<!--                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
+<!--                        <HBox styleClass="tableBody">-->
+<!--                            <Label>Ousman</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Mballow</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Mballow</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>Bajo</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>Bajo</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>66 years</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>66 years</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label styleClass="email">mballow@gmail.com</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label styleClass="email">mballow@gmail.com</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <Label>0.8</Label>
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <Label>0.8</Label>-->
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="action">
-                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>
-                            </HBox>
-                        </HBox>
+<!--                            <HBox styleClass="action">-->
+<!--                                <Button text="Profile" onAction="#onShowPatientButtonClick"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
 
                         <VBox.margin>
                             <Insets>

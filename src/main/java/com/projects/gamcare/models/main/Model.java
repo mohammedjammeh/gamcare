@@ -1,11 +1,13 @@
 package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.Database;
+import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.models.Region;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+import static java.util.Calendar.*;
+import static java.util.Calendar.DATE;
 
 public class Model {
     protected Database database;
@@ -34,6 +36,22 @@ public class Model {
         return (Integer) this.attributes.get("id");
     }
 
+    public String firstNameAttribute() {
+        return (String) this.attributes.get("first_name");
+    }
+
+    public String middleNameAttribute() {
+        return (String) this.attributes.get("middle_name");
+    }
+
+    public String lastNameAttribute() {
+        return (String) this.attributes.get("last_name");
+    }
+
+    public String emailAttribute() {
+        return (String) this.attributes.get("email_address");
+    }
+
     public String fullNameAttribute() {
         return this.attributes.get("first_name") + " "
             + this.attributes.get("last_name");
@@ -45,6 +63,14 @@ public class Model {
 
     public Integer regionIdAttribute() {
         return (Integer) this.attributes.get("regions_id");
+    }
+
+    public String age() {
+        return TimeTool.yearsSince(dateOfBirthAttribute()) + " years";
+    }
+
+    public Date dateOfBirthAttribute() {
+        return (Date) this.attributes.get("date_of_birth");
     }
 
 
@@ -59,12 +85,20 @@ public class Model {
     /**
      * Query Methods
      */
+    public Database with(String anotherTableName) {
+        return database.with(anotherTableName);
+    }
+
     public Model first() {
         return (Model) database.first();
     }
 
     public Model last() {
         return (Model) database.last();
+    }
+
+    public List<Model> getAll() {
+        return database.getAll();
     }
 
     public Model where(String column, Object value) {

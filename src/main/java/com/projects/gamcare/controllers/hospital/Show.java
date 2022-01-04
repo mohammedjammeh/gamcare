@@ -1,14 +1,18 @@
 package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.models.Patient;
+import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-import java.util.List;
+import java.util.*;
 
 public class Show extends Controller {
     @FXML
@@ -16,6 +20,9 @@ public class Show extends Controller {
 
     @FXML
     protected VBox profileOtherDetails;
+
+    @FXML
+    protected VBox profilePatients;
 
     @FXML
     protected void onEditHospitalButtonClick() {
@@ -28,7 +35,7 @@ public class Show extends Controller {
     }
 
     @FXML
-    protected void onShowPatientButtonClick() {
+    protected void onShowPatientButtonClick(Patient patient) {
         System.out.println("You can now see a patient.");
     }
 
@@ -43,11 +50,13 @@ public class Show extends Controller {
     }
 
     public void setUpBody() {
-        buildProfileAttributes();
+        buildAttributesSection();
         buildOtherDetailsSection();
+        buildPatientsSection();
     }
 
-    private void buildProfileAttributes() {
+    // might have to add h grow always
+    private void buildAttributesSection() {
         ObservableList<Node> row01Children = new HBox().getChildren();
         ObservableList<Node> row02Children = new HBox().getChildren();
         ObservableList<Node> row03Children = new HBox().getChildren();
@@ -72,21 +81,13 @@ public class Show extends Controller {
     }
 
     private HBox attributeBox(String name, String value) {
-        Label attributeLabel = new Label(name);
-        attributeLabel.getStyleClass().add("attributeLabel");
+        Label attributeLabel = newLabelWithStyleClass(name, "attributeLabel");
+        Label attributeValue = newLabelWithStyleClass(value, "attributeValue");
+        HBox attributeBox = newHBoxWithStyleClass("attribute");
 
-        Label attributeValue = new Label(value);
-        attributeLabel.getStyleClass().add("attributeValue");
-
-        HBox attributeBox = new HBox();
-        attributeBox.getStyleClass().add("attribute");
         attributeBox.getChildren().addAll(List.of(attributeLabel, attributeValue));
 
         return attributeBox;
-    }
-
-    private String getHospitalAttribute(String name) {
-        return (String) getHospital().attributes.get(name);
     }
 
     private void buildOtherDetailsSection() {
@@ -102,4 +103,101 @@ public class Show extends Controller {
         row.getChildren().add(otherDetailsBox);
         profileOtherDetails.getChildren().add(row);
     }
+
+    private void buildPatientsSection() {
+        List<Model> patients = getHospitalPatients();
+
+        for (Model patientModel: patients) {
+            Patient patient = (Patient) patientModel;
+            HBox tableBody = newHBoxWithStyleClass("tableBody");
+
+            Map<String, Node> tableFirstName = tableLabelWithSpacer(patient.firstNameAttribute());
+            Map<String, Node> tableMiddleName = tableLabelWithSpacer(patient.middleNameAttribute());
+            Map<String, Node> tableLastName = tableLabelWithSpacer(patient.lastNameAttribute());
+            Map<String, Node> tableAge = tableLabelWithSpacer(patient.age());
+            Map<String, Node> tableEmail = styledTableLabelWithSpacer(patient.emailAttribute(), "email");
+            Map<String, Node> tableScore = tableLabelWithSpacer(patient.getScore());
+            Map<String, Node> tableAction = tableButtonWithSpacer(patient);
+
+            tableBody.getChildren().addAll(
+                tableFirstName.get("label"), tableFirstName.get("spacer"),
+                tableMiddleName.get("label"), tableMiddleName.get("spacer"),
+                tableLastName.get("label"), tableLastName.get("spacer"),
+                tableAge.get("label"), tableAge.get("spacer"),
+                tableEmail.get("label"), tableEmail.get("spacer"),
+                tableScore.get("label"), tableScore.get("spacer"),
+                tableAction.get("button-box"), tableAction.get("spacer")
+            );
+
+            profilePatients.getChildren().add(tableBody);
+        }
+    }
+
+    private Map<String, Node> tableLabelWithSpacer(String attributeName) {
+        Label tableLabel = new Label(attributeName);
+        HBox tableLabelSpacer = new HBox();
+        HBox.setHgrow(tableLabelSpacer, Priority.ALWAYS);
+
+        return tableNodeWithSpacer("label", tableLabel, "spacer", tableLabelSpacer);
+    }
+
+    private Map<String, Node> styledTableLabelWithSpacer(String attributeName, String styleClass) {
+        Label tableLabel = newLabelWithStyleClass(attributeName, styleClass);
+        HBox tableLabelSpacer = new HBox();
+        HBox.setHgrow(tableLabelSpacer, Priority.ALWAYS);
+
+        return tableNodeWithSpacer("label", tableLabel, "spacer", tableLabelSpacer);
+    }
+
+    private Map<String, Node> tableButtonWithSpacer(Patient patient) {
+        Button tableButton = new Button("Profile");
+        tableButton.setOnAction(event -> onShowPatientButtonClick(patient));
+
+        HBox tableButtonBox = new HBox();
+        tableButtonBox.getStyleClass().add("action");
+        tableButtonBox.getChildren().add(tableButton);
+
+        HBox tableButtonBoxSpacer = new HBox();
+        HBox.setHgrow(tableButtonBoxSpacer, Priority.ALWAYS);
+
+        return tableNodeWithSpacer("button-box", tableButtonBox, "spacer", tableButtonBoxSpacer);
+    }
+
+    private Map<String, Node> tableNodeWithSpacer(String nodeKey, Node actualNode,  String spacerKey, Node actualSpacer) {
+        Map<String, Node> nodeWithSpacer = new HashMap<>();
+        nodeWithSpacer.put(nodeKey, actualNode);
+        nodeWithSpacer.put(spacerKey, actualSpacer);
+
+        return nodeWithSpacer;
+    }
+
+    private HBox newHBoxWithStyleClass(String styleClass) {
+        HBox newHBox = new HBox();
+        newHBox.getStyleClass().add(styleClass);
+
+        return newHBox;
+    }
+
+    private Label newLabelWithStyleClass(String labelText, String styleClass) {
+        Label newLabel = new Label(labelText);
+        newLabel.getStyleClass().add(styleClass);
+
+        return newLabel;
+    }
+
+
+    /**
+     * Hospital Methods
+     */
+    private String getHospitalAttribute(String name) {
+        return (String) getHospital().attributes.get(name);
+    }
+
+    private List<Model> getHospitalPatients() {
+        return (new Patient())
+            .with("users")
+            .where("hospitals_id", "=", getHospital().idAttribute())
+            .getAll();
+    }
+
 }
