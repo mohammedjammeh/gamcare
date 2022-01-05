@@ -1,10 +1,13 @@
 package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Patient;
 import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -24,6 +27,9 @@ public class Show extends Controller {
 
     @FXML
     protected VBox profilePatients;
+
+    @FXML
+    protected VBox profileDoctors;
 
     @FXML
     protected void onEditHospitalButtonClick() {
@@ -46,7 +52,7 @@ public class Show extends Controller {
     }
 
     @FXML
-    protected void onShowDoctorButtonClick() {
+    protected void onShowDoctorButtonClick(Doctor doctor) {
         System.out.println("You can now see a doctor.");
     }
 
@@ -54,6 +60,7 @@ public class Show extends Controller {
         buildAttributesSection();
         buildOtherDetailsSection();
         buildPatientsSection();
+        buildDoctorsSection();
     }
 
     private void buildAttributesSection() {
@@ -124,7 +131,7 @@ public class Show extends Controller {
             Map<String, Node> tableAge = tableLabelWithSpacer(patient.age());
             Map<String, Node> tableEmail = styledTableLabelWithSpacer(patient.emailAttribute(), "email");
             Map<String, Node> tableScore = tableLabelWithSpacer(patient.getScore());
-            Map<String, Node> tableAction = tableButtonWithSpacer(patient);
+            Map<String, Node> tableAction = tableButtonWithSpacer(patient, event -> onShowPatientButtonClick(patient));
 
             tableBody.getChildren().addAll(
                 tableFirstName.get("label"), tableFirstName.get("spacer"),
@@ -137,6 +144,33 @@ public class Show extends Controller {
             );
 
             profilePatients.getChildren().add(tableBody);
+        }
+    }
+
+    private void buildDoctorsSection() {
+        for (Model doctorModel: getHospital().getDoctors()) {
+            Doctor doctor = (Doctor) doctorModel;
+            HBox tableBody = newHBoxWithStyleClass("tableBody");
+
+            Map<String, Node> tableFirstName = tableLabelWithSpacer(doctor.firstNameAttribute());
+            Map<String, Node> tableMiddleName = tableLabelWithSpacer(doctor.middleNameAttribute());
+            Map<String, Node> tableLastName = tableLabelWithSpacer(doctor.lastNameAttribute());
+            Map<String, Node> tableAge = tableLabelWithSpacer(doctor.age());
+            Map<String, Node> tableEmail = styledTableLabelWithSpacer(doctor.emailAttribute(), "email");
+            Map<String, Node> tableCareerLevel = tableLabelWithSpacer(doctor.careerLevelAttribute());
+            Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
+
+            tableBody.getChildren().addAll(
+                    tableFirstName.get("label"), tableFirstName.get("spacer"),
+                    tableMiddleName.get("label"), tableMiddleName.get("spacer"),
+                    tableLastName.get("label"), tableLastName.get("spacer"),
+                    tableAge.get("label"), tableAge.get("spacer"),
+                    tableEmail.get("label"), tableEmail.get("spacer"),
+                    tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
+                    tableAction.get("button-box"), tableAction.get("spacer")
+            );
+
+            profileDoctors.getChildren().add(tableBody);
         }
     }
 
@@ -156,16 +190,14 @@ public class Show extends Controller {
         return tableNodeWithSpacer("label", tableLabel, "spacer", tableLabelSpacer);
     }
 
-    private Map<String, Node> tableButtonWithSpacer(Patient patient) {
+    private Map<String, Node> tableButtonWithSpacer(Model patient, EventHandler<ActionEvent> event) {
         Button tableButton = new Button("Profile");
-        tableButton.setOnAction(event -> onShowPatientButtonClick(patient));
+        tableButton.setOnAction(event);
 
-        HBox tableButtonBox = new HBox();
-        tableButtonBox.getStyleClass().add("action");
+        HBox tableButtonBox = newHBoxWithStyleClass("action");
         tableButtonBox.getChildren().add(tableButton);
 
-        HBox tableButtonBoxSpacer = new HBox();
-        HBox.setHgrow(tableButtonBoxSpacer, Priority.ALWAYS);
+        HBox tableButtonBoxSpacer = newHBoxWithAlwaysHGrow();
 
         return tableNodeWithSpacer("button-box", tableButtonBox, "spacer", tableButtonBoxSpacer);
     }
@@ -181,6 +213,13 @@ public class Show extends Controller {
     private HBox newHBoxWithStyleClass(String styleClass) {
         HBox newHBox = new HBox();
         newHBox.getStyleClass().add(styleClass);
+
+        return newHBox;
+    }
+
+    private HBox newHBoxWithAlwaysHGrow() {
+        HBox newHBox = new HBox();
+        HBox.setHgrow(newHBox, Priority.ALWAYS);
 
         return newHBox;
     }

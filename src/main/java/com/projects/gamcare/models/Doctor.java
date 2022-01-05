@@ -1,5 +1,6 @@
 package com.projects.gamcare.models;
 
+import com.projects.gamcare.core.StringTool;
 import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
@@ -12,6 +13,16 @@ public class Doctor extends Model implements ModelInterface {
 
     public String getTableName() {
         return table;
+    }
+
+
+    /**
+     * Attributes Methods
+     */
+    public String careerLevelAttribute() {
+        String careerLevel = (String) attributes.get("career_level");
+
+        return StringTool.capitalise(careerLevel);
     }
 
 

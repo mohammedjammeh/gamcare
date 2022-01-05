@@ -18,13 +18,19 @@ public class Hospital extends Model implements ModelInterface {
      */
     public Doctor getLeadDoctor() {
         return (Doctor) (new Doctor())
-            .getDatabase()
-            .select(List.of("*"))
             .with("users")
             .withMany("hospitals", "hospitals_doctors")
             .where("hospitals_doctors.lead_doctor", "=", 1)
-            .where("doctors.id", "=", idAttribute())
+            .where("hospitals.id", "=", idAttribute())
             .first();
+    }
+
+    public List<Model> getDoctors() {
+        return (new Doctor())
+            .with("users")
+            .withMany("hospitals", "hospitals_doctors")
+            .where("hospitals.id", "=", idAttribute())
+            .getAll();
     }
 
     public List<Model> getPatients() {
