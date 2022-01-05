@@ -1,6 +1,7 @@
 package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Patient;
 import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
@@ -55,23 +56,24 @@ public class Show extends Controller {
         buildPatientsSection();
     }
 
-    // might have to add h grow always
     private void buildAttributesSection() {
+        Hospital hospital = getHospital();
+
         ObservableList<Node> row01Children = new HBox().getChildren();
         ObservableList<Node> row02Children = new HBox().getChildren();
         ObservableList<Node> row03Children = new HBox().getChildren();
 
-        row01Children.add(attributeBox("Name:", getHospitalAttribute("name")));
-        row01Children.add(attributeBox("Size:", getHospitalAttribute("size")));
-        row01Children.add(attributeBox("Lead doctor:", getHospital().getLeadDoctor().fullNameAttribute()));
+        row01Children.addAll(attributeBoxWithSpacer("Name:", hospital.getAttribute("name")));
+        row01Children.addAll(attributeBoxWithSpacer("Size:", hospital.getAttribute("size")));
+        row01Children.add(attributeBox("Lead doctor:", hospital.getLeadDoctor().fullNameAttribute()));
 
-        row02Children.add(attributeBox("Email address:", getHospitalAttribute("email_address")));
-        row02Children.add(attributeBox("Number:", getHospitalAttribute("phone_number")));
-        row02Children.add(attributeBox("Relevant link:", getHospitalAttribute("relevant_link")));
+        row02Children.addAll(attributeBoxWithSpacer("Email address:", hospital.getAttribute("email_address")));
+        row02Children.addAll(attributeBoxWithSpacer("Number:", hospital.getAttribute("phone_number")));
+        row02Children.add(attributeBox("Relevant link:", hospital.getAttribute("relevant_link")));
 
-        row03Children.add(attributeBox("Compound:", getHospitalAttribute("compound")));
-        row03Children.add(attributeBox("City / Town:", getHospitalAttribute("town")));
-        row03Children.add(attributeBox("Region:", getHospital().getRegion().nameAttribute()));
+        row03Children.addAll(attributeBoxWithSpacer("Compound:", hospital.getAttribute("compound")));
+        row03Children.addAll(attributeBoxWithSpacer("City / Town:", hospital.getAttribute("town")));
+        row03Children.add(attributeBox("Region:", hospital.getRegion().nameAttribute()));
 
         profileAttributes.getChildren().addAll(
             row01Children.get(0).getParent(),
@@ -80,10 +82,17 @@ public class Show extends Controller {
         );
     }
 
+    private List<HBox> attributeBoxWithSpacer(String name, String value) {
+        HBox spacerBox = new HBox();
+        HBox.setHgrow(spacerBox, Priority.ALWAYS);
+
+        return List.of(attributeBox(name, value), spacerBox);
+    }
+
     private HBox attributeBox(String name, String value) {
+        HBox attributeBox = newHBoxWithStyleClass("attribute");
         Label attributeLabel = newLabelWithStyleClass(name, "attributeLabel");
         Label attributeValue = newLabelWithStyleClass(value, "attributeValue");
-        HBox attributeBox = newHBoxWithStyleClass("attribute");
 
         attributeBox.getChildren().addAll(List.of(attributeLabel, attributeValue));
 
@@ -94,7 +103,7 @@ public class Show extends Controller {
         Label otherDetails = new Label();
         otherDetails.setLineSpacing(14);
         otherDetails.setWrapText(true);
-        otherDetails.setText(getHospitalAttribute("other_details"));
+        otherDetails.setText(getHospital().getAttribute("other_details"));
 
         HBox otherDetailsBox = new HBox();
         HBox row = new HBox();
@@ -105,9 +114,7 @@ public class Show extends Controller {
     }
 
     private void buildPatientsSection() {
-        List<Model> patients = getHospitalPatients();
-
-        for (Model patientModel: patients) {
+        for (Model patientModel: getHospital().getPatients()) {
             Patient patient = (Patient) patientModel;
             HBox tableBody = newHBoxWithStyleClass("tableBody");
 
@@ -184,20 +191,4 @@ public class Show extends Controller {
 
         return newLabel;
     }
-
-
-    /**
-     * Hospital Methods
-     */
-    private String getHospitalAttribute(String name) {
-        return (String) getHospital().attributes.get(name);
-    }
-
-    private List<Model> getHospitalPatients() {
-        return (new Patient())
-            .with("users")
-            .where("hospitals_id", "=", getHospital().idAttribute())
-            .getAll();
-    }
-
 }

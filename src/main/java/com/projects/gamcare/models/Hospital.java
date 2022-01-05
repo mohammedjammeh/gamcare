@@ -26,4 +26,11 @@ public class Hospital extends Model implements ModelInterface {
             .where("doctors.id", "=", idAttribute())
             .first();
     }
+
+    public List<Model> getPatients() {
+        return (new Patient())
+            .with("users")
+            .where("hospitals_id", "=", idAttribute())
+            .getAll();
+    }
 }

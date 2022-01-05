@@ -32,37 +32,41 @@ public class Model {
     /**
      * Attributes Methods
      */
+    public String getAttribute(String name) {
+        return (String) attributes.get(name);
+    }
+
     public Integer idAttribute() {
-        return (Integer) this.attributes.get("id");
+        return (Integer) attributes.get("id");
     }
 
     public String firstNameAttribute() {
-        return (String) this.attributes.get("first_name");
+        return (String) attributes.get("first_name");
     }
 
     public String middleNameAttribute() {
-        return (String) this.attributes.get("middle_name");
+        return (String) attributes.get("middle_name");
     }
 
     public String lastNameAttribute() {
-        return (String) this.attributes.get("last_name");
+        return (String) attributes.get("last_name");
     }
 
     public String emailAttribute() {
-        return (String) this.attributes.get("email_address");
+        return (String) attributes.get("email_address");
     }
 
     public String fullNameAttribute() {
-        return this.attributes.get("first_name") + " "
-            + this.attributes.get("last_name");
+        return attributes.get("first_name") + " "
+            + attributes.get("last_name");
     }
 
     public String nameAttribute() {
-        return (String) this.attributes.get("name");
+        return (String) attributes.get("name");
     }
 
     public Integer regionIdAttribute() {
-        return (Integer) this.attributes.get("regions_id");
+        return (Integer) attributes.get("regions_id");
     }
 
     public String age() {
@@ -70,7 +74,7 @@ public class Model {
     }
 
     public Date dateOfBirthAttribute() {
-        return (Date) this.attributes.get("date_of_birth");
+        return (Date) attributes.get("date_of_birth");
     }
 
 

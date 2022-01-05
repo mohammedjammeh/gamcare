@@ -381,8 +381,7 @@
     -fx-padding: 0 0 25px 0;
 }
 
-.profileAttributes .attributeLabel,
-.profileAttributes .attributeValue {
+.profileAttributes .attributeLabel {
     -fx-min-width: 110px;
     -fx-max-width: 110px;
 }
