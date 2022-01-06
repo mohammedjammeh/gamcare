@@ -39,7 +39,8 @@
     -fx-border-width: 0;
 }
 
-.menuBox Button:hover {
+.menuBox Button:hover,
+.menuBox Button.active {
     -fx-background-color: #330011;
 }
 

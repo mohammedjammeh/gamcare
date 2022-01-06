@@ -20,12 +20,12 @@ public class Index extends Controller {
 
     @FXML
     protected void onAddHospitalButtonClick() {
-        SceneTool.switchTo("hospital/create", getUser());
+        SceneTool.switchTo("hospital/create", getAuthUser());
     }
 
     @FXML
     protected void onShowHospitalButtonClick(Hospital hospital) {
-        SceneTool.switchTo("hospital/show", getUser(), hospital);
+        SceneTool.switchToHospital("show", getAuthUser(), hospital);
     }
 
     public void setUpBody() {
@@ -34,14 +34,14 @@ public class Index extends Controller {
     }
 
     private void updateAddHospitalButtonVisibility() {
-        if (! getUser().isAdmin()) {
+        if (! getAuthUser().isAdmin()) {
             addHospitalButton.setVisible(false);
             addHospitalButton.setManaged(false);
         }
     }
 
     private void showHospitals() {
-        List<Model> hospitals = getUser().getHospitals();
+        List<Model> hospitals = getAuthUser().getHospitals();
         HBox row = new HBox();
 
         for (int i = 0; i < hospitals.size(); i++) {

@@ -15,15 +15,12 @@ public class Login extends LoginFields {
 
     @FXML
     protected void onLogInButtonClick() {
-        String emailAddress = getEmailAddress();
-        String password = getPassword();
-
-        User user = (new User()).where("email_address", emailAddress).first();
+        User user = (new User()).where("email_address", getEmailAddress()).first();
 
         byte[] userSalt = user.getSalt();
         Object userHash = user.attributes.get("hash");
 
-        String expectedHash = Hash.generate(password, userSalt);
+        String expectedHash = Hash.generate(getPassword(), userSalt);
 
         if (userHash.equals(expectedHash)) {
             SceneTool.switchTo(user.afterLoginResourceName(), user);

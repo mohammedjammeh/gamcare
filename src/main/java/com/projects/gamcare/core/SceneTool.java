@@ -11,25 +11,38 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneTool {
-    public static void switchTo(String resourceName, User user) {
+    public static void switchTo(String resourceName, User authUser) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
 
         Controller controller = loader.getController();
-        controller.setUser(user);
+        controller.setAuthUser(authUser);
         controller.setUpHeader();
         controller.setUpBody();
 
         showStage(root);
     }
 
-    public static void switchTo(String resourceName, User user, Hospital hospital) {
+    public static void switchToHospital(String resourceName, User authUser, Hospital hospital) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/" + resourceName + ".fxml"));
+        Parent root = getLoadedRoot(loader);
+
+        Controller controller = loader.getController();
+        controller.setAuthUser(authUser);
+        controller.setHospital(hospital);
+        controller.setUpHeader();
+        controller.setUpBody();
+
+        showStage(root);
+    }
+
+    public static void switchToProfile(String resourceName, User authUser, User profileUser) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
 
         Controller controller = loader.getController();
-        controller.setUser(user);
-        controller.setHospital(hospital);
+        controller.setAuthUser(authUser);
+        controller.setProfileUser(profileUser);
         controller.setUpHeader();
         controller.setUpBody();
 
