@@ -20,16 +20,10 @@ import java.util.*;
 
 public class Show extends Controller {
     @FXML
-    protected VBox profileAttributes;
+    protected VBox profileAttributes, profileOtherDetails, profilePatients, profileDoctors;
 
     @FXML
-    protected VBox profileOtherDetails;
-
-    @FXML
-    protected VBox profilePatients;
-
-    @FXML
-    protected VBox profileDoctors;
+    protected Button editHospitalButton, editHospitalDetailsButton, addPatientButton, addDoctorButton;
 
     @FXML
     protected void onEditHospitalButtonClick() {
@@ -42,13 +36,13 @@ public class Show extends Controller {
     }
 
     @FXML
-    protected void onShowPatientButtonClick(Patient patient) {
-        System.out.println("You can now see a patient.");
+    protected void onAddDoctorButtonClick() {
+        System.out.println("You have now added a doctor.");
     }
 
     @FXML
-    protected void onAddDoctorButtonClick() {
-        System.out.println("You have now added a doctor.");
+    protected void onShowPatientButtonClick(Patient patient) {
+        System.out.println("You can now see a patient.");
     }
 
     @FXML
@@ -57,10 +51,19 @@ public class Show extends Controller {
     }
 
     public void setUpBody() {
+        updateButtonsVisibility();
         buildAttributesSection();
         buildOtherDetailsSection();
         buildPatientsSection();
         buildDoctorsSection();
+    }
+
+    private void updateButtonsVisibility() {
+        if (getAuthUser().isNotAdmin()) {
+            hide(editHospitalButton);
+            hide(editHospitalDetailsButton);
+            hide(addDoctorButton);
+        }
     }
 
     private void buildAttributesSection() {
@@ -87,23 +90,6 @@ public class Show extends Controller {
             row02Children.get(0).getParent(),
             row03Children.get(0).getParent()
         );
-    }
-
-    private List<HBox> attributeBoxWithSpacer(String name, String value) {
-        HBox spacerBox = new HBox();
-        HBox.setHgrow(spacerBox, Priority.ALWAYS);
-
-        return List.of(attributeBox(name, value), spacerBox);
-    }
-
-    private HBox attributeBox(String name, String value) {
-        HBox attributeBox = newHBoxWithStyleClass("attribute");
-        Label attributeLabel = newLabelWithStyleClass(name, "attributeLabel");
-        Label attributeValue = newLabelWithStyleClass(value, "attributeValue");
-
-        attributeBox.getChildren().addAll(List.of(attributeLabel, attributeValue));
-
-        return attributeBox;
     }
 
     private void buildOtherDetailsSection() {
@@ -208,13 +194,6 @@ public class Show extends Controller {
         nodeWithSpacer.put(spacerKey, actualSpacer);
 
         return nodeWithSpacer;
-    }
-
-    private HBox newHBoxWithStyleClass(String styleClass) {
-        HBox newHBox = new HBox();
-        newHBox.getStyleClass().add(styleClass);
-
-        return newHBox;
     }
 
     private HBox newHBoxWithAlwaysHGrow() {

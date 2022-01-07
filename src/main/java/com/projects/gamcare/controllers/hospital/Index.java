@@ -34,9 +34,8 @@ public class Index extends Controller {
     }
 
     private void updateAddHospitalButtonVisibility() {
-        if (! getAuthUser().isAdmin()) {
-            addHospitalButton.setVisible(false);
-            addHospitalButton.setManaged(false);
+        if (getAuthUser().isNotAdmin()) {
+            hide(addHospitalButton);
         }
     }
 

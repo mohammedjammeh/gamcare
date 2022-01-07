@@ -40,8 +40,8 @@ public class User extends Model implements ModelInterface {
         return typeAttribute().equals(UserType.DOCTOR.name());
     }
 
-    public Boolean isPatient() {
-        return typeAttribute().equals(UserType.PATIENT.name());
+    public Boolean isNotAdmin() {
+        return ! isAdmin();
     }
 
     public String afterLoginResourceName() {

@@ -27,9 +27,17 @@ public class Controller {
     @FXML
     private VBox errorBox;
 
+    /**
+     * General Methods
+     */
     public void hideErrorBox() {
         errorBox.setVisible(false);
         errorBox.setManaged(false);
+    }
+
+    public void hide(Button button) {
+        button.setVisible(false);
+        button.setManaged(false);
     }
 
     public List<String> getEnumItems(Class<?> enumClass) {
@@ -40,6 +48,9 @@ public class Controller {
             .toList();
     }
 
+    /**
+     * Setters & Getters
+     */
     public void setAuthUser(User authUser) {
         this.authUser = authUser;
     }
@@ -64,6 +75,8 @@ public class Controller {
         return profileUser;
     }
 
+    public void setUpBody() {}
+
     public void setUpHeader() {
         Label titleLabel = new Label("Gamcare - Farokono");
 
@@ -83,8 +96,6 @@ public class Controller {
 
         headingBox.getChildren().add(innerHeadingBox);
     }
-
-    public void setUpBody() {}
 
     private List<Button> headerButtons() {
         Button hospitalsButton = newButtonWithAction("Hospitals", switchSceneTo("hospital/index"));
@@ -162,5 +173,39 @@ public class Controller {
         return getClass().isInstance(new com.projects.gamcare.controllers.doctor.Create()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Index()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Show());
+    }
+
+    /**
+     * Extend Methods
+     */
+    protected List<HBox> attributeBoxWithSpacer(String name, String value) {
+        HBox spacerBox = new HBox();
+        HBox.setHgrow(spacerBox, Priority.ALWAYS);
+
+        return List.of(attributeBox(name, value), spacerBox);
+    }
+
+    protected HBox attributeBox(String name, String value) {
+        HBox attributeBox = newHBoxWithStyleClass("attribute");
+        Label attributeLabel = newLabelWithStyleClass(name, "attributeLabel");
+        Label attributeValue = newLabelWithStyleClass(value, "attributeValue");
+
+        attributeBox.getChildren().addAll(List.of(attributeLabel, attributeValue));
+
+        return attributeBox;
+    }
+
+    protected HBox newHBoxWithStyleClass(String styleClass) {
+        HBox newHBox = new HBox();
+        newHBox.getStyleClass().add(styleClass);
+
+        return newHBox;
+    }
+
+    private Label newLabelWithStyleClass(String labelText, String styleClass) {
+        Label newLabel = new Label(labelText);
+        newLabel.getStyleClass().add(styleClass);
+
+        return newLabel;
     }
 }

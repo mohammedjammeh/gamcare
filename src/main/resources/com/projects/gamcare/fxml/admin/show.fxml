@@ -8,9 +8,9 @@
 <?import javafx.scene.control.ScrollPane?>
 
 <VBox
-        xmlns:fx="http://javafx.com/fxml"
-        fx:controller="com.projects.gamcare.controllers.admin.Show"
-        stylesheets="@../../css/main.css"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.projects.gamcare.controllers.admin.Show"
+    stylesheets="@../../css/main.css"
 >
     <ScrollPane styleClass="bodyScrollPane" fitToWidth="true">
         <VBox>
@@ -18,117 +18,117 @@
 
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
+
                     <HBox styleClass="subHeadingBox">
                         <Label text="Main"/>
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Edit" onAction="#onEditAdminButtonClick"/>
                     </HBox>
-
                     <VBox styleClass="profileAttributes">
-                        <HBox>
-                            <HBox styleClass="attribute">
-                                <Label text="Title:" styleClass="attributeLabel"/>
-                                <Label text="Dr."/>
-                            </HBox>
+<!--                        <HBox>-->
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Title:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Dr."/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Gender:" styleClass="attributeLabel"/>
-                                <Label text="Male"/>
-                            </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Gender:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Male"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Date of birth:" styleClass="attributeLabel"/>
-                                <Label text="19th June 1996"/>
-                            </HBox>
-                        </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Date of birth:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="19th June 1996"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
 
-                        <HBox>
-                            <HBox styleClass="attribute">
-                                <Label text="First name:" styleClass="attributeLabel"/>
-                                <Label text="Mohammed"/>
-                            </HBox>
+<!--                        <HBox>-->
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="First name:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Mohammed"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Middle name:" styleClass="attributeLabel"/>
-                                <Label text="Doctor"/>
-                            </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Middle name:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Doctor"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Last name:" styleClass="attributeLabel"/>
-                                <Label text="Jammeh"/>
-                            </HBox>
-                        </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Last name:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Jammeh"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
 
-                        <HBox>
-                            <HBox styleClass="attribute">
-                                <Label text="University:" styleClass="attributeLabel"/>
-                                <Label text="University of Gambia"/>
-                            </HBox>
+<!--                        <HBox>-->
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="University:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="University of Gambia"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Field of Study:" styleClass="attributeLabel"/>
-                                <Label text="Biomedical Science"/>
-                            </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Field of Study:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Biomedical Science"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Cereer Level:" styleClass="attributeLabel"/>
-                                <Label text="Senior"/>
-                            </HBox>
-                        </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Cereer Level:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Senior"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
 
-                        <HBox>
-                            <HBox styleClass="attribute">
-                                <Label text="Email address:" styleClass="attributeLabel"/>
-                                <Label text="mansa@gmail.com"/>
-                            </HBox>
+<!--                        <HBox>-->
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Email address:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="mansa@gmail.com"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Phone number:" styleClass="attributeLabel"/>
-                                <Label text="07506 259 330"/>
-                            </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Phone number:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="07506 259 330"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Relevant link:" styleClass="attributeLabel"/>
-                                <Label text="www.mansakonko.com"/>
-                            </HBox>
-                        </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Relevant link:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="www.mansakonko.com"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
 
-                        <HBox>
-                            <HBox styleClass="attribute">
-                                <Label text="Compound:" styleClass="attributeLabel"/>
-                                <Label text="Jammeh Kunda"/>
-                            </HBox>
+<!--                        <HBox>-->
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Compound:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Jammeh Kunda"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="City / Town:" styleClass="attributeLabel"/>
-                                <Label text="Tallinding Kungjang"/>
-                            </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="City / Town:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Tallinding Kungjang"/>-->
+<!--                            </HBox>-->
 
-                            <HBox HBox.hgrow="ALWAYS"/>
+<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
 
-                            <HBox styleClass="attribute">
-                                <Label text="Region:" styleClass="attributeLabel"/>
-                                <Label text="Western Region"/>
-                            </HBox>
-                        </HBox>
+<!--                            <HBox styleClass="attribute">-->
+<!--                                <Label text="Region:" styleClass="attributeLabel"/>-->
+<!--                                <Label text="Western Region"/>-->
+<!--                            </HBox>-->
+<!--                        </HBox>-->
 
                         <VBox.margin>
                             <Insets>
@@ -138,18 +138,11 @@
                     </VBox>
 
 
-
-
-
-
-
-
                     <HBox styleClass="subHeadingBox">
                         <Label text="Other Details"/>
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Edit" onAction="#onEditAdminButtonClick"/>
                     </HBox>
-
                     <VBox styleClass="profileOtherDetails">
                         <HBox>
                             <HBox>

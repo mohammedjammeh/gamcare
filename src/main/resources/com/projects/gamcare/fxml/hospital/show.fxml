@@ -18,10 +18,11 @@
 
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
+
                     <HBox styleClass="subHeadingBox">
                         <Label text="Main"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
+                        <Button text="Edit" onAction="#onEditHospitalButtonClick" fx:id="editHospitalButton"/>
                     </HBox>
                     <VBox styleClass="profileAttributes" fx:id="profileAttributes">
                         <VBox.margin>
@@ -35,7 +36,7 @@
                     <HBox styleClass="subHeadingBox">
                         <Label text="Other Details"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Edit" onAction="#onEditHospitalButtonClick"/>
+                        <Button text="Edit" onAction="#onEditHospitalButtonClick" fx:id="editHospitalDetailsButton"/>
                     </HBox>
                     <VBox styleClass="profileOtherDetails" fx:id="profileOtherDetails">
                         <VBox.margin>
@@ -49,7 +50,7 @@
                     <HBox styleClass="subHeadingBox">
                         <Label text="Patients"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Add" onAction="#onAddPatientButtonClick"/>
+                        <Button text="Add" onAction="#onAddPatientButtonClick" fx:id="addPatientButton"/>
                     </HBox>
                     <VBox styleClass="tableDisplay" fx:id="profilePatients">
                         <HBox styleClass="tableHeadings">
@@ -84,7 +85,7 @@
                     <HBox styleClass="subHeadingBox">
                         <Label text="Doctors"/>
                         <HBox HBox.hgrow="ALWAYS"/>
-                        <Button text="Add" onAction="#onAddDoctorButtonClick"/>
+                        <Button text="Add" onAction="#onAddDoctorButtonClick" fx:id="addDoctorButton"/>
                     </HBox>
                     <VBox styleClass="tableDisplay" fx:id="profileDoctors">
                         <HBox styleClass="tableHeadings">
