@@ -87,41 +87,12 @@ public class Controller {
     public void setUpBody() {}
 
     private List<Button> headerButtons() {
-        Button hospitalsMenuButton = newButtonWithResource("Hospitals", "hospital/index");
-        Button doctorsMenuButton = newButtonWithResource("Doctors", "doctor/index");
-        Button myProfileMenuButton = newButtonWithResource("My Profile", "patient/show");
+        Button hospitalsButton = newButtonWithAction("Hospitals", switchSceneTo("hospital/index"));
+        Button doctorsButton = newButtonWithAction("Doctors", switchSceneTo("doctor/index"));
+        Button myProfileButton = newButtonWithAction("My Profile", switchSceneToProfile());
         Button logOutButton = newButtonWithAction("Log Out", event -> SceneTool.switchToLogin());
 
-        List<Button> buttons = userHeaderButtons(hospitalsMenuButton, doctorsMenuButton, myProfileMenuButton, logOutButton);
-
-        if (thisIsInstanceOfHospitalController()) {
-            hospitalsMenuButton.getStyleClass().add("active");
-            return buttons;
-        }
-
-        if (thisIsInstanceOfDoctorController()) {
-            if(thisIsInstanceOfDoctorShowController() && authUserProfileIsBeingViewed()) {
-                myProfileMenuButton.getStyleClass().add("active");
-                return buttons;
-            }
-
-            doctorsMenuButton.getStyleClass().add("active");
-            return buttons;
-        }
-
-        if (thisIsInstanceOfPatientShowController() && authUserProfileIsBeingViewed()) {
-            myProfileMenuButton.getStyleClass().add("active");
-            return buttons;
-        }
-
-        return buttons;
-    }
-
-    private Button newButtonWithResource(String name, String resourceName) {
-        Button newButton = new Button(name);
-        newButton.setOnAction(event -> SceneTool.switchTo(resourceName, getAuthUser()));
-
-        return newButton;
+        return userHeaderButtons(hospitalsButton, doctorsButton, myProfileButton, logOutButton);
     }
 
     private Button newButtonWithAction(String name, EventHandler<ActionEvent> action) {
@@ -131,14 +102,54 @@ public class Controller {
         return newButton;
     }
 
-    private List<Button> userHeaderButtons(Button hospitalsButton, Button doctorsMenuButton, Button myProfileMenuButton, Button logOutButton) {
-        Map<String, List<Button>> resourceNames = new HashMap<>();
+    private EventHandler<ActionEvent> switchSceneTo(String resourceName) {
+        return event -> SceneTool.switchTo(resourceName, getAuthUser());
+    }
 
-        resourceNames.put(UserType.PATIENT.name(), List.of(myProfileMenuButton, logOutButton));
-        resourceNames.put(UserType.DOCTOR.name(), List.of(hospitalsButton, myProfileMenuButton, logOutButton));
-        resourceNames.put(UserType.ADMIN.name(), List.of(hospitalsButton, doctorsMenuButton, myProfileMenuButton, logOutButton));
+    private EventHandler<ActionEvent> switchSceneToProfile() {
+        return event -> SceneTool.switchToProfile(getAuthUser().profileResourceName(), getAuthUser(), getAuthUser());
+    }
 
-        return resourceNames.get(getAuthUser().typeAttribute());
+    private List<Button> userHeaderButtons(Button hospitalsButton, Button doctorsButton, Button myProfileButton, Button logOutButton) {
+        Map<String, List<Button>> buttons = new HashMap<>();
+
+        buttons.put(UserType.PATIENT.name(), List.of(logOutButton));
+        buttons.put(UserType.DOCTOR.name(), List.of(hospitalsButton, myProfileButton, logOutButton));
+        buttons.put(UserType.ADMIN.name(), List.of(hospitalsButton, doctorsButton, myProfileButton, logOutButton));
+
+        List<Button> userButtons = buttons.get(getAuthUser().typeAttribute());
+
+        if (authUserProfileIsBeingViewed()) {
+            myProfileButton.getStyleClass().add("active");
+            return userButtons;
+        }
+
+        if (thisIsInstanceOfHospitalController()) {
+            hospitalsButton.getStyleClass().add("active");
+            return userButtons;
+        }
+
+        if (thisIsInstanceOfDoctorController()) {
+            doctorsButton.getStyleClass().add("active");
+            return userButtons;
+        }
+
+        return userButtons;
+    }
+
+    private boolean authUserProfileIsBeingViewed() {
+        if (Optional.ofNullable(getProfileUser()).isEmpty()) {
+            return false;
+        }
+
+        return thisIsInstanceOfShowController() &&
+            getAuthUser().idAttribute() == getProfileUser().idAttribute();
+    }
+
+    private boolean thisIsInstanceOfShowController() {
+        return getClass().isInstance(new com.projects.gamcare.controllers.admin.Show()) ||
+            getClass().isInstance(new com.projects.gamcare.controllers.doctor.Show()) ||
+            getClass().isInstance(new com.projects.gamcare.controllers.patient.Show());
     }
 
     private boolean thisIsInstanceOfHospitalController() {
@@ -151,21 +162,5 @@ public class Controller {
         return getClass().isInstance(new com.projects.gamcare.controllers.doctor.Create()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Index()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Show());
-    }
-
-    private boolean thisIsInstanceOfDoctorShowController() {
-        return getClass().isInstance(new com.projects.gamcare.controllers.doctor.Show());
-    }
-
-    private boolean thisIsInstanceOfPatientShowController() {
-        return getClass().isInstance(new com.projects.gamcare.controllers.patient.Show());
-    }
-
-    private boolean authUserProfileIsBeingViewed() {
-        if (Optional.ofNullable(getProfileUser()).isEmpty()) {
-            return false;
-        }
-
-        return getAuthUser().idAttribute() == getProfileUser().idAttribute();
     }
 }

@@ -54,6 +54,16 @@ public class User extends Model implements ModelInterface {
         return resourceNames.get(typeAttribute());
     }
 
+    public String profileResourceName() {
+        Map<String, String> resourceNames = new HashMap<>();
+
+        resourceNames.put(UserType.ADMIN.name(), "admin/show");
+        resourceNames.put(UserType.DOCTOR.name(), "doctor/show");
+        resourceNames.put(UserType.PATIENT.name(), "patient/show");
+
+        return resourceNames.get(typeAttribute());
+    }
+
 
     /**
      * Query Methods

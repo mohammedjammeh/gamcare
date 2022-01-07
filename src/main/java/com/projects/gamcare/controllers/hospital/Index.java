@@ -25,7 +25,7 @@ public class Index extends Controller {
 
     @FXML
     protected void onShowHospitalButtonClick(Hospital hospital) {
-        SceneTool.switchToHospital("show", getAuthUser(), hospital);
+        SceneTool.switchToHospitalShow(getAuthUser(), hospital);
     }
 
     public void setUpBody() {

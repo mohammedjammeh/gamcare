@@ -13,7 +13,7 @@
     styleClass="profileIncludeBox"
 >
     <HBox styleClass="subHeadingBox">
-        <Label text="Profile"/>
+        <Label text="Main"/>
         <HBox HBox.hgrow="ALWAYS"/>
         <Button text="Edit" onAction="#onEditPatientButtonClick"/>
     </HBox>
@@ -50,7 +50,7 @@
 
             <HBox styleClass="attribute">
                 <Label text="Middle name:" styleClass="attributeLabel"/>
-                <Label text="Lamin" styleClass="attributeData"/>
+                <Label text="Patient" styleClass="attributeData"/>
             </HBox>
 
             <HBox HBox.hgrow="ALWAYS"/>

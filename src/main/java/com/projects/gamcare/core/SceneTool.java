@@ -23,19 +23,6 @@ public class SceneTool {
         showStage(root);
     }
 
-    public static void switchToHospital(String resourceName, User authUser, Hospital hospital) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/" + resourceName + ".fxml"));
-        Parent root = getLoadedRoot(loader);
-
-        Controller controller = loader.getController();
-        controller.setAuthUser(authUser);
-        controller.setHospital(hospital);
-        controller.setUpHeader();
-        controller.setUpBody();
-
-        showStage(root);
-    }
-
     public static void switchToProfile(String resourceName, User authUser, User profileUser) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
@@ -43,6 +30,19 @@ public class SceneTool {
         Controller controller = loader.getController();
         controller.setAuthUser(authUser);
         controller.setProfileUser(profileUser);
+        controller.setUpHeader();
+        controller.setUpBody();
+
+        showStage(root);
+    }
+
+    public static void switchToHospitalShow(User authUser, Hospital hospital) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
+        Parent root = getLoadedRoot(loader);
+
+        Controller controller = loader.getController();
+        controller.setAuthUser(authUser);
+        controller.setHospital(hospital);
         controller.setUpHeader();
         controller.setUpBody();
 
