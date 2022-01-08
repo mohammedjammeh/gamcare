@@ -22,8 +22,16 @@ public class Login extends LoginFields {
 
         String expectedHash = Hash.generate(getPassword(), userSalt);
 
-        if (userHash.equals(expectedHash)) {
-            SceneTool.switchTo(user.afterLoginResourceName(), user);
+        if (!userHash.equals(expectedHash)) {
+            // throw exception, etc..
+            return;
         }
+
+        if (user.isPatient()) {
+            SceneTool.switchToProfile(user.afterLoginResourceName(), user, user);
+            return;
+        }
+
+        SceneTool.switchTo(user.afterLoginResourceName(), user);
     }
 }
