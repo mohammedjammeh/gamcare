@@ -1,7 +1,7 @@
 package com.projects.gamcare.controllers.patient;
 
-import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.controllers.ShowParent;
 
-public class Show extends Controller {
+public class Show extends ShowParent {
 
 }

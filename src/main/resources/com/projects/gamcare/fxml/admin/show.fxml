@@ -24,112 +24,7 @@
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Edit" onAction="#onEditAdminButtonClick"/>
                     </HBox>
-                    <VBox styleClass="profileAttributes">
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Title:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Dr."/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Gender:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Male"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Date of birth:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="19th June 1996"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="First name:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Mohammed"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Middle name:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Doctor"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Last name:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Jammeh"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="University:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="University of Gambia"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Field of Study:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Biomedical Science"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Cereer Level:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Senior"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Email address:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="mansa@gmail.com"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Phone number:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="07506 259 330"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Relevant link:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="www.mansakonko.com"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Compound:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Jammeh Kunda"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="City / Town:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Tallinding Kungjang"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Region:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Western Region"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
+                    <VBox styleClass="profileAttributes" fx:id="profileAttributes">
                         <VBox.margin>
                             <Insets>
                                 <bottom>30</bottom>
@@ -143,15 +38,7 @@
                         <HBox HBox.hgrow="ALWAYS"/>
                         <Button text="Edit" onAction="#onEditAdminButtonClick"/>
                     </HBox>
-                    <VBox styleClass="profileOtherDetails">
-                        <HBox>
-                            <HBox>
-                                <Label lineSpacing="14" wrapText="true">
-                                    Timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer which counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device which counts down from a specified time interval is more usually called a timer. A simple example of this type is an hourglass. Working method timers have two main groups: hardware and software timers.
-                                </Label>
-                            </HBox>
-                        </HBox>
-
+                    <VBox styleClass="profileOtherDetails" fx:id="profileOtherDetails">
                         <VBox.margin>
                             <Insets>
                                 <bottom>30</bottom>

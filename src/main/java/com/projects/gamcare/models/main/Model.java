@@ -2,7 +2,9 @@ package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.Database;
 import com.projects.gamcare.core.TimeTool;
+import com.projects.gamcare.models.Gender;
 import com.projects.gamcare.models.Region;
+import com.projects.gamcare.models.Title;
 
 import java.util.*;
 
@@ -32,8 +34,8 @@ public class Model {
     /**
      * Attributes Methods
      */
-    public String getAttribute(String name) {
-        return (String) attributes.get(name);
+    public Object getAttribute(String name) {
+        return attributes.get(name);
     }
 
     public Integer idAttribute() {
@@ -63,10 +65,6 @@ public class Model {
 
     public String nameAttribute() {
         return (String) attributes.get("name");
-    }
-
-    public Integer regionIdAttribute() {
-        return (Integer) attributes.get("regions_id");
     }
 
     public String age() {
@@ -124,7 +122,21 @@ public class Model {
     public Region getRegion() {
         return (Region) (new Region())
             .getDatabase()
-            .where("id", "=", regionIdAttribute())
+            .where("id", "=", getAttribute("regions_id"))
+            .first();
+    }
+
+    public Title getTitle() {
+        return (Title) (new Title())
+            .getDatabase()
+            .where("id", "=", getAttribute("titles_id"))
+            .first();
+    }
+
+    public Gender getGender() {
+        return (Gender) (new Gender())
+            .getDatabase()
+            .where("id", "=", getAttribute("genders_id"))
             .first();
     }
 }

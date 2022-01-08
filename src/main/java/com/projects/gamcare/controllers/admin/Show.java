@@ -1,18 +1,13 @@
 package com.projects.gamcare.controllers.admin;
 
-import com.projects.gamcare.core.Controller;
-import com.projects.gamcare.models.Hospital;
-import com.projects.gamcare.models.User;
+import com.projects.gamcare.controllers.ShowParent;
+import com.projects.gamcare.core.TimeTool;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
-public class Show extends Controller {
-    @FXML
-    protected VBox profileAttributes, profileOtherDetails;
-
+public class Show extends ShowParent {
     @FXML
     protected void onEditAdminButtonClick() {
         System.out.println("You have now edit a hospital.");
@@ -20,19 +15,26 @@ public class Show extends Controller {
 
     public void setUpBody() {
         buildAttributesSection();
+        buildOtherDetailsSection(getProfileUser());
     }
 
     private void buildAttributesSection() {
-        User profileUser = getProfileUser();
+        profileAttributes.getChildren().addAll(
+            topAttributesRow(),
+            nameAttributesRow(getProfileUser()),
+            contactAttributesRow(getProfileUser()),
+            addressAttributesRow(getProfileUser())
+        );
+    }
 
-        ObservableList<Node> row01Children = new HBox().getChildren();
-        ObservableList<Node> row02Children = new HBox().getChildren();
-        ObservableList<Node> row03Children = new HBox().getChildren();
-        ObservableList<Node> row04Children = new HBox().getChildren();
-        ObservableList<Node> row05Children = new HBox().getChildren();
+    private HBox topAttributesRow() {
+        HBox topRow = new HBox();
+        ObservableList<Node> topRowChildren = topRow.getChildren();
 
-//        row01Children.addAll(attributeBoxWithSpacer("Name:", profileUser.getAttribute("name")));
-//        row01Children.addAll(attributeBoxWithSpacer("Size:", hospital.getAttribute("size")));
-//        row01Children.add(attributeBox("Lead doctor:", hospital.getLeadDoctor().fullNameAttribute()));
+        topRowChildren.addAll(attributeBoxWithSpacer("Title:", getProfileUser().getTitle().nameAttribute()));
+        topRowChildren.addAll(attributeBoxWithSpacer("Gender:", getProfileUser().getGender().nameAttribute()));
+        topRowChildren.add(attributeBox("Date of birth:", TimeTool.dateOfBirthDisplay(getProfileUser().dateOfBirthAttribute())));
+
+        return topRow;
     }
 }

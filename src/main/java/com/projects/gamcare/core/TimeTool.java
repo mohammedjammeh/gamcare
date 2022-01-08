@@ -1,5 +1,6 @@
 package com.projects.gamcare.core;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -8,6 +9,11 @@ import static java.util.Calendar.*;
 import static java.util.Calendar.DATE;
 
 public class TimeTool {
+    public static String dateOfBirthDisplay(Date date) {
+        return new SimpleDateFormat("dd MMMM yyyy").format(date) +
+            " (" + yearsSince(date) + " years)";
+    }
+
     public static int yearsSince(Date sinceDate) {
         Calendar timeAgo = getCalendar(sinceDate);
         Calendar rightNow = getCalendar(new Date());

@@ -1,6 +1,6 @@
 package com.projects.gamcare.controllers.hospital;
 
-import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.controllers.ShowParent;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Patient;
@@ -18,9 +18,11 @@ import javafx.scene.layout.VBox;
 
 import java.util.*;
 
-public class Show extends Controller {
+public class Show extends ShowParent {
     @FXML
-    protected VBox profileAttributes, profileOtherDetails, profilePatients, profileDoctors;
+    protected VBox profilePatients, profileDoctors;
+
+    private Hospital hospital;
 
     @FXML
     protected Button editHospitalButton, editHospitalDetailsButton, addPatientButton, addDoctorButton;
@@ -50,10 +52,21 @@ public class Show extends Controller {
         System.out.println("You can now see a doctor.");
     }
 
+    /**
+     * Setters & Getters
+     */
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
     public void setUpBody() {
         updateButtonsVisibility();
         buildAttributesSection();
-        buildOtherDetailsSection();
+        buildOtherDetailsSection(getHospital());
         buildPatientsSection();
         buildDoctorsSection();
     }
@@ -67,43 +80,22 @@ public class Show extends Controller {
     }
 
     private void buildAttributesSection() {
-        Hospital hospital = getHospital();
-
-        ObservableList<Node> row01Children = new HBox().getChildren();
-        ObservableList<Node> row02Children = new HBox().getChildren();
-        ObservableList<Node> row03Children = new HBox().getChildren();
-
-        row01Children.addAll(attributeBoxWithSpacer("Name:", hospital.getAttribute("name")));
-        row01Children.addAll(attributeBoxWithSpacer("Size:", hospital.getAttribute("size")));
-        row01Children.add(attributeBox("Lead doctor:", hospital.getLeadDoctor().fullNameAttribute()));
-
-        row02Children.addAll(attributeBoxWithSpacer("Email address:", hospital.getAttribute("email_address")));
-        row02Children.addAll(attributeBoxWithSpacer("Number:", hospital.getAttribute("phone_number")));
-        row02Children.add(attributeBox("Relevant link:", hospital.getAttribute("relevant_link")));
-
-        row03Children.addAll(attributeBoxWithSpacer("Compound:", hospital.getAttribute("compound")));
-        row03Children.addAll(attributeBoxWithSpacer("City / Town:", hospital.getAttribute("town")));
-        row03Children.add(attributeBox("Region:", hospital.getRegion().nameAttribute()));
-
         profileAttributes.getChildren().addAll(
-            row01Children.get(0).getParent(),
-            row02Children.get(0).getParent(),
-            row03Children.get(0).getParent()
+            topAttributesRow(),
+            contactAttributesRow(getHospital()),
+            addressAttributesRow(getHospital())
         );
     }
 
-    private void buildOtherDetailsSection() {
-        Label otherDetails = new Label();
-        otherDetails.setLineSpacing(14);
-        otherDetails.setWrapText(true);
-        otherDetails.setText(getHospital().getAttribute("other_details"));
+    private HBox topAttributesRow() {
+        HBox topRow = new HBox();
+        ObservableList<Node> topRowChildren = topRow.getChildren();
 
-        HBox otherDetailsBox = new HBox();
-        HBox row = new HBox();
+        topRowChildren.addAll(attributeBoxWithSpacer("Name:", getHospital().getAttribute("name")));
+        topRowChildren.addAll(attributeBoxWithSpacer("Size:", getHospital().getAttribute("size")));
+        topRowChildren.add(attributeBox("Lead doctor:", getHospital().getLeadDoctor().fullNameAttribute()));
 
-        otherDetailsBox.getChildren().add(otherDetails);
-        row.getChildren().add(otherDetailsBox);
-        profileOtherDetails.getChildren().add(row);
+        return topRow;
     }
 
     private void buildPatientsSection() {
@@ -147,13 +139,13 @@ public class Show extends Controller {
             Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
 
             tableBody.getChildren().addAll(
-                    tableFirstName.get("label"), tableFirstName.get("spacer"),
-                    tableMiddleName.get("label"), tableMiddleName.get("spacer"),
-                    tableLastName.get("label"), tableLastName.get("spacer"),
-                    tableAge.get("label"), tableAge.get("spacer"),
-                    tableEmail.get("label"), tableEmail.get("spacer"),
-                    tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
-                    tableAction.get("button-box"), tableAction.get("spacer")
+                tableFirstName.get("label"), tableFirstName.get("spacer"),
+                tableMiddleName.get("label"), tableMiddleName.get("spacer"),
+                tableLastName.get("label"), tableLastName.get("spacer"),
+                tableAge.get("label"), tableAge.get("spacer"),
+                tableEmail.get("label"), tableEmail.get("spacer"),
+                tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
+                tableAction.get("button-box"), tableAction.get("spacer")
             );
 
             profileDoctors.getChildren().add(tableBody);
@@ -201,12 +193,5 @@ public class Show extends Controller {
         HBox.setHgrow(newHBox, Priority.ALWAYS);
 
         return newHBox;
-    }
-
-    private Label newLabelWithStyleClass(String labelText, String styleClass) {
-        Label newLabel = new Label(labelText);
-        newLabel.getStyleClass().add(styleClass);
-
-        return newLabel;
     }
 }

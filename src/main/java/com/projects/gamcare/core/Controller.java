@@ -1,7 +1,6 @@
 package com.projects.gamcare.core;
 
 import com.projects.gamcare.enums.UserType;
-import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,19 +12,13 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 import java.util.*;
+import java.util.List;
 
 public class Controller {
     private User authUser;
 
-    private User profileUser;
-
-    private Hospital hospital;
-
     @FXML
-    private VBox headingBox;
-
-    @FXML
-    private VBox errorBox;
+    private VBox headingBox, errorBox;
 
     /**
      * General Methods
@@ -48,6 +41,32 @@ public class Controller {
             .toList();
     }
 
+    protected Button newButtonWithAction(String name, EventHandler<ActionEvent> action) {
+        Button newButton = new Button(name);
+        newButton.setOnAction(action);
+
+        return newButton;
+    }
+
+    protected HBox newHBoxWithStyleClass(String styleClass) {
+        HBox newHBox = new HBox();
+        newHBox.getStyleClass().add(styleClass);
+
+        return newHBox;
+    }
+
+    protected Label newLabelWithStyleClass(Object labelTextObject, String styleClass) {
+        String labelText = Optional.ofNullable(labelTextObject).isEmpty()
+                ? "N/A"
+                : String.valueOf(labelTextObject);
+
+        Label newLabel = new Label(labelText);
+        newLabel.getStyleClass().add(styleClass);
+
+        return newLabel;
+    }
+
+
     /**
      * Setters & Getters
      */
@@ -59,21 +78,7 @@ public class Controller {
         return authUser;
     }
 
-    public void setHospital(Hospital hospital) {
-        this.hospital = hospital;
-    }
-
-    public Hospital getHospital() {
-        return hospital;
-    }
-
-    public void setProfileUser(User profileUser) {
-        this.profileUser = profileUser;
-    }
-
-    public User getProfileUser() {
-        return profileUser;
-    }
+    public User getProfileUser() { return null; }
 
     public void setUpBody() {}
 
@@ -104,13 +109,6 @@ public class Controller {
         Button logOutButton = newButtonWithAction("Log Out", event -> SceneTool.switchToLogin());
 
         return userHeaderButtons(hospitalsButton, doctorsButton, myProfileButton, logOutButton);
-    }
-
-    private Button newButtonWithAction(String name, EventHandler<ActionEvent> action) {
-        Button newButton = new Button(name);
-        newButton.setOnAction(action);
-
-        return newButton;
     }
 
     private EventHandler<ActionEvent> switchSceneTo(String resourceName) {
@@ -173,39 +171,5 @@ public class Controller {
         return getClass().isInstance(new com.projects.gamcare.controllers.doctor.Create()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Index()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Show());
-    }
-
-    /**
-     * Extend Methods
-     */
-    protected List<HBox> attributeBoxWithSpacer(String name, String value) {
-        HBox spacerBox = new HBox();
-        HBox.setHgrow(spacerBox, Priority.ALWAYS);
-
-        return List.of(attributeBox(name, value), spacerBox);
-    }
-
-    protected HBox attributeBox(String name, String value) {
-        HBox attributeBox = newHBoxWithStyleClass("attribute");
-        Label attributeLabel = newLabelWithStyleClass(name, "attributeLabel");
-        Label attributeValue = newLabelWithStyleClass(value, "attributeValue");
-
-        attributeBox.getChildren().addAll(List.of(attributeLabel, attributeValue));
-
-        return attributeBox;
-    }
-
-    protected HBox newHBoxWithStyleClass(String styleClass) {
-        HBox newHBox = new HBox();
-        newHBox.getStyleClass().add(styleClass);
-
-        return newHBox;
-    }
-
-    private Label newLabelWithStyleClass(String labelText, String styleClass) {
-        Label newLabel = new Label(labelText);
-        newLabel.getStyleClass().add(styleClass);
-
-        return newLabel;
     }
 }

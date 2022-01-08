@@ -1,6 +1,8 @@
 package com.projects.gamcare.core;
 
 import com.projects.gamcare.Main;
+import com.projects.gamcare.controllers.ShowParent;
+import com.projects.gamcare.controllers.hospital.Show;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +29,7 @@ public class SceneTool {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
 
-        Controller controller = loader.getController();
+        ShowParent controller = loader.getController();
         controller.setAuthUser(authUser);
         controller.setProfileUser(profileUser);
         controller.setUpHeader();
@@ -40,7 +42,7 @@ public class SceneTool {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
         Parent root = getLoadedRoot(loader);
 
-        Controller controller = loader.getController();
+        Show controller = loader.getController();
         controller.setAuthUser(authUser);
         controller.setHospital(hospital);
         controller.setUpHeader();
