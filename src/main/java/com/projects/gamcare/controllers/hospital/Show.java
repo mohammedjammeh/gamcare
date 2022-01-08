@@ -81,13 +81,13 @@ public class Show extends ShowParent {
 
     private void buildAttributesSection() {
         profileAttributes.getChildren().addAll(
-            topAttributesRow(),
+            hospitalTopAttributesRow(),
             contactAttributesRow(getHospital()),
             addressAttributesRow(getHospital())
         );
     }
 
-    private HBox topAttributesRow() {
+    private HBox hospitalTopAttributesRow() {
         HBox topRow = new HBox();
         ObservableList<Node> topRowChildren = topRow.getChildren();
 

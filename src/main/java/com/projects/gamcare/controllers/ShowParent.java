@@ -1,6 +1,7 @@
 package com.projects.gamcare.controllers;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
@@ -35,6 +36,17 @@ public class ShowParent extends Controller {
     /**
      * Extend Methods
      */
+    protected HBox topAttributesRow() {
+        HBox topRow = new HBox();
+        ObservableList<Node> topRowChildren = topRow.getChildren();
+
+        topRowChildren.addAll(attributeBoxWithSpacer("Title:", getProfileUser().getTitle().nameAttribute()));
+        topRowChildren.addAll(attributeBoxWithSpacer("Gender:", getProfileUser().getGender().nameAttribute()));
+        topRowChildren.add(attributeBox("Date of birth:", TimeTool.dateOfBirthDisplay(getProfileUser().dateOfBirthAttribute())));
+
+        return topRow;
+    }
+
     protected HBox nameAttributesRow(Model model) {
         HBox namesRow = new HBox();
         ObservableList<Node> namesRowChildren = namesRow.getChildren();

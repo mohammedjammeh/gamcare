@@ -24,6 +24,10 @@ public class User extends Model implements ModelInterface {
         return (Integer) this.attributes.get("doctors_id");
     }
 
+    public Integer patientIdAttribute() {
+        return (Integer) this.attributes.get("patients_id");
+    }
+
     public String typeAttribute() {
         return (String) this.attributes.get("type");
     }
@@ -88,7 +92,11 @@ public class User extends Model implements ModelInterface {
     }
 
     public Doctor getDoctor() {
-        return (new Doctor()).where("id", doctorIdAttribute()).first();
+        return (Doctor) (new Doctor()).where("id", doctorIdAttribute()).first();
+    }
+
+    public Patient getPatient() {
+        return (Patient) (new Patient()).where("id", patientIdAttribute()).first();
     }
 
     public List<Model> getHospitals() {

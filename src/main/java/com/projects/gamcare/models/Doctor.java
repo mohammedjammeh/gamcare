@@ -110,14 +110,6 @@ public class Doctor extends Model implements ModelInterface {
     /**
      * Query Methods
      */
-    public Doctor first() {
-        return (Doctor) super.first();
-    }
-
-    public Doctor last() {
-        return (Doctor) super.last();
-    }
-
     public Doctor where(String column, Object value) {
         return (Doctor) super.where(column, value);
     }

@@ -30,7 +30,7 @@ public class Index extends Controller {
 
     public void setUpBody() {
         updateAddHospitalButtonVisibility();
-        showHospitals();
+        buildHospitalsSection();
     }
 
     private void updateAddHospitalButtonVisibility() {
@@ -39,7 +39,7 @@ public class Index extends Controller {
         }
     }
 
-    private void showHospitals() {
+    private void buildHospitalsSection() {
         List<Model> hospitals = getAuthUser().getHospitals();
         HBox row = new HBox();
 
