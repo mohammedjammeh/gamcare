@@ -17,7 +17,7 @@
             <VBox styleClass="headingBox" fx:id="headingBox"/>
 
             <VBox styleClass="bodyBox">
-                <VBox styleClass="innerBodyBox">
+                <VBox styleClass="innerBodyBox" fx:id="innerBodyBox">
                     <HBox styleClass="subHeadingBox">
                         <Label text="Main"/>
                         <HBox HBox.hgrow="ALWAYS"/>
@@ -45,13 +45,12 @@
                         </VBox.margin>
                     </VBox>
 
+
                     <fx:include source="show/exercises.fxml"/>
 
                     <fx:include source="show/meals.fxml"/>
 
                     <fx:include source="show/reports.fxml"/>
-
-                    <fx:include source="show/actions.fxml"/>
                 </VBox>
             </VBox>
         </VBox>

@@ -55,6 +55,13 @@ public class Controller {
         return newHBox;
     }
 
+    protected VBox newVBoxWithStyleClass(String styleClass) {
+        VBox newVBox = new VBox();
+        newVBox.getStyleClass().add(styleClass);
+
+        return newVBox;
+    }
+
     protected Label newLabelWithStyleClass(Object labelTextObject, String styleClass) {
         String labelText = Optional.ofNullable(labelTextObject).isEmpty()
                 ? "N/A"
@@ -128,7 +135,7 @@ public class Controller {
 
         List<Button> userButtons = buttons.get(getAuthUser().typeAttribute());
 
-        if (authUserProfileIsBeingViewed()) {
+        if (authUserViewingOwnProfile()) {
             myProfileButton.getStyleClass().add("active");
             return userButtons;
         }
@@ -146,7 +153,7 @@ public class Controller {
         return userButtons;
     }
 
-    private boolean authUserProfileIsBeingViewed() {
+    protected boolean authUserViewingOwnProfile() {
         if (Optional.ofNullable(getProfileUser()).isEmpty()) {
             return false;
         }
