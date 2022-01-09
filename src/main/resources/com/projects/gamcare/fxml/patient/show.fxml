@@ -24,133 +24,6 @@
                         <Button text="Edit" onAction="#onEditPatientButtonClick"/>
                     </HBox>
                     <VBox styleClass="profileAttributes" fx:id="profileAttributes">
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Title:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Mr." styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Gender:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Male" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Tribe:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Serakhulle" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="First name:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Mohammed" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Middle name:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Patient" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Last name:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Jammeh" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Date of birth:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="19th June 1996" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Place of birth:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Greenwich, U.K." styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Hospital:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Mansa Konko" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Blood type:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="AB" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Body weight:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="110 kg" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Height:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="183 cm" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Email address:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="mo@gmail.com" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Phone number:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="07506 259 330" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Relevant link:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="www.mohammedjammeh.com" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
-
-<!--                        <HBox>-->
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Compound:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Jammeh Kunda" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="City / Town:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Tallinding Kungjang" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
-
-<!--                            <HBox styleClass="attribute">-->
-<!--                                <Label text="Region:" styleClass="attributeLabel"/>-->
-<!--                                <Label text="Western Region" styleClass="attributeData"/>-->
-<!--                            </HBox>-->
-<!--                        </HBox>-->
-
                         <VBox.margin>
                             <Insets>
                                 <bottom>30</bottom>
@@ -158,13 +31,27 @@
                         </VBox.margin>
                     </VBox>
 
-<!--                    <fx:include source="show/exercises.fxml"/>-->
 
-<!--                    <fx:include source="show/meals.fxml"/>-->
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Other Details"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="Edit" onAction="#onEditPatientButtonClick"/>
+                    </HBox>
+                    <VBox styleClass="profileOtherDetails" fx:id="profileOtherDetails">
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
 
-<!--                    <fx:include source="show/reports.fxml"/>-->
+                    <fx:include source="show/exercises.fxml"/>
 
-<!--                    <fx:include source="show/actions.fxml"/>-->
+                    <fx:include source="show/meals.fxml"/>
+
+                    <fx:include source="show/reports.fxml"/>
+
+                    <fx:include source="show/actions.fxml"/>
                 </VBox>
             </VBox>
         </VBox>

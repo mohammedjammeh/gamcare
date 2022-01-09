@@ -42,7 +42,7 @@ public class ShowParent extends Controller {
 
         topRowChildren.addAll(attributeBoxWithSpacer("Title:", getProfileUser().getTitle().nameAttribute()));
         topRowChildren.addAll(attributeBoxWithSpacer("Gender:", getProfileUser().getGender().nameAttribute()));
-        topRowChildren.add(attributeBox("Date of birth:", TimeTool.dateOfBirthDisplay(getProfileUser().dateOfBirthAttribute())));
+        topRowChildren.add(attributeBox("Date of birth:", getProfileUser().dateOfBirthDisplay()));
 
         return topRow;
     }
@@ -63,7 +63,7 @@ public class ShowParent extends Controller {
         ObservableList<Node> contactRowChildren = contactRow.getChildren();
 
         contactRowChildren.addAll(attributeBoxWithSpacer("Email address:", model.getAttribute("email_address")));
-        contactRowChildren.addAll(attributeBoxWithSpacer("Number:", model.getAttribute("phone_number")));
+        contactRowChildren.addAll(attributeBoxWithSpacer("Phone number:", model.getAttribute("phone_number")));
         contactRowChildren.add(attributeBox("Relevant link:", model.getAttribute("relevant_link")));
 
         return contactRow;

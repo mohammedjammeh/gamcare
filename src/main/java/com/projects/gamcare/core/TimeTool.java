@@ -11,7 +11,7 @@ import static java.util.Calendar.DATE;
 public class TimeTool {
     public static String dateOfBirthDisplay(Date date) {
         return new SimpleDateFormat("dd MMMM yyyy").format(date) +
-            " (" + yearsSince(date) + " years)";
+            " (" + yearsSince(date) + ")";
     }
 
     public static int yearsSince(Date sinceDate) {

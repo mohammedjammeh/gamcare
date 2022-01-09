@@ -27,6 +27,7 @@ public class Login extends LoginFields {
             return;
         }
 
+        // add this on user, just call the user method
         if (user.isPatient()) {
             SceneTool.switchToProfile(user.afterLoginResourceName(), user, user);
             return;

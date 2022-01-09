@@ -5,6 +5,7 @@ import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.models.Gender;
 import com.projects.gamcare.models.Region;
 import com.projects.gamcare.models.Title;
+import com.projects.gamcare.models.Tribe;
 
 import java.util.*;
 
@@ -121,22 +122,25 @@ public class Model {
 
     public Region getRegion() {
         return (Region) (new Region())
-            .getDatabase()
-            .where("id", "=", getAttribute("regions_id"))
+            .where("id", getAttribute("regions_id"))
             .first();
     }
 
     public Title getTitle() {
         return (Title) (new Title())
-            .getDatabase()
-            .where("id", "=", getAttribute("titles_id"))
+            .where("id", getAttribute("titles_id"))
             .first();
     }
 
     public Gender getGender() {
         return (Gender) (new Gender())
-            .getDatabase()
-            .where("id", "=", getAttribute("genders_id"))
+            .where("id", getAttribute("genders_id"))
+            .first();
+    }
+
+    public Tribe getTribe() {
+        return (Tribe) (new Tribe())
+            .where("id", getAttribute("tribes_id"))
             .first();
     }
 }

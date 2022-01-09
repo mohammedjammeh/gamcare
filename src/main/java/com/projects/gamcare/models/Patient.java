@@ -12,6 +12,19 @@ public class Patient extends Model implements ModelInterface {
         return table;
     }
 
+
+    /**
+     * General Methods
+     */
+    public String weightAttribute() {
+        return getAttribute("weight") + " kg";
+    }
+
+    public String heightAttribute() {
+        return getAttribute("height") + " cm";
+    }
+
+
     /**
      * General Methods
      */
@@ -19,5 +32,21 @@ public class Patient extends Model implements ModelInterface {
         double randomNumber = Math.random();
 
         return String.valueOf(new DecimalFormat("#.#").format(randomNumber));
+    }
+
+
+    /**
+     * Query Methods
+     */
+    public Hospital getHospital() {
+        return (Hospital) (new Hospital())
+            .where("id", getAttribute("hospitals_id"))
+            .first();
+    }
+
+    public BloodType getBloodType() {
+        return (BloodType) (new BloodType())
+            .where("id", getAttribute("blood_types_id"))
+            .first();
     }
 }

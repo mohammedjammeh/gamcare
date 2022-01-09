@@ -1,5 +1,6 @@
 package com.projects.gamcare.models;
 
+import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
@@ -70,6 +71,10 @@ public class User extends Model implements ModelInterface {
         resourceNames.put(UserType.PATIENT.name(), "patient/show");
 
         return resourceNames.get(typeAttribute());
+    }
+
+    public String dateOfBirthDisplay() {
+        return TimeTool.dateOfBirthDisplay(dateOfBirthAttribute());
     }
 
 
