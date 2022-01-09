@@ -19,13 +19,18 @@ public class Show extends ShowParent {
     protected VBox profileHospitals;
 
     @FXML
+    protected void onShowHospitalButtonClick(Hospital hospital) {
+        SceneTool.switchToHospitalShow(getAuthUser(), hospital);
+    }
+
+    @FXML
     protected void onEditDoctorButtonClick() {
         System.out.println("You have now edit a hospital.");
     }
 
     @FXML
-    protected void onShowHospitalButtonClick(Hospital hospital) {
-        SceneTool.switchToHospitalShow(getAuthUser(), hospital);
+    protected void onDeleteDoctorButtonClick() {
+        System.out.println("You have now edit a hospital.");
     }
 
     public void setUpBody() {
@@ -34,6 +39,11 @@ public class Show extends ShowParent {
         buildAttributesSection();
         buildOtherDetailsSection(getProfileUser());
         buildHospitalsSection();
+
+        if (getAuthUser().isAdmin()) {
+            buildActionsSubHeading();
+            buildActionsSection(actionEvent -> onDeleteDoctorButtonClick());
+        }
     }
 
     private void buildAttributesSection() {

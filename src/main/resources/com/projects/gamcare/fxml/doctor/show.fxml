@@ -17,7 +17,7 @@
             <VBox styleClass="headingBox" fx:id="headingBox"/>
 
             <VBox styleClass="bodyBox">
-                <VBox styleClass="innerBodyBox">
+                <VBox styleClass="innerBodyBox" fx:id="innerBodyBox">
                     <HBox styleClass="subHeadingBox">
                         <Label text="Main"/>
                         <HBox HBox.hgrow="ALWAYS"/>
@@ -50,7 +50,13 @@
                         <Label text="Hospitals"/>
                         <HBox HBox.hgrow="ALWAYS"/>
                     </HBox>
-                    <VBox styleClass="profileHospitals" fx:id="profileHospitals"/>
+                    <VBox styleClass="profileHospitals" fx:id="profileHospitals">
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
                 </VBox>
             </VBox>
         </VBox>

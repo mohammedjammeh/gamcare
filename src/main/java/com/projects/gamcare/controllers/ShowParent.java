@@ -4,8 +4,11 @@ import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -17,7 +20,7 @@ public class ShowParent extends Controller {
     private User profileUser;
 
     @FXML
-    protected VBox profileAttributes, profileOtherDetails;
+    protected VBox innerBodyBox, profileAttributes, profileOtherDetails;
 
 
     /**
@@ -33,7 +36,7 @@ public class ShowParent extends Controller {
 
 
     /**
-     * Extend Methods
+     * Extend Methods (Attributes)
      */
     protected HBox topAttributesRow() {
         HBox topRow = new HBox();
@@ -79,6 +82,9 @@ public class ShowParent extends Controller {
         return addressRow;
     }
 
+    /**
+     * Extend Methods (Build Section)
+     */
     protected void buildOtherDetailsSection(Model model) {
         Object otherDetailsText = model.getAttribute("other_details");
         Label otherDetailsLabel = newLabelWithStyleClass(otherDetailsText, "");
@@ -93,6 +99,34 @@ public class ShowParent extends Controller {
         profileOtherDetails.getChildren().add(row);
     }
 
+    protected void buildActionsSubHeading() {
+        Label title = new Label("Actions");
+
+        HBox spacer = new HBox();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+
+        HBox box = newHBoxWithStyleClass("subHeadingBox");
+        box.getChildren().addAll(title, spacer);
+
+        innerBodyBox.getChildren().add(box);
+    }
+
+    protected void buildActionsSection(EventHandler<ActionEvent> actionEvent) {
+        Button deleteAccountButton = new Button(authUserViewingOwnProfile() ? "Delete My Account" : "Delete Account");
+        deleteAccountButton.setOnAction(actionEvent);
+
+        HBox innerActionsBox = new HBox();
+        innerActionsBox.getChildren().add(deleteAccountButton);
+
+        VBox actionsBox = newVBoxWithStyleClass("profileAction");
+        actionsBox.getChildren().add(innerActionsBox);
+
+        innerBodyBox.getChildren().add(actionsBox);
+    }
+
+    /**
+     * Extend Methods (General)
+     */
     protected List<HBox> attributeBoxWithSpacer(String name, Object value) {
         HBox spacerBox = new HBox();
         HBox.setHgrow(spacerBox, Priority.ALWAYS);

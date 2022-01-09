@@ -5,17 +5,10 @@ import com.projects.gamcare.models.Patient;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 
 public class Show extends ShowParent {
     private Patient patient;
-
-    @FXML
-    protected VBox innerBodyBox;
 
     @FXML
     protected void onEditPatientButtonClick() {
@@ -33,8 +26,9 @@ public class Show extends ShowParent {
         buildAttributesSection();
         buildOtherDetailsSection(getProfileUser());
 
-        if(getAuthUser().isAdmin() || getAuthUser().isPatient()) {
-            buildActionsSection();
+        if (getAuthUser().isAdmin() || getAuthUser().isPatient()) {
+            buildActionsSubHeading();
+            buildActionsSection(actionEvent -> onDeletePatientButtonClick());
         }
     }
 
@@ -80,35 +74,5 @@ public class Show extends ShowParent {
         mainRowChildren.add(attributeBox("Height:", patient.heightAttribute()));
 
         return mainRow;
-    }
-
-    private void buildActionsSection() {
-        buildActionsSubHeading();
-        buildActions();
-    }
-
-    private void buildActionsSubHeading() {
-        Label title = new Label("Actions");
-
-        HBox spacer = new HBox();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        HBox box = newHBoxWithStyleClass("subHeadingBox");
-        box.getChildren().addAll(title, spacer);
-
-        innerBodyBox.getChildren().add(box);
-    }
-
-    private void buildActions() {
-        Button deleteAccountButton = new Button(authUserViewingOwnProfile() ? "Delete My Account" : "Delete Account");
-        deleteAccountButton.setOnAction(actionEvent -> onDeletePatientButtonClick());
-
-        HBox innerActionsBox = new HBox();
-        innerActionsBox.getChildren().add(deleteAccountButton);
-
-        VBox actionsBox = newVBoxWithStyleClass("profileAction");
-        actionsBox.getChildren().add(innerActionsBox);
-
-        innerBodyBox.getChildren().add(actionsBox);
     }
 }
