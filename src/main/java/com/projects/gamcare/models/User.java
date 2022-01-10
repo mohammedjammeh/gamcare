@@ -1,6 +1,5 @@
 package com.projects.gamcare.models;
 
-import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
@@ -99,5 +98,13 @@ public class User extends ProfileUser implements ModelInterface {
         }
 
         return new ArrayList<>();
+    }
+
+    public Doctor getDoctor() {
+        return (Doctor) (new Doctor()).where("id", getAttribute("doctors_id")).first();
+    }
+
+    public Patient getPatient() {
+        return (Patient) (new Patient()).where("id", getAttribute("patients_id")).first();
     }
 }

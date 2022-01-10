@@ -1,6 +1,7 @@
 package com.projects.gamcare.controllers;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.collections.ObservableList;
@@ -30,8 +31,8 @@ public class ShowParent extends Controller {
         this.profileUser = profileUser;
     }
 
-    public ProfileUser getProfileUser() {
-        return profileUser;
+    public User getProfileUser() {
+        return (User) profileUser;
     }
 
 
