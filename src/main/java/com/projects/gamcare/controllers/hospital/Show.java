@@ -21,10 +21,10 @@ import javafx.scene.layout.VBox;
 import java.util.*;
 
 public class Show extends ShowParent {
+    private Hospital hospital;
+
     @FXML
     protected VBox profilePatients, profileDoctors;
-
-    private Hospital hospital;
 
     @FXML
     protected Button editHospitalButton, editHospitalDetailsButton, addPatientButton, addDoctorButton;
@@ -49,11 +49,6 @@ public class Show extends ShowParent {
         SceneTool.switchToProfile("patient/show", getAuthUser(), patient);
     }
 
-    @FXML
-    protected void onShowDoctorButtonClick(Doctor doctor) {
-        SceneTool.switchToProfile("doctor/show", getAuthUser(), doctor);
-    }
-
     /**
      * Setters & Getters
      */
@@ -70,7 +65,7 @@ public class Show extends ShowParent {
         buildAttributesSection();
         buildOtherDetailsSection(getHospital());
         buildPatientsSection();
-        buildDoctorsSection();
+        buildDoctorsSection(getHospital().getDoctors(), profileDoctors);
     }
 
     private void updateButtonsVisibility() {
@@ -127,73 +122,30 @@ public class Show extends ShowParent {
         }
     }
 
-    private void buildDoctorsSection() {
-        for (Model doctorModel: getHospital().getDoctors()) {
-            Doctor doctor = (Doctor) doctorModel;
-            HBox tableBody = newHBoxWithStyleClass("tableBody");
-
-            Map<String, Node> tableFirstName = tableLabelWithSpacer(doctor.firstNameAttribute());
-            Map<String, Node> tableMiddleName = tableLabelWithSpacer(doctor.middleNameAttribute());
-            Map<String, Node> tableLastName = tableLabelWithSpacer(doctor.lastNameAttribute());
-            Map<String, Node> tableAge = tableLabelWithSpacer(doctor.age());
-            Map<String, Node> tableEmail = styledTableLabelWithSpacer(doctor.emailAttribute(), "email");
-            Map<String, Node> tableCareerLevel = tableLabelWithSpacer(doctor.careerLevelAttribute());
-            Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
-
-            tableBody.getChildren().addAll(
-                tableFirstName.get("label"), tableFirstName.get("spacer"),
-                tableMiddleName.get("label"), tableMiddleName.get("spacer"),
-                tableLastName.get("label"), tableLastName.get("spacer"),
-                tableAge.get("label"), tableAge.get("spacer"),
-                tableEmail.get("label"), tableEmail.get("spacer"),
-                tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
-                tableAction.get("button-box"), tableAction.get("spacer")
-            );
-
-            profileDoctors.getChildren().add(tableBody);
-        }
-    }
-
-    private Map<String, Node> tableLabelWithSpacer(String attributeName) {
-        Label tableLabel = new Label(attributeName);
-        HBox tableLabelSpacer = new HBox();
-        HBox.setHgrow(tableLabelSpacer, Priority.ALWAYS);
-
-        return tableNodeWithSpacer("label", tableLabel, "spacer", tableLabelSpacer);
-    }
-
-    private Map<String, Node> styledTableLabelWithSpacer(String attributeName, String styleClass) {
-        Label tableLabel = newLabelWithStyleClass(attributeName, styleClass);
-        HBox tableLabelSpacer = new HBox();
-        HBox.setHgrow(tableLabelSpacer, Priority.ALWAYS);
-
-        return tableNodeWithSpacer("label", tableLabel, "spacer", tableLabelSpacer);
-    }
-
-    private Map<String, Node> tableButtonWithSpacer(Model patient, EventHandler<ActionEvent> event) {
-        Button tableButton = new Button("Profile");
-        tableButton.setOnAction(event);
-
-        HBox tableButtonBox = newHBoxWithStyleClass("action");
-        tableButtonBox.getChildren().add(tableButton);
-
-        HBox tableButtonBoxSpacer = newHBoxWithAlwaysHGrow();
-
-        return tableNodeWithSpacer("button-box", tableButtonBox, "spacer", tableButtonBoxSpacer);
-    }
-
-    private Map<String, Node> tableNodeWithSpacer(String nodeKey, Node actualNode,  String spacerKey, Node actualSpacer) {
-        Map<String, Node> nodeWithSpacer = new HashMap<>();
-        nodeWithSpacer.put(nodeKey, actualNode);
-        nodeWithSpacer.put(spacerKey, actualSpacer);
-
-        return nodeWithSpacer;
-    }
-
-    private HBox newHBoxWithAlwaysHGrow() {
-        HBox newHBox = new HBox();
-        HBox.setHgrow(newHBox, Priority.ALWAYS);
-
-        return newHBox;
-    }
+//    private void buildDoctorsSection() {
+//        for (Model doctorModel: getHospital().getDoctors()) {
+//            Doctor doctor = (Doctor) doctorModel;
+//            HBox tableBody = newHBoxWithStyleClass("tableBody");
+//
+//            Map<String, Node> tableFirstName = tableLabelWithSpacer(doctor.firstNameAttribute());
+//            Map<String, Node> tableMiddleName = tableLabelWithSpacer(doctor.middleNameAttribute());
+//            Map<String, Node> tableLastName = tableLabelWithSpacer(doctor.lastNameAttribute());
+//            Map<String, Node> tableAge = tableLabelWithSpacer(doctor.age());
+//            Map<String, Node> tableEmail = styledTableLabelWithSpacer(doctor.emailAttribute(), "email");
+//            Map<String, Node> tableCareerLevel = tableLabelWithSpacer(doctor.careerLevelAttribute());
+//            Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
+//
+//            tableBody.getChildren().addAll(
+//                tableFirstName.get("label"), tableFirstName.get("spacer"),
+//                tableMiddleName.get("label"), tableMiddleName.get("spacer"),
+//                tableLastName.get("label"), tableLastName.get("spacer"),
+//                tableAge.get("label"), tableAge.get("spacer"),
+//                tableEmail.get("label"), tableEmail.get("spacer"),
+//                tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
+//                tableAction.get("button-box"), tableAction.get("spacer")
+//            );
+//
+//            profileDoctors.getChildren().add(tableBody);
+//        }
+//    }
 }

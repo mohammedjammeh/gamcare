@@ -1,11 +1,14 @@
 package com.projects.gamcare.core;
 
 import com.projects.gamcare.enums.UserType;
+import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.User;
+import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -179,5 +182,88 @@ public class Controller {
         return getClass().isInstance(new com.projects.gamcare.controllers.doctor.Create()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Index()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Show());
+    }
+
+
+    /**
+     * Extend Methods (Button Click)
+     */
+    @FXML
+    public void onShowDoctorButtonClick(Doctor doctor) {
+        SceneTool.switchToProfile("doctor/show", getAuthUser(), doctor);
+    }
+
+
+    /**
+     * Extend Methods (Table Display)
+     */
+    protected void buildDoctorsSection(List<Model> doctors, VBox section) {
+        for (Model doctorModel : doctors) {
+            Doctor doctor = (Doctor) doctorModel;
+            HBox tableBody = newHBoxWithStyleClass("tableBody");
+
+            Map<String, Node> tableFirstName = tableLabelWithSpacer(doctor.firstNameAttribute());
+            Map<String, Node> tableMiddleName = tableLabelWithSpacer(doctor.middleNameAttribute());
+            Map<String, Node> tableLastName = tableLabelWithSpacer(doctor.lastNameAttribute());
+            Map<String, Node> tableAge = tableLabelWithSpacer(doctor.age());
+            Map<String, Node> tableEmail = styledTableLabelWithSpacer(doctor.emailAttribute(), "email");
+            Map<String, Node> tableCareerLevel = tableLabelWithSpacer(doctor.careerLevelAttribute());
+            Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
+
+            tableBody.getChildren().addAll(
+                    tableFirstName.get("label"), tableFirstName.get("spacer"),
+                    tableMiddleName.get("label"), tableMiddleName.get("spacer"),
+                    tableLastName.get("label"), tableLastName.get("spacer"),
+                    tableAge.get("label"), tableAge.get("spacer"),
+                    tableEmail.get("label"), tableEmail.get("spacer"),
+                    tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
+                    tableAction.get("button-box"), tableAction.get("spacer")
+            );
+
+            section.getChildren().add(tableBody);
+        }
+    }
+
+    protected Map<String, Node> tableLabelWithSpacer(String attributeName) {
+        Label tableLabel = new Label(attributeName);
+        HBox tableLabelSpacer = new HBox();
+        HBox.setHgrow(tableLabelSpacer, Priority.ALWAYS);
+
+        return tableNodeWithSpacer("label", tableLabel, "spacer", tableLabelSpacer);
+    }
+
+    protected Map<String, Node> styledTableLabelWithSpacer(String attributeName, String styleClass) {
+        Label tableLabel = newLabelWithStyleClass(attributeName, styleClass);
+        HBox tableLabelSpacer = new HBox();
+        HBox.setHgrow(tableLabelSpacer, Priority.ALWAYS);
+
+        return tableNodeWithSpacer("label", tableLabel, "spacer", tableLabelSpacer);
+    }
+
+    protected Map<String, Node> tableButtonWithSpacer(Model patient, EventHandler<ActionEvent> event) {
+        Button tableButton = new Button("Profile");
+        tableButton.setOnAction(event);
+
+        HBox tableButtonBox = newHBoxWithStyleClass("action");
+        tableButtonBox.getChildren().add(tableButton);
+
+        HBox tableButtonBoxSpacer = newHBoxWithAlwaysHGrow();
+
+        return tableNodeWithSpacer("button-box", tableButtonBox, "spacer", tableButtonBoxSpacer);
+    }
+
+    protected Map<String, Node> tableNodeWithSpacer(String nodeKey, Node actualNode,  String spacerKey, Node actualSpacer) {
+        Map<String, Node> nodeWithSpacer = new HashMap<>();
+        nodeWithSpacer.put(nodeKey, actualNode);
+        nodeWithSpacer.put(spacerKey, actualSpacer);
+
+        return nodeWithSpacer;
+    }
+
+    protected HBox newHBoxWithAlwaysHGrow() {
+        HBox newHBox = new HBox();
+        HBox.setHgrow(newHBox, Priority.ALWAYS);
+
+        return newHBox;
     }
 }

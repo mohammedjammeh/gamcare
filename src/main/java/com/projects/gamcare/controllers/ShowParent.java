@@ -1,7 +1,6 @@
 package com.projects.gamcare.controllers;
 
 import com.projects.gamcare.core.Controller;
-import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.collections.ObservableList;

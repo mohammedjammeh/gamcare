@@ -110,6 +110,7 @@
                             <Label styleClass="action">Action</Label>
                         </HBox>
                     </VBox>
+
                 </VBox>
             </VBox>
         </VBox>
