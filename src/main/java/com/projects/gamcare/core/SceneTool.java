@@ -5,6 +5,7 @@ import com.projects.gamcare.controllers.ShowParent;
 import com.projects.gamcare.controllers.hospital.Show;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
+import com.projects.gamcare.models.main.ProfileUser;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,7 +26,7 @@ public class SceneTool {
         showStage(root);
     }
 
-    public static void switchToProfile(String resourceName, User authUser, User profileUser) {
+    public static void switchToProfile(String resourceName, User authUser, ProfileUser profileUser) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
 

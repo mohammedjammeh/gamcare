@@ -1,9 +1,11 @@
 package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.controllers.ShowParent;
+import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Patient;
+import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -44,12 +46,12 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onShowPatientButtonClick(Patient patient) {
-        System.out.println("You can now see a patient.");
+        SceneTool.switchToProfile("patient/show", getAuthUser(), patient);
     }
 
     @FXML
     protected void onShowDoctorButtonClick(Doctor doctor) {
-        System.out.println("You can now see a doctor.");
+        SceneTool.switchToProfile("doctor/show", getAuthUser(), doctor);
     }
 
     /**

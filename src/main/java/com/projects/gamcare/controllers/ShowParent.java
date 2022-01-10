@@ -3,6 +3,7 @@ package com.projects.gamcare.controllers;
 import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
+import com.projects.gamcare.models.main.ProfileUser;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,7 +18,7 @@ import javafx.scene.layout.VBox;
 import java.util.*;
 
 public class ShowParent extends Controller {
-    private User profileUser;
+    private ProfileUser profileUser;
 
     @FXML
     protected VBox innerBodyBox, profileAttributes, profileOtherDetails;
@@ -26,11 +27,11 @@ public class ShowParent extends Controller {
     /**
      * Setters & Getters
      */
-    public void setProfileUser(User profileUser) {
+    public void setProfileUser(ProfileUser profileUser) {
         this.profileUser = profileUser;
     }
 
-    public User getProfileUser() {
+    public ProfileUser getProfileUser() {
         return profileUser;
     }
 

@@ -2,6 +2,7 @@ package com.projects.gamcare.core;
 
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.models.User;
+import com.projects.gamcare.models.main.ProfileUser;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -85,7 +86,7 @@ public class Controller {
         return authUser;
     }
 
-    public User getProfileUser() { return null; }
+    public ProfileUser getProfileUser() { return null; }
 
     public void setUpBody() {}
 

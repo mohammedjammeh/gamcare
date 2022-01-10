@@ -4,11 +4,12 @@ import com.projects.gamcare.core.StringTool;
 import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
+import com.projects.gamcare.models.main.ProfileUser;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Doctor extends Model implements ModelInterface {
+public class Doctor extends ProfileUser implements ModelInterface {
     protected final String table = "doctors";
 
     public String getTableName() {

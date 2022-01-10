@@ -4,13 +4,14 @@ import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
+import com.projects.gamcare.models.main.ProfileUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class User extends Model implements ModelInterface {
+public class User extends ProfileUser implements ModelInterface {
     protected final String table = "users";
 
     public String getTableName() {
@@ -21,14 +22,6 @@ public class User extends Model implements ModelInterface {
     /**
      * Attributes Methods
      */
-    public Integer doctorIdAttribute() {
-        return (Integer) this.attributes.get("doctors_id");
-    }
-
-    public Integer patientIdAttribute() {
-        return (Integer) this.attributes.get("patients_id");
-    }
-
     public String typeAttribute() {
         return (String) this.attributes.get("type");
     }
@@ -73,10 +66,6 @@ public class User extends Model implements ModelInterface {
         return resourceNames.get(typeAttribute());
     }
 
-    public String dateOfBirthDisplay() {
-        return TimeTool.dateOfBirthDisplay(dateOfBirthAttribute());
-    }
-
 
     /**
      * Query Methods
@@ -98,14 +87,6 @@ public class User extends Model implements ModelInterface {
             .select(List.of("salt"))
             .where("id", "=", idAttribute())
             .getBytes();
-    }
-
-    public Doctor getDoctor() {
-        return (Doctor) (new Doctor()).where("id", doctorIdAttribute()).first();
-    }
-
-    public Patient getPatient() {
-        return (Patient) (new Patient()).where("id", patientIdAttribute()).first();
     }
 
     public List<Model> getHospitals() {

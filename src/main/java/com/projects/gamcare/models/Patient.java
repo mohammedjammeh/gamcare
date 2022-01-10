@@ -1,11 +1,11 @@
 package com.projects.gamcare.models;
 
 import com.projects.gamcare.interfaces.ModelInterface;
-import com.projects.gamcare.models.main.Model;
+import com.projects.gamcare.models.main.ProfileUser;
 
 import java.text.DecimalFormat;
 
-public class Patient extends Model implements ModelInterface {
+public class Patient extends ProfileUser implements ModelInterface {
     protected final String table = "patients";
 
     public String getTableName() {

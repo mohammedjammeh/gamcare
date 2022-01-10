@@ -9,9 +9,6 @@ import com.projects.gamcare.models.Tribe;
 
 import java.util.*;
 
-import static java.util.Calendar.*;
-import static java.util.Calendar.DATE;
-
 public class Model {
     protected Database database;
 
