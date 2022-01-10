@@ -24,59 +24,6 @@ public class Controller {
     @FXML
     private VBox headingBox, errorBox;
 
-    /**
-     * General Methods
-     */
-    public void hideErrorBox() {
-        errorBox.setVisible(false);
-        errorBox.setManaged(false);
-    }
-
-    public void hide(Button button) {
-        button.setVisible(false);
-        button.setManaged(false);
-    }
-
-    public List<String> getEnumItems(Class<?> enumClass) {
-        return Arrays
-            .stream(enumClass.getEnumConstants())
-            .map(Object::toString)
-            .map(StringTool::capitalise)
-            .toList();
-    }
-
-    protected Button newButtonWithAction(String name, EventHandler<ActionEvent> action) {
-        Button newButton = new Button(name);
-        newButton.setOnAction(action);
-
-        return newButton;
-    }
-
-    protected HBox newHBoxWithStyleClass(String styleClass) {
-        HBox newHBox = new HBox();
-        newHBox.getStyleClass().add(styleClass);
-
-        return newHBox;
-    }
-
-    protected VBox newVBoxWithStyleClass(String styleClass) {
-        VBox newVBox = new VBox();
-        newVBox.getStyleClass().add(styleClass);
-
-        return newVBox;
-    }
-
-    protected Label newLabelWithStyleClass(Object labelTextObject, String styleClass) {
-        String labelText = Optional.ofNullable(labelTextObject).isEmpty()
-                ? "N/A"
-                : String.valueOf(labelTextObject);
-
-        Label newLabel = new Label(labelText);
-        newLabel.getStyleClass().add(styleClass);
-
-        return newLabel;
-    }
-
 
     /**
      * Setters & Getters
@@ -186,6 +133,33 @@ public class Controller {
 
 
     /**
+     * Fields Methods
+     */
+    public void hideErrorBox() {
+        errorBox.setVisible(false);
+        errorBox.setManaged(false);
+    }
+
+    public void showErrorBox() {
+        errorBox.setVisible(true);
+        errorBox.setManaged(true);
+    }
+
+    public void hide(Button button) {
+        button.setVisible(false);
+        button.setManaged(false);
+    }
+
+    public List<String> getEnumItems(Class<?> enumClass) {
+        return Arrays
+            .stream(enumClass.getEnumConstants())
+            .map(Object::toString)
+            .map(StringTool::capitalise)
+            .toList();
+    }
+
+
+    /**
      * Extend Methods (Button Click)
      */
     @FXML
@@ -211,13 +185,13 @@ public class Controller {
             Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
 
             tableBody.getChildren().addAll(
-                    tableFirstName.get("label"), tableFirstName.get("spacer"),
-                    tableMiddleName.get("label"), tableMiddleName.get("spacer"),
-                    tableLastName.get("label"), tableLastName.get("spacer"),
-                    tableAge.get("label"), tableAge.get("spacer"),
-                    tableEmail.get("label"), tableEmail.get("spacer"),
-                    tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
-                    tableAction.get("button-box"), tableAction.get("spacer")
+                tableFirstName.get("label"), tableFirstName.get("spacer"),
+                tableMiddleName.get("label"), tableMiddleName.get("spacer"),
+                tableLastName.get("label"), tableLastName.get("spacer"),
+                tableAge.get("label"), tableAge.get("spacer"),
+                tableEmail.get("label"), tableEmail.get("spacer"),
+                tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
+                tableAction.get("button-box"), tableAction.get("spacer")
             );
 
             section.getChildren().add(tableBody);
@@ -260,10 +234,46 @@ public class Controller {
         return nodeWithSpacer;
     }
 
+
+    /**
+     * Extend Methods (General)
+     */
     protected HBox newHBoxWithAlwaysHGrow() {
         HBox newHBox = new HBox();
         HBox.setHgrow(newHBox, Priority.ALWAYS);
 
         return newHBox;
+    }
+
+    protected HBox newHBoxWithStyleClass(String styleClass) {
+        HBox newHBox = new HBox();
+        newHBox.getStyleClass().add(styleClass);
+
+        return newHBox;
+    }
+
+    protected VBox newVBoxWithStyleClass(String styleClass) {
+        VBox newVBox = new VBox();
+        newVBox.getStyleClass().add(styleClass);
+
+        return newVBox;
+    }
+
+    protected Label newLabelWithStyleClass(Object labelTextObject, String styleClass) {
+        String labelText = Optional.ofNullable(labelTextObject).isEmpty()
+            ? "N/A"
+            : String.valueOf(labelTextObject);
+
+        Label newLabel = new Label(labelText);
+        newLabel.getStyleClass().add(styleClass);
+
+        return newLabel;
+    }
+
+    protected Button newButtonWithAction(String name, EventHandler<ActionEvent> action) {
+        Button newButton = new Button(name);
+        newButton.setOnAction(action);
+
+        return newButton;
     }
 }

@@ -1,7 +1,6 @@
 package com.projects.gamcare.controllers;
 
 import com.projects.gamcare.core.Hash;
-import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.fields.LoginFields;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
@@ -9,24 +8,27 @@ import javafx.fxml.FXML;
 public class Login extends LoginFields {
     public void initialize() {
         super.initialize();
-        emailAddressTextField.setText("mohammedjammeh@yahoo.com");
+        emailAddressTextField.setText("mohammedjamme@yahoo.com");
         passwordTextField.setText("password123");
     }
 
     @FXML
     protected void onLogInButtonClick() {
-        User user = (new User()).where("email_address", getEmailAddress()).first();
+        User user = (new User()).where("email_address", emailInput()).first();
 
-        byte[] userSalt = user.getSalt();
-        Object userHash = user.attributes.get("hash");
+        if (hashEqualsExpectedPasswordInputHash(user))
+            user.switchToAfterLoginResource();
 
-        String expectedHash = Hash.generate(getPassword(), userSalt);
+        showErrorBox();
+    }
 
-        if (!userHash.equals(expectedHash)) {
-            // throw exception, etc..
-            return;
-        }
+    private boolean hashEqualsExpectedPasswordInputHash(User user) {
+        if (user == null)
+            return false;
 
-        user.switchToAfterLoginResource();
+        Object userHash = user.getAttribute("hash");
+        String expectedHash = Hash.generate(passwordInput(), user.getSalt());
+
+        return userHash.equals(expectedHash);
     }
 }

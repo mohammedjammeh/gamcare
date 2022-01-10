@@ -19,11 +19,11 @@ public class LoginFields extends Controller {
         hideErrorBox();
     }
 
-    public String getEmailAddress() {
+    public String emailInput() {
         return emailAddressTextField.getText();
     }
 
-    public String getPassword() {
+    public String passwordInput() {
         return passwordTextField.getText();
     }
 }
