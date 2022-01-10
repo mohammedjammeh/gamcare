@@ -1,5 +1,6 @@
 package com.projects.gamcare.models;
 
+import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
@@ -43,6 +44,15 @@ public class User extends ProfileUser implements ModelInterface {
 
     public Boolean isNotAdmin() {
         return ! isAdmin();
+    }
+
+    public void switchToAfterLoginResource() {
+        if (isPatient()) {
+            SceneTool.switchToProfile(afterLoginResourceName(), this, this);
+            return;
+        }
+
+        SceneTool.switchTo(afterLoginResourceName(), this);
     }
 
     public String afterLoginResourceName() {
