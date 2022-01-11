@@ -21,7 +21,7 @@ public class Doctor extends ProfileUser implements ModelInterface {
      * Attributes Methods
      */
     public String careerLevelAttribute() {
-        String careerLevel = (String) attributes.get("career_level");
+        String careerLevel = (String) getAttribute("career_level");
 
         return StringTool.capitalise(careerLevel);
     }
@@ -99,6 +99,7 @@ public class Doctor extends ProfileUser implements ModelInterface {
         return doctors.stream()
             .filter(doctor -> isAvailable(doctor, doctors))
             .map(Model::fullNameAttribute)
+            .distinct()
             .toList();
     }
 

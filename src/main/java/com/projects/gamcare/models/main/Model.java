@@ -57,8 +57,9 @@ public class Model {
     }
 
     public String fullNameAttribute() {
-        return attributes.get("first_name") + " "
-            + attributes.get("last_name");
+        return getAttribute("first_name") + " "
+            + getAttribute("middle_name") + " "
+            + getAttribute("last_name");
     }
 
     public String nameAttribute() {
