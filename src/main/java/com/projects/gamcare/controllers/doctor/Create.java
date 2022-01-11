@@ -1,11 +1,10 @@
 package com.projects.gamcare.controllers.doctor;
 
-import com.projects.gamcare.fields.DoctorFields;
 import javafx.fxml.FXML;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Create extends DoctorFields {
+public class Create extends CreateFields {
     @FXML
     protected void onAddDoctorsButtonClick() {
         List<Integer> studentDoctorsIndices = getStudentDoctorsIndices();

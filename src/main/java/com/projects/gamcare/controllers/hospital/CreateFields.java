@@ -1,4 +1,4 @@
-package com.projects.gamcare.fields;
+package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.enums.HospitalSize;
 import com.projects.gamcare.core.Controller;
@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class HospitalFields extends Controller {
+public class CreateFields extends Controller {
     @FXML
     protected TextField nameTextField;
 

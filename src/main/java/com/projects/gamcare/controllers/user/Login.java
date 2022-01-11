@@ -1,7 +1,6 @@
-package com.projects.gamcare.controllers;
+package com.projects.gamcare.controllers.user;
 
 import com.projects.gamcare.core.Hash;
-import com.projects.gamcare.fields.LoginFields;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
 

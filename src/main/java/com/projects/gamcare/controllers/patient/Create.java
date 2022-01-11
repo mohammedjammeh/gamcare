@@ -1,12 +1,11 @@
 package com.projects.gamcare.controllers.patient;
 
 import com.projects.gamcare.core.Hash;
-import com.projects.gamcare.fields.PatientFields;
 import javafx.fxml.FXML;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 
-public class Create extends PatientFields {
+public class Create extends CreateFields {
     @FXML
     protected void onCreatePatientButtonClick() throws NoSuchAlgorithmException {
         String firstName = getFirstName();

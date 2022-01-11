@@ -1,9 +1,8 @@
 package com.projects.gamcare.controllers.hospital;
 
-import com.projects.gamcare.fields.HospitalFields;
 import javafx.fxml.FXML;
 
-public class Create extends HospitalFields {
+public class Create extends CreateFields {
     @FXML
     protected void onCreateHospitalButtonClick() {
         String name = getName();

@@ -1,4 +1,4 @@
-package com.projects.gamcare.fields;
+package com.projects.gamcare.controllers.user;
 
 import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.models.Gender;
@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
 
-public class UserFields extends Controller {
+public class CreateFieldsParent extends Controller {
     @FXML
     protected TextField firstNameTextField;
 

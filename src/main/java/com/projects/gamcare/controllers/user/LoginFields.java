@@ -1,4 +1,4 @@
-package com.projects.gamcare.fields;
+package com.projects.gamcare.controllers.user;
 
 import com.projects.gamcare.core.Controller;
 import javafx.fxml.FXML;

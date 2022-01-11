@@ -1,6 +1,7 @@
-package com.projects.gamcare.fields;
+package com.projects.gamcare.controllers.doctor;
 
 import com.projects.gamcare.enums.DoctorLevel;
+import com.projects.gamcare.controllers.user.CreateFieldsParent;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Speciality;
@@ -12,7 +13,7 @@ import javafx.scene.control.TextField;
 
 import java.util.List;
 
-public class DoctorFields extends UserFields {
+public class CreateFields extends CreateFieldsParent {
     @FXML
     protected ListView studentDoctorsListView;
 

@@ -1,12 +1,13 @@
-package com.projects.gamcare.fields;
+package com.projects.gamcare.controllers.patient;
 
+import com.projects.gamcare.controllers.user.CreateFieldsParent;
 import com.projects.gamcare.models.BloodType;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class PatientFields extends UserFields {
+public class CreateFields extends CreateFieldsParent {
     @FXML
     protected ChoiceBox hospitalChoiceBox;
 

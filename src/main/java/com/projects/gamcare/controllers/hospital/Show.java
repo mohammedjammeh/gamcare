@@ -121,31 +121,4 @@ public class Show extends ShowParent {
             profilePatients.getChildren().add(tableBody);
         }
     }
-
-//    private void buildDoctorsSection() {
-//        for (Model doctorModel: getHospital().getDoctors()) {
-//            Doctor doctor = (Doctor) doctorModel;
-//            HBox tableBody = newHBoxWithStyleClass("tableBody");
-//
-//            Map<String, Node> tableFirstName = tableLabelWithSpacer(doctor.firstNameAttribute());
-//            Map<String, Node> tableMiddleName = tableLabelWithSpacer(doctor.middleNameAttribute());
-//            Map<String, Node> tableLastName = tableLabelWithSpacer(doctor.lastNameAttribute());
-//            Map<String, Node> tableAge = tableLabelWithSpacer(doctor.age());
-//            Map<String, Node> tableEmail = styledTableLabelWithSpacer(doctor.emailAttribute(), "email");
-//            Map<String, Node> tableCareerLevel = tableLabelWithSpacer(doctor.careerLevelAttribute());
-//            Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
-//
-//            tableBody.getChildren().addAll(
-//                tableFirstName.get("label"), tableFirstName.get("spacer"),
-//                tableMiddleName.get("label"), tableMiddleName.get("spacer"),
-//                tableLastName.get("label"), tableLastName.get("spacer"),
-//                tableAge.get("label"), tableAge.get("spacer"),
-//                tableEmail.get("label"), tableEmail.get("spacer"),
-//                tableCareerLevel.get("label"), tableCareerLevel.get("spacer"),
-//                tableAction.get("button-box"), tableAction.get("spacer")
-//            );
-//
-//            profileDoctors.getChildren().add(tableBody);
-//        }
-//    }
 }
