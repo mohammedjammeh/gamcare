@@ -82,7 +82,7 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
@@ -92,12 +92,12 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/show.fxml"));
 
-//        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
-//        stage.setTitle("Gamcare");
-//        stage.setScene(scene);
-//        stage.show();
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+        stage.setTitle("Gamcare");
+        stage.setScene(scene);
+        stage.show();
 
-        SceneTool.switchToLogin();
+//        SceneTool.switchToLogin();
     }
 
     public static void main(String[] args) {

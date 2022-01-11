@@ -48,43 +48,43 @@ public class CreateFields extends Controller {
         leadDoctorChoiceBox.setItems((new Doctor()).getAvailableSeniors());
     }
 
-    public String getName() {
+    public String nameInput() {
         return nameTextField.getText();
     }
 
-    public String getSize() {
+    public String sizeInput() {
         return sizeChoiceBox.getValue();
     }
 
-    public Integer getLeadDoctorIndex() {
+    public Integer leadDoctorIndexInput() {
         return leadDoctorChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public String getEmailAddress() {
+    public String emailAddressInput() {
         return emailAddressTextField.getText();
     }
 
-    public String getPhoneNumber() {
+    public String phoneNumberInput() {
         return phoneNumberTextField.getText();
     }
 
-    public String getRelevantLink() {
+    public String relevantLinkInput() {
         return relevantLinkTextField.getText();
     }
 
-    public String getCompoundName() {
+    public String compoundNameInput() {
         return compoundNameTextField.getText();
     }
 
-    public String getTown() {
+    public String townInput() {
         return townTextField.getText();
     }
 
-    public Integer getRegionIndex() {
+    public Integer regionIndexInput() {
         return regionChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public String getOtherDetails() {
+    public String otherDetailsInput() {
         return otherDetailsTextArea.getText();
     }
 }
