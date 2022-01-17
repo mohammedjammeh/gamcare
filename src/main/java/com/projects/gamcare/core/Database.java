@@ -11,7 +11,7 @@ public class Database {
     private Model model;
 
     private String selectSql;
-    private List<String> selectColumns = new ArrayList<>();
+    private List<Object> selectColumns = new ArrayList<>();
     private List<Object> whereValues = new ArrayList<>();
 
     private String insertSql;
@@ -38,15 +38,15 @@ public class Database {
     /**
      * Select Query Builders
      */
-    public Database select(List<String> columns) {
+    public Database select(List<Object> columns) {
         selectColumns = columns;
 
         StringBuilder selectStatement = new StringBuilder("SELECT ");
 
-        for (String column: columns) {
+        for (Object column: columns) {
             selectStatement
                 .append(column)
-                .append(endOf(column));
+                .append(selectColumnEnd(column, columns));
         }
 
         selectSql = selectStatement.toString();
@@ -130,21 +130,13 @@ public class Database {
         try {
             ResultSet queryResults = this.query();
             while (queryResults.next()) {
-                bytesData = queryResults.getBytes(selectColumns.get(0));
+                bytesData = queryResults.getBytes(selectColumns.get(0).toString());
             }
         } catch (Exception exception) {
             exception.printStackTrace();
         }
 
         return bytesData;
-    }
-
-    private String endOf(String column) {
-        return isLastColumn(column, selectColumns) ? " " : ", ";
-    }
-
-    private Boolean isLastColumn(String column, List<String> columns) {
-        return columns.indexOf(column) == columns.size() - 1;
     }
 
     private ResultSet query() throws SQLException {
@@ -242,7 +234,64 @@ public class Database {
     /**
      * Insert Query Builders
      */
-    private void prepareInsertQuery() {
-        insertSql = "INSERT INTO " + model.getTableName() + " ";
+    public Database fields(List<Object> columns) {
+        StringBuilder insertStatement = new StringBuilder("INSERT INTO " + model.getTableName() + " (");
+
+        for (Object column : columns) {
+            insertStatement
+                .append(column)
+                .append(insertColumnEnd(column, columns));
+        }
+
+        insertSql = insertStatement + ") ";
+
+        return this;
+    }
+
+    public Database values(List<Object> values) {
+        StringBuilder insertStatement = new StringBuilder(insertSql + "values (");
+
+        for (Object value : values) {
+            insertStatement
+                .append(insertValue(value))
+                .append(insertColumnEnd(value, values));
+        }
+
+        insertSql = insertStatement + ")";
+
+        return this;
+    }
+
+    public void insert() {
+        try {
+            PreparedStatement statement = connection.prepareStatement(insertSql);
+            statement.execute(insertSql);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    private Object insertValue(Object value) {
+        if (value instanceof String) {
+            return "'" + value + "'";
+        }
+
+        return value;
+    }
+
+
+    /**
+     * General Methods
+     */
+    private String selectColumnEnd(Object column, List<Object> columns) {
+        return isLastColumn(column, columns) ? " " : ", ";
+    }
+
+    private String insertColumnEnd(Object column, List<Object> columns) {
+        return isLastColumn(column, columns) ? "" : ", ";
+    }
+
+    private Boolean isLastColumn(Object column, List<Object> columns) {
+        return columns.indexOf(column) == columns.size() - 1;
     }
 }
