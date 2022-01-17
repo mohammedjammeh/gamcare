@@ -8,11 +8,13 @@ import java.util.*;
 
 public class Database {
     private Connection connection;
-    private String sql;
     private Model model;
 
-    protected List<String> selectColumns = new ArrayList<>();
-    protected List<Object> whereValues = new ArrayList<>();
+    private String selectSql;
+    private List<String> selectColumns = new ArrayList<>();
+    private List<Object> whereValues = new ArrayList<>();
+
+    private String insertSql;
 
     public Database(Model model) {
         try {
@@ -34,7 +36,7 @@ public class Database {
 
 
     /**
-     * Query Builders
+     * Select Query Builders
      */
     public Database select(List<String> columns) {
         selectColumns = columns;
@@ -47,42 +49,34 @@ public class Database {
                 .append(endOf(column));
         }
 
-        sql = selectStatement.toString();
-        sql += "FROM " + model.getTableName() + " ";
+        selectSql = selectStatement.toString();
+        selectSql += "FROM " + model.getTableName() + " ";
 
         return this;
     }
 
-    private String endOf(String column) {
-        return isLastColumn(column, selectColumns) ? " " : ", ";
-    }
-
-    private Boolean isLastColumn(String column, List<String> columns) {
-        return columns.indexOf(column) == columns.size() - 1;
-    }
-
     public Database with(String anotherTableName) {
-        model.prepareQuery();
+        prepareSelectQuery();
 
-        sql += "INNER JOIN " + anotherTableName + " ON " + model.getTableName() +  ".id = " + anotherTableName + "." + model.getTableName() + "_id ";
+        selectSql += "INNER JOIN " + anotherTableName + " ON " + model.getTableName() +  ".id = " + anotherTableName + "." + model.getTableName() + "_id ";
 
         return this;
     }
 
     public Database withMany( String anotherTableName, String pivotTableName) {
-        model.prepareQuery();
+        prepareSelectQuery();
 
-        sql += "INNER JOIN " + pivotTableName + " ON " + model.getTableName() +  ".id = " + pivotTableName + "." + model.getTableName() + "_id ";
-        sql += "INNER JOIN " + anotherTableName + " ON " + pivotTableName + "." + anotherTableName + "_id = " + anotherTableName + ".id ";
+        selectSql += "INNER JOIN " + pivotTableName + " ON " + model.getTableName() +  ".id = " + pivotTableName + "." + model.getTableName() + "_id ";
+        selectSql += "INNER JOIN " + anotherTableName + " ON " + pivotTableName + "." + anotherTableName + "_id = " + anotherTableName + ".id ";
 
         return this;
     }
 
     public Database where(String column, String operator, Object value) {
-        model.prepareQuery();
+        prepareSelectQuery();
 
-        sql += whereValues.isEmpty() ? "WHERE " : "AND ";
-        sql += column + " " + operator + " ? ";
+        selectSql += whereValues.isEmpty() ? "WHERE " : "AND ";
+        selectSql += column + " " + operator + " ? ";
 
         whereValues.add(value);
 
@@ -90,17 +84,30 @@ public class Database {
     }
 
     public Database orderBy(String column) {
-        model.prepareQuery();
+        prepareSelectQuery();
 
-        sql += "ORDER BY " + column;
+        selectSql += "ORDER BY " + column;
 
         return this;
     }
 
+    public Object first() {
+        List<Model> resultsList = getAll();
 
-    /**
-     * Query Methods
-     */
+        return resultsList.isEmpty()
+            ? null
+            : resultsList.get(0);
+    }
+
+    public Object last() {
+        List<Model> resultsList = getAll();
+        int lastResultIndex = resultsList.size() - 1;
+
+        return resultsList.isEmpty()
+            ? null
+            : resultsList.get(lastResultIndex);
+    }
+
     public List<Model> getAll() {
         List<Model> results = new ArrayList<>();
 
@@ -132,10 +139,18 @@ public class Database {
         return bytesData;
     }
 
-    private ResultSet query() throws SQLException {
-        model.prepareQuery();
+    private String endOf(String column) {
+        return isLastColumn(column, selectColumns) ? " " : ", ";
+    }
 
-        PreparedStatement statement = connection.prepareStatement(sql);
+    private Boolean isLastColumn(String column, List<String> columns) {
+        return columns.indexOf(column) == columns.size() - 1;
+    }
+
+    private ResultSet query() throws SQLException {
+        prepareSelectQuery();
+
+        PreparedStatement statement = connection.prepareStatement(selectSql);
 
         for (int i = 0; i < whereValues.size(); i++) {
             setStatementValue(statement, i+1, whereValues.get(i));
@@ -216,38 +231,18 @@ public class Database {
         row.put(columnName, queryResults.getString(columnName));
     }
 
-
-    /**
-     * Results Methods
-     */
-    public Object first() {
-        List<Model> resultsList = getAll();
-
-        return resultsList.isEmpty()
-            ? null
-            : resultsList.get(0);
+    public void prepareSelectQuery() {
+        if (selectSql == null) {
+            select(List.of("*"));
+        }
     }
 
-    public Object last() {
-        List<Model> resultsList = getAll();
-        int lastResultIndex = resultsList.size() - 1;
-
-        return resultsList.isEmpty()
-            ? null
-            : resultsList.get(lastResultIndex);
-    }
 
 
     /**
-     * General Methods
+     * Insert Query Builders
      */
-    public Boolean sqlIsNull() {
-        return sql == null;
-    }
-
-    public Database setSql(String sql) {
-        this.sql = sql;
-
-        return this;
+    private void prepareInsertQuery() {
+        insertSql = "INSERT INTO " + model.getTableName() + " ";
     }
 }

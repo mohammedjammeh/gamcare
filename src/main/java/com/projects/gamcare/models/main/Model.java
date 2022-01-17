@@ -22,12 +22,6 @@ public class Model {
         return null;
     }
 
-    public void prepareQuery() {
-        if (database.sqlIsNull()) {
-            database.select(List.of("*"));
-        }
-    }
-
 
     /**
      * Attributes Methods

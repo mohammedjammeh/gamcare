@@ -3,6 +3,7 @@ package com.projects.gamcare;
 import com.projects.gamcare.core.Hash;
 import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.enums.DoctorLevel;
+import com.projects.gamcare.models.Hospital;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,6 +11,8 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Main extends Application {
     @Override
@@ -38,12 +41,21 @@ public class Main extends Application {
 
 
 //            INSERT
-//            String insertSql = "insert into users"
-//                    + "(title, first_name, middle_name, last_name, email, phone_number, relevant_link, date_of_birth, gender, compound, town, region, other_details)"
-//                    + "values(1, 'Omar', 'Bailo', 'Jallow', 'bailo@gmail.com', '07506259330', 'https://bailo.com/', '1986-08-21', 1, 'Jallow kunda', 'Brikama', 1, 'I am chilling')";
-//
-//            myStmt.executeUpdate(insertSql);
+//            String updateDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+//            System.out.println(updateDate);
 
+//            String insertSql = "insert into hospitals"
+//                    + "(name, size, email_address, phone_number, relevant_link, compound, town, regions_id, other_details, created_at, updated_at)"
+//                    + "values('Niumi Bali', 'Small', 'bailo@gmail.com', '07506259330', 'https://bailo.com/', 'Jallow kunda', 'Brikama', 1, 'I am chilling', '1986-08-21', '1986-08-21')";
+//
+//            PreparedStatement statement = myConn.prepareStatement(insertSql);
+//            int haha = statement.executeUpdate(insertSql);
+
+//            (new Hospital())
+//                .getDatabase()
+//                .fields()
+//                .values()
+//                .insert();
 
 
 
@@ -82,7 +94,7 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
@@ -92,10 +104,10 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/show.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
-        stage.setTitle("Gamcare");
-        stage.setScene(scene);
-        stage.show();
+//        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+//        stage.setTitle("Gamcare");
+//        stage.setScene(scene);
+//        stage.show();
 
 //        SceneTool.switchToLogin();
     }

@@ -26,14 +26,14 @@ public class TimeTool {
         return yearsDifference;
     }
 
-    private static boolean yearsDifferenceShouldBeAYearLess(Calendar timeAgo, Calendar rightNow) {
-        return timeAgo.get(MONTH) > rightNow.get(MONTH) ||
-            (timeAgo.get(MONTH) == rightNow.get(MONTH) && timeAgo.get(DATE) > rightNow.get(DATE));
-    }
-
     private static Calendar getCalendar(Date date) {
         Calendar cal = Calendar.getInstance(Locale.US);
         cal.setTime(date);
         return cal;
+    }
+
+    private static boolean yearsDifferenceShouldBeAYearLess(Calendar timeAgo, Calendar rightNow) {
+        return timeAgo.get(MONTH) > rightNow.get(MONTH) ||
+            (timeAgo.get(MONTH) == rightNow.get(MONTH) && timeAgo.get(DATE) > rightNow.get(DATE));
     }
 }
