@@ -45,7 +45,9 @@ public class CreateFields extends Controller {
 
         regionChoiceBox.setItems((new Region()).getAllNames());
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-        leadDoctorChoiceBox.setItems((new Doctor()).getAvailableSeniors());
+//        leadDoctorChoiceBox.setItems((new Doctor()).getAvailableSeniors());
+        
+        System.out.println((new Doctor()).getAvailableSeniors());
     }
 
     public String nameInput() {

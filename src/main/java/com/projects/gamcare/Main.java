@@ -42,9 +42,6 @@ public class Main extends Application {
 
 
 //            INSERT
-//            String updateDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-//            System.out.println(updateDate);
-
 //            String insertSql = "insert into hospitals"
 //                    + "(name, size, email_address, phone_number, relevant_link, compound, town, regions_id, other_details, created_at, updated_at)"
 //                    + "values('Niumi Bali', 'Small', 'bailo@gmail.com', '07506259330', 'https://bailo.com/', 'Jallow kunda', 'Brikama', 1, 'I am chilling', '1986-08-21', '1986-08-21')";
@@ -52,25 +49,6 @@ public class Main extends Application {
 //            PreparedStatement statement = myConn.prepareStatement(insertSql);
 //            int haha = statement.executeUpdate(insertSql);
 
-            List<Object> fieldsList = List.of(
-                "name", "size",
-                "email_address", "phone_number", "relevant_link",
-                "compound", "town", "regions_id",
-                "created_at", "updated_at", "other_details"
-            );
-
-            List<Object> valuesList = List.of(
-                "Niumi Bali", "Small",
-                "bailo@gmail.com", "07506259330", "https://bailo.com/",
-                "Jallow kunda", "Brikama", 1,
-                "1986-08-21", "1986-08-21", "I am chilling"
-            );
-
-            (new Hospital())
-                .getDatabase()
-                .fields(fieldsList)
-                .values(valuesList)
-                .insert();
 
 
 
@@ -109,7 +87,7 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
@@ -119,10 +97,10 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/show.fxml"));
 
-//        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
-//        stage.setTitle("Gamcare");
-//        stage.setScene(scene);
-//        stage.show();
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+        stage.setTitle("Gamcare");
+        stage.setScene(scene);
+        stage.show();
 
 //        SceneTool.switchToLogin();
     }

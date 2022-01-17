@@ -1,9 +1,11 @@
 package com.projects.gamcare.controllers.hospital;
 
-import com.projects.gamcare.wrappers.ChoiceBox;
+import com.projects.gamcare.models.Hospital;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 public class Create extends CreateFields {
     public void initialize() {
@@ -20,7 +22,7 @@ public class Create extends CreateFields {
     protected void onCreateHospitalButtonClick() {
         String name = nameInput();
         String size = sizeInput();
-        Integer leadDoctor = leadDoctorIndexInput();
+        Integer leadDoctorIndex = leadDoctorIndexInput();
 
         String emailAddress = emailAddressInput();
         String phoneNumber = phoneNumberInput();
@@ -30,6 +32,34 @@ public class Create extends CreateFields {
         String town = townInput();
         Integer regionIndex = regionIndexInput();
 
+        String createDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        String updateDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+
         String otherDetails = otherDetailsInput();
+
+
+        System.out.println(leadDoctorIndex);
+
+
+
+//        List<Object> fieldsList = List.of(
+//            "name", "size",
+//            "email_address", "phone_number", "relevant_link",
+//            "compound", "town", "regions_id",
+//            "created_at", "updated_at", "other_details"
+//        );
+//
+//        List<Object> valuesList = List.of(
+//            "Niumi Bali", "Small",
+//            "bailo@gmail.com", "07506259330", "https://bailo.com/",
+//            "Jallow kunda", "Brikama", 1,
+//            "1986-08-21", "1986-08-21", "I am chilling"
+//        );
+//
+//        (new Hospital())
+//            .getDatabase()
+//            .fields(fieldsList)
+//            .values(valuesList)
+//            .insert();
     }
 }

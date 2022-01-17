@@ -230,7 +230,6 @@ public class Database {
     }
 
 
-
     /**
      * Insert Query Builders
      */
