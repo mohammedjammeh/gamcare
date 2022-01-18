@@ -9,6 +9,10 @@ import static java.util.Calendar.*;
 import static java.util.Calendar.DATE;
 
 public class TimeTool {
+    public static String newDate() {
+        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+    }
+
     public static String dateOfBirthDisplay(Date date) {
         return new SimpleDateFormat("dd MMMM yyyy").format(date) +
             " (" + yearsSince(date) + ")";

@@ -272,7 +272,7 @@ public class Database {
 
     private Object insertValue(Object value) {
         if (value instanceof String) {
-            return "'" + value + "'";
+            return value.toString().isEmpty() ? null : "'" + value + "'";
         }
 
         return value;

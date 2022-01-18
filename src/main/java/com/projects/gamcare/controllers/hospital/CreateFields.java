@@ -11,6 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.util.List;
+import java.util.Optional;
 
 public class CreateFields extends Controller {
     @FXML
@@ -54,7 +55,7 @@ public class CreateFields extends Controller {
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
         leadDoctorChoiceBox.setItems(leadDoctors
             .stream()
-            .map(Model::firstNameAttribute)
+            .map(Model::fullNameAttribute)
             .toList()
         );
     }
