@@ -2,10 +2,7 @@ package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.Database;
 import com.projects.gamcare.core.TimeTool;
-import com.projects.gamcare.models.Gender;
-import com.projects.gamcare.models.Region;
-import com.projects.gamcare.models.Title;
-import com.projects.gamcare.models.Tribe;
+import com.projects.gamcare.models.*;
 
 import java.util.*;
 
@@ -74,6 +71,29 @@ public class Model {
      */
     public Database getDatabase() {
         return database;
+    }
+
+
+    /**
+     * Override Methods
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Model other = (Model) obj;
+        return Objects.equals(idAttribute(), other.idAttribute());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idAttribute());
     }
 
 

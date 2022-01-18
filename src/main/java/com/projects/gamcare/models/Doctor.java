@@ -30,19 +30,19 @@ public class Doctor extends ProfileUser implements ModelInterface {
     /**
      * Get Available Doctors
      */
-    public List<String> getAvailableSeniors() {
+    public List<Model> getAvailableSeniors() {
         List<Model> doctors = getAllWhere(DoctorLevel.SENIOR.name());
 
         return getAvailable(doctors);
     }
 
-    public List<String> getAvailableJuniors() {
+    public List<Model> getAvailableJuniors() {
         List<Model> doctors = getAllWhere(DoctorLevel.JUNIOR.name());
 
         return getAvailable(doctors);
     }
 
-    public List<String> getAvailableStudents() {
+    public List<Model> getAvailableStudents() {
         List<Model> doctors = getAllWhere(DoctorLevel.STUDENT.name());
 
         return getAvailable(doctors);
@@ -62,19 +62,19 @@ public class Doctor extends ProfileUser implements ModelInterface {
     /**
      * Get Available Doctors for Hospital
      */
-    public List<String> getAvailableSeniors(Integer hospitalId) {
+    public List<Model> getAvailableSeniors(Integer hospitalId) {
         List<Model> doctors = getOtherHospitalDoctorsWhere(hospitalId, DoctorLevel.SENIOR.name());
 
         return getAvailable(doctors);
     }
 
-    public List<String> getAvailableJuniors(Integer hospitalId) {
+    public List<Model> getAvailableJuniors(Integer hospitalId) {
         List<Model> doctors = getOtherHospitalDoctorsWhere(hospitalId, DoctorLevel.JUNIOR.name());
 
         return getAvailable(doctors);
     }
 
-    public List<String> getAvailableStudents(Integer hospitalId) {
+    public List<Model> getAvailableStudents(Integer hospitalId) {
         List<Model> doctors = getOtherHospitalDoctorsWhere(hospitalId, DoctorLevel.STUDENT.name());
 
         return getAvailable(doctors);
@@ -95,10 +95,9 @@ public class Doctor extends ProfileUser implements ModelInterface {
     /**
      * General Methods
      */
-    private List<String> getAvailable(List<Model> doctors) {
+    private List<Model> getAvailable(List<Model> doctors) {
         return doctors.stream()
             .filter(doctor -> isAvailable(doctor, doctors))
-            .map(Model::fullNameAttribute)
             .distinct()
             .toList();
     }

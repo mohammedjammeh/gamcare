@@ -5,6 +5,7 @@ import com.projects.gamcare.controllers.user.CreateFieldsParent;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Speciality;
+import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import com.projects.gamcare.wrappers.ListView;
 import javafx.fxml.FXML;
@@ -38,6 +39,12 @@ public class CreateFields extends CreateFieldsParent {
     @FXML
     protected ListView hospitalsListView;
 
+    protected List<Model> studentDoctors;
+
+    protected List<Model> juniorDoctors;
+
+    protected List<Model> seniorDoctors;
+
     public String getUniversity() {
         return universityTextField.getText();
     }
@@ -69,14 +76,18 @@ public class CreateFields extends CreateFieldsParent {
     public void initialize() {
         super.initialize();
 
+        studentDoctors = (new Doctor()).getAvailableStudents(1);
+        juniorDoctors = (new Doctor()).getAvailableJuniors(1);
+        seniorDoctors = (new Doctor()).getAvailableSeniors(1);
+
+        studentDoctorsListView.setItems(studentDoctors.stream().map(Model::fullNameAttribute).toList());
+        juniorDoctorsListView.setItems(juniorDoctors.stream().map(Model::fullNameAttribute).toList());
+        seniorDoctorsListView.setItems(seniorDoctors.stream().map(Model::fullNameAttribute).toList());
+
+        hospitalsListView.setItems((new Hospital()).getAllNames());
         specialityChoiceBox.setItems((new Speciality()).getAllNames());
         careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
 
-        hospitalsListView.setItems((new Hospital()).getAllNames());
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
-
-        studentDoctorsListView.setItems((new Doctor()).getAvailableStudents(1));
-        juniorDoctorsListView.setItems((new Doctor()).getAvailableJuniors(1));
-        seniorDoctorsListView.setItems((new Doctor()).getAvailableSeniors(1));
     }
 }

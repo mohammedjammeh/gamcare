@@ -4,10 +4,13 @@ import com.projects.gamcare.enums.HospitalSize;
 import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Region;
+import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import java.util.List;
 
 public class CreateFields extends Controller {
     @FXML
@@ -40,14 +43,20 @@ public class CreateFields extends Controller {
     @FXML
     protected TextArea otherDetailsTextArea;
 
+    protected List<Model> leadDoctors;
+
     public void initialize() {
         hideErrorBox();
 
+        leadDoctors = (new Doctor()).getAvailableSeniors();
+
         regionChoiceBox.setItems((new Region()).getAllNames());
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-//        leadDoctorChoiceBox.setItems((new Doctor()).getAvailableSeniors());
-        
-        System.out.println((new Doctor()).getAvailableSeniors());
+        leadDoctorChoiceBox.setItems(leadDoctors
+            .stream()
+            .map(Model::firstNameAttribute)
+            .toList()
+        );
     }
 
     public String nameInput() {
