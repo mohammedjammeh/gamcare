@@ -11,16 +11,6 @@ import java.util.List;
 public class Create extends CreateFields {
     private Hospital newHospital;
 
-    public void initialize() {
-        super.initialize();
-        nameTextField.setText("Badibu");
-        emailAddressTextField.setText("mohammedjamme@yahoo.com");
-        phoneNumberTextField.setText("07506259330");
-        relevantLinkTextField.setText("https://www.google.co.uk/");
-        compoundNameTextField.setText("Jammeh Kunda");
-        townTextField.setText("Santoto");
-    }
-
     @FXML
     protected void onCreateHospitalButtonClick() {
         (new Hospital())
