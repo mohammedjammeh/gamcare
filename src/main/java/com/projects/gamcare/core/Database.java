@@ -233,21 +233,31 @@ public class Database {
     /**
      * Insert Query Builders
      */
-    public Database fields(List<Object> columns) {
+    public void insert(List<Object> fields, List<Object> values) {
+        addFieldsToInsertSql(fields);
+        addValuesToInsertSql(values);
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(insertSql);
+            statement.execute(insertSql);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public void addFieldsToInsertSql(List<Object> fields) {
         StringBuilder insertStatement = new StringBuilder("INSERT INTO " + model.getTableName() + " (");
 
-        for (Object column : columns) {
+        for (Object field : fields) {
             insertStatement
-                .append(column)
-                .append(insertColumnEnd(column, columns));
+                .append(field)
+                .append(insertColumnEnd(field, fields));
         }
 
         insertSql = insertStatement + ") ";
-
-        return this;
     }
 
-    public Database values(List<Object> values) {
+    public void addValuesToInsertSql(List<Object> values) {
         StringBuilder insertStatement = new StringBuilder(insertSql + "values (");
 
         for (Object value : values) {
@@ -257,17 +267,6 @@ public class Database {
         }
 
         insertSql = insertStatement + ")";
-
-        return this;
-    }
-
-    public void insert() {
-        try {
-            PreparedStatement statement = connection.prepareStatement(insertSql);
-            statement.execute(insertSql);
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
     }
 
 

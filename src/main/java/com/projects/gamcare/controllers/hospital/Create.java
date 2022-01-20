@@ -14,19 +14,13 @@ public class Create extends CreateFields {
     @FXML
     protected void onCreateHospitalButtonClick() {
         (new Hospital())
-            .getDatabase()
-            .fields(hospitalFieldsList())
-            .values(hospitalValuesList())
-            .insert();
+            .insert(hospitalFieldsList(), hospitalValuesList());
 
         setNewHospital();
 
         (new Model())
             .setTableName("hospitals_doctors")
-            .getDatabase()
-            .fields(hospitalDoctorFieldsList())
-            .values(hospitalDoctorValuesList())
-            .insert();
+            .insert(hospitalDoctorFieldsList(), hospitalDoctorValuesList());
 
         SceneTool.switchToHospitalShow(getAuthUser(), newHospital);
     }

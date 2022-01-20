@@ -129,6 +129,10 @@ public class Model implements ModelInterface {
         return this;
     }
 
+    public void insert(List<Object> fields, List<Object> values) {
+        database.insert(fields, values);
+    }
+
     public List<String> getAllNames() {
         return database.
             select(List.of("*"))
