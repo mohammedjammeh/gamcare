@@ -20,20 +20,20 @@ public class CreateFields extends CreateFieldsParent {
     @FXML
     protected ChoiceBox bloodTypeChoiceBox;
 
-    public Integer getHospitalIndex() {
+    public Integer hospitalIndexInput() {
         return hospitalChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public String getWeight() {
+    public String weightInput() {
         return weightTextField.getText();
     }
 
-    public String getHeight() {
+    public String heightInput() {
         return heightTextField.getText();
     }
 
-    public Integer getBloodTypeIndex() {
-        return bloodTypeChoiceBox.getSelectionModel().getSelectedIndex();
+    public Integer bloodTypeInputId() {
+        return inputId(bloodTypeChoiceBox);
     }
 
     public void initialize() {

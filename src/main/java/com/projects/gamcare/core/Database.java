@@ -237,6 +237,8 @@ public class Database {
         addFieldsToInsertSql(fields);
         addValuesToInsertSql(values);
 
+//        System.out.println(insertSql);
+
         try {
             PreparedStatement statement = connection.prepareStatement(insertSql);
             statement.execute(insertSql);

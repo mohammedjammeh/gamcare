@@ -15,30 +15,6 @@ public class Create extends CreateFields {
 
     @FXML
     protected void onCreateDoctorButtonClick() {
-        String firstName = getFirstName();
-        String middleName = getMiddleName();
-        String lastName = getLastName();
 
-        Integer titleIndex = getTitleIndex();
-        Integer genderIndex = getGenderIndex();
-        Integer tribeIndex = getTribeIndex();
-
-        String university = getUniversity();
-        String fieldOfStudy = getFieldOfStudy();
-        String careerLevel = getCareerLevel();
-
-        Integer specialityIndex = getSpecialityIndex();
-        String placeOfBirth = getPlaceOfBirth();
-        LocalDate dateOfBirth = getDateOfBirth();
-
-        String emailAddress = getEmailAddress();
-        String phoneNumber = getPhoneNumber();
-        String relevantLink = getRelevantLink();
-
-        String compoundName = getCompoundName();
-        String town = getTown();
-        Integer regionIndex = getRegionIndex();
-
-        String otherDetails = getOtherDetails();
     }
 }

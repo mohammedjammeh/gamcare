@@ -2,14 +2,16 @@ package com.projects.gamcare.controllers.patient;
 
 import com.projects.gamcare.core.Hash;
 import com.projects.gamcare.core.TimeTool;
-import com.projects.gamcare.models.Hospital;
+import com.projects.gamcare.enums.UserType;
+import com.projects.gamcare.models.Patient;
 import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
-import java.security.NoSuchAlgorithmException;
+
 import java.time.LocalDate;
 import java.util.List;
 
 public class Create extends CreateFields {
+    private Patient newPatient;
 
     public void initialize() {
         super.initialize();
@@ -32,58 +34,38 @@ public class Create extends CreateFields {
     }
 
     @FXML
-    protected void onCreatePatientButtonClick() throws NoSuchAlgorithmException {
-        String firstName = getFirstName();
-        String middleName = getMiddleName();
-        String lastName = getLastName();
-
-        Integer titleIndex = getTitleIndex();
-        Integer genderIndex = getGenderIndex();
-        Integer tribeIndex = getTribeIndex();
-
-        Integer hospitalIndex = getHospitalIndex();
-        String placeOfBirth = getPlaceOfBirth();
-        LocalDate dateOfBirth = getDateOfBirth();
-
-        String weight = getWeight();
-        String height = getHeight();
-        Integer bloodTypeIndex = getBloodTypeIndex();
-
-        String emailAddress = getEmailAddress();
-        String phoneNumber = getPhoneNumber();
-        String relevantLink = getRelevantLink();
-
-        String compoundName = getCompoundName();
-        String town = getTown();
-        Integer regionIndex = getRegionIndex();
-
-        String otherDetails = getOtherDetails();
-
-        byte[] salt = Hash.createSalt();
-        String hash = Hash.generate("password123", salt);
-
+    protected void onCreatePatientButtonClick() {
         (new User())
             .insert(userFieldsList(), userValuesList());
     }
 
     private List<Object> userFieldsList() {
         return List.of(
-//            "name", "size",
-//            "email_address", "phone_number", "relevant_link",
-//            "compound", "town", "regions_id",
-//            "created_at", "updated_at", "other_details"
+            "first_name", "middle_name", "last_name",
+            "email_address", "phone_number", "relevant_link",
+            "date_of_birth", "place_of_birth",
+            "compound", "town",
+            "type", "patients_id", "doctors_id",
+            "created_at", "updated_at",
+            "titles_id", "genders_id", "tribes_id", "regions_id",
+            "other_details", "salt", "hash"
         );
     }
 
     private List<Object> userValuesList() {
-//        String newDate = TimeTool.newDate();
-//        Integer regionId = regionIndexInput() + 1;
+        String newDate = TimeTool.newDate();
+        byte[] salt = Hash.createSalt();
+        String hash = Hash.generate("password123", salt);
 
         return List.of(
-//            nameInput(), sizeInput(),
-//            emailAddressInput(), phoneNumberInput(), relevantLinkInput(),
-//            compoundNameInput(), townInput(), regionId,
-//            newDate, newDate, otherDetailsInput()
+            firstNameInput(), middleNameInput(), lastNameInput(),
+            emailAddressInput(), phoneNumberInput(), relevantLinkInput(),
+            dateOfBirthIput(), placeOfBirthInput(),
+            compoundNameInput(), townInput(),
+            UserType.PATIENT.name(), 1, "",
+            newDate, newDate,
+            titleInputId(), genderInputId(), tribeInputId(), regionInputId(),
+            otherDetailsInput(), salt, hash
         );
     }
 }

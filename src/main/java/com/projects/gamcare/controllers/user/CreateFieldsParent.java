@@ -59,66 +59,6 @@ public class CreateFieldsParent extends Controller {
     @FXML
     protected TextArea otherDetailsTextArea;
 
-    public String getFirstName() {
-        return firstNameTextField.getText();
-    }
-
-    public String getMiddleName() {
-        return middleNameTextField.getText();
-    }
-
-    public String getLastName() {
-        return lastNameTextField.getText();
-    }
-
-    public Integer getTitleIndex() {
-        return titleChoiceBox.getSelectionModel().getSelectedIndex();
-    }
-
-    public Integer getGenderIndex() {
-        return genderChoiceBox.getSelectionModel().getSelectedIndex();
-    }
-
-    public Integer getTribeIndex() {
-        return tribeChoiceBox.getSelectionModel().getSelectedIndex();
-    }
-
-    public String getEmailAddress() {
-        return emailAddressTextField.getText();
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumberTextField.getText();
-    }
-
-    public String getRelevantLink() {
-        return relevantLinkTextField.getText();
-    }
-
-    public String getPlaceOfBirth() {
-        return placeOfBirthTextField.getText();
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirthPicker.getValue();
-    }
-
-    public String getCompoundName() {
-        return compoundNameTextField.getText();
-    }
-
-    public String getTown() {
-        return townTextField.getText();
-    }
-
-    public Integer getRegionIndex() {
-        return regionChoiceBox.getSelectionModel().getSelectedIndex();
-    }
-
-    public String getOtherDetails() {
-        return otherDetailsTextArea.getText();
-    }
-
     public void initialize() {
         hideErrorBox();
 
@@ -126,5 +66,73 @@ public class CreateFieldsParent extends Controller {
         genderChoiceBox.setItems((new Gender()).getAllNames());
         tribeChoiceBox.setItems((new Tribe()).getAllNames());
         regionChoiceBox.setItems((new Region()).getAllNames());
+    }
+
+    public String firstNameInput() {
+        return firstNameTextField.getText();
+    }
+
+    public String middleNameInput() {
+        return middleNameTextField.getText();
+    }
+
+    public String lastNameInput() {
+        return lastNameTextField.getText();
+    }
+
+    public Integer titleInputId() {
+        return inputId(titleChoiceBox);
+    }
+
+    public Integer genderInputId() {
+        return inputId(genderChoiceBox);
+    }
+
+    public Integer tribeInputId() {
+        return inputId(tribeChoiceBox);
+    }
+
+    public String emailAddressInput() {
+        return emailAddressTextField.getText();
+    }
+
+    public String phoneNumberInput() {
+        return phoneNumberTextField.getText();
+    }
+
+    public String relevantLinkInput() {
+        return relevantLinkTextField.getText();
+    }
+
+    public String placeOfBirthInput() {
+        return placeOfBirthTextField.getText();
+    }
+
+    public LocalDate dateOfBirthIput() {
+        return dateOfBirthPicker.getValue();
+    }
+
+    public String compoundNameInput() {
+        return compoundNameTextField.getText();
+    }
+
+    public String townInput() {
+        return townTextField.getText();
+    }
+
+    public Integer regionInputId() {
+        return inputId(regionChoiceBox);
+    }
+
+    public String otherDetailsInput() {
+        return otherDetailsTextArea.getText();
+    }
+
+    public Integer inputId(ChoiceBox choiceBox)
+    {
+        int choiceBoxIndex = choiceBox.getSelectionModel().getSelectedIndex();
+        choiceBoxIndex++;
+
+        return choiceBoxIndex;
     }
 }
