@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 public class Login extends LoginFields {
     public void initialize() {
         super.initialize();
-        emailAddressTextField.setText("mohammedjamme@yahoo.com");
+        emailAddressTextField.setText("mohammedjammeh@yahoo.com");
         passwordTextField.setText("password123");
     }
 

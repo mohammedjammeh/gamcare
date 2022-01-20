@@ -270,6 +270,10 @@ public class Database {
         }
     }
 
+
+    /**
+     * General Methods
+     */
     private Object insertValue(Object value) {
         if (value instanceof String) {
             return value.toString().isEmpty() ? null : "'" + value + "'";
@@ -278,10 +282,6 @@ public class Database {
         return value;
     }
 
-
-    /**
-     * General Methods
-     */
     private String selectColumnEnd(Object column, List<Object> columns) {
         return isLastColumn(column, columns) ? " " : ", ";
     }

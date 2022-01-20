@@ -18,8 +18,8 @@ import java.util.List;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        try {
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
+//        try {
+//            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamcare", "root", "3aj3!96wMWeyU9&z");
 
 //          SELECT
 //            String selectSql = "SELECT * FROM users WHERE email_address = ?";
@@ -76,18 +76,18 @@ public class Main extends Application {
 //
 //            System.out.println("Number of rows affected: " + rowsAffected);
 
-        }
-        catch (Exception exception)
-        {
-            exception.printStackTrace();
-        }
+//        }
+//        catch (Exception exception)
+//        {
+//            exception.printStackTrace();
+//        }
 
 
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/login.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/index.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/doctor/index.fxml"));
@@ -97,12 +97,12 @@ public class Main extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/create.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/patient/show.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
-        stage.setTitle("Gamcare");
-        stage.setScene(scene);
-        stage.show();
+//        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+//        stage.setTitle("Gamcare");
+//        stage.setScene(scene);
+//        stage.show();
 
-//        SceneTool.switchToLogin();
+        SceneTool.switchToLogin();
     }
 
     public static void main(String[] args) {

@@ -2,21 +2,28 @@ package com.projects.gamcare.models.main;
 
 import com.projects.gamcare.core.Database;
 import com.projects.gamcare.core.TimeTool;
+import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.*;
 
 import java.util.*;
 
-public class Model {
+public class Model implements ModelInterface {
     protected Database database;
-
+    protected String table;
     public Map<String, Object> attributes = new HashMap<>();
 
     public Model() {
         database = new Database(this);
     }
 
+    public Model setTableName(String table) {
+        this.table = table;
+
+        return this;
+    }
+
     public String getTableName() {
-        return null;
+        return table;
     }
 
 
