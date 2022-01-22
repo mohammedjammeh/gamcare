@@ -5,6 +5,7 @@ import com.projects.gamcare.models.main.Model;
 import java.io.FileInputStream;
 import java.sql.*;
 import java.util.*;
+import java.util.Date;
 
 public class Database {
     private Connection connection;
@@ -276,12 +277,21 @@ public class Database {
      * General Methods
      */
     private void setStatementValue(PreparedStatement statement, Integer index, Object value) throws SQLException {
-        if(value instanceof Integer) {
+        if (value instanceof Integer) {
             statement.setInt(index, (int) value);
+            return;
         }
 
-        if(value instanceof String) {
-            statement.setString(index, (String) value);
+        if (value instanceof Date) {
+            statement.setDate(index, (java.sql.Date) value);
+            return;
         }
+
+        if (value instanceof byte[]) {
+            statement.setBytes(index, (byte[]) value);
+            return;
+        }
+
+        statement.setString(index, (String) value);
     }
 }

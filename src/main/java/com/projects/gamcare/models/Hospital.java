@@ -4,6 +4,7 @@ import com.projects.gamcare.interfaces.ModelInterface;
 import com.projects.gamcare.models.main.Model;
 
 import java.util.List;
+import java.util.Map;
 
 public class Hospital extends Model implements ModelInterface {
     protected final String table = "hospitals";

@@ -1,8 +1,10 @@
 package com.projects.gamcare.controllers.hospital;
 
+import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.enums.HospitalSize;
 import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.models.Doctor;
+import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Region;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
@@ -12,39 +14,25 @@ import javafx.scene.control.TextField;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.TreeMap;
 
 public class CreateFields extends Controller {
+    protected List<Model> leadDoctors, regions;
+
     @FXML
     protected TextField nameTextField;
 
     @FXML
-    protected ChoiceBox sizeChoiceBox;
+    protected ChoiceBox sizeChoiceBox, leadDoctorChoiceBox, regionChoiceBox;
 
     @FXML
-    protected ChoiceBox leadDoctorChoiceBox;
+    protected TextField emailAddressTextField, phoneNumberTextField, relevantLinkTextField;
 
     @FXML
-    protected TextField emailAddressTextField;
-
-    @FXML
-    protected TextField phoneNumberTextField;
-
-    @FXML
-    protected TextField relevantLinkTextField;
-
-    @FXML
-    protected TextField compoundNameTextField;
-
-    @FXML
-    protected TextField townTextField;
-
-    @FXML
-    protected ChoiceBox regionChoiceBox;
+    protected TextField compoundNameTextField, townTextField;
 
     @FXML
     protected TextArea otherDetailsTextArea;
-
-    protected List<Model> leadDoctors, regions;
 
     public void initialize() {
         hideErrorBox();
@@ -57,43 +45,61 @@ public class CreateFields extends Controller {
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
     }
 
-    public String nameInput() {
+    protected TreeMap<String, Object> newHospitalData() {
+        TreeMap<String, Object> data = new TreeMap<>();
+
+        data.put("name", nameInput());
+        data.put("size", sizeInput());
+        data.put("email_address", emailAddressInput());
+        data.put("phone_number", phoneNumberInput());
+        data.put("relevant_link", relevantLinkInput());
+        data.put("compound", compoundNameInput());
+        data.put("town", townInput());
+        data.put("regions_id", regions.get(regionIndexInput()).idAttribute());
+        data.put("created_at", TimeTool.newDate());
+        data.put("updated_at", TimeTool.newDate());
+        data.put("other_details", otherDetailsInput());
+
+        return data;
+    }
+
+    protected String nameInput() {
         return nameTextField.getText();
     }
 
-    public String sizeInput() {
+    protected String sizeInput() {
         return sizeChoiceBox.getValue();
     }
 
-    public Integer leadDoctorIndexInput() {
+    protected Integer leadDoctorIndexInput() {
         return leadDoctorChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public String emailAddressInput() {
+    protected String emailAddressInput() {
         return emailAddressTextField.getText();
     }
 
-    public String phoneNumberInput() {
+    protected String phoneNumberInput() {
         return phoneNumberTextField.getText();
     }
 
-    public String relevantLinkInput() {
+    protected String relevantLinkInput() {
         return relevantLinkTextField.getText();
     }
 
-    public String compoundNameInput() {
+    protected String compoundNameInput() {
         return compoundNameTextField.getText();
     }
 
-    public String townInput() {
+    protected String townInput() {
         return townTextField.getText();
     }
 
-    public Integer regionIndexInput() {
+    protected Integer regionIndexInput() {
         return regionChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public String otherDetailsInput() {
+    protected String otherDetailsInput() {
         return otherDetailsTextArea.getText();
     }
 }

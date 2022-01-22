@@ -133,16 +133,6 @@ public class Model implements ModelInterface {
         database.insert(newData);
     }
 
-//    public List<Model>getAll() {
-//        return database.
-//            select(List.of("*"))
-//            .orderBy("id")
-//            .getAll();
-////            .stream()
-////            .map(Model::nameAttribute)
-////            .toList();
-//    }
-
     public Region getRegion() {
         return (Region) (new Region())
             .where("id", getAttribute("regions_id"))
