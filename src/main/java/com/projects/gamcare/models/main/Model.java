@@ -120,7 +120,7 @@ public class Model implements ModelInterface {
     }
 
     public List<Model> getAll() {
-        return database.getAll();
+        return database.orderBy("id").getAll();
     }
 
     public Model where(String column, Object value) {
@@ -129,19 +129,19 @@ public class Model implements ModelInterface {
         return this;
     }
 
-    public void insert(List<Object> fields, List<Object> values) {
-        database.insert(fields, values);
+    public void insert(Map<String, Object> newData) {
+        database.insert(newData);
     }
 
-    public List<String> getAllNames() {
-        return database.
-            select(List.of("*"))
-            .orderBy("id")
-            .getAll()
-            .stream()
-            .map(Model::nameAttribute)
-            .toList();
-    }
+//    public List<Model>getAll() {
+//        return database.
+//            select(List.of("*"))
+//            .orderBy("id")
+//            .getAll();
+////            .stream()
+////            .map(Model::nameAttribute)
+////            .toList();
+//    }
 
     public Region getRegion() {
         return (Region) (new Region())

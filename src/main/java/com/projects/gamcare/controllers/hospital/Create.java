@@ -6,64 +6,66 @@ import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.main.Model;
 import javafx.fxml.FXML;
 
-import java.util.List;
+import java.util.*;
 
 public class Create extends CreateFields {
     private Hospital newHospital;
 
+    public void initialize() {
+        super.initialize();
+        nameTextField.setText("Lalala");
+        emailAddressTextField.setText("lalala@yahoo.com");
+        phoneNumberTextField.setText("07506259330");
+        relevantLinkTextField.setText("https://www.google.co.uk/");
+        compoundNameTextField.setText("Jammeh Kunda");
+        townTextField.setText("Santoto");
+    }
+
     @FXML
     protected void onCreateHospitalButtonClick() {
         (new Hospital())
-            .insert(hospitalFieldsList(), hospitalValuesList());
+            .insert(newHospitalData());
 
         setNewHospital();
 
         (new Model())
             .setTableName("hospitals_doctors")
-            .insert(hospitalDoctorFieldsList(), hospitalDoctorValuesList());
+            .insert(newHospitalDoctorData());
 
         SceneTool.switchToHospitalShow(getAuthUser(), newHospital);
     }
 
+    private TreeMap<String, Object> newHospitalData() {
+        TreeMap<String, Object> data = new TreeMap<>();
+
+        data.put("name", nameInput());
+        data.put("size", sizeInput());
+        data.put("email_address", emailAddressInput());
+        data.put("phone_number", phoneNumberInput());
+        data.put("relevant_link", relevantLinkInput());
+        data.put("compound", compoundNameInput());
+        data.put("town", townInput());
+        data.put("regions_id", regionInputId());
+        data.put("created_at", TimeTool.newDate());
+        data.put("updated_at", TimeTool.newDate());
+        data.put("other_details", otherDetailsInput());
+
+        return data;
+    }
+
+    private TreeMap<String, Object> newHospitalDoctorData() {
+        TreeMap<String, Object> data = new TreeMap<>();
+
+        data.put("lead_doctor", 1);
+        data.put("created_at", TimeTool.newDate());
+        data.put("updated_at", TimeTool.newDate());
+        data.put("doctors_id", leadDoctors.get(leadDoctorIndexInput()).idAttribute());
+        data.put("hospitals_id", newHospital.idAttribute());
+
+        return data;
+    }
+
     private void setNewHospital() {
         newHospital = (Hospital) (new Hospital()).where("email_address", emailAddressInput()).first();
-    }
-
-    private List<Object> hospitalFieldsList() {
-        return List.of(
-            "name", "size",
-            "email_address", "phone_number", "relevant_link",
-            "compound", "town", "regions_id",
-            "created_at", "updated_at", "other_details"
-        );
-    }
-
-    private List<Object> hospitalValuesList() {
-        String newDate = TimeTool.newDate();
-        Integer regionId = regionIndexInput() + 1;
-
-        return List.of(
-            nameInput(), sizeInput(),
-            emailAddressInput(), phoneNumberInput(), relevantLinkInput(),
-            compoundNameInput(), townInput(), regionId,
-            newDate, newDate, otherDetailsInput()
-        );
-    }
-
-    private List<Object> hospitalDoctorFieldsList() {
-        return List.of(
-            "lead_doctor", "created_at", "updated_at",
-            "doctors_id", "hospitals_id"
-        );
-    }
-
-    private List<Object> hospitalDoctorValuesList() {
-        String newDate = TimeTool.newDate();
-        Integer doctorId = leadDoctors.get(leadDoctorIndexInput()).idAttribute();
-
-        return List.of(
-            1, newDate, newDate,
-            doctorId, newHospital.idAttribute()
-        );
     }
 }

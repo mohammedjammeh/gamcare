@@ -35,8 +35,8 @@ public class Create extends CreateFields {
 
     @FXML
     protected void onCreatePatientButtonClick() {
-        (new User())
-            .insert(userFieldsList(), userValuesList());
+//        (new User())
+//            .insert(userFieldsList(), userValuesList());
     }
 
     private List<Object> userFieldsList() {

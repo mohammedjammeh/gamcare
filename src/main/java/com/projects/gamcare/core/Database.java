@@ -14,8 +14,6 @@ public class Database {
     private List<Object> selectColumns = new ArrayList<>();
     private List<Object> whereValues = new ArrayList<>();
 
-    private String insertSql;
-
     public Database(Model model) {
         try {
             Properties properties = new Properties();
@@ -46,7 +44,7 @@ public class Database {
         for (Object column: columns) {
             selectStatement
                 .append(column)
-                .append(selectColumnEnd(column, columns));
+                .append(selectColumnEnd(column));
         }
 
         selectSql = selectStatement.toString();
@@ -151,14 +149,8 @@ public class Database {
         return statement.executeQuery();
     }
 
-    private void setStatementValue(PreparedStatement statement, Integer index, Object value) throws SQLException {
-        if(value instanceof Integer) {
-            statement.setInt(index, (int) value);
-        }
-
-        if(value instanceof String) {
-            statement.setString(index, (String) value);
-        }
+    private String selectColumnEnd(Object column) {
+        return selectColumns.indexOf(column) == selectColumns.size() - 1 ? " " : ", ";
     }
 
     private Model newModelInstance(ResultSet queryResults) throws SQLException {
@@ -233,65 +225,63 @@ public class Database {
     /**
      * Insert Query Builders
      */
-    public void insert(List<Object> fields, List<Object> values) {
-        addFieldsToInsertSql(fields);
-        addValuesToInsertSql(values);
-
-//        System.out.println(insertSql);
-
+    public void insert(Map<String, Object> data) {
         try {
-            PreparedStatement statement = connection.prepareStatement(insertSql);
-            statement.execute(insertSql);
+            List<Object> dataValuesList = data.values().stream().toList();
+            PreparedStatement statement = connection.prepareStatement(insertStatement(data));
+
+            for (int i = 0; i < dataValuesList.size(); i++) {
+                setStatementValue(statement, i+1, dataValuesList.get(i));
+            }
+
+            statement.execute();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
 
-    public void addFieldsToInsertSql(List<Object> fields) {
-        StringBuilder insertStatement = new StringBuilder("INSERT INTO " + model.getTableName() + " (");
+    private String insertStatement(Map<String, Object> data) {
+        StringBuilder insertStatementStart = new StringBuilder("INSERT INTO " + model.getTableName() + " (");
+        StringBuilder insertFieldsBuilder = new StringBuilder();
+        StringBuilder insertValuesBuilder = new StringBuilder(") values (");
+        String insertStatementEnd = ")";
 
-        for (Object field : fields) {
-            insertStatement
-                .append(field)
-                .append(insertColumnEnd(field, fields));
+        int insertCount = 0;
+
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
+            insertCount++;
+
+            insertFieldsBuilder
+                .append(entry.getKey())
+                .append(insertColumnEnd(data, insertCount));
+
+            insertValuesBuilder
+                .append("?")
+                .append(insertColumnEnd(data, insertCount));
         }
 
-        insertSql = insertStatement + ") ";
+        return insertStatementStart
+            .append(insertFieldsBuilder)
+            .append(insertValuesBuilder)
+            .append(insertStatementEnd)
+            .toString();
     }
 
-    public void addValuesToInsertSql(List<Object> values) {
-        StringBuilder insertStatement = new StringBuilder(insertSql + "values (");
-
-        for (Object value : values) {
-            insertStatement
-                .append(insertValue(value))
-                .append(insertColumnEnd(value, values));
-        }
-
-        insertSql = insertStatement + ")";
+    private String insertColumnEnd(Map<String, Object> data, Integer insertCount) {
+        return insertCount == (long) data.values().size() ?  "" : ", ";
     }
 
 
     /**
      * General Methods
      */
-    private Object insertValue(Object value) {
-        if (value instanceof String) {
-            return value.toString().isEmpty() ? null : "'" + value + "'";
+    private void setStatementValue(PreparedStatement statement, Integer index, Object value) throws SQLException {
+        if(value instanceof Integer) {
+            statement.setInt(index, (int) value);
         }
 
-        return value;
-    }
-
-    private String selectColumnEnd(Object column, List<Object> columns) {
-        return isLastColumn(column, columns) ? " " : ", ";
-    }
-
-    private String insertColumnEnd(Object column, List<Object> columns) {
-        return isLastColumn(column, columns) ? "" : ", ";
-    }
-
-    private Boolean isLastColumn(Object column, List<Object> columns) {
-        return columns.indexOf(column) == columns.size() - 1;
+        if(value instanceof String) {
+            statement.setString(index, (String) value);
+        }
     }
 }

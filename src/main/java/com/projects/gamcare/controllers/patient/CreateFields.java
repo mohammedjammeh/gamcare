@@ -33,13 +33,13 @@ public class CreateFields extends CreateFieldsParent {
     }
 
     public Integer bloodTypeInputId() {
-        return inputId(bloodTypeChoiceBox);
+        return selectedInputId(bloodTypeChoiceBox);
     }
 
     public void initialize() {
         super.initialize();
 
-        hospitalChoiceBox.setItems((new Hospital()).getAllNames());
-        bloodTypeChoiceBox.setItems((new BloodType()).getAllNames());
+//        hospitalChoiceBox.setItems((new Hospital()).getAllNames());
+//        bloodTypeChoiceBox.setItems((new BloodType()).getAllNames());
     }
 }

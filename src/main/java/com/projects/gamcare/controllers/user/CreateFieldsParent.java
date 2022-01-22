@@ -62,10 +62,10 @@ public class CreateFieldsParent extends Controller {
     public void initialize() {
         hideErrorBox();
 
-        titleChoiceBox.setItems((new Title()).getAllNames());
-        genderChoiceBox.setItems((new Gender()).getAllNames());
-        tribeChoiceBox.setItems((new Tribe()).getAllNames());
-        regionChoiceBox.setItems((new Region()).getAllNames());
+//        titleChoiceBox.setItems((new Title()).getAllNames());
+//        genderChoiceBox.setItems((new Gender()).getAllNames());
+//        tribeChoiceBox.setItems((new Tribe()).getAllNames());
+//        regionChoiceBox.setItems((new Region()).getAllNames());
     }
 
     public String firstNameInput() {
@@ -81,15 +81,15 @@ public class CreateFieldsParent extends Controller {
     }
 
     public Integer titleInputId() {
-        return inputId(titleChoiceBox);
+        return selectedInputId(titleChoiceBox);
     }
 
     public Integer genderInputId() {
-        return inputId(genderChoiceBox);
+        return selectedInputId(genderChoiceBox);
     }
 
     public Integer tribeInputId() {
-        return inputId(tribeChoiceBox);
+        return selectedInputId(tribeChoiceBox);
     }
 
     public String emailAddressInput() {
@@ -121,18 +121,11 @@ public class CreateFieldsParent extends Controller {
     }
 
     public Integer regionInputId() {
-        return inputId(regionChoiceBox);
+        return selectedInputId(regionChoiceBox);
     }
 
     public String otherDetailsInput() {
         return otherDetailsTextArea.getText();
     }
 
-    public Integer inputId(ChoiceBox choiceBox)
-    {
-        int choiceBoxIndex = choiceBox.getSelectionModel().getSelectedIndex();
-        choiceBoxIndex++;
-
-        return choiceBoxIndex;
-    }
 }

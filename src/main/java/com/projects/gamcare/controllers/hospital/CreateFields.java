@@ -44,20 +44,17 @@ public class CreateFields extends Controller {
     @FXML
     protected TextArea otherDetailsTextArea;
 
-    protected List<Model> leadDoctors;
+    protected List<Model> leadDoctors, regions;
 
     public void initialize() {
         hideErrorBox();
 
         leadDoctors = (new Doctor()).getAvailableSeniors();
+        regions = (new Region()).getAll();
 
-        regionChoiceBox.setItems((new Region()).getAllNames());
+        leadDoctorChoiceBox.setItems(getFullNames(leadDoctors));
+        regionChoiceBox.setItems(getNames(regions));
         sizeChoiceBox.setItems(getEnumItems(HospitalSize.class));
-        leadDoctorChoiceBox.setItems(leadDoctors
-            .stream()
-            .map(Model::fullNameAttribute)
-            .toList()
-        );
     }
 
     public String nameInput() {
@@ -92,8 +89,8 @@ public class CreateFields extends Controller {
         return townTextField.getText();
     }
 
-    public Integer regionIndexInput() {
-        return regionChoiceBox.getSelectionModel().getSelectedIndex();
+    public Integer regionInputId() {
+        return selectedInputId(regionChoiceBox);
     }
 
     public String otherDetailsInput() {

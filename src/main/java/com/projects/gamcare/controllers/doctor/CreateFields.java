@@ -39,11 +39,7 @@ public class CreateFields extends CreateFieldsParent {
     @FXML
     protected ListView hospitalsListView;
 
-    protected List<Model> studentDoctors;
-
-    protected List<Model> juniorDoctors;
-
-    protected List<Model> seniorDoctors;
+    protected List<Model> studentDoctors, juniorDoctors, seniorDoctors;
 
     public String getUniversity() {
         return universityTextField.getText();
@@ -80,12 +76,12 @@ public class CreateFields extends CreateFieldsParent {
         juniorDoctors = (new Doctor()).getAvailableJuniors(1);
         seniorDoctors = (new Doctor()).getAvailableSeniors(1);
 
-        studentDoctorsListView.setItems(studentDoctors.stream().map(Model::fullNameAttribute).toList());
-        juniorDoctorsListView.setItems(juniorDoctors.stream().map(Model::fullNameAttribute).toList());
-        seniorDoctorsListView.setItems(seniorDoctors.stream().map(Model::fullNameAttribute).toList());
+        studentDoctorsListView.setItems(getFullNames(studentDoctors));
+        juniorDoctorsListView.setItems(getFullNames(juniorDoctors));
+        seniorDoctorsListView.setItems(getFullNames(seniorDoctors));
 
-        hospitalsListView.setItems((new Hospital()).getAllNames());
-        specialityChoiceBox.setItems((new Speciality()).getAllNames());
+//        hospitalsListView.setItems((new Hospital()).getAllNames());
+//        specialityChoiceBox.setItems((new Speciality()).getAllNames());
         careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
 
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);

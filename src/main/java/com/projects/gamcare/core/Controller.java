@@ -5,6 +5,7 @@ import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
+import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -158,6 +159,14 @@ public class Controller {
             .toList();
     }
 
+    public List<String> getNames(List<Model> models) {
+        return models.stream().map(Model::nameAttribute).toList();
+    }
+
+    public List<String> getFullNames(List<Model> models) {
+        return models.stream().map(Model::fullNameAttribute).toList();
+    }
+
 
     /**
      * Extend Methods (Button Click)
@@ -275,5 +284,13 @@ public class Controller {
         newButton.setOnAction(action);
 
         return newButton;
+    }
+
+    protected Integer selectedInputId(ChoiceBox choiceBox)
+    {
+        int selectedIndex = choiceBox.getSelectionModel().getSelectedIndex();
+        selectedIndex++;
+
+        return selectedIndex;
     }
 }
