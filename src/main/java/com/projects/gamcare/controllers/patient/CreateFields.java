@@ -3,22 +3,32 @@ package com.projects.gamcare.controllers.patient;
 import com.projects.gamcare.controllers.user.CreateFieldsParent;
 import com.projects.gamcare.models.BloodType;
 import com.projects.gamcare.models.Hospital;
+import com.projects.gamcare.models.Speciality;
+import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+import java.util.List;
+
 public class CreateFields extends CreateFieldsParent {
     @FXML
-    protected ChoiceBox hospitalChoiceBox;
+    protected TextField weightTextField, heightTextField;
 
     @FXML
-    protected TextField weightTextField;
+    protected ChoiceBox hospitalChoiceBox, bloodTypeChoiceBox;
 
-    @FXML
-    protected TextField heightTextField;
+    protected List<Model> hospitals, bloodTypes;
 
-    @FXML
-    protected ChoiceBox bloodTypeChoiceBox;
+    public void initialize() {
+        super.initialize();
+
+        hospitals = (new Hospital()).getAll();
+        bloodTypes = (new BloodType()).getAll();
+
+        hospitalChoiceBox.setItems(getNames(hospitals));
+        bloodTypeChoiceBox.setItems(getNames(bloodTypes));
+    }
 
     public Integer hospitalIndexInput() {
         return hospitalChoiceBox.getSelectionModel().getSelectedIndex();
@@ -32,14 +42,7 @@ public class CreateFields extends CreateFieldsParent {
         return heightTextField.getText();
     }
 
-    public Integer bloodTypeInputId() {
-        return selectedInputId(bloodTypeChoiceBox);
-    }
-
-    public void initialize() {
-        super.initialize();
-
-//        hospitalChoiceBox.setItems((new Hospital()).getAllNames());
-//        bloodTypeChoiceBox.setItems((new BloodType()).getAllNames());
+    public Integer bloodTypeIndexInput() {
+        return bloodTypeChoiceBox.getSelectionModel().getSelectedIndex();
     }
 }

@@ -11,16 +11,6 @@ import java.util.*;
 public class Create extends CreateFields {
     private Hospital newHospital;
 
-    public void initialize() {
-        super.initialize();
-        nameTextField.setText("Lalala");
-        emailAddressTextField.setText("lalala@yahoo.com");
-        phoneNumberTextField.setText("07506259330");
-        relevantLinkTextField.setText("https://www.google.co.uk/");
-        compoundNameTextField.setText("Jammeh Kunda");
-        townTextField.setText("Santoto");
-    }
-
     @FXML
     protected void onCreateHospitalButtonClick() {
         (new Hospital())
@@ -45,7 +35,7 @@ public class Create extends CreateFields {
         data.put("relevant_link", relevantLinkInput());
         data.put("compound", compoundNameInput());
         data.put("town", townInput());
-        data.put("regions_id", regionInputId());
+        data.put("regions_id", regions.get(regionIndexInput()).idAttribute());
         data.put("created_at", TimeTool.newDate());
         data.put("updated_at", TimeTool.newDate());
         data.put("other_details", otherDetailsInput());

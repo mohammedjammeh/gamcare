@@ -89,8 +89,8 @@ public class CreateFields extends Controller {
         return townTextField.getText();
     }
 
-    public Integer regionInputId() {
-        return selectedInputId(regionChoiceBox);
+    public Integer regionIndexInput() {
+        return regionChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
     public String otherDetailsInput() {

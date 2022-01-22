@@ -285,12 +285,4 @@ public class Controller {
 
         return newButton;
     }
-
-    protected Integer selectedInputId(ChoiceBox choiceBox)
-    {
-        int selectedIndex = choiceBox.getSelectionModel().getSelectedIndex();
-        selectedIndex++;
-
-        return selectedIndex;
-    }
 }

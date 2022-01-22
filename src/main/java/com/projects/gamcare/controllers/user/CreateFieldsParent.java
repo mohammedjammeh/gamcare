@@ -1,10 +1,8 @@
 package com.projects.gamcare.controllers.user;
 
 import com.projects.gamcare.core.Controller;
-import com.projects.gamcare.models.Gender;
-import com.projects.gamcare.models.Region;
-import com.projects.gamcare.models.Title;
-import com.projects.gamcare.models.Tribe;
+import com.projects.gamcare.models.*;
+import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -12,60 +10,41 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class CreateFieldsParent extends Controller {
     @FXML
-    protected TextField firstNameTextField;
+    protected TextField firstNameTextField, middleNameTextField, lastNameTextField;
 
     @FXML
-    protected TextField middleNameTextField;
+    protected ChoiceBox titleChoiceBox, genderChoiceBox, tribeChoiceBox, regionChoiceBox;
 
     @FXML
-    protected TextField lastNameTextField;
+    protected TextField emailAddressTextField, phoneNumberTextField, relevantLinkTextField;
 
     @FXML
-    protected ChoiceBox titleChoiceBox;
-
-    @FXML
-    protected ChoiceBox genderChoiceBox;
-
-    @FXML
-    protected ChoiceBox tribeChoiceBox;
-
-    @FXML
-    protected TextField emailAddressTextField;
-
-    @FXML
-    protected TextField phoneNumberTextField;
-
-    @FXML
-    protected TextField relevantLinkTextField;
-
-    @FXML
-    protected TextField placeOfBirthTextField;
+    protected TextField placeOfBirthTextField, compoundNameTextField, townTextField;
 
     @FXML
     protected DatePicker dateOfBirthPicker;
 
     @FXML
-    protected TextField compoundNameTextField;
-
-    @FXML
-    protected TextField townTextField;
-
-    @FXML
-    protected ChoiceBox regionChoiceBox;
-
-    @FXML
     protected TextArea otherDetailsTextArea;
+
+    protected List<Model> titles, genders, tribes, regions;
 
     public void initialize() {
         hideErrorBox();
 
-//        titleChoiceBox.setItems((new Title()).getAllNames());
-//        genderChoiceBox.setItems((new Gender()).getAllNames());
-//        tribeChoiceBox.setItems((new Tribe()).getAllNames());
-//        regionChoiceBox.setItems((new Region()).getAllNames());
+        titles = (new Title()).getAll();
+        genders = (new Gender()).getAll();
+        tribes = (new Tribe()).getAll();
+        regions = (new Region()).getAll();
+
+        titleChoiceBox.setItems(getNames(titles));
+        genderChoiceBox.setItems(getNames(genders));
+        tribeChoiceBox.setItems(getNames(tribes));
+        regionChoiceBox.setItems(getNames(regions));
     }
 
     public String firstNameInput() {
@@ -80,16 +59,16 @@ public class CreateFieldsParent extends Controller {
         return lastNameTextField.getText();
     }
 
-    public Integer titleInputId() {
-        return selectedInputId(titleChoiceBox);
+    public Integer titleIndexInput() {
+        return titleChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public Integer genderInputId() {
-        return selectedInputId(genderChoiceBox);
+    public Integer genderIndexInput() {
+        return genderChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public Integer tribeInputId() {
-        return selectedInputId(tribeChoiceBox);
+    public Integer tribeIndexInput() {
+        return tribeChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
     public String emailAddressInput() {
@@ -120,8 +99,8 @@ public class CreateFieldsParent extends Controller {
         return townTextField.getText();
     }
 
-    public Integer regionInputId() {
-        return selectedInputId(regionChoiceBox);
+    public Integer regionIndexInput() {
+        return regionChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
     public String otherDetailsInput() {

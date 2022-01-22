@@ -4,7 +4,6 @@ import com.projects.gamcare.core.Hash;
 import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.models.Patient;
-import com.projects.gamcare.models.User;
 import javafx.fxml.FXML;
 
 import java.time.LocalDate;
@@ -64,7 +63,7 @@ public class Create extends CreateFields {
             compoundNameInput(), townInput(),
             UserType.PATIENT.name(), 1, "",
             newDate, newDate,
-            titleInputId(), genderInputId(), tribeInputId(), regionInputId(),
+            titleIndexInput(), genderIndexInput(), tribeIndexInput(), regionIndexInput(),
             otherDetailsInput(), salt, hash
         );
     }
