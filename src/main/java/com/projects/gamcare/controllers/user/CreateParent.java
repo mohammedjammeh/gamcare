@@ -3,7 +3,6 @@ package com.projects.gamcare.controllers.user;
 import com.projects.gamcare.core.Controller;
 import com.projects.gamcare.core.Hash;
 import com.projects.gamcare.core.TimeTool;
-import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.models.*;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
@@ -17,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class CreateFieldsParent extends Controller {
+public class CreateParent extends Controller {
     protected List<Model> titles, genders, tribes, regions;
 
     @FXML
@@ -52,7 +51,7 @@ public class CreateFieldsParent extends Controller {
         regionChoiceBox.setItems(getNames(regions));
     }
 
-    protected Map<String, Object> newUserData() {
+    protected Map<String, Object> newUserData(Map<String, Object> extraUserData) {
         TreeMap<String, Object> data = new TreeMap<>();
         byte[] salt = Hash.createSalt();
 
@@ -81,6 +80,8 @@ public class CreateFieldsParent extends Controller {
 
         data.put("created_at", TimeTool.newDate());
         data.put("updated_at", TimeTool.newDate());
+
+        data.putAll(extraUserData);
 
         return data;
     }

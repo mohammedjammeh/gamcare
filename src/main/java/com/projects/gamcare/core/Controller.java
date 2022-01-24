@@ -168,6 +168,12 @@ public class Controller {
         return models.stream().map(Model::fullNameAttribute).toList();
     }
 
+    protected Integer getInputId(ChoiceBox choiceBox, List<Model> modelsList) {
+        int bloodTypeIndexInput =  choiceBox.getSelectionModel().getSelectedIndex();
+
+        return modelsList.get(bloodTypeIndexInput).idAttribute();
+    }
+
 
     /**
      * Extend Methods (Button Click)
