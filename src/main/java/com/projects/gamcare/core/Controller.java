@@ -2,6 +2,7 @@ package com.projects.gamcare.core;
 
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.models.Doctor;
+import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
@@ -245,7 +246,7 @@ public class Controller {
 
 
     /**
-     * Extend Methods (General)
+     * Extend Methods (Nodes)
      */
     protected HBox newHBoxWithAlwaysHGrow() {
         HBox newHBox = new HBox();
@@ -284,5 +285,21 @@ public class Controller {
         newButton.setOnAction(action);
 
         return newButton;
+    }
+
+
+    /**
+     * Extend Methods (Pivot Tables)
+     */
+    public TreeMap<String, Object> newHospitalDoctorData(Hospital hospital, Doctor doctor,  Integer leadDoctor) {
+        TreeMap<String, Object> data = new TreeMap<>();
+
+        data.put("lead_doctor", leadDoctor);
+        data.put("created_at", TimeTool.newDate());
+        data.put("updated_at", TimeTool.newDate());
+        data.put("doctors_id", doctor.idAttribute());
+        data.put("hospitals_id", hospital.idAttribute());
+
+        return data;
     }
 }

@@ -44,7 +44,7 @@ public class CreateFields extends CreateFieldsParent {
         return data;
     }
 
-    public Map<String, Object> newUserData(Patient patient) {
+    protected Map<String, Object> newUserData(Patient patient) {
         Map<String, Object> data = super.newUserData();
 
         data.put("type", UserType.PATIENT.name());
@@ -53,19 +53,19 @@ public class CreateFields extends CreateFieldsParent {
         return data;
     }
 
-    public Integer hospitalIndexInput() {
+    protected Integer hospitalIndexInput() {
         return hospitalChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    public String weightInput() {
+    protected String weightInput() {
         return weightTextField.getText();
     }
 
-    public String heightInput() {
+    protected String heightInput() {
         return heightTextField.getText();
     }
 
-    public Integer bloodTypeIndexInput() {
+    protected Integer bloodTypeIndexInput() {
         return bloodTypeChoiceBox.getSelectionModel().getSelectedIndex();
     }
 }

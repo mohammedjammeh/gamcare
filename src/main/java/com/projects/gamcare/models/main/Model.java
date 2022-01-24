@@ -124,7 +124,7 @@ public class Model implements ModelInterface {
     }
 
     public Model where(String column, Object value) {
-        database.where(column, "=", value);
+        database.where(column, value);
 
         return this;
     }

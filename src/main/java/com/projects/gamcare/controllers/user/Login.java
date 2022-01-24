@@ -13,7 +13,7 @@ public class Login extends LoginFields {
 
     @FXML
     protected void onLogInButtonClick() {
-        User user = (new User()).where("email_address", emailInput()).first();
+        User user = (User) (new User()).where("email_address", emailInput()).first();
 
         if (hashEqualsExpectedPasswordInputHash(user))
             user.switchToAfterLoginResource();

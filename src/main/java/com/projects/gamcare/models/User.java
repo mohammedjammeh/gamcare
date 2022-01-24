@@ -79,22 +79,10 @@ public class User extends ProfileUser implements ModelInterface {
     /**
      * Query Methods
      */
-    public User first() {
-        return (User) super.first();
-    }
-
-    public User last() {
-        return (User) super.last();
-    }
-
-    public User where(String column, Object value) {
-        return (User) super.where(column, value);
-    }
-
     public byte[] getSalt() {
         return database
             .select(List.of("salt"))
-            .where("id", "=", idAttribute())
+            .where("id", idAttribute())
             .getBytes();
     }
 

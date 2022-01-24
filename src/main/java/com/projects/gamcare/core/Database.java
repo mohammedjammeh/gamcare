@@ -71,11 +71,33 @@ public class Database {
         return this;
     }
 
-    public Database where(String column, String operator, Object value) {
+//    public Database where(String column, String operator, Object value) {
+//        prepareSelectQuery();
+//
+//        selectSql += whereValues.isEmpty() ? "WHERE " : "AND ";
+//        selectSql += column + " " + operator + " ? ";
+//
+//        whereValues.add(value);
+//
+//        return this;
+//    }
+
+    public Database where(String column, Object value) {
         prepareSelectQuery();
 
         selectSql += whereValues.isEmpty() ? "WHERE " : "AND ";
-        selectSql += column + " " + operator + " ? ";
+        selectSql += column + " = ? ";
+
+        whereValues.add(value);
+
+        return this;
+    }
+
+    public Database whereNot(String column, Object value) {
+        prepareSelectQuery();
+
+        selectSql += whereValues.isEmpty() ? "WHERE " : "AND ";
+        selectSql += column + " != ? ";
 
         whereValues.add(value);
 

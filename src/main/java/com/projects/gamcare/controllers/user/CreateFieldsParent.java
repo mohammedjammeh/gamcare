@@ -52,7 +52,7 @@ public class CreateFieldsParent extends Controller {
         regionChoiceBox.setItems(getNames(regions));
     }
 
-    public Map<String, Object> newUserData() {
+    protected Map<String, Object> newUserData() {
         TreeMap<String, Object> data = new TreeMap<>();
         byte[] salt = Hash.createSalt();
 

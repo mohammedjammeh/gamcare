@@ -21,8 +21,8 @@ public class Hospital extends Model implements ModelInterface {
         return (Doctor) (new Doctor())
             .with("users")
             .withMany("hospitals", "hospitals_doctors")
-            .where("hospitals_doctors.lead_doctor", "=", 1)
-            .where("hospitals.id", "=", idAttribute())
+            .where("hospitals_doctors.lead_doctor", 1)
+            .where("hospitals.id", idAttribute())
             .first();
     }
 
@@ -30,14 +30,14 @@ public class Hospital extends Model implements ModelInterface {
         return (new Doctor())
             .with("users")
             .withMany("hospitals", "hospitals_doctors")
-            .where("hospitals.id", "=", idAttribute())
+            .where("hospitals.id", idAttribute())
             .getAll();
     }
 
     public List<Model> getPatients() {
         return (new Patient())
             .with("users")
-            .where("hospitals_id", "=", idAttribute())
+            .where("hospitals_id", idAttribute())
             .getAll();
     }
 }

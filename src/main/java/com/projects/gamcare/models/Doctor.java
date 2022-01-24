@@ -53,7 +53,7 @@ public class Doctor extends ProfileUser implements ModelInterface {
             .select(List.of("*"))
             .with("users")
             .with("hospitals_doctors")
-            .where("doctors.career_level", "=", level)
+            .where("doctors.career_level", level)
             .orderBy("first_name")
             .getAll();
     }
@@ -85,8 +85,8 @@ public class Doctor extends ProfileUser implements ModelInterface {
             .select(List.of("*"))
             .with("users")
             .with("hospitals_doctors")
-            .where("hospitals_doctors.hospitals_id", "!=", hospitalId)
-            .where("doctors.career_level", "=", level)
+            .whereNot("hospitals_doctors.hospitals_id", hospitalId)
+            .where("doctors.career_level", level)
             .orderBy("first_name")
             .getAll();
     }
@@ -120,7 +120,7 @@ public class Doctor extends ProfileUser implements ModelInterface {
             .getDatabase()
             .select(List.of("*"))
             .with("hospitals_doctors")
-            .where("hospitals_doctors.doctors_id", "=", idAttribute())
+            .where("hospitals_doctors.doctors_id", idAttribute())
             .getAll();
     }
 }
