@@ -3,6 +3,7 @@ package com.projects.gamcare.core;
 import com.projects.gamcare.Main;
 import com.projects.gamcare.controllers.ShowParent;
 import com.projects.gamcare.controllers.hospital.Show;
+import com.projects.gamcare.controllers.user.CreateParent;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.ProfileUser;
@@ -35,6 +36,21 @@ public class SceneTool {
         controller.setProfileUser(profileUser);
         controller.setUpHeader();
         controller.setUpBody();
+
+        showStage(root);
+    }
+
+    public static void switchToUserCreate(String resourceName, User authUser, Hospital hospital) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
+        Parent root = getLoadedRoot(loader);
+
+        CreateParent controller = loader.getController();
+        controller.setAuthUser(authUser);
+        controller.setCurrentHospital(hospital);
+        controller.setUpHeader();
+        controller.setUpBody();
+        controller.setUpAddForm();
+        controller.setUpCreateForm();
 
         showStage(root);
     }

@@ -28,7 +28,7 @@ public class Controller {
 
 
     /**
-     * Setters & Getters
+     * Getters & Setters
      */
     public void setAuthUser(User authUser) {
         this.authUser = authUser;

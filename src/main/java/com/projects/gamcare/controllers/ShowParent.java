@@ -25,7 +25,7 @@ public class ShowParent extends Controller {
 
 
     /**
-     * Setters & Getters
+     * Getters & Setters
      */
     public void setProfileUser(ProfileUser profileUser) {
         this.profileUser = profileUser;

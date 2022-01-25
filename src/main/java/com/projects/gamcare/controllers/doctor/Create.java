@@ -34,26 +34,17 @@ public class Create extends CreateParent {
     @FXML
     protected ListView hospitalsListView;
 
-    public void initialize() {
-        super.initialize();
-
-        setUpAddForm();
-        setUpCreateForm();
-    }
-
-    private void setUpAddForm() {
-        Hospital hospital = (Hospital) (new Hospital()).where("id", 1).first();
-
-        studentDoctors = (new Doctor()).getAvailableStudents(hospital);
-        juniorDoctors = (new Doctor()).getAvailableJuniors(hospital);
-        seniorDoctors = (new Doctor()).getAvailableSeniors(hospital);
+    public void setUpAddForm() {
+        studentDoctors = (new Doctor()).getAvailableStudents(getCurrentHospital());
+        juniorDoctors = (new Doctor()).getAvailableJuniors(getCurrentHospital());
+        seniorDoctors = (new Doctor()).getAvailableSeniors(getCurrentHospital());
 
         studentDoctorsListView.setItems(getFullNames(studentDoctors));
         juniorDoctorsListView.setItems(getFullNames(juniorDoctors));
         seniorDoctorsListView.setItems(getFullNames(seniorDoctors));
     }
 
-    private void setUpCreateForm() {
+    public void setUpCreateForm() {
         hospitals = (new Hospital()).getAll();
         specialities = (new Speciality()).getAll();
 
@@ -62,6 +53,7 @@ public class Create extends CreateParent {
         careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
 
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
+        hospitalsListView.getSelectionModel().select(hospitals.indexOf(getCurrentHospital()));
     }
 
     @FXML

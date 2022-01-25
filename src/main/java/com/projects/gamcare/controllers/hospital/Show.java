@@ -41,7 +41,7 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onAddDoctorButtonClick() {
-        System.out.println("You have now added a doctor.");
+        SceneTool.switchToUserCreate("doctor/create", getAuthUser(), hospital);
     }
 
     @FXML
@@ -50,7 +50,7 @@ public class Show extends ShowParent {
     }
 
     /**
-     * Setters & Getters
+     * Getters & Setters
      */
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
@@ -68,6 +68,9 @@ public class Show extends ShowParent {
         buildDoctorsSection(getHospital().getDoctors(), profileDoctors);
     }
 
+    /**
+     * Build Section
+     */
     private void updateButtonsVisibility() {
         if (getAuthUser().isNotAdmin()) {
             hide(editHospitalButton);

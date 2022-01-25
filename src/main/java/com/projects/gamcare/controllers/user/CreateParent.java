@@ -17,7 +17,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class CreateParent extends Controller {
-    protected List<Model> titles, genders, tribes, regions;
+    private Hospital currentHospital;
+
+    private List<Model> titles, genders, tribes, regions;
 
     @FXML
     protected TextField firstNameTextField, middleNameTextField, lastNameTextField;
@@ -145,4 +147,19 @@ public class CreateParent extends Controller {
     protected String otherDetailsInput() {
         return otherDetailsTextArea.getText();
     }
+
+    /**
+     * Getters & Setters
+     */
+    public void setCurrentHospital(Hospital hospital) {
+        this.currentHospital = hospital;
+    }
+
+    public Hospital getCurrentHospital() {
+        return currentHospital;
+    }
+
+    public void setUpAddForm() {}
+
+    public void setUpCreateForm() {}
 }
