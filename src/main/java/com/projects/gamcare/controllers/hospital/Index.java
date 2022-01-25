@@ -21,11 +21,13 @@ public class Index extends Controller {
     @FXML
     protected void onAddHospitalButtonClick() {
         SceneTool.switchTo("hospital/create", getAuthUser());
+        SceneTool.closeWindow(addHospitalButton);
     }
 
     @FXML
-    protected void onShowHospitalButtonClick(Hospital hospital) {
+    protected void onShowHospitalButtonClick(Hospital hospital, Button button) {
         SceneTool.switchToHospitalShow(getAuthUser(), hospital);
+        SceneTool.closeWindow(button);
     }
 
     public void setUpBody() {
@@ -47,7 +49,7 @@ public class Index extends Controller {
             Hospital hospital = (Hospital) hospitals.get(i);
 
             Button button = new Button(hospital.nameAttribute());
-            button.setOnAction(event -> onShowHospitalButtonClick(hospital));
+            button.setOnAction(event -> onShowHospitalButtonClick(hospital, button));
 
             row = hasNoSpace(row) ? new HBox() : row;
             row.getChildren().add(button);

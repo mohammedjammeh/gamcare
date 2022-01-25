@@ -8,6 +8,7 @@ import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -73,6 +74,11 @@ public class SceneTool {
         Parent root = getLoadedRoot(loader);
 
         showStage(root);
+    }
+
+    public static void closeWindow(Node node) {
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
     }
 
     private static Parent getLoadedRoot(FXMLLoader loader) {

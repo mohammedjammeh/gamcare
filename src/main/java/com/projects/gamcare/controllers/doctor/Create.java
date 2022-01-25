@@ -92,9 +92,8 @@ public class Create extends CreateParent {
                 .insert(newHospitalDoctorData(hospital, newDoctor, 0));
         }
 
-        SceneTool.switchToProfile(
-            "doctor/show", getAuthUser(), getNewDoctorWithUser()
-        );
+        SceneTool.switchToProfile("doctor/show", getAuthUser(), getNewDoctorWithUser());
+        SceneTool.closeWindow(hospitalsListView);
     }
 
     private Map<String, Object> newDoctorData() {

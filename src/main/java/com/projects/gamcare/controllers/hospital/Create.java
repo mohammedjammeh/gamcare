@@ -58,6 +58,7 @@ public class Create extends Controller {
             .insert(newHospitalDoctorData(newHospital, leadDoctor, 1));
 
         SceneTool.switchToHospitalShow(getAuthUser(), newHospital);
+        SceneTool.closeWindow(nameTextField);
     }
 
     private TreeMap<String, Object> newHospitalData() {

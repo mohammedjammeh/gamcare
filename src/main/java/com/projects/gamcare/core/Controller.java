@@ -63,20 +63,32 @@ public class Controller {
     }
 
     private List<Button> headerButtons() {
-        Button hospitalsButton = newButtonWithAction("Hospitals", switchSceneTo("hospital/index"));
-        Button doctorsButton = newButtonWithAction("Doctors", switchSceneTo("doctor/index"));
-        Button myProfileButton = newButtonWithAction("My Profile", switchSceneToProfile());
-        Button logOutButton = newButtonWithAction("Log Out", event -> SceneTool.switchToLogin());
-
-        return userHeaderButtons(hospitalsButton, doctorsButton, myProfileButton, logOutButton);
+        return userHeaderButtons(
+            newButtonWithAction("Hospitals", event -> onHospitalsMenuButtonClick()),
+            newButtonWithAction("Doctors", event -> onDoctorsMenuButtonClick()),
+            newButtonWithAction("My Profile", event -> onMyProfileMenuButtonClick()),
+            newButtonWithAction("Log Out", event -> onLogOutMenuButtonClick())
+        );
     }
 
-    private EventHandler<ActionEvent> switchSceneTo(String resourceName) {
-        return event -> SceneTool.switchTo(resourceName, getAuthUser());
+    private void onHospitalsMenuButtonClick() {
+        SceneTool.switchTo("hospital/index", getAuthUser());
+        SceneTool.closeWindow(headingBox);
     }
 
-    private EventHandler<ActionEvent> switchSceneToProfile() {
-        return event -> SceneTool.switchToProfile(getAuthUser().profileResourceName(), getAuthUser(), getAuthUser());
+    private void onDoctorsMenuButtonClick() {
+        SceneTool.switchTo("doctor/index", getAuthUser());
+        SceneTool.closeWindow(headingBox);
+    }
+
+    private void onMyProfileMenuButtonClick() {
+        SceneTool.switchToProfile(getAuthUser().profileResourceName(), getAuthUser(), getAuthUser());
+        SceneTool.closeWindow(headingBox);
+    }
+
+    private void onLogOutMenuButtonClick() {
+        SceneTool.switchToLogin();
+        SceneTool.closeWindow(headingBox);
     }
 
     private List<Button> userHeaderButtons(Button hospitalsButton, Button doctorsButton, Button myProfileButton, Button logOutButton) {
@@ -179,8 +191,9 @@ public class Controller {
      * Extend Methods (Button Click)
      */
     @FXML
-    public void onShowDoctorButtonClick(Doctor doctor) {
+    public void onShowDoctorButtonClick(Doctor doctor, Node node) {
         SceneTool.switchToProfile("doctor/show", getAuthUser(), doctor);
+        SceneTool.closeWindow(node);
     }
 
 
@@ -198,7 +211,7 @@ public class Controller {
             Map<String, Node> tableAge = tableLabelWithSpacer(doctor.age());
             Map<String, Node> tableEmail = styledTableLabelWithSpacer(doctor.emailAttribute(), "email");
             Map<String, Node> tableCareerLevel = tableLabelWithSpacer(doctor.careerLevelAttribute());
-            Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor));
+            Map<String, Node> tableAction = tableButtonWithSpacer(doctor, event -> onShowDoctorButtonClick(doctor, section));
 
             tableBody.getChildren().addAll(
                 tableFirstName.get("label"), tableFirstName.get("spacer"),

@@ -36,17 +36,20 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onAddPatientButtonClick() {
-        System.out.println("You have now added a patient.");
+        SceneTool.switchToUserCreate("patient/create", getAuthUser(), hospital);
+        SceneTool.closeWindow(addPatientButton);
     }
 
     @FXML
     protected void onAddDoctorButtonClick() {
         SceneTool.switchToUserCreate("doctor/create", getAuthUser(), hospital);
+        SceneTool.closeWindow(addDoctorButton);
     }
 
     @FXML
     protected void onShowPatientButtonClick(Patient patient) {
         SceneTool.switchToProfile("patient/show", getAuthUser(), patient);
+        SceneTool.closeWindow(profilePatients);
     }
 
     /**

@@ -21,6 +21,7 @@ public class Show extends ShowParent {
     @FXML
     protected void onShowHospitalButtonClick(Hospital hospital) {
         SceneTool.switchToHospitalShow(getAuthUser(), hospital);
+        SceneTool.closeWindow(profileHospitals);
     }
 
     @FXML

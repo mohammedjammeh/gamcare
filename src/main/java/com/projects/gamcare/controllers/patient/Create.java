@@ -2,14 +2,13 @@ package com.projects.gamcare.controllers.patient;
 
 import com.projects.gamcare.controllers.user.CreateParent;
 import com.projects.gamcare.core.SceneTool;
+import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.enums.UserType;
-import com.projects.gamcare.models.BloodType;
-import com.projects.gamcare.models.Hospital;
-import com.projects.gamcare.models.Patient;
-import com.projects.gamcare.models.User;
+import com.projects.gamcare.models.*;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
+import javafx.geometry.Orientation;
 import javafx.scene.control.TextField;
 
 import java.util.List;
@@ -25,14 +24,14 @@ public class Create extends CreateParent {
     @FXML
     protected ChoiceBox hospitalChoiceBox, bloodTypeChoiceBox;
 
-    public void initialize() {
-        super.initialize();
-
+    public void setUpCreateForm() {
         hospitals = (new Hospital()).getAll();
         bloodTypes = (new BloodType()).getAll();
 
         hospitalChoiceBox.setItems(getNames(hospitals));
         bloodTypeChoiceBox.setItems(getNames(bloodTypes));
+
+        hospitalChoiceBox.getSelectionModel().select(hospitals.indexOf(getCurrentHospital()));
     }
 
     @FXML
@@ -45,9 +44,8 @@ public class Create extends CreateParent {
             newUserData(newPatientUserData(newPatient))
         );
 
-        SceneTool.switchToProfile(
-            "patient/show", getAuthUser(), getNewPatientWithUser()
-        );
+        SceneTool.switchToProfile("patient/show", getAuthUser(), getNewPatientWithUser());
+        SceneTool.closeWindow(bloodTypeChoiceBox);
     }
 
     private Map<String, Object> newPatientData() {
