@@ -43,7 +43,7 @@ public class Controller {
     public void setUpBody() {}
 
     public void setUpHeader() {
-        Label titleLabel = new Label("Gamcare - Farokono");
+        Label titleLabel = new Label("Gamcare");
 
         HBox mainTitleBox = new HBox();
         HBox.setHgrow(mainTitleBox, Priority.ALWAYS);
