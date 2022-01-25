@@ -97,12 +97,4 @@ public class User extends ProfileUser implements ModelInterface {
 
         return new ArrayList<>();
     }
-
-    public Doctor getDoctor() {
-        return (Doctor) (new Doctor()).where("id", getAttribute("doctors_id")).first();
-    }
-
-    public Patient getPatient() {
-        return (Patient) (new Patient()).where("id", getAttribute("patients_id")).first();
-    }
 }

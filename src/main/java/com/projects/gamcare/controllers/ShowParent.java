@@ -31,8 +31,8 @@ public class ShowParent extends Controller {
         this.profileUser = profileUser;
     }
 
-    public User getProfileUser() {
-        return (User) profileUser;
+    public ProfileUser getProfileUser() {
+        return profileUser;
     }
 
 
