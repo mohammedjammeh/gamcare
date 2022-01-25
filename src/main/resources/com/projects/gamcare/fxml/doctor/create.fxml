@@ -23,42 +23,42 @@
 
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
-<!--                    <HBox styleClass="subHeadingBox">-->
-<!--                        <Label text="Add Doctors"/>-->
-<!--                    </HBox>-->
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Add Doctors"/>
+                    </HBox>
 
-<!--                    <VBox styleClass="form">-->
-<!--                        <HBox styleClass="addDoctorsBox">-->
-<!--                            <VBox styleClass="studentDoctorsBox">-->
-<!--                                <Label text="Student doctors"/>-->
-<!--                                <ListView fx:id="studentDoctorsListView" styleClass="vertical"/>-->
-<!--                            </VBox>-->
+                    <VBox styleClass="form">
+                        <HBox styleClass="addDoctorsBox">
+                            <VBox styleClass="studentDoctorsBox">
+                                <Label text="Student doctors"/>
+                                <ListView fx:id="studentDoctorsListView" styleClass="vertical"/>
+                            </VBox>
 
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
+                            <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                            <VBox styleClass="juniorDoctorsBox">-->
-<!--                                <Label text="Junior doctors"/>-->
-<!--                                <ListView fx:id="juniorDoctorsListView" styleClass="vertical"/>-->
-<!--                            </VBox>-->
+                            <VBox styleClass="juniorDoctorsBox">
+                                <Label text="Junior doctors"/>
+                                <ListView fx:id="juniorDoctorsListView" styleClass="vertical"/>
+                            </VBox>
 
-<!--                            <HBox HBox.hgrow="ALWAYS"/>-->
+                            <HBox HBox.hgrow="ALWAYS"/>
 
-<!--                            <VBox styleClass="seniorDoctorsBox">-->
-<!--                                <Label text="Senior doctors"/>-->
-<!--                                <ListView fx:id="seniorDoctorsListView" styleClass="vertical"/>-->
-<!--                            </VBox>-->
-<!--                        </HBox>-->
+                            <VBox styleClass="seniorDoctorsBox">
+                                <Label text="Senior doctors"/>
+                                <ListView fx:id="seniorDoctorsListView" styleClass="vertical"/>
+                            </VBox>
+                        </HBox>
 
-<!--                        <VBox styleClass="buttonBox">-->
-<!--                            <Button text="Add Doctors" onAction="#onAddDoctorsButtonClick"/>-->
-<!--                        </VBox>-->
+                        <VBox styleClass="buttonBox">
+                            <Button text="Add Doctors" onAction="#onAddDoctorsButtonClick"/>
+                        </VBox>
 
-<!--                        <VBox.margin>-->
-<!--                            <Insets>-->
-<!--                                <bottom>30</bottom>-->
-<!--                            </Insets>-->
-<!--                        </VBox.margin>-->
-<!--                    </VBox>-->
+                        <VBox.margin>
+                            <Insets>
+                                <bottom>30</bottom>
+                            </Insets>
+                        </VBox.margin>
+                    </VBox>
 
 
 

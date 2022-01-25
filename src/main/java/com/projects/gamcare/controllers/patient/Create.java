@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Create extends CreateParent {
-    protected List<Model> hospitals, bloodTypes;
+    private List<Model> hospitals, bloodTypes;
 
     @FXML
     protected TextField weightTextField, heightTextField;

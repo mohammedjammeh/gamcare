@@ -48,73 +48,72 @@ public class Doctor extends ProfileUser implements ModelInterface {
         return getAvailable(doctors);
     }
 
-    public List<Model> getAllWhere(String level) {
-        return getDatabase()
-            .select(List.of("*"))
-            .with("users")
-            .with("hospitals_doctors")
-            .where("doctors.career_level", level)
-            .orderBy("first_name")
-            .getAll();
+    private List<Model> getAvailable(List<Model> doctors) {
+        return doctors.stream()
+            .filter(doctor -> belongsToLessThanThreeHospitals(doctor, doctors))
+            .distinct()
+            .toList();
     }
 
 
     /**
      * Get Available Doctors for Hospital
      */
-    public List<Model> getAvailableSeniors(Integer hospitalId) {
-        List<Model> doctors = getOtherHospitalDoctorsWhere(hospitalId, DoctorLevel.SENIOR.name());
+    public List<Model> getAvailableSeniors(Hospital hospital) {
+        List<Model> doctors = getAllWhere(DoctorLevel.SENIOR.name());
 
-        return getAvailable(doctors);
+        return getAvailable(doctors, hospital);
     }
 
-    public List<Model> getAvailableJuniors(Integer hospitalId) {
-        List<Model> doctors = getOtherHospitalDoctorsWhere(hospitalId, DoctorLevel.JUNIOR.name());
+    public List<Model> getAvailableJuniors(Hospital hospital) {
+        List<Model> doctors = getAllWhere(DoctorLevel.JUNIOR.name());
 
-        return getAvailable(doctors);
+        return getAvailable(doctors, hospital);
     }
 
-    public List<Model> getAvailableStudents(Integer hospitalId) {
-        List<Model> doctors = getOtherHospitalDoctorsWhere(hospitalId, DoctorLevel.STUDENT.name());
+    public List<Model> getAvailableStudents(Hospital hospital) {
+        List<Model> doctors = getAllWhere(DoctorLevel.STUDENT.name());
 
-        return getAvailable(doctors);
+        return getAvailable(doctors, hospital);
     }
 
-    private List<Model> getOtherHospitalDoctorsWhere(Integer hospitalId, String level) {
-        return database
-            .select(List.of("*"))
-            .with("users")
-            .with("hospitals_doctors")
-            .whereNot("hospitals_doctors.hospitals_id", hospitalId)
-            .where("doctors.career_level", level)
-            .orderBy("first_name")
-            .getAll();
+    private List<Model> getAvailable(List<Model> doctors, Hospital hospital) {
+        return doctors.stream()
+            .filter(doctor -> belongsToLessThanThreeHospitals(doctor, doctors))
+            .filter(doctor -> belongsToOtherHospitalsExcept(doctor, hospital))
+            .distinct()
+            .toList();
+    }
+
+    private static Boolean belongsToOtherHospitalsExcept(Model doctor, Hospital hospital) {
+        List<Integer> hospitalDoctorsIDs = hospital.getDoctors().stream().map(Model::idAttribute).toList();
+
+        return ! hospitalDoctorsIDs.contains(doctor.idAttribute());
     }
 
 
     /**
      * General Methods
      */
-    private List<Model> getAvailable(List<Model> doctors) {
-        return doctors.stream()
-            .filter(doctor -> isAvailable(doctor, doctors))
-            .distinct()
-            .toList();
+    public List<Model> getAllWhere(String level) {
+        return getDatabase()
+            .select(List.of("*"))
+            .with("users")
+            .where("doctors.career_level", level)
+            .orderBy("first_name")
+            .getAll();
     }
 
-    private static Boolean isAvailable(Model doctor, List<Model> doctors) {
+    private static Boolean belongsToLessThanThreeHospitals(Model doctor, List<Model> doctors) {
         return doctors.stream()
-            .filter(filteredDoctor -> Objects.equals(filteredDoctor.attributes.get("id"), doctor.attributes.get("id")))
+            .filter(filteredDoctor -> Objects.equals(filteredDoctor.idAttribute(), doctor.idAttribute()))
             .count() < 3;
     }
+
 
     /**
      * Query Methods
      */
-    public Doctor where(String column, Object value) {
-        return (Doctor) super.where(column, value);
-    }
-
     public List<Model> getHospitals() {
         return (new Hospital())
             .getDatabase()

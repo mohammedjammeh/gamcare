@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class Create extends Controller {
-    protected List<Model> leadDoctors, regions;
+    private List<Model> leadDoctors, regions;
 
     @FXML
     protected TextField nameTextField;
@@ -60,7 +60,7 @@ public class Create extends Controller {
         SceneTool.switchToHospitalShow(getAuthUser(), newHospital);
     }
 
-    protected TreeMap<String, Object> newHospitalData() {
+    private TreeMap<String, Object> newHospitalData() {
         TreeMap<String, Object> data = new TreeMap<>();
 
         data.put("name", nameInput());
@@ -78,47 +78,47 @@ public class Create extends Controller {
         return data;
     }
 
-    protected Hospital getNewHospital() {
+    private Hospital getNewHospital() {
         return (Hospital) (new Hospital()).where("email_address", emailAddressInput()).first();
     }
 
-    protected String nameInput() {
+    private String nameInput() {
         return nameTextField.getText();
     }
 
-    protected String sizeInput() {
+    private String sizeInput() {
         return sizeChoiceBox.getValue();
     }
 
-    protected Integer leadDoctorIndexInput() {
+    private Integer leadDoctorIndexInput() {
         return leadDoctorChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    protected String emailAddressInput() {
+    private String emailAddressInput() {
         return emailAddressTextField.getText();
     }
 
-    protected String phoneNumberInput() {
+    private String phoneNumberInput() {
         return phoneNumberTextField.getText();
     }
 
-    protected String relevantLinkInput() {
+    private String relevantLinkInput() {
         return relevantLinkTextField.getText();
     }
 
-    protected String compoundNameInput() {
+    private String compoundNameInput() {
         return compoundNameTextField.getText();
     }
 
-    protected String townInput() {
+    private String townInput() {
         return townTextField.getText();
     }
 
-    protected Integer regionIndexInput() {
+    private Integer regionIndexInput() {
         return regionChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    protected String otherDetailsInput() {
+    private String otherDetailsInput() {
         return otherDetailsTextArea.getText();
     }
 }

@@ -18,9 +18,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Create extends CreateParent {
-    protected List<Model> studentDoctors, juniorDoctors, seniorDoctors;
+    private List<Model> studentDoctors, juniorDoctors, seniorDoctors;
 
-    protected List<Model> hospitals, specialities;
+    private List<Model> hospitals, specialities;
 
     @FXML
     protected ListView studentDoctorsListView, juniorDoctorsListView, seniorDoctorsListView;
@@ -37,16 +37,26 @@ public class Create extends CreateParent {
     public void initialize() {
         super.initialize();
 
-//        studentDoctors = (new Doctor()).getAvailableStudents(1);
-//        juniorDoctors = (new Doctor()).getAvailableJuniors(1);
-//        seniorDoctors = (new Doctor()).getAvailableSeniors(1);
+        setUpAddForm();
+        setUpCreateForm();
+    }
+
+    private void setUpAddForm() {
+        Hospital hospital = (Hospital) (new Hospital()).where("id", 1).first();
+
+        studentDoctors = (new Doctor()).getAvailableStudents(hospital);
+        juniorDoctors = (new Doctor()).getAvailableJuniors(hospital);
+        seniorDoctors = (new Doctor()).getAvailableSeniors(hospital);
+
+        studentDoctorsListView.setItems(getFullNames(studentDoctors));
+        juniorDoctorsListView.setItems(getFullNames(juniorDoctors));
+        seniorDoctorsListView.setItems(getFullNames(seniorDoctors));
+    }
+
+    private void setUpCreateForm() {
         hospitals = (new Hospital()).getAll();
         specialities = (new Speciality()).getAll();
 
-
-//        studentDoctorsListView.setItems(getFullNames(studentDoctors));
-//        juniorDoctorsListView.setItems(getFullNames(juniorDoctors));
-//        seniorDoctorsListView.setItems(getFullNames(seniorDoctors));
         hospitalsListView.setItems(getNames(hospitals));
         specialityChoiceBox.setItems(getNames(specialities));
         careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
@@ -59,6 +69,18 @@ public class Create extends CreateParent {
         List<Integer> studentDoctorsIndices = getStudentDoctorsIndices();
         List<Integer> juniorDoctorsIndices = getJuniorDoctorsIndices();
         List<Integer> seniorDoctorsIndices = getSeniorDoctorsIndices();
+    }
+
+    private List<Integer> getStudentDoctorsIndices() {
+        return studentDoctorsListView.getSelectionModel().getSelectedIndices();
+    }
+
+    private List<Integer> getJuniorDoctorsIndices() {
+        return juniorDoctorsListView.getSelectionModel().getSelectedIndices();
+    }
+
+    private List<Integer> getSeniorDoctorsIndices() {
+        return seniorDoctorsListView.getSelectionModel().getSelectedIndices();
     }
 
     @FXML
@@ -83,7 +105,7 @@ public class Create extends CreateParent {
         );
     }
 
-    protected Map<String, Object> newDoctorData() {
+    private Map<String, Object> newDoctorData() {
         TreeMap<String, Object> data = new TreeMap<>();
 
         data.put("school", universityInput());
@@ -94,7 +116,7 @@ public class Create extends CreateParent {
         return data;
     }
 
-    protected Map<String, Object> newDoctorUserData(Doctor doctor) {
+    private Map<String, Object> newDoctorUserData(Doctor doctor) {
         TreeMap<String, Object> data = new TreeMap<>();
 
         data.put("type", UserType.DOCTOR.name());
@@ -122,31 +144,19 @@ public class Create extends CreateParent {
             .first();
     }
 
-    protected List<Integer> getStudentDoctorsIndices() {
-        return studentDoctorsListView.getSelectionModel().getSelectedIndices();
-    }
-
-    protected List<Integer> getJuniorDoctorsIndices() {
-        return juniorDoctorsListView.getSelectionModel().getSelectedIndices();
-    }
-
-    protected List<Integer> getSeniorDoctorsIndices() {
-        return seniorDoctorsListView.getSelectionModel().getSelectedIndices();
-    }
-
-    protected String universityInput() {
+    private String universityInput() {
         return universityTextField.getText();
     }
 
-    protected String fieldOfStudyInput() {
+    private String fieldOfStudyInput() {
         return fieldOfStudyTextField.getText();
     }
 
-    protected String careerLevelInput() {
+    private String careerLevelInput() {
         return careerLevelChoiceBox.getValue();
     }
 
-    protected ObservableList<Integer> hospitalsIndicesInput() {
+    private ObservableList<Integer> hospitalsIndicesInput() {
         return hospitalsListView.getSelectionModel().getSelectedIndices();
     }
 }
