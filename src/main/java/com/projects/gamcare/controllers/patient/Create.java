@@ -2,13 +2,11 @@ package com.projects.gamcare.controllers.patient;
 
 import com.projects.gamcare.controllers.user.CreateParent;
 import com.projects.gamcare.core.SceneTool;
-import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.models.*;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.wrappers.ChoiceBox;
 import javafx.fxml.FXML;
-import javafx.geometry.Orientation;
 import javafx.scene.control.TextField;
 
 import java.util.List;
@@ -31,7 +29,7 @@ public class Create extends CreateParent {
         hospitalChoiceBox.setItems(getNames(hospitals));
         bloodTypeChoiceBox.setItems(getNames(bloodTypes));
 
-        hospitalChoiceBox.getSelectionModel().select(hospitals.indexOf(getCurrentHospital()));
+        hospitalChoiceBox.getSelectionModel().select(hospitals.indexOf(getHospital()));
     }
 
     @FXML

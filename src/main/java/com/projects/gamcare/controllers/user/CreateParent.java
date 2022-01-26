@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class CreateParent extends Controller {
-    private Hospital currentHospital;
+    private Hospital hospital;
 
     private List<Model> titles, genders, tribes, regions;
 
@@ -148,15 +148,16 @@ public class CreateParent extends Controller {
         return otherDetailsTextArea.getText();
     }
 
+
     /**
      * Getters & Setters
      */
-    public void setCurrentHospital(Hospital hospital) {
-        this.currentHospital = hospital;
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
     }
 
-    public Hospital getCurrentHospital() {
-        return currentHospital;
+    public Hospital getHospital() {
+        return hospital;
     }
 
     public void setUpAddForm() {}

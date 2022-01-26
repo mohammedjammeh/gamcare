@@ -2,6 +2,7 @@ package com.projects.gamcare.core;
 
 import com.projects.gamcare.Main;
 import com.projects.gamcare.controllers.ShowParent;
+import com.projects.gamcare.controllers.hospital.Edit;
 import com.projects.gamcare.controllers.hospital.Show;
 import com.projects.gamcare.controllers.user.CreateParent;
 import com.projects.gamcare.models.Hospital;
@@ -47,7 +48,7 @@ public class SceneTool {
 
         CreateParent controller = loader.getController();
         controller.setAuthUser(authUser);
-        controller.setCurrentHospital(hospital);
+        controller.setHospital(hospital);
         controller.setUpHeader();
         controller.setUpBody();
         controller.setUpAddForm();
@@ -63,6 +64,19 @@ public class SceneTool {
         Show controller = loader.getController();
         controller.setAuthUser(authUser);
         controller.setHospital(hospital);
+        controller.setUpHeader();
+        controller.setUpBody();
+
+        showStage(root);
+    }
+
+    public static void switchToHospitalEdit(User authUser, Hospital hospital) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/edit.fxml"));
+        Parent root = getLoadedRoot(loader);
+
+        Edit controller = loader.getController();
+        controller.setAuthUser(authUser);
+        controller.setInputData(hospital);
         controller.setUpHeader();
         controller.setUpBody();
 

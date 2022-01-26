@@ -2,20 +2,14 @@ package com.projects.gamcare.controllers.hospital;
 
 import com.projects.gamcare.controllers.ShowParent;
 import com.projects.gamcare.core.SceneTool;
-import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Patient;
-import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 import java.util.*;
@@ -31,7 +25,8 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onEditHospitalButtonClick() {
-        System.out.println("You have now edit a hospital.");
+        SceneTool.switchToHospitalEdit(getAuthUser(), hospital);
+        SceneTool.closeWindow(editHospitalButton);
     }
 
     @FXML
