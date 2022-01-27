@@ -76,6 +76,7 @@ public class SceneTool {
 
         Edit controller = loader.getController();
         controller.setAuthUser(authUser);
+        controller.setHospital(hospital);
         controller.setInputData(hospital);
         controller.setUpHeader();
         controller.setUpBody();

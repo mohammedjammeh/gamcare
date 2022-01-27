@@ -47,7 +47,7 @@ public class Fields extends Controller {
     /**
      * Getters & Setters
      */
-    protected TreeMap<String, Object> getInputData() {
+    public TreeMap<String, Object> getInputData() {
         TreeMap<String, Object> data = new TreeMap<>();
 
         data.put("name", nameTextField.getText());
@@ -58,22 +58,21 @@ public class Fields extends Controller {
         data.put("compound", compoundNameTextField.getText());
         data.put("town", townTextField.getText());
         data.put("regions_id", regions.get(regionIndexInput()).idAttribute());
-        data.put("created_at", TimeTool.newDate());
-        data.put("updated_at", TimeTool.newDate());
         data.put("other_details", otherDetailsTextArea.getText());
+        data.put("updated_at", TimeTool.newDate());
 
         return data;
     }
 
-    protected String emailAddressInput() {
+    public String emailAddressInput() {
         return emailAddressTextField.getText();
     }
 
-    protected Integer regionIndexInput() {
+    public Integer regionIndexInput() {
         return regionChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    protected Integer leadDoctorIndexInput() {
+    public Integer leadDoctorIndexInput() {
         return leadDoctorChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
@@ -88,6 +87,10 @@ public class Fields extends Controller {
         townTextField.setText(hospital.getAttribute("town").toString());
         regionChoiceBox.getSelectionModel().select(regions.indexOf(hospital.getRegion()));
         otherDetailsTextArea.setText(hospital.getAttribute("other_details").toString());
+    }
+
+    protected Hospital getHospitalFromDB() {
+        return (Hospital) (new Hospital()).where("email_address", emailAddressInput()).first();
     }
 
 }

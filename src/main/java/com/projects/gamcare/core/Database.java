@@ -171,6 +171,7 @@ public class Database {
 
         for (Map<String, String> columnData : getColumnsData(queryResults)) {
             putData(modelInstance.attributes, columnData, queryResults);
+            modelInstance.setTableName(model.getTableName());
         }
 
         return modelInstance;
@@ -282,6 +283,51 @@ public class Database {
 
     private String insertColumnEnd(Map<String, Object> data, Integer insertCount) {
         return insertCount == (long) data.values().size() ?  "" : ", ";
+    }
+
+
+    /**
+     * Insert Query Builders
+     */
+    public void update(Map<String, Object> data) {
+        try {
+            List<Object> dataValuesList = data.values().stream().toList();
+            PreparedStatement statement = connection.prepareStatement(updateStatement(data));
+
+            for (int i = 0; i < dataValuesList.size(); i++) {
+                setStatementValue(statement, i+1, dataValuesList.get(i));
+            }
+
+            statement.executeUpdate();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    private String updateStatement(Map<String, Object> data) {
+        StringBuilder statementStart = new StringBuilder("UPDATE " + model.getTableName() + " SET ");
+        StringBuilder fieldsValuesBuilder = new StringBuilder();
+        String statementEnd = "WHERE id = " + model.idAttribute();
+
+        int updateCount = 0;
+
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
+            updateCount++;
+
+            fieldsValuesBuilder
+                .append(entry.getKey())
+                .append(" = ?")
+                .append(updateColumnEnd(data, updateCount));
+        }
+
+        return statementStart
+            .append(fieldsValuesBuilder)
+            .append(statementEnd)
+            .toString();
+    }
+
+    private String updateColumnEnd(Map<String, Object> data, Integer updateCount) {
+        return updateCount == (long) data.values().size() ?  " " : ", ";
     }
 
 

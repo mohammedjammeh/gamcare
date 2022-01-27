@@ -135,6 +135,7 @@ public class Controller {
 
     private boolean thisIsInstanceOfHospitalController() {
         return getClass().isInstance(new com.projects.gamcare.controllers.hospital.Create()) ||
+            getClass().isInstance(new com.projects.gamcare.controllers.hospital.Edit()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.hospital.Index()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.hospital.Show());
     }
@@ -310,10 +311,10 @@ public class Controller {
     /**
      * Extend Methods (Pivot Tables)
      */
-    public TreeMap<String, Object> newHospitalDoctorData(Hospital hospital, Doctor doctor,  Integer leadDoctor) {
+    public TreeMap<String, Object> newHospitalDoctorData(Hospital hospital, Doctor doctor,  Integer isLeadDoctor) {
         TreeMap<String, Object> data = new TreeMap<>();
 
-        data.put("lead_doctor", leadDoctor);
+        data.put("lead_doctor", isLeadDoctor);
         data.put("created_at", TimeTool.newDate());
         data.put("updated_at", TimeTool.newDate());
         data.put("doctors_id", doctor.idAttribute());

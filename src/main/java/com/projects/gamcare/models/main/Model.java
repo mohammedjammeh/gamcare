@@ -133,6 +133,10 @@ public class Model implements ModelInterface {
         database.insert(newData);
     }
 
+    public void update(Map<String, Object> newData) {
+        database.update(newData);
+    }
+
     public Region getRegion() {
         return (Region) (new Region())
             .where("id", getAttribute("regions_id"))
