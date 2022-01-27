@@ -18,19 +18,19 @@ public class Edit extends Fields {
         Doctor currentLeadDoctor = hospital.getLeadDoctor();
         Doctor selectedLeadDoctor = (Doctor) leadDoctors.get(leadDoctorIndexInput());
 
-        if (currentLeadDoctor.equals(selectedLeadDoctor) ) {
-            return;
+        if (! currentLeadDoctor.equals(selectedLeadDoctor) ) {
+            Model hospitalLeadDoctorPivot = (new Model())
+                .setTableName("hospitals_doctors")
+                .where("lead_doctor", 1)
+                .where("doctors_id", currentLeadDoctor.idAttribute())
+                .where("hospitals_id", hospital.idAttribute())
+                .first();
+
+            hospitalLeadDoctorPivot
+                .update(newHospitalDoctorData(
+                    hospital, selectedLeadDoctor, 1
+                ));
         }
-
-        Model hospitalLeadDoctorPivot = (new Model())
-            .setTableName("hospitals_doctors")
-            .where("lead_doctor", 1)
-            .where("doctors_id", currentLeadDoctor.idAttribute())
-            .where("hospitals_id", hospital.idAttribute())
-            .first();
-
-        hospitalLeadDoctorPivot
-            .update(newHospitalDoctorData(hospital, selectedLeadDoctor, 1));
 
         SceneTool.switchToHospitalShow(getAuthUser(), hospital);
         SceneTool.closeWindow(nameTextField);
