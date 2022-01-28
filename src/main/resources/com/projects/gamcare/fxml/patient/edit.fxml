@@ -164,7 +164,7 @@
                         </HBox>
 
                         <VBox styleClass="buttonBox">
-                            <Button text="Edit Patient" onAction="#onEditPatientButtonClick"/>
+                            <Button text="Update Patient" onAction="#onUpdatePatientButtonClick"/>
                         </VBox>
                     </VBox>
                 </VBox>

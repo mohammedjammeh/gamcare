@@ -186,9 +186,9 @@ public class Controller {
     }
 
     protected Integer getInputId(ChoiceBox choiceBox, List<Model> modelsList) {
-        int bloodTypeIndexInput =  choiceBox.getSelectionModel().getSelectedIndex();
+        int indexInput =  choiceBox.getSelectionModel().getSelectedIndex();
 
-        return modelsList.get(bloodTypeIndexInput).idAttribute();
+        return modelsList.get(indexInput).idAttribute();
     }
 
 

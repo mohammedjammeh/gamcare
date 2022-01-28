@@ -24,8 +24,8 @@ public class Create extends Fields {
 
         Patient newPatient = getPatientFromDB();
 
-        (new User()).insert(
-            newUserData(newPatientUserData(newPatient))
+        (new User()).insert(newUserData(
+            newPatientUserData(newPatient))
         );
 
         SceneTool.switchToProfile("patient/show", getAuthUser(), getPatientWithUserFromDB());

@@ -57,7 +57,7 @@ public class Fields extends Controller {
         data.put("relevant_link", relevantLinkTextField.getText());
         data.put("compound", compoundNameTextField.getText());
         data.put("town", townTextField.getText());
-        data.put("regions_id", regions.get(regionIndexInput()).idAttribute());
+        data.put("regions_id", getInputId(regionChoiceBox, regions));
         data.put("other_details", otherDetailsTextArea.getText());
         data.put("updated_at", TimeTool.newDate());
 
@@ -66,10 +66,6 @@ public class Fields extends Controller {
 
     public String emailAddressInput() {
         return emailAddressTextField.getText();
-    }
-
-    public Integer regionIndexInput() {
-        return regionChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
     public Integer leadDoctorIndexInput() {

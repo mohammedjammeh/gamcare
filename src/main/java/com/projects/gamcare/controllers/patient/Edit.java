@@ -23,18 +23,17 @@ public class Edit extends Fields {
     }
 
     @FXML
-    protected void onEditPatientButtonClick() {
-//        System.out.println(profileUser.attributes);
-//        (new Patient()).insert(getInputData());
-//
-//        Patient newPatient = getPatientFromDB();
-//
-//        (new User()).insert(
-//            newUserData(newPatientUserData(newPatient))
-//        );
-//
-//        SceneTool.switchToProfile("patient/show", getAuthUser(), getPatientWithUserFromDB());
-//        SceneTool.closeWindow(bloodTypeChoiceBox);
+    protected void onUpdatePatientButtonClick() {
+        profileUser.getPatient().update(getInputData());
+
+        Patient newPatient = getPatientFromDB();
+
+        profileUser.getUser().update(newUserData(
+            newPatientUserData(newPatient))
+        );
+
+        SceneTool.switchToProfile("patient/show", getAuthUser(), getPatientWithUserFromDB());
+        SceneTool.closeWindow(bloodTypeChoiceBox);
     }
 
     /**
