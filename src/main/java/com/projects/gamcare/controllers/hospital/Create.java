@@ -23,7 +23,7 @@ public class Create extends Fields {
             .setTableName("hospitals_doctors")
             .insert(newHospitalDoctorData(newHospital, leadDoctor, 1));
 
-        SceneTool.switchToHospitalShow(getAuthUser(), newHospital);
+        SceneTool.switchToHospital("show", getAuthUser(), newHospital);
         SceneTool.closeWindow(nameTextField);
     }
 

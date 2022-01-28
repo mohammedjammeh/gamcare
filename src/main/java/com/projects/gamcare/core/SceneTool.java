@@ -2,8 +2,6 @@ package com.projects.gamcare.core;
 
 import com.projects.gamcare.Main;
 import com.projects.gamcare.controllers.ShowParent;
-import com.projects.gamcare.controllers.hospital.Edit;
-import com.projects.gamcare.controllers.hospital.Show;
 import com.projects.gamcare.controllers.user.CreateParent;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
@@ -43,7 +41,7 @@ public class SceneTool {
     }
 
     public static void switchToUserCreate(String resourceName, User authUser, Hospital hospital) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + "/create.fxml"));
         Parent root = getLoadedRoot(loader);
 
         CreateParent controller = loader.getController();
@@ -57,27 +55,13 @@ public class SceneTool {
         showStage(root);
     }
 
-    public static void switchToHospitalShow(User authUser, Hospital hospital) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/show.fxml"));
+    public static void switchToHospital(String resourceName, User authUser, Hospital hospital) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/" + resourceName + ".fxml"));
         Parent root = getLoadedRoot(loader);
 
-        Show controller = loader.getController();
+        Controller controller = loader.getController();
         controller.setAuthUser(authUser);
         controller.setHospital(hospital);
-        controller.setUpHeader();
-        controller.setUpBody();
-
-        showStage(root);
-    }
-
-    public static void switchToHospitalEdit(User authUser, Hospital hospital) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/hospital/edit.fxml"));
-        Parent root = getLoadedRoot(loader);
-
-        Edit controller = loader.getController();
-        controller.setAuthUser(authUser);
-        controller.setHospital(hospital);
-        controller.setInputData(hospital);
         controller.setUpHeader();
         controller.setUpBody();
 

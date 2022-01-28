@@ -25,19 +25,19 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onEditHospitalButtonClick() {
-        SceneTool.switchToHospitalEdit(getAuthUser(), hospital);
+        SceneTool.switchToHospital("edit", getAuthUser(), hospital);
         SceneTool.closeWindow(editHospitalButton);
     }
 
     @FXML
     protected void onAddPatientButtonClick() {
-        SceneTool.switchToUserCreate("patient/create", getAuthUser(), hospital);
+        SceneTool.switchToUserCreate("patient", getAuthUser(), hospital);
         SceneTool.closeWindow(addPatientButton);
     }
 
     @FXML
     protected void onAddDoctorButtonClick() {
-        SceneTool.switchToUserCreate("doctor/create", getAuthUser(), hospital);
+        SceneTool.switchToUserCreate("doctor", getAuthUser(), hospital);
         SceneTool.closeWindow(addDoctorButton);
     }
 

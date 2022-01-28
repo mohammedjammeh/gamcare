@@ -32,7 +32,7 @@ public class Edit extends Fields {
                 ));
         }
 
-        SceneTool.switchToHospitalShow(getAuthUser(), hospital);
+        SceneTool.switchToHospital("show", getAuthUser(), hospital);
         SceneTool.closeWindow(nameTextField);
     }
 
@@ -41,5 +41,7 @@ public class Edit extends Fields {
      */
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
+
+        this.setInputData(hospital);
     }
 }
