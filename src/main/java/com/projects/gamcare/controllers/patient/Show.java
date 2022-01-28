@@ -1,6 +1,7 @@
 package com.projects.gamcare.controllers.patient;
 
 import com.projects.gamcare.controllers.ShowParent;
+import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.models.Patient;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,7 +13,8 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onEditPatientButtonClick() {
-        System.out.println("You can now edit patient profile.");
+        SceneTool.switchToUserEdit("patient", getAuthUser(), getProfileUser());
+        SceneTool.closeWindow(innerBodyBox);
     }
 
     @FXML

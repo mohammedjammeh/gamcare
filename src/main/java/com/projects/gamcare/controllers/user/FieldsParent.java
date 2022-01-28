@@ -11,15 +11,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class CreateParent extends Controller {
-    private Hospital hospital;
-
-    private List<Model> titles, genders, tribes, regions;
+public class FieldsParent extends Controller {
+    protected List<Model> titles, genders, tribes, regions;
 
     @FXML
     protected TextField firstNameTextField, middleNameTextField, lastNameTextField;
@@ -57,26 +55,26 @@ public class CreateParent extends Controller {
         TreeMap<String, Object> data = new TreeMap<>();
         byte[] salt = Hash.createSalt();
 
-        data.put("first_name", firstNameInput());
-        data.put("middle_name", middleNameInput());
-        data.put("last_name", lastNameInput());
+        data.put("first_name", firstNameTextField.getText());
+        data.put("middle_name", middleNameTextField.getText());
+        data.put("last_name", lastNameTextField.getText());
 
         data.put("titles_id", titles.get(titleIndexInput()).idAttribute());
         data.put("genders_id", genders.get(genderIndexInput()).idAttribute());
         data.put("tribes_id", tribes.get(tribeIndexInput()).idAttribute());
 
-        data.put("email_address", emailAddressInput());
-        data.put("phone_number", phoneNumberInput());
-        data.put("relevant_link", relevantLinkInput());
+        data.put("email_address", emailAddressTextField.getText());
+        data.put("phone_number", phoneNumberTextField.getText());
+        data.put("relevant_link", relevantLinkTextField.getText());
 
-        data.put("place_of_birth", placeOfBirthInput());
-        data.put("date_of_birth", dateOfBirthInput().toString());
+        data.put("place_of_birth", placeOfBirthTextField.getText());
+        data.put("date_of_birth", Date.valueOf(dateOfBirthPicker.getValue()));
 
-        data.put("compound", compoundNameInput());
-        data.put("town", townInput());
+        data.put("compound", compoundNameTextField.getText());
+        data.put("town", townTextField.getText());
         data.put("regions_id", regions.get(regionIndexInput()).idAttribute());
 
-        data.put("other_details", otherDetailsInput());
+        data.put("other_details", otherDetailsTextArea.getText());
         data.put("salt", salt);
         data.put("hash", Hash.generate("password123", salt));
 
@@ -86,18 +84,6 @@ public class CreateParent extends Controller {
         data.putAll(extraUserData);
 
         return data;
-    }
-
-    protected String firstNameInput() {
-        return firstNameTextField.getText();
-    }
-
-    protected String middleNameInput() {
-        return middleNameTextField.getText();
-    }
-
-    protected String lastNameInput() {
-        return lastNameTextField.getText();
     }
 
     protected Integer titleIndexInput() {
@@ -112,55 +98,17 @@ public class CreateParent extends Controller {
         return tribeChoiceBox.getSelectionModel().getSelectedIndex();
     }
 
-    protected String emailAddressInput() {
-        return emailAddressTextField.getText();
-    }
-
-    protected String phoneNumberInput() {
-        return phoneNumberTextField.getText();
-    }
-
-    protected String relevantLinkInput() {
-        return relevantLinkTextField.getText();
-    }
-
-    protected String placeOfBirthInput() {
-        return placeOfBirthTextField.getText();
-    }
-
-    protected LocalDate dateOfBirthInput() {
-        return dateOfBirthPicker.getValue();
-    }
-
-    protected String compoundNameInput() {
-        return compoundNameTextField.getText();
-    }
-
-    protected String townInput() {
-        return townTextField.getText();
-    }
-
     protected Integer regionIndexInput() {
         return regionChoiceBox.getSelectionModel().getSelectedIndex();
-    }
-
-    protected String otherDetailsInput() {
-        return otherDetailsTextArea.getText();
     }
 
 
     /**
      * Getters & Setters
      */
-    public void setHospital(Hospital hospital) {
-        this.hospital = hospital;
-    }
-
-    public Hospital getHospital() {
-        return hospital;
-    }
-
     public void setUpAddForm() {}
 
     public void setUpCreateForm() {}
+
+    public void setUpEditForm() {}
 }

@@ -40,6 +40,8 @@ public class Controller {
 
     public void setHospital(Hospital hospital) {}
 
+    public void setProfileUser(ProfileUser profileUser) {}
+
     public ProfileUser getProfileUser() { return null; }
 
     public void setUpBody() {}

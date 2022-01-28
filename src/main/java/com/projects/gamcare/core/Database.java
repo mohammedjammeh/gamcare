@@ -4,8 +4,8 @@ import com.projects.gamcare.models.main.Model;
 
 import java.io.FileInputStream;
 import java.sql.*;
+import java.sql.Date;
 import java.util.*;
-import java.util.Date;
 
 public class Database {
     private Connection connection;

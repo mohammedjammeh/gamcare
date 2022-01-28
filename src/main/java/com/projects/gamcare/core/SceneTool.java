@@ -2,9 +2,10 @@ package com.projects.gamcare.core;
 
 import com.projects.gamcare.Main;
 import com.projects.gamcare.controllers.ShowParent;
-import com.projects.gamcare.controllers.user.CreateParent;
+import com.projects.gamcare.controllers.user.FieldsParent;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.User;
+import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -40,17 +41,31 @@ public class SceneTool {
         showStage(root);
     }
 
-    public static void switchToUserCreate(String resourceName, User authUser, Hospital hospital) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + "/create.fxml"));
+    public static void switchToUserCreate(String resourceFolderName, User authUser, Hospital hospital) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceFolderName + "/create.fxml"));
         Parent root = getLoadedRoot(loader);
 
-        CreateParent controller = loader.getController();
+        FieldsParent controller = loader.getController();
         controller.setAuthUser(authUser);
         controller.setHospital(hospital);
         controller.setUpHeader();
         controller.setUpBody();
         controller.setUpAddForm();
         controller.setUpCreateForm();
+
+        showStage(root);
+    }
+
+    public static void switchToUserEdit(String resourceFolderName, User authUser, ProfileUser profileUser) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceFolderName + "/edit.fxml"));
+        Parent root = getLoadedRoot(loader);
+
+        FieldsParent controller = loader.getController();
+        controller.setAuthUser(authUser);
+        controller.setProfileUser(profileUser);
+        controller.setUpHeader();
+        controller.setUpBody();
+        controller.setUpEditForm();
 
         showStage(root);
     }

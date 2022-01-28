@@ -1,6 +1,6 @@
 package com.projects.gamcare.controllers.doctor;
 
-import com.projects.gamcare.controllers.user.CreateParent;
+import com.projects.gamcare.controllers.user.FieldsParent;
 import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.enums.UserType;
@@ -17,7 +17,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Create extends CreateParent {
+public class Create extends FieldsParent {
+    private Hospital hospital;
+
     private List<Model> studentDoctors, juniorDoctors, seniorDoctors;
 
     private List<Model> hospitals, specialities;
@@ -35,9 +37,9 @@ public class Create extends CreateParent {
     protected ListView hospitalsListView;
 
     public void setUpAddForm() {
-        studentDoctors = (new Doctor()).getAvailableStudents(getHospital());
-        juniorDoctors = (new Doctor()).getAvailableJuniors(getHospital());
-        seniorDoctors = (new Doctor()).getAvailableSeniors(getHospital());
+        studentDoctors = (new Doctor()).getAvailableStudents(hospital);
+        juniorDoctors = (new Doctor()).getAvailableJuniors(hospital);
+        seniorDoctors = (new Doctor()).getAvailableSeniors(hospital);
 
         studentDoctorsListView.setItems(getFullNames(studentDoctors));
         juniorDoctorsListView.setItems(getFullNames(juniorDoctors));
@@ -53,7 +55,7 @@ public class Create extends CreateParent {
         careerLevelChoiceBox.setItems(getEnumItems(DoctorLevel.class));
 
         hospitalsListView.setOrientation(Orientation.HORIZONTAL);
-        hospitalsListView.getSelectionModel().select(hospitals.indexOf(getHospital()));
+        hospitalsListView.getSelectionModel().select(hospitals.indexOf(hospital));
     }
 
     @FXML
@@ -149,5 +151,13 @@ public class Create extends CreateParent {
 
     private ObservableList<Integer> hospitalsIndicesInput() {
         return hospitalsListView.getSelectionModel().getSelectedIndices();
+    }
+
+
+    /**
+     * Getters & Setters
+     */
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
     }
 }
