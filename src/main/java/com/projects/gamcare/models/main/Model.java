@@ -160,4 +160,10 @@ public class Model implements ModelInterface {
             .where("id", getAttribute("tribes_id"))
             .first();
     }
+
+    public Speciality getSpeciality() {
+        return (Speciality) (new Speciality())
+            .where("id", getAttribute("specialities_id"))
+            .first();
+    }
 }

@@ -146,6 +146,7 @@ public class Controller {
 
     private boolean thisIsInstanceOfDoctorController() {
         return getClass().isInstance(new com.projects.gamcare.controllers.doctor.Create()) ||
+            getClass().isInstance(new com.projects.gamcare.controllers.doctor.Edit()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Index()) ||
             getClass().isInstance(new com.projects.gamcare.controllers.doctor.Show());
     }

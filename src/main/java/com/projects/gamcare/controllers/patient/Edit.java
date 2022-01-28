@@ -19,7 +19,7 @@ public class Edit extends Fields {
         hospitalChoiceBox.setItems(getNames(hospitals));
         bloodTypeChoiceBox.setItems(getNames(bloodTypes));
 
-        this.setInputData(profileUser);
+        setInputData(profileUser);
     }
 
     @FXML

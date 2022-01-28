@@ -21,17 +21,18 @@ public class Show extends ShowParent {
     @FXML
     protected void onShowHospitalButtonClick(Hospital hospital) {
         SceneTool.switchToHospital("show", getAuthUser(), hospital);
-        SceneTool.closeWindow(profileHospitals);
+        SceneTool.closeWindow(innerBodyBox);
     }
 
     @FXML
     protected void onEditDoctorButtonClick() {
-        System.out.println("You have now edit a hospital.");
+        SceneTool.switchToUserEdit("doctor", getAuthUser(), getProfileUser());
+        SceneTool.closeWindow(innerBodyBox);
     }
 
     @FXML
     protected void onDeleteDoctorButtonClick() {
-        System.out.println("You have now edit a hospital.");
+        System.out.println("You have now delete a doctor.");
     }
 
     public void setUpBody() {

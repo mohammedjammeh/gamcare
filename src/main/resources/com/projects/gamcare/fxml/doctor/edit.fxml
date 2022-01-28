@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import com.projects.gamcare.wrappers.ChoiceBox?>
+<?import com.projects.gamcare.wrappers.ListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.projects.gamcare.controllers.doctor.Edit"
+    stylesheets="@../../css/main.css"
+>
+    <ScrollPane styleClass="bodyScrollPane" fitToWidth="true">
+        <VBox>
+            <VBox styleClass="headingBox" fx:id="headingBox"/>
+
+            <VBox styleClass="bodyBox">
+                <VBox styleClass="innerBodyBox">
+                    <HBox styleClass="subHeadingBox">
+                        <Label text="Edit New Doctor"/>
+                    </HBox>
+
+                    <VBox styleClass="form">
+                        <VBox fx:id="errorBox" styleClass="errorBox">
+                            <Label text="Sorry, there is an error."/>
+                        </VBox>
+
+                        <HBox>
+                            <VBox styleClass="firstNameBox">
+                                <Label text="First name"/>
+                                <TextField promptText="First name" fx:id="firstNameTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="middleNameBox">
+                                <Label text="Middle name"/>
+                                <TextField promptText="Middle name" fx:id="middleNameTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="lastNameBox">
+                                <Label text="Last name"/>
+                                <TextField promptText="Last name" fx:id="lastNameTextField"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="titleBox">
+                                <Label text="Title"/>
+                                <ChoiceBox fx:id="titleChoiceBox"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="genderBox">
+                                <Label text="Gender"/>
+                                <ChoiceBox fx:id="genderChoiceBox"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="tribeBox">
+                                <Label text="Tribe"/>
+                                <ChoiceBox fx:id="tribeChoiceBox"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="universityBox">
+                                <Label text="University"/>
+                                <TextField promptText="University" fx:id="universityTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="fieldOfStudyBox">
+                                <Label text="Field of study"/>
+                                <TextField promptText="Field of study" fx:id="fieldOfStudyTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="careerLevelBox">
+                                <Label text="Level"/>
+                                <ChoiceBox fx:id="careerLevelChoiceBox"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="specialityBox">
+                                <Label text="Speciality"/>
+                                <ChoiceBox fx:id="specialityChoiceBox"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="placeOfBirthBox">
+                                <Label text="Place of birth"/>
+                                <TextField promptText="Place of birth" fx:id="placeOfBirthTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="dateOfBirthBox">
+                                <Label text="Date of birth"/>
+                                <DatePicker promptText="Date of birth" fx:id="dateOfBirthPicker"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="emailAddressBox">
+                                <Label text="Email address"/>
+                                <TextField promptText="Email address" fx:id="emailAddressTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="phoneNumberBox">
+                                <Label text="Phone number"/>
+                                <TextField promptText="Phone number" fx:id="phoneNumberTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="relevantLinkBox">
+                                <Label text="Relevant link"/>
+                                <TextField promptText="Relevant link" fx:id="relevantLinkTextField"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="compoundNameBox">
+                                <Label text="Compound name"/>
+                                <TextField promptText="Compound name" fx:id="compoundNameTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="townBox">
+                                <Label text="Town"/>
+                                <TextField promptText="Town" fx:id="townTextField"/>
+                            </VBox>
+
+                            <HBox HBox.hgrow="ALWAYS"/>
+
+                            <VBox styleClass="regionBox">
+                                <Label text="Region"/>
+                                <ChoiceBox fx:id="regionChoiceBox"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="hospitalsBox">
+                                <Label text="Hospitals"/>
+                                <ListView fx:id="hospitalsListView" styleClass="horizontal"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox>
+                            <VBox styleClass="otherDetailsBox">
+                                <Label text="Other details"/>
+                                <TextArea fx:id="otherDetailsTextArea" promptText="Other details"/>
+                            </VBox>
+                        </HBox>
+
+                        <VBox styleClass="buttonBox">
+                            <Button text="Update Doctor" onAction="#onUpdateDoctorButtonClick"/>
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</VBox>
+

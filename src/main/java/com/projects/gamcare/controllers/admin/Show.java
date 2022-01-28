@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 public class Show extends ShowParent {
     @FXML
     protected void onEditAdminButtonClick() {
-        System.out.println("You have now edit a hospital.");
+        System.out.println("You have now edit an admin.");
     }
 
     public void setUpBody() {
