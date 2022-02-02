@@ -255,29 +255,29 @@ public class Database {
     }
 
     private String insertStatement(Map<String, Object> data) {
-        StringBuilder insertStatementStart = new StringBuilder("INSERT INTO " + model.getTableName() + " (");
-        StringBuilder insertFieldsBuilder = new StringBuilder();
-        StringBuilder insertValuesBuilder = new StringBuilder(") values (");
-        String insertStatementEnd = ")";
+        StringBuilder statementStart = new StringBuilder("INSERT INTO " + model.getTableName() + " (");
+        StringBuilder fieldsBuilder = new StringBuilder();
+        StringBuilder valuesBuilder = new StringBuilder(") values (");
+        String statementEnd = ")";
 
         int insertCount = 0;
 
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             insertCount++;
 
-            insertFieldsBuilder
+            fieldsBuilder
                 .append(entry.getKey())
                 .append(insertColumnEnd(data, insertCount));
 
-            insertValuesBuilder
+            valuesBuilder
                 .append("?")
                 .append(insertColumnEnd(data, insertCount));
         }
 
-        return insertStatementStart
-            .append(insertFieldsBuilder)
-            .append(insertValuesBuilder)
-            .append(insertStatementEnd)
+        return statementStart
+            .append(fieldsBuilder)
+            .append(valuesBuilder)
+            .append(statementEnd)
             .toString();
     }
 
@@ -287,7 +287,7 @@ public class Database {
 
 
     /**
-     * Insert Query Builders
+     * Update Query Builders
      */
     public void update(Map<String, Object> data) {
         try {
@@ -328,6 +328,56 @@ public class Database {
 
     private String updateColumnEnd(Map<String, Object> data, Integer updateCount) {
         return updateCount == (long) data.values().size() ?  " " : ", ";
+    }
+
+
+    /**
+     * Delete Query Builders
+     */
+    public void deleteManyWhere(List<Map<String, Object>> rowsData) {
+        try {
+            PreparedStatement statement = connection.prepareStatement(deleteManyWhereStatement(rowsData));
+
+            int paramsCount = 0;
+            for (Map<String, Object> rowData : rowsData) {
+                for (Map.Entry<String, Object> entity : rowData.entrySet()) {
+                    paramsCount++;
+                    setStatementValue(statement, paramsCount, entity.getValue());
+                }
+            }
+
+            statement.executeUpdate();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public String deleteManyWhereStatement(List<Map<String, Object>> rowsData) {
+        StringBuilder statementStart = new StringBuilder("DELETE FROM " + model.getTableName() + " WHERE ");
+        StringBuilder rowsDataBuilder = new StringBuilder();
+
+        for (int rowsIndex = 0; rowsIndex < rowsData.size(); rowsIndex++) {
+            if (rowsIndex > 0) {
+                rowsDataBuilder.append(" OR ");
+            }
+
+            rowsDataBuilder.append("(");
+
+            int rowsCount = 0;
+            for (Map.Entry<String, Object> field: rowsData.get(rowsIndex).entrySet()) {
+                if (rowsCount > 0) {
+                    rowsDataBuilder.append(" AND ");
+                }
+
+                rowsDataBuilder.append(field.getKey()).append(" = ?");
+
+                rowsCount++;
+            }
+
+            rowsDataBuilder.append(")");
+        }
+
+        return statementStart.append(rowsDataBuilder).toString();
     }
 
 

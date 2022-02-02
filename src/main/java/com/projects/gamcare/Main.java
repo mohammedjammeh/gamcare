@@ -5,6 +5,7 @@ import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.core.TimeTool;
 import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.models.Hospital;
+import com.projects.gamcare.models.main.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -102,9 +103,22 @@ public class Main extends Application {
 
 
 //            DELETE
-//            String deleteSql = "delete from users where email='bailo@gmail.com'";
+//            String deleteSql = "DELETE FROM hospitals_doctors WHERE (doctors_id = ? AND hospitals_id = ?) OR (doctors_id = ? AND hospitals_id = ?)";
 //
-//            int rowsAffected = myStmt.executeUpdate(deleteSql);
+//            (new Model())
+//                .setTableName("hospitals_doctors")
+//                .whereAnd("doctors_id")
+//                .whereAnd();
+
+//            PreparedStatement statement = myConn.prepareStatement(deleteSql);
+//
+//            statement.setInt(1, 2);
+//            statement.setInt(2, 4);
+//
+//            statement.setInt(3, 2);
+//            statement.setInt(4, 7);
+//
+//            int rowsAffected = statement.executeUpdate();
 //
 //            System.out.println("Number of rows affected: " + rowsAffected);
 

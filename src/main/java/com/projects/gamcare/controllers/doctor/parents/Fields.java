@@ -6,7 +6,6 @@ import com.projects.gamcare.enums.DoctorLevel;
 import com.projects.gamcare.enums.UserType;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
-import com.projects.gamcare.models.Patient;
 import com.projects.gamcare.models.Speciality;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
@@ -101,7 +100,6 @@ public class Fields extends FieldsParent {
             hospitalID--;
             hospitalsListView.getSelectionModel().select(hospitalID);
         }
-
     }
 
     protected Map<String, Object> newDoctorUserData(Doctor doctor) {

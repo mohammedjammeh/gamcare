@@ -21,7 +21,11 @@ public class ProfileUser extends Model {
         return (Patient) (new Patient()).where("id", getAttribute("patients_id")).first();
     }
 
-    public User getUser() {
+    public User getPatientUser() {
         return (User) (new User()).where("patients_id", getAttribute("patients_id")).first();
+    }
+
+    public User getDoctorUser() {
+        return (User) (new User()).where("doctors_id", getAttribute("doctors_id")).first();
     }
 }

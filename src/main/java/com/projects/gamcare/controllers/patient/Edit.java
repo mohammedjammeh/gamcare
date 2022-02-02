@@ -5,7 +5,6 @@ import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.models.BloodType;
 import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Patient;
-import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.fxml.FXML;
 
@@ -28,7 +27,7 @@ public class Edit extends Fields {
 
         Patient newPatient = getPatientFromDB();
 
-        profileUser.getUser().update(newUserData(
+        profileUser.getPatientUser().update(newUserData(
             newPatientUserData(newPatient))
         );
 

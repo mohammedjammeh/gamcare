@@ -137,6 +137,10 @@ public class Model implements ModelInterface {
         database.update(newData);
     }
 
+    public void deleteManyWhere(List<Map<String, Object>> fieldsValues) {
+        database.deleteManyWhere(fieldsValues);
+    }
+
     public Region getRegion() {
         return (Region) (new Region())
             .where("id", getAttribute("regions_id"))
