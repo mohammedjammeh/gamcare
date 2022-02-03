@@ -51,14 +51,7 @@ public class Show extends ShowParent {
 
         doctor.delete();
 
-        if (authUserViewingOwnProfile()) {
-            SceneTool.switchToLogin();
-            SceneTool.closeWindow(innerBodyBox);
-            return;
-        }
-
-        SceneTool.switchTo("doctor/index", getAuthUser());
-        SceneTool.closeWindow(innerBodyBox);
+        switchSceneAfterUserDelete("doctor/index");
     }
 
     public void setUpBody() {

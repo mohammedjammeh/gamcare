@@ -19,7 +19,11 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onDeletePatientButtonClick() {
-        System.out.println("You have now deleted patient profile.");
+        getProfileUser().getPatientUser().delete();
+
+        patient.delete();
+
+        switchSceneAfterUserDelete("hospital/index");
     }
 
     public void setUpBody() {

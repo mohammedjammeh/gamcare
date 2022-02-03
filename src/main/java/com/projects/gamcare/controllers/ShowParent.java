@@ -1,6 +1,7 @@
 package com.projects.gamcare.controllers;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.collections.ObservableList;
@@ -82,6 +83,23 @@ public class ShowParent extends Controller {
         return addressRow;
     }
 
+    protected List<HBox> attributeBoxWithSpacer(String name, Object value) {
+        HBox spacerBox = new HBox();
+        HBox.setHgrow(spacerBox, Priority.ALWAYS);
+
+        return List.of(attributeBox(name, value), spacerBox);
+    }
+
+    protected HBox attributeBox(String name, Object value) {
+        HBox attributeBox = newHBoxWithStyleClass("attribute");
+        Label attributeLabel = newLabelWithStyleClass(name, "attributeLabel");
+        Label attributeValue = newLabelWithStyleClass(value, "attributeValue");
+
+        attributeBox.getChildren().addAll(List.of(attributeLabel, attributeValue));
+
+        return attributeBox;
+    }
+
     /**
      * Extend Methods (Build Section)
      */
@@ -127,20 +145,14 @@ public class ShowParent extends Controller {
     /**
      * Extend Methods (General)
      */
-    protected List<HBox> attributeBoxWithSpacer(String name, Object value) {
-        HBox spacerBox = new HBox();
-        HBox.setHgrow(spacerBox, Priority.ALWAYS);
+    protected void switchSceneAfterUserDelete(String resourceName) {
+        if (authUserViewingOwnProfile()) {
+            SceneTool.switchToLogin();
+            SceneTool.closeWindow(innerBodyBox);
+            return;
+        }
 
-        return List.of(attributeBox(name, value), spacerBox);
-    }
-
-    protected HBox attributeBox(String name, Object value) {
-        HBox attributeBox = newHBoxWithStyleClass("attribute");
-        Label attributeLabel = newLabelWithStyleClass(name, "attributeLabel");
-        Label attributeValue = newLabelWithStyleClass(value, "attributeValue");
-
-        attributeBox.getChildren().addAll(List.of(attributeLabel, attributeValue));
-
-        return attributeBox;
+        SceneTool.switchTo(resourceName, getAuthUser());
+        SceneTool.closeWindow(innerBodyBox);
     }
 }
