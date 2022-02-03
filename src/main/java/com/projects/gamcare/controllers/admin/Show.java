@@ -1,12 +1,14 @@
 package com.projects.gamcare.controllers.admin;
 
 import com.projects.gamcare.controllers.ShowParent;
+import com.projects.gamcare.core.SceneTool;
 import javafx.fxml.FXML;
 
 public class Show extends ShowParent {
     @FXML
     protected void onEditAdminButtonClick() {
-        System.out.println("You have now edit an admin.");
+        SceneTool.switchToUserEdit("admin", getAuthUser(), getProfileUser());
+        SceneTool.closeWindow(profileAttributes);
     }
 
     public void setUpBody() {

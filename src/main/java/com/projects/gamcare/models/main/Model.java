@@ -31,7 +31,9 @@ public class Model implements ModelInterface {
      * Attributes Methods
      */
     public Object getAttribute(String name) {
-        return attributes.get(name);
+        Object attribute = attributes.get(name);
+
+        return Optional.ofNullable(attribute).isEmpty() ? "" : attribute;
     }
 
     public Integer idAttribute() {

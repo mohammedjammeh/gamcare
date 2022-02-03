@@ -2,7 +2,6 @@ package com.projects.gamcare.controllers.patient.parents;
 
 import com.projects.gamcare.controllers.user.FieldsParent;
 import com.projects.gamcare.enums.UserType;
-import com.projects.gamcare.models.Hospital;
 import com.projects.gamcare.models.Patient;
 import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;

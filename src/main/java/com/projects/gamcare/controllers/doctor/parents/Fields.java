@@ -65,8 +65,6 @@ public class Fields extends FieldsParent {
     public void setInputData(ProfileUser profileUser) {
         Doctor doctor = profileUser.getDoctor();
         Date dateOfBirth = (Date) profileUser.getAttribute("date_of_birth");
-        Object otherDetailsObj = profileUser.getAttribute("other_details");
-        String otherDetails = Optional.ofNullable(otherDetailsObj).isEmpty() ? "" : otherDetailsObj.toString();
         String careerLevel = StringTool.capitalise(profileUser.getAttribute("career_level").toString());
         List<Integer> hospitalsIDs = doctor.getHospitals().stream().map(Model::idAttribute).toList();
 
@@ -94,7 +92,7 @@ public class Fields extends FieldsParent {
         townTextField.setText(profileUser.getAttribute("town").toString());
         regionChoiceBox.getSelectionModel().select(regions.indexOf(profileUser.getRegion()));
 
-        otherDetailsTextArea.setText(otherDetails);
+        otherDetailsTextArea.setText(profileUser.getAttribute("other_details").toString());
 
         for (Integer hospitalID : hospitalsIDs) {
             hospitalID--;
