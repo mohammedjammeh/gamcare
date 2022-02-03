@@ -96,14 +96,14 @@
                         <HBox>
                             <VBox styleClass="weightBox">
                                 <Label text="Weight"/>
-                                <TextField fx:id="weightTextField" promptText="Weight"/>
+                                <TextField fx:id="weightTextField" promptText="Weight (kg)"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
 
                             <VBox styleClass="heightBox">
                                 <Label text="Height"/>
-                                <TextField fx:id="heightTextField" promptText="Height"/>
+                                <TextField fx:id="heightTextField" promptText="Height (cm)"/>
                             </VBox>
 
                             <HBox HBox.hgrow="ALWAYS"/>
