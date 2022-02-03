@@ -1,6 +1,7 @@
 package com.projects.gamcare.controllers.doctor;
 
 import com.projects.gamcare.core.Controller;
+import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.models.Doctor;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,7 +16,8 @@ public class Index extends Controller {
 
     @FXML
     protected void onAddDoctorButtonClick() {
-        System.out.println("You have now added a doctor.");
+        SceneTool.switchToUserCreate("doctor", getAuthUser());
+        SceneTool.closeWindow(addDoctorButton);
     }
 
     public void setUpBody() {

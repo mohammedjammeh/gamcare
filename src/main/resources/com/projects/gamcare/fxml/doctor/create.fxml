@@ -23,11 +23,11 @@
 
             <VBox styleClass="bodyBox">
                 <VBox styleClass="innerBodyBox">
-                    <HBox styleClass="subHeadingBox">
+                    <HBox styleClass="subHeadingBox" fx:id="addDoctorsSubHeadingBox">
                         <Label text="Add Doctors"/>
                     </HBox>
 
-                    <VBox styleClass="form">
+                    <VBox styleClass="form" fx:id="addDoctorsForm">
                         <HBox styleClass="addDoctorsBox">
                             <VBox styleClass="studentDoctorsBox">
                                 <Label text="Student doctors"/>

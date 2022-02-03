@@ -56,6 +56,19 @@ public class SceneTool {
         showStage(root);
     }
 
+    public static void switchToUserCreate(String resourceFolderName, User authUser) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceFolderName + "/create.fxml"));
+        Parent root = getLoadedRoot(loader);
+
+        FieldsParent controller = loader.getController();
+        controller.setAuthUser(authUser);
+        controller.setUpHeader();
+        controller.setUpBody();
+        controller.setUpCreateForm();
+
+        showStage(root);
+    }
+
     public static void switchToUserEdit(String resourceFolderName, User authUser, ProfileUser profileUser) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceFolderName + "/edit.fxml"));
         Parent root = getLoadedRoot(loader);

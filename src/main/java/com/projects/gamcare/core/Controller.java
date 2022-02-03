@@ -165,9 +165,14 @@ public class Controller {
         errorBox.setManaged(true);
     }
 
-    public void hide(Button button) {
-        button.setVisible(false);
-        button.setManaged(false);
+    public void hide(Node node) {
+        node.setVisible(false);
+        node.setManaged(false);
+    }
+
+    public void show(Node node) {
+        node.setVisible(true);
+        node.setManaged(true);
     }
 
     public List<String> getEnumItems(Class<?> enumClass) {
