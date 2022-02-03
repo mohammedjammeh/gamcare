@@ -4,13 +4,19 @@ import com.projects.gamcare.controllers.ShowParent;
 import com.projects.gamcare.core.SceneTool;
 import com.projects.gamcare.models.Doctor;
 import com.projects.gamcare.models.Hospital;
+import com.projects.gamcare.models.User;
 import com.projects.gamcare.models.main.Model;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Show extends ShowParent {
     private Doctor doctor;
@@ -32,7 +38,27 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onDeleteDoctorButtonClick() {
-        System.out.println("You have now delete a doctor.");
+        List<Map<String, Object>> doctorHospitalsRowsValues = doctor.getHospitals()
+            .stream()
+            .map(hospital -> doctorHospitalRowValues(doctor, (Hospital) hospital))
+            .toList();
+
+        (new Model())
+            .setTableName("hospitals_doctors")
+            .deleteManyWhere(doctorHospitalsRowsValues);
+
+        getProfileUser().getDoctorUser().delete();
+
+        doctor.delete();
+
+        if (authUserViewingOwnProfile()) {
+            SceneTool.switchToLogin();
+            SceneTool.closeWindow(innerBodyBox);
+            return;
+        }
+
+        SceneTool.switchTo("doctor/index", getAuthUser());
+        SceneTool.closeWindow(innerBodyBox);
     }
 
     public void setUpBody() {

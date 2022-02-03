@@ -327,4 +327,13 @@ public class Controller {
 
         return data;
     }
+
+    public Map<String, Object> doctorHospitalRowValues(Doctor doctor, Hospital hospital) {
+        Map<String, Object> rowValues = new HashMap<>();
+
+        rowValues.put("doctors_id", doctor.idAttribute());
+        rowValues.put("hospitals_id", hospital.idAttribute());
+
+        return rowValues;
+    }
 }

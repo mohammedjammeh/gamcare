@@ -334,6 +334,19 @@ public class Database {
     /**
      * Delete Query Builders
      */
+    public void delete() {
+        try {
+            String DeleteSql = "DELETE FROM " + model.getTableName() + " WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(DeleteSql);
+
+            setStatementValue(statement, 1, model.idAttribute());
+
+            statement.executeUpdate();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
     public void deleteManyWhere(List<Map<String, Object>> rowsData) {
         try {
             PreparedStatement statement = connection.prepareStatement(deleteManyWhereStatement(rowsData));
@@ -352,7 +365,7 @@ public class Database {
         }
     }
 
-    public String deleteManyWhereStatement(List<Map<String, Object>> rowsData) {
+    private String deleteManyWhereStatement(List<Map<String, Object>> rowsData) {
         StringBuilder statementStart = new StringBuilder("DELETE FROM " + model.getTableName() + " WHERE ");
         StringBuilder rowsDataBuilder = new StringBuilder();
 

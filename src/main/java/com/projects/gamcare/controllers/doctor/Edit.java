@@ -10,7 +10,6 @@ import com.projects.gamcare.models.main.Model;
 import com.projects.gamcare.models.main.ProfileUser;
 import javafx.fxml.FXML;
 
-import javax.print.Doc;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,23 +35,23 @@ public class Edit extends Fields {
         user.update(newUserData(newDoctorUserData(doctor)));
 
 
-        final Predicate<Integer> notInDoctorHospitalIndices = inputIndex -> ! doctorHospitalsIndices.contains(inputIndex);
+        final Predicate<Integer> notInDoctorHospitalIndices = hospitalInputIndex -> ! doctorHospitalsIndices.contains(hospitalInputIndex);
         hospitalsIndicesInput()
             .stream()
             .filter(notInDoctorHospitalIndices)
-            .forEach(inputIndex -> {
-                Hospital hospital = (Hospital) hospitals.get(inputIndex);
+            .forEach(hospitalInputIndex -> {
+                Hospital hospital = (Hospital) hospitals.get(hospitalInputIndex);
                 (new Model())
                     .setTableName("hospitals_doctors")
                     .insert(newHospitalDoctorData(hospital, doctor, 0));
             });
 
 
-        final Predicate<Integer> notInHospitalsIndicesInput = inputIndex -> ! hospitalsIndicesInput().contains(inputIndex);
+        final Predicate<Integer> notInHospitalsIndicesInput = hospitalInputIndex -> ! hospitalsIndicesInput().contains(hospitalInputIndex);
         List<Map<String, Object>> doctorHospitalsToRemove = doctorHospitalsIndices
             .stream()
             .filter(notInHospitalsIndicesInput)
-            .map(inputIndex -> doctorsHospitalsRowValues(doctor, inputIndex))
+            .map(hospitalInputIndex -> doctorHospitalInputRowsValues(doctor, hospitalInputIndex))
             .toList();
 
         if(! doctorHospitalsToRemove.isEmpty()) {
@@ -66,15 +65,11 @@ public class Edit extends Fields {
         SceneTool.closeWindow(hospitalsListView);
     }
 
-    private Map<String, Object> doctorsHospitalsRowValues(Doctor doctor, Integer inputIndex) {
-        Hospital hospital = (Hospital) hospitals.get(inputIndex);
-
-        Map<String, Object> rowValues = new HashMap<>();
-
-        rowValues.put("doctors_id", doctor.idAttribute());
-        rowValues.put("hospitals_id", hospital.idAttribute());
-
-        return rowValues;
+    private Map<String, Object> doctorHospitalInputRowsValues(Doctor doctor, Integer hospitalInputIndex) {
+        return doctorHospitalRowValues(
+            doctor,
+            (Hospital) hospitals.get(hospitalInputIndex)
+        );
     }
 
     /**

@@ -137,6 +137,10 @@ public class Model implements ModelInterface {
         database.update(newData);
     }
 
+    public void delete() {
+        database.delete();
+    }
+
     public void deleteManyWhere(List<Map<String, Object>> fieldsValues) {
         database.deleteManyWhere(fieldsValues);
     }
