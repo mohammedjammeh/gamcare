@@ -24,7 +24,7 @@ public class Edit extends Fields {
         profileUser.update(newUserData(data));
         ProfileUser profileUserFromDB = (ProfileUser) (new User()).where("id", profileUser.idAttribute()).first();
 
-        SceneTool.switchToProfile(getAuthUser().profileResourceName(), getAuthUser(), profileUserFromDB);
+        SceneTool.switchToProfile(getAuthUser().profileResourceFolderName(), getAuthUser(), profileUserFromDB);
         SceneTool.closeWindow(firstNameTextField);
     }
 

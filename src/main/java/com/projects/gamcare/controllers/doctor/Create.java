@@ -87,7 +87,7 @@ public class Create extends Fields {
                 .insert(newHospitalDoctorData(hospital, newDoctor, 0));
         }
 
-        SceneTool.switchToProfile("doctor/show", getAuthUser(), getNewDoctorWithUser());
+        SceneTool.switchToProfile("doctor", getAuthUser(), getNewDoctorWithUser());
         SceneTool.closeWindow(hospitalsListView);
     }
 }

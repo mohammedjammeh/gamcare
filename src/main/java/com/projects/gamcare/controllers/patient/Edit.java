@@ -31,7 +31,7 @@ public class Edit extends Fields {
             newPatientUserData(newPatient))
         );
 
-        SceneTool.switchToProfile("patient/show", getAuthUser(), getPatientWithUserFromDB());
+        SceneTool.switchToProfile("patient", getAuthUser(), getPatientWithUserFromDB());
         SceneTool.closeWindow(bloodTypeChoiceBox);
     }
 

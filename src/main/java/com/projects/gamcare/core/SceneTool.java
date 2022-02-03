@@ -28,8 +28,8 @@ public class SceneTool {
         showStage(root);
     }
 
-    public static void switchToProfile(String resourceName, User authUser, ProfileUser profileUser) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceName + ".fxml"));
+    public static void switchToProfile(String resourceFolderName, User authUser, ProfileUser profileUser) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("fxml/" + resourceFolderName + "/show.fxml"));
         Parent root = getLoadedRoot(loader);
 
         ShowParent controller = loader.getController();

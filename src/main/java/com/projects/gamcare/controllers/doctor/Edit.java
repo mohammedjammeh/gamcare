@@ -61,7 +61,7 @@ public class Edit extends Fields {
         }
 
 
-        SceneTool.switchToProfile("doctor/show", getAuthUser(), getNewDoctorWithUser());
+        SceneTool.switchToProfile("doctor", getAuthUser(), getNewDoctorWithUser());
         SceneTool.closeWindow(hospitalsListView);
     }
 

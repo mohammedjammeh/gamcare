@@ -86,7 +86,7 @@ public class Controller {
     }
 
     private void onMyProfileMenuButtonClick() {
-        SceneTool.switchToProfile(getAuthUser().profileResourceName(), getAuthUser(), getAuthUser());
+        SceneTool.switchToProfile(getAuthUser().profileResourceFolderName(), getAuthUser(), getAuthUser());
         SceneTool.closeWindow(headingBox);
     }
 
@@ -203,7 +203,7 @@ public class Controller {
      */
     @FXML
     public void onShowDoctorButtonClick(Doctor doctor, Node node) {
-        SceneTool.switchToProfile("doctor/show", getAuthUser(), doctor);
+        SceneTool.switchToProfile("doctor", getAuthUser(), doctor);
         SceneTool.closeWindow(node);
     }
 

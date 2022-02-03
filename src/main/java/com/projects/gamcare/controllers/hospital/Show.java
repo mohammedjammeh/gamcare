@@ -43,7 +43,7 @@ public class Show extends ShowParent {
 
     @FXML
     protected void onShowPatientButtonClick(Patient patient) {
-        SceneTool.switchToProfile("patient/show", getAuthUser(), patient);
+        SceneTool.switchToProfile("patient", getAuthUser(), patient);
         SceneTool.closeWindow(profilePatients);
     }
 

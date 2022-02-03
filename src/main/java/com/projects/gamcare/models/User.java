@@ -48,29 +48,19 @@ public class User extends ProfileUser implements ModelInterface {
 
     public void switchToAfterLoginResource() {
         if (isPatient()) {
-            SceneTool.switchToProfile(afterLoginResourceName(), this, this);
+            SceneTool.switchToProfile("patient", this, this);
             return;
         }
 
-        SceneTool.switchTo(afterLoginResourceName(), this);
+        SceneTool.switchTo("hospital/index", this);
     }
 
-    public String afterLoginResourceName() {
+    public String profileResourceFolderName() {
         Map<String, String> resourceNames = new HashMap<>();
 
-        resourceNames.put(UserType.ADMIN.name(), "hospital/index");
-        resourceNames.put(UserType.DOCTOR.name(), "hospital/index");
-        resourceNames.put(UserType.PATIENT.name(), "patient/show");
-
-        return resourceNames.get(typeAttribute());
-    }
-
-    public String profileResourceName() {
-        Map<String, String> resourceNames = new HashMap<>();
-
-        resourceNames.put(UserType.ADMIN.name(), "admin/show");
-        resourceNames.put(UserType.DOCTOR.name(), "doctor/show");
-        resourceNames.put(UserType.PATIENT.name(), "patient/show");
+        resourceNames.put(UserType.ADMIN.name(), "admin");
+        resourceNames.put(UserType.DOCTOR.name(), "doctor");
+        resourceNames.put(UserType.PATIENT.name(), "patient");
 
         return resourceNames.get(typeAttribute());
     }
